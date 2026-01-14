@@ -1,11 +1,97 @@
 ---
-import Welcome from '../components/Welcome.astro';
 import Layout from '../layouts/Layout.astro';
-
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+import Header from '../components/Header.astro';
 ---
 
-<Layout>
-	<Welcome />
+<Layout title="Ever Wellspring - 驱动未来能源">
+	<Header />
+	
+	<main>
+		<!-- Hero Section: 首屏大图 -->
+		<section class="relative h-[650px] flex items-center bg-slate-900">
+			<!-- 背景图 -->
+			<div class="absolute inset-0 overflow-hidden">
+				<img 
+					src="https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?q=80&w=2070&auto=format&fit=crop" 
+					alt="Industrial Rig" 
+					class="w-full h-full object-cover opacity-60"
+				/>
+			</div>
+			
+			<!-- 文字内容 -->
+			<div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-white mt-10">
+				<h1 class="text-5xl md:text-7xl font-extrabold mb-6 leading-tight">
+					Powering the <br/>
+					Industry that <br/>
+					<span class="text-[#E63E00]">Powers the World.</span>
+				</h1>
+				<p class="text-xl md:text-2xl mb-10 max-w-2xl text-gray-200 font-light">
+					我们提供尖端的设备与技术解决方案，助力能源行业实现更安全、更高效、更可持续的未来。
+				</p>
+				<div class="flex flex-col sm:flex-row gap-4">
+					<a href="#" class="bg-[#E63E00] text-white px-8 py-4 rounded font-bold text-center hover:bg-orange-700 transition uppercase tracking-wider">
+						查看解决方案
+					</a>
+					<a href="#" class="bg-transparent border-2 border-white text-white px-8 py-4 rounded font-bold text-center hover:bg-white hover:text-[#003865] transition uppercase tracking-wider">
+						联系我们
+					</a>
+				</div>
+			</div>
+		</section>
+
+		<!-- 业务卡片区域 -->
+		<section class="py-24 bg-gray-50">
+			<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+				<div class="text-center mb-16">
+					<h2 class="text-4xl font-extrabold text-[#003865] mb-4">核心业务板块</h2>
+					<div class="w-20 h-1 bg-[#E63E00] mx-auto"></div>
+				</div>
+
+				<div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+					<!-- Card 1 -->
+					<div class="group bg-white shadow-xl rounded overflow-hidden hover:-translate-y-2 transition duration-300">
+						<div class="h-56 overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1581092160562-40aa08e78837?q=80&w=800" class="w-full h-full object-cover group-hover:scale-105 transition duration-500"/>
+                        </div>
+						<div class="p-8">
+							<h3 class="text-2xl font-bold mb-3 text-[#003865]">能源设备制造</h3>
+							<p class="text-gray-600 mb-6 leading-relaxed">提供钻井、完井及生产所需的高端机械设备，确保极端环境下的稳定运行。</p>
+							<a href="#" class="text-[#E63E00] font-bold uppercase tracking-wide hover:underline">了解更多 &rarr;</a>
+						</div>
+					</div>
+
+					<!-- Card 2 -->
+					<div class="group bg-white shadow-xl rounded overflow-hidden hover:-translate-y-2 transition duration-300">
+						<div class="h-56 overflow-hidden">
+                             <img src="https://images.unsplash.com/photo-1581092335397-9583eb92d232?q=80&w=800" class="w-full h-full object-cover group-hover:scale-105 transition duration-500"/>
+                        </div>
+						<div class="p-8">
+							<h3 class="text-2xl font-bold mb-3 text-[#003865]">海洋工程技术</h3>
+							<p class="text-gray-600 mb-6 leading-relaxed">深海作业支持、海底管道铺设及海上风电安装技术的综合解决方案。</p>
+							<a href="#" class="text-[#E63E00] font-bold uppercase tracking-wide hover:underline">了解更多 &rarr;</a>
+						</div>
+					</div>
+
+					<!-- Card 3 -->
+					<div class="group bg-white shadow-xl rounded overflow-hidden hover:-translate-y-2 transition duration-300">
+						<div class="h-56 overflow-hidden">
+                             <img src="https://images.unsplash.com/photo-1531297461136-82lw9b2b0321?q=80&w=800" class="w-full h-full object-cover group-hover:scale-105 transition duration-500"/>
+                        </div>
+						<div class="p-8">
+							<h3 class="text-2xl font-bold mb-3 text-[#003865]">数字化转型</h3>
+							<p class="text-gray-600 mb-6 leading-relaxed">利用大数据与AI技术优化资产管理，提升运营效率并降低维护成本。</p>
+							<a href="#" class="text-[#E63E00] font-bold uppercase tracking-wide hover:underline">了解更多 &rarr;</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+        <!-- 简单的页脚 -->
+        <footer class="bg-[#002845] text-white py-12 border-t-4 border-[#E63E00]">
+            <div class="max-w-7xl mx-auto px-4 text-center text-sm text-gray-400">
+                <p>&copy; 2026 Ever Wellspring Pte. Ltd. All rights reserved.</p>
+            </div>
+        </footer>
+	</main>
 </Layout>

@@ -1,0 +1,30 @@
+---
+// src/components/Header.astro
+---
+<header class="bg-white border-b border-gray-200 sticky top-0 z-50 shadow-sm">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex justify-between items-center h-20">
+      <!-- Logo 区域 -->
+      <div class="flex-shrink-0 flex items-center cursor-pointer">
+        <span class="text-3xl font-extrabold text-[#003865] tracking-tighter">
+          EVER WELLSPRING<span class="text-[#E63E00]">.</span>
+        </span>
+      </div>
+      
+      <!-- 导航菜单 (模仿 NOV) -->
+      <nav class="hidden md:flex space-x-8">
+        <a href="#" class="text-gray-700 hover:text-[#003865] font-bold text-sm uppercase tracking-wide">关于我们</a>
+        <a href="#" class="text-gray-700 hover:text-[#003865] font-bold text-sm uppercase tracking-wide">产品与服务</a>
+        <a href="#" class="text-gray-700 hover:text-[#003865] font-bold text-sm uppercase tracking-wide">解决方案</a>
+        <a href="#" class="text-gray-700 hover:text-[#003865] font-bold text-sm uppercase tracking-wide">联系方式</a>
+      </nav>
+
+      <!-- 搜索/按钮 -->
+      <div class="flex items-center">
+         <button class="bg-[#003865] text-white px-5 py-2 rounded font-semibold hover:bg-blue-900 transition">
+          登录 / Login
+        </button>
+      </div>
+    </div>
+  </div>
+</header>
