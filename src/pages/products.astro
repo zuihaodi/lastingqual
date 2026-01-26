@@ -1,0 +1,72 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+
+// 这里定义产品数据，方便修改
+const products = [
+  {
+    title: "高端钻井设备租赁",
+    desc: "提供各类顶驱、绞车、泥浆泵等核心钻井装备的租赁服务。",
+    img: "/card1.jpg" // 记得用你之前上传的图片
+  },
+  {
+    title: "深海工程支持",
+    desc: "包括ROV（水下机器人）操作、海底管道检测及维护服务。",
+    img: "/card2.jpg"
+  },
+  {
+    title: "数字化管理平台",
+    desc: "基于AI的资产管理系统，实时监控设备状态，预防故障。",
+    img: "/card3.jpg"
+  },
+  {
+    title: "备件供应链服务",
+    desc: "全球化的物流网络，确保关键备件在24小时内送达现场。",
+    img: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?q=80&w=800"
+  },
+  {
+    title: "技术咨询与培训",
+    desc: "派遣资深工程师驻场指导，并提供专业的人员操作培训。",
+    img: "https://images.unsplash.com/photo-1581094794329-c8112a89af12?q=80&w=800"
+  }
+];
+---
+
+<Layout title="产品与服务 | Ever Wellspring">
+  <Header />
+  
+  <main>
+    <div class="bg-[#003865] py-16">
+      <div class="max-w-7xl mx-auto px-4 text-center">
+        <h1 class="text-4xl font-extrabold text-white">产品与服务</h1>
+        <p class="mt-4 text-xl text-gray-300">全面的工业解决方案库</p>
+      </div>
+    </div>
+
+    <section class="py-16 bg-gray-50">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+          
+          {products.map((item) => (
+            <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:-translate-y-1 transition duration-300">
+              <div class="h-48 overflow-hidden">
+                <img src={item.img} alt={item.title} class="w-full h-full object-cover hover:scale-105 transition duration-500">
+              </div>
+              <div class="p-6">
+                <h3 class="text-xl font-bold text-[#003865] mb-2">{item.title}</h3>
+                <p class="text-gray-600">{item.desc}</p>
+              </div>
+            </div>
+          ))}
+
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="bg-[#002845] text-white py-8">
+      <div class="max-w-7xl mx-auto px-4 text-center text-sm">
+          <p>&copy; 2026 Ever Wellspring Pte. Ltd. All rights reserved.</p>
+      </div>
+  </footer>
+</Layout>

@@ -1,0 +1,68 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+---
+
+<Layout title="关于我们 | Ever Wellspring">
+  <Header />
+  
+  <main>
+    <!-- 页面顶部标题栏 -->
+    <div class="bg-[#003865] py-16">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <h1 class="text-4xl font-extrabold text-white tracking-tight">关于我们</h1>
+        <p class="mt-4 text-xl text-gray-300">致力卓越，驱动未来</p>
+      </div>
+    </div>
+
+    <!-- 公司简介部分 -->
+    <section class="py-16 bg-white">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+        <!-- 左侧文字 -->
+        <div>
+          <h2 class="text-3xl font-bold text-[#003865] mb-6">公司概况</h2>
+          <p class="text-gray-600 mb-4 leading-relaxed">
+            Ever Wellspring Pte. Ltd. 成立于新加坡，是一家专注于能源设备与工程解决方案的领先提供商。我们致力于为全球油气及可再生能源行业提供高质量的设备租赁、技术支持及工程服务。
+          </p>
+          <p class="text-gray-600 mb-4 leading-relaxed">
+            凭借多年的行业经验和全球化的供应链网络，我们能够快速响应客户需求，确保项目在极端环境下的安全与高效运行。
+          </p>
+        </div>
+        <!-- 右侧图片 (请记得在 public 放入 about.jpg) -->
+        <div class="rounded-lg overflow-hidden shadow-xl">
+          <img src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?q=80&w=1000" alt="About Us" class="w-full h-full object-cover">
+        </div>
+      </div>
+    </section>
+
+    <!-- 核心价值观 -->
+    <section class="py-16 bg-gray-50">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-12">
+          <h2 class="text-3xl font-bold text-[#003865]">我们的核心价值观</h2>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+          <div class="bg-white p-8 rounded shadow">
+            <h3 class="text-xl font-bold text-[#E63E00] mb-2">安全第一</h3>
+            <p class="text-gray-600">无论是设备还是人员，安全永远是我们的首要考量。</p>
+          </div>
+          <div class="bg-white p-8 rounded shadow">
+            <h3 class="text-xl font-bold text-[#E63E00] mb-2">客户至上</h3>
+            <p class="text-gray-600">深入理解客户痛点，提供量身定制的解决方案。</p>
+          </div>
+          <div class="bg-white p-8 rounded shadow">
+            <h3 class="text-xl font-bold text-[#E63E00] mb-2">持续创新</h3>
+            <p class="text-gray-600">不断引入新技术，推动行业的数字化与智能化转型。</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  
+  <!-- 这里以后可以单独做一个 Footer 组件 -->
+  <footer class="bg-[#002845] text-white py-8 mt-auto">
+      <div class="max-w-7xl mx-auto px-4 text-center text-sm">
+          <p>&copy; 2026 Ever Wellspring Pte. Ltd. All rights reserved.</p>
+      </div>
+  </footer>
+</Layout>
