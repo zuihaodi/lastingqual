@@ -3,97 +3,145 @@ import Layout from '../layouts/Layout.astro';
 import Header from '../components/Header.astro';
 ---
 
-<Layout title="Ever Wellspring - 驱动未来能源">
+<Layout title="Ever Wellspring - 能源装备综合服务商">
 	<Header />
 	
 	<main>
-		<!-- Hero Section: 首屏大图 -->
-		<section class="relative h-[650px] flex items-center bg-slate-900">
-			<!-- 背景图 -->
+		<!-- Hero Section -->
+		<section class="relative h-[700px] flex items-center bg-slate-900">
 			<div class="absolute inset-0 overflow-hidden">
+				<!-- 建议换成 PDF 首页那种壮观的钻井现场图 -->
 				<img 
-					src="/images/hero-bg.jpg" 
-					alt="" 
-					class="w-full h-full object-cover object-top opacity-60" 
+					src="/hero-bg.jpg" 
+					alt="Drilling Site" 
+					class="w-full h-full object-cover opacity-50"
 				/>
 			</div>
 			
-			<!-- 文字内容 -->
 			<div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-white mt-10">
 				<h1 class="text-5xl md:text-7xl font-extrabold mb-6 leading-tight">
-					
-					Oil and gas   <br/>
-					Drilling equipment <br/>
-					<span class="text-[#E63E00]">Leasing.</span>
+					挑战地心深度<br/>
+					<span class="text-[#E63E00]">刷新亚洲纪录</span>
 				</h1>
 				<p class="text-xl md:text-2xl mb-10 max-w-2xl text-gray-200 font-light">
-					作为能源行业设备租赁专家，以服务客户为使命，通过高质量产品和服务为客户创造价值，推动能源行业的可持续发展。
+					掌握12000米超深井钻采技术，创下9396米亚洲最深水平井纪录。<br/>
+                    Ever Wellspring —— 您最值得信赖的能源合作伙伴。
 				</p>
 				<div class="flex flex-col sm:flex-row gap-4">
-					<a href="#" class="bg-[#E63E00] text-white px-8 py-4 rounded font-bold text-center hover:bg-orange-700 transition uppercase tracking-wider">
-						查看解决方案
+					<a href="/products" class="bg-[#E63E00] text-white px-8 py-4 rounded font-bold text-center hover:bg-orange-700 transition uppercase tracking-wider">
+						查看业务领域
 					</a>
-					<a href="#" class="bg-transparent border-2 border-white text-white px-8 py-4 rounded font-bold text-center hover:bg-white hover:text-[#003865] transition uppercase tracking-wider">
+					<a href="/contact" class="bg-transparent border-2 border-white text-white px-8 py-4 rounded font-bold text-center hover:bg-white hover:text-[#003865] transition uppercase tracking-wider">
 						联系我们
 					</a>
 				</div>
 			</div>
 		</section>
 
-		<!-- 业务卡片区域 -->
+        <!-- 核心数据栏 (新增) -->
+        <section class="bg-[#003865] py-10 border-b-4 border-[#E63E00]">
+            <div class="max-w-7xl mx-auto px-4 grid grid-cols-2 md:grid-cols-4 gap-8 text-center text-white">
+                <div>
+                    <div class="text-4xl font-bold mb-1">2002<span class="text-xl font-normal">年</span></div>
+                    <div class="text-gray-300 text-sm">行业积淀始于</div>
+                </div>
+                <div>
+                    <div class="text-4xl font-bold mb-1">9396<span class="text-xl font-normal">米</span></div>
+                    <div class="text-gray-300 text-sm">亚洲钻探深度纪录</div>
+                </div>
+                <div>
+                    <div class="text-4xl font-bold mb-1">CNPC</div>
+                    <div class="text-gray-300 text-sm">中石油一级供应商</div>
+                </div>
+                <div>
+                    <div class="text-4xl font-bold mb-1">ISO</div>
+                    <div class="text-gray-300 text-sm">全体系质量认证</div>
+                </div>
+            </div>
+        </section>
+
+		<!-- 业务板块 (基于 PDF 第 2 页目录) -->
 		<section class="py-24 bg-gray-50">
 			<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 				<div class="text-center mb-16">
-					<h2 class="text-4xl font-extrabold text-[#003865] mb-4">核心业务板块</h2>
+					<h2 class="text-4xl font-extrabold text-[#003865] mb-4">核心业务领域</h2>
 					<div class="w-20 h-1 bg-[#E63E00] mx-auto"></div>
+                    <p class="mt-4 text-gray-600 max-w-2xl mx-auto">
+                        集钻采装备研发、制造、租赁、贸易及服务于一体的综合性跨国企业。
+                    </p>
 				</div>
 
 				<div class="grid grid-cols-1 md:grid-cols-3 gap-10">
-					<!-- Card 1 -->
+					<!-- Card 1: 租赁 -->
 					<div class="group bg-white shadow-xl rounded overflow-hidden hover:-translate-y-2 transition duration-300">
 						<div class="h-56 overflow-hidden">
-                            <img src="/images/card1.jpg" class="w-full h-full object-cover group-hover:scale-105 transition duration-500"/>
+                            <img src="/card1.jpg" alt="设备租赁" class="w-full h-full object-cover group-hover:scale-105 transition duration-500"/>
                         </div>
 						<div class="p-8">
-							<h3 class="text-2xl font-bold mb-3 text-[#003865]">Drilling Rig Leasing</h3>
-							<p class="text-gray-600 mb-6 leading-relaxed">This includes a full series of drilling rigs and XJ350–2250HP workover rigs</p>
-							<a href="#" class="text-[#E63E00] font-bold uppercase tracking-wide hover:underline">more &rarr;</a>
+							<h3 class="text-2xl font-bold mb-3 text-[#003865]">大型装备租赁</h3>
+							<p class="text-gray-600 mb-6 leading-relaxed">
+                                提供以钻机为基础的直租、联合租赁服务。拥有ZJ90DB等高端设备，服务于塔里木、墨西哥等全球油田。
+                            </p>
+							<a href="/products" class="text-[#E63E00] font-bold uppercase tracking-wide hover:underline">了解更多 &rarr;</a>
 						</div>
 					</div>
 
-					<!-- Card 2 -->
+					<!-- Card 2: 销售 -->
 					<div class="group bg-white shadow-xl rounded overflow-hidden hover:-translate-y-2 transition duration-300">
 						<div class="h-56 overflow-hidden">
-                             <img src="/images/card2.jpg" class="w-full h-full object-cover group-hover:scale-105 transition duration-500"/>
+                             <img src="/card2.jpg" alt="特种车辆" class="w-full h-full object-cover group-hover:scale-105 transition duration-500"/>
                         </div>
 						<div class="p-8">
-							<h3 class="text-2xl font-bold mb-3 text-[#003865]">Special Vehicle Leasing</h3>
-							<p class="text-gray-600 mb-6 leading-relaxed">We are currently collaborating with renowned domestic and international partners to deliver diverse and technical equipment leasing solutions.
-</p>
-							<a href="#" class="text-[#E63E00] font-bold uppercase tracking-wide hover:underline">more&rarr;</a>
+							<h3 class="text-2xl font-bold mb-3 text-[#003865]">特种车辆销售</h3>
+							<p class="text-gray-600 mb-6 leading-relaxed">
+                                携手中国重汽联合研发，提供压裂车、混砂车、连续油管车等油田特种底盘，实现进口替代。
+                            </p>
+							<a href="/products" class="text-[#E63E00] font-bold uppercase tracking-wide hover:underline">了解更多 &rarr;</a>
 						</div>
 					</div>
 
-					<!-- Card 3 -->
+					<!-- Card 3: 服务 -->
 					<div class="group bg-white shadow-xl rounded overflow-hidden hover:-translate-y-2 transition duration-300">
 						<div class="h-56 overflow-hidden">
-                             <img src="/images/card3.jpg" class="w-full h-full object-cover group-hover:scale-105 transition duration-500"/>
+                             <img src="/card3.jpg" alt="技术服务" class="w-full h-full object-cover group-hover:scale-105 transition duration-500"/>
                         </div>
 						<div class="p-8">
-							<h3 class="text-2xl font-bold mb-3 text-[#003865]">Integrated MRO Services</h3>
-							<p class="text-gray-600 mb-6 leading-relaxed">利We deploy a team of professional electricians, mechanics, and maintenance experts to provide 24/7 support, guaranteeing high-efficiency equipment performance at all times.
-</p>
-							<a href="#" class="text-[#E63E00] font-bold uppercase tracking-wide hover:underline">more&rarr;</a>
+							<h3 class="text-2xl font-bold mb-3 text-[#003865]">动力总包与服务</h3>
+							<p class="text-gray-600 mb-6 leading-relaxed">
+                                提供一站式动力设备运维、安装调试及HSE质量管理方案。24小时响应，保障项目稳健运行。
+                            </p>
+							<a href="/products" class="text-[#E63E00] font-bold uppercase tracking-wide hover:underline">了解更多 &rarr;</a>
 						</div>
 					</div>
 				</div>
 			</div>
 		</section>
 
-        <!-- 简单的页脚 -->
+        <!-- 合作伙伴 Logo 墙 (基于 PDF 第 17/19 页) -->
+        <section class="py-16 bg-white">
+            <div class="max-w-7xl mx-auto px-4 text-center">
+                 <h2 class="text-2xl font-bold text-gray-400 mb-8 uppercase tracking-widest">战略合作伙伴</h2>
+                 <div class="grid grid-cols-2 md:grid-cols-5 gap-8 items-center opacity-70 grayscale hover:grayscale-0 transition duration-500">
+                     <!-- 建议把 PDF 第19页的 logo 切图放进 public 文件夹 -->
+                     <div class="text-xl font-bold text-gray-600">CNPC 中国石油</div>
+                     <div class="text-xl font-bold text-gray-600">SINOPEC 中国石化</div>
+                     <div class="text-xl font-bold text-gray-600">CNOOC 中国海油</div>
+                     <div class="text-xl font-bold text-gray-600">Jereh 杰瑞股份</div>
+                     <div class="text-xl font-bold text-gray-600">Sinotruk 中国重汽</div>
+                     <div class="text-xl font-bold text-gray-600">Aramco</div>
+                     <div class="text-xl font-bold text-gray-600">PEMEX</div>
+                     <div class="text-xl font-bold text-gray-600">BOMCO 宝石机械</div>
+                     <div class="text-xl font-bold text-gray-600">Kunlun Bank</div>
+                     <div class="text-xl font-bold text-gray-600">Shell</div>
+                 </div>
+            </div>
+        </section>
+
+        <!-- 页脚 -->
         <footer class="bg-[#002845] text-white py-12 border-t-4 border-[#E63E00]">
             <div class="max-w-7xl mx-auto px-4 text-center text-sm text-gray-400">
-                <p>&copy; 2026 Ever Wellspring Pte. Ltd. All rights reserved.</p>
+                <p class="mb-2">&copy; 2026 Ever Wellspring Pte. Ltd. All rights reserved.</p>
+                <p>致力于推动能源行业的技术进步和效率提升</p>
             </div>
         </footer>
 	</main>
