@@ -1,30 +1,42 @@
 ---
 // src/components/HeaderEN.astro
+// 英文版导航栏 - 标准修复版
 ---
 <header class="bg-white border-b border-gray-200 sticky top-0 z-50 shadow-sm">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="flex justify-between items-center h-20">
-      <!-- Logo 区域 (点击回英文首页) -->
+      
+      <!-- 1. Left Logo -->
       <div class="flex-shrink-0 flex items-center cursor-pointer">
-        <a href="/en" class="text-3xl font-extrabold text-[#003865] tracking-tighter no-underline">
+        <a href="/en/" class="text-3xl font-extrabold text-[#003865] tracking-tighter no-underline">
           LASTING QUAL<span class="text-[#E63E00]">.</span>
         </a>
       </div>
       
-      <!-- 英文导航菜单 -->
-<nav class="hidden md:flex space-x-8">
-  <a href="/en/about" class="text-gray-700 hover:text-[#003865] font-bold text-sm uppercase tracking-wide no-underline">About Us</a>
-  <a href="/en/products" class="text-gray-700 hover:text-[#003865] font-bold text-sm uppercase tracking-wide no-underline">Products</a>
-  <!-- 重点看下面这一行，必须是 /en/solutions -->
-  <a href="/en/solutions" class="text-gray-700 hover:text-[#003865] font-bold text-sm uppercase tracking-wide no-underline">Solutions</a>
-  <a href="/en/contact" class="text-gray-700 hover:text-[#003865] font-bold text-sm uppercase tracking-wide no-underline">Contact</a>
-</nav>
-      <!-- 切换回中文按钮 -->
-      <div class="flex items-center">
-         <a href="/" class="ml-4 border border-[#003865] text-[#003865] px-3 py-1 rounded text-xs font-bold hover:bg-[#003865] hover:text-white transition no-underline">
+      <!-- 2. Middle/Right Nav Menu (Desktop) -->
+      <div class="hidden md:flex items-center space-x-8">
+        <nav class="flex space-x-8">
+          <a href="/en/about" class="text-gray-700 hover:text-[#003865] font-bold text-sm uppercase tracking-wide no-underline">About Us</a>
+          <a href="/en/products" class="text-gray-700 hover:text-[#003865] font-bold text-sm uppercase tracking-wide no-underline">Products</a>
+          <a href="/en/solutions" class="text-gray-700 hover:text-[#003865] font-bold text-sm uppercase tracking-wide no-underline">Solutions</a>
+          <a href="/en/contact" class="text-gray-700 hover:text-[#003865] font-bold text-sm uppercase tracking-wide no-underline">Contact</a>
+        </nav>
+
+        <!-- 3. Language Switch Button -->
+        <a href="/zh" class="border border-[#003865] text-[#003865] px-3 py-1 rounded text-xs font-bold hover:bg-[#003865] hover:text-white transition no-underline">
           中文
         </a>
       </div>
+
+      <!-- 4. Mobile Menu Icon (Mobile only) -->
+      <div class="md:hidden flex items-center">
+        <button class="text-gray-500 hover:text-gray-900 focus:outline-none">
+          <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+        </button>
+      </div>
+
     </div>
   </div>
 </header>
