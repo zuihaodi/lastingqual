@@ -1,32 +1,30 @@
 ---
-// src/components/Header.astro
-// 已删除登录按钮
+// src/components/HeaderEN.astro
 ---
 <header class="bg-white border-b border-gray-200 sticky top-0 z-50 shadow-sm">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="flex justify-between items-center h-20">
-      <!-- Logo 区域 -->
+      <!-- Logo 区域 (点击回英文首页) -->
       <div class="flex-shrink-0 flex items-center cursor-pointer">
-        <a href="/" class="text-3xl font-extrabold text-[#003865] tracking-tighter no-underline">
+        <a href="/en" class="text-3xl font-extrabold text-[#003865] tracking-tighter no-underline">
           LASTING QUAL<span class="text-[#E63E00]">.</span>
         </a>
       </div>
       
-      <!-- 导航菜单 -->
-	<!-- src/components/Header.astro -->
-	<nav class="hidden md:flex space-x-8">
-	  <a href="/about" class="text-gray-700 hover:text-[#003865] font-bold text-sm uppercase tracking-wide no-underline">About Us</a>
-	  <a href="/products" class="text-gray-700 hover:text-[#003865] font-bold text-sm uppercase tracking-wide no-underline">Products And Services</a>
-	  <a href="/solutions" class="text-gray-700 hover:text-[#003865] font-bold text-sm uppercase tracking-wide no-underline">Solution</a>
-	  <a href="/contact" class="text-gray-700 hover:text-[#003865] font-bold text-sm uppercase tracking-wide no-underline">Contact Us</a>
-	</nav>
-      <!-- 右侧留空或放搜索图标 -->
+      <!-- 英文导航菜单 -->
+      <nav class="hidden md:flex space-x-8">
+        <a href="/en/about" class="text-gray-700 hover:text-[#003865] font-bold text-sm uppercase tracking-wide no-underline">About Us</a>
+        <a href="/en/products" class="text-gray-700 hover:text-[#003865] font-bold text-sm uppercase tracking-wide no-underline">Products</a>
+        <a href="/en/solutions" class="text-gray-700 hover:text-[#003865] font-bold text-sm uppercase tracking-wide no-underline">Solutions</a>
+        <a href="/en/contact" class="text-gray-700 hover:text-[#003865] font-bold text-sm uppercase tracking-wide no-underline">Contact</a>
+      </nav>
+
+      <!-- 切换回中文按钮 -->
       <div class="flex items-center">
-         <!-- 登录按钮已删除 -->
+         <a href="/" class="ml-4 border border-[#003865] text-[#003865] px-3 py-1 rounded text-xs font-bold hover:bg-[#003865] hover:text-white transition no-underline">
+          中文
+        </a>
       </div>
     </div>
   </div>
-<a href="/" class="ml-4 border border-[#003865] text-[#003865] px-3 py-1 rounded text-xs font-bold hover:bg-[#003865] hover:text-white transition">
-  中
-</a>
 </header>

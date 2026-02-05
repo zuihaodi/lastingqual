@@ -1,6 +1,5 @@
 ---
 // src/components/Header.astro
-// 已删除登录按钮
 ---
 <header class="bg-white border-b border-gray-200 sticky top-0 z-50 shadow-sm">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -13,20 +12,19 @@
       </div>
       
       <!-- 导航菜单 -->
-	<!-- src/components/Header.astro -->
-	<nav class="hidden md:flex space-x-8">
-	  <a href="/about" class="text-gray-700 hover:text-[#003865] font-bold text-sm uppercase tracking-wide no-underline">关于我们</a>
-	  <a href="/products" class="text-gray-700 hover:text-[#003865] font-bold text-sm uppercase tracking-wide no-underline">产品与服务</a>
-	  <a href="/solutions" class="text-gray-700 hover:text-[#003865] font-bold text-sm uppercase tracking-wide no-underline">解决方案</a>
-	  <a href="/contact" class="text-gray-700 hover:text-[#003865] font-bold text-sm uppercase tracking-wide no-underline">联系方式</a>
-	</nav>
-      <!-- 右侧留空或放搜索图标 -->
+      <nav class="hidden md:flex space-x-8">
+        <a href="/zh/about" class="text-gray-700 hover:text-[#003865] font-bold text-sm uppercase tracking-wide no-underline">关于我们</a>
+        <a href="/zh/products" class="text-gray-700 hover:text-[#003865] font-bold text-sm uppercase tracking-wide no-underline">产品与服务</a>
+        <a href="/zh/solutions" class="text-gray-700 hover:text-[#003865] font-bold text-sm uppercase tracking-wide no-underline">解决方案</a>
+        <a href="/zh/contact" class="text-gray-700 hover:text-[#003865] font-bold text-sm uppercase tracking-wide no-underline">联系方式</a>
+      </nav>
+
+      <!-- 语言切换按钮 (放在这里才对！) -->
       <div class="flex items-center">
-         <!-- 登录按钮已删除 -->
+         <a href="/en" class="ml-4 border border-[#003865] text-[#003865] px-3 py-1 rounded text-xs font-bold hover:bg-[#003865] hover:text-white transition no-underline">
+          EN
+        </a>
       </div>
     </div>
   </div>
-<a href="/en" class="ml-4 border border-[#003865] text-[#003865] px-3 py-1 rounded text-xs font-bold hover:bg-[#003865] hover:text-white transition">
-  EN
-</a>
 </header>
