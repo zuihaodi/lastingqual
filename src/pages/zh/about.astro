@@ -1,0 +1,99 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+---
+
+<Layout title="关于我们 | Lasting Qual">
+  <Header />
+  
+  <main>
+    <div class="bg-[#003865] py-20 relative overflow-hidden">
+      <div class="absolute inset-0 bg-[url('/about-bg.jpg')] bg-cover opacity-20"></div>
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+        <h1 class="text-5xl font-extrabold text-white tracking-tight">关于我们</h1>
+        <p class="mt-4 text-xl text-gray-300">源于 2002，深耕能源行业二十余载</p>
+      </div>
+    </div>
+
+    <!-- 公司简介 (PDF P4) -->
+    <section class="py-16 bg-white">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+        <div>
+          <h2 class="text-3xl font-bold text-[#003865] mb-6">公司概况</h2>
+          <p class="text-gray-600 mb-4 leading-relaxed text-justify">
+            Lasting Qual Pte. Ltd.（前身为恒沣能源）始创于 2002 年，是一家集能源行业钻采装备研发、生产、销售及服务于一体的创新型企业。公司总部位于新加坡，致力于提供全面的钻采解决方案。
+          </p>
+          <p class="text-gray-600 mb-4 leading-relaxed text-justify">
+            作为<strong>中国石油集团一号网一级供应商</strong>及<strong>中国石化集团易派客成员</strong>，我们拥有全面的入网资质。凭借强大的研发实力和全球化供应链，我们与中石油、中石化、杰瑞股份、东方宏华等业内顶尖企业保持着长期稳定的战略伙伴关系。
+          </p>
+          <div class="mt-6 flex gap-4">
+             <span class="px-4 py-2 bg-gray-100 text-[#003865] font-bold rounded">注册资金 5亿+</span>
+             <span class="px-4 py-2 bg-gray-100 text-[#003865] font-bold rounded">专业团队 15年+经验</span>
+          </div>
+        </div>
+        <div class="rounded-lg overflow-hidden shadow-2xl rotate-2 hover:rotate-0 transition duration-500">
+          <!-- 建议放一张公司大楼或团队合影 -->
+          <img src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?q=80&w=1000" alt="About Us" class="w-full h-full object-cover">
+        </div>
+      </div>
+    </section>
+
+    <!-- 企业文化 (PDF P5) -->
+    <section class="py-16 bg-gray-50">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-12">
+          <h2 class="text-3xl font-bold text-[#003865]">我们的核心价值观</h2>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+          <div class="bg-white p-8 rounded-lg shadow-lg border-t-4 border-[#E63E00]">
+            <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4 text-2xl">🎯</div>
+            <h3 class="text-xl font-bold text-[#003865] mb-4">使命 Mission</h3>
+            <p class="text-gray-600">以服务客户为使命，通过高质量产品和服务为客户创造价值，推动能源行业的可持续发展。</p>
+          </div>
+          <div class="bg-white p-8 rounded-lg shadow-lg border-t-4 border-[#E63E00]">
+            <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4 text-2xl">🤝</div>
+            <h3 class="text-xl font-bold text-[#003865] mb-4">经营理念 Philosophy</h3>
+            <p class="text-gray-600">坚持“诚信、共赢、开拓”，致力于与客户、合作伙伴建立以信任和尊重为基础的长期合作关系。</p>
+          </div>
+          <div class="bg-white p-8 rounded-lg shadow-lg border-t-4 border-[#E63E00]">
+            <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4 text-2xl">🚀</div>
+            <h3 class="text-xl font-bold text-[#003865] mb-4">愿景 Vision</h3>
+            <p class="text-gray-600">成为集研发、制造、服务和贸易于一体的综合性跨国企业，做能源行业领域内最值得信赖的合作伙伴。</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 资质荣誉 (PDF P7) -->
+    <section class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 text-center">
+            <h2 class="text-3xl font-bold text-[#003865] mb-12">资质与认证</h2>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+                <!-- 这里可以用文字或者以后放证书图片 -->
+                <div class="border p-4 rounded">
+                    <h4 class="font-bold text-lg">ISO 9001</h4>
+                    <p class="text-sm text-gray-500">质量管理体系认证</p>
+                </div>
+                <div class="border p-4 rounded">
+                    <h4 class="font-bold text-lg">ISO 14001</h4>
+                    <p class="text-sm text-gray-500">环境管理体系认证</p>
+                </div>
+                <div class="border p-4 rounded">
+                    <h4 class="font-bold text-lg">ISO 45001</h4>
+                    <p class="text-sm text-gray-500">职业健康安全管理</p>
+                </div>
+                <div class="border p-4 rounded">
+                    <h4 class="font-bold text-lg">HSE</h4>
+                    <p class="text-sm text-gray-500">安全与环境管理体系</p>
+                </div>
+            </div>
+        </div>
+    </section>
+  </main>
+  
+  <footer class="bg-[#002845] text-white py-8 mt-auto">
+      <div class="max-w-7xl mx-auto px-4 text-center text-sm">
+          <p>&copy; 2026 Lasting Qual Pte. Ltd. All rights reserved.</p>
+      </div>
+  </footer>
+</Layout>

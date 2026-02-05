@@ -1,0 +1,100 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+
+// 基于 PDF 内容整理的产品数据
+const products = [
+  {
+    title: "高端钻机租赁 (ZJ90DB)",
+    category: "租赁业务",
+    desc: "提供包含 ZJ90DB (含固控/全含) 在内的高端钻机租赁。拥有刷新亚洲纪录的 9396米 深井钻探能力，适应塔里木、墨西哥等极端环境。",
+    img: "/images/card1.jpg"
+  },
+  {
+    title: "油田特种底盘 (中国重汽联研)",
+    category: "销售业务",
+    desc: "与中国重汽联合研发，提供 8x6 压裂车底盘、混砂车底盘及 58吨 连续油管车底盘。全面替代进口 MAN 及奔驰底盘，降低综合成本。",
+    img: "/images/card2.jpg"
+  },
+  {
+    title: "动力总包服务",
+    category: "技术服务",
+    desc: "为钻机提供一站式动力解决方案。业务覆盖东北、华北、四川及内蒙，已累计服务 30+ 支钻井队伍。",
+    img: "/images/card3.jpg"
+  },
+  {
+    title: "墨西哥 PEMEX 项目支持",
+    category: "全球案例",
+    desc: "助力长城钻探中标墨西哥国家石油公司项目，租赁 3 台 3000HP 钻机，迅速响应资产轻量化战略。",
+    img: "https://images.unsplash.com/photo-1581094794329-c8112a89af12?q=80&w=800"
+  },
+  {
+    title: "定制化柴油机组",
+    category: "联合研发",
+    desc: "与济柴机械建立战略合作，开发定制化高性能发电机组，共同推动产品在石油石化行业的应用。",
+    img: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?q=80&w=800"
+  },
+  {
+    title: "HSE 全方位风控",
+    category: "安全体系",
+    desc: "15分钟内响应，24小时在线。提供全场景风险评估、实时监测及定制化技术培训。",
+    img: "/images/product6.jpg"
+  }
+];
+---
+
+<Layout title="产品与服务 | Ever Wellspring">
+  <Header />
+  
+  <main>
+    <div class="bg-[#003865] py-16">
+      <div class="max-w-7xl mx-auto px-4 text-center">
+        <h1 class="text-4xl font-extrabold text-white">产品与服务</h1>
+        <p class="mt-4 text-xl text-gray-300">钻采装备销售租赁 | 动力总包 | 全球工程服务</p>
+      </div>
+    </div>
+
+    <section class="py-16 bg-gray-50">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+          
+          {products.map((item) => (
+            <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:-translate-y-1 transition duration-300 flex flex-col">
+              <div class="h-48 overflow-hidden relative">
+                <span class="absolute top-0 right-0 bg-[#E63E00] text-white text-xs font-bold px-3 py-1 m-2 rounded">
+                    {item.category}
+                </span>
+                <img src={item.img} alt={item.title} class="w-full h-full object-cover hover:scale-105 transition duration-500">
+              </div>
+              <div class="p-6 flex-1 flex flex-col">
+                <h3 class="text-xl font-bold text-[#003865] mb-2">{item.title}</h3>
+                <p class="text-gray-600 text-sm leading-relaxed mb-4 flex-1">{item.desc}</p>
+                <a href="/contact" class="text-[#E63E00] font-semibold text-sm hover:underline mt-auto">咨询详情 &rarr;</a>
+              </div>
+            </div>
+          ))}
+
+        </div>
+      </div>
+    </section>
+
+    <!-- 底部呼吁行动 -->
+    <section class="bg-[#003865] py-12">
+        <div class="max-w-5xl mx-auto px-4 text-center">
+            <h2 class="text-2xl font-bold text-white mb-4">拥有业内领先的供应链体系</h2>
+            <p class="text-gray-300 mb-8">
+                无论是在塔里木的沙漠，还是墨西哥的油田，我们都能为您提供精准的定制化服务。
+            </p>
+            <a href="/contact" class="bg-white text-[#003865] px-8 py-3 rounded font-bold hover:bg-gray-100 transition">
+                立即获取方案
+            </a>
+        </div>
+    </section>
+  </main>
+
+  <footer class="bg-[#002845] text-white py-8 border-t border-gray-700">
+      <div class="max-w-7xl mx-auto px-4 text-center text-sm">
+          <p>&copy; 2026 Ever Wellspring Pte. Ltd. All rights reserved.</p>
+      </div>
+  </footer>
+</Layout>
