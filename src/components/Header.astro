@@ -1,19 +1,19 @@
 ---
 // src/components/Header.astro
-// 中文版导航栏 - 标准修复版
+// 包含手机端交互功能的完整版
 ---
 <header class="bg-white border-b border-gray-200 sticky top-0 z-50 shadow-sm">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="flex justify-between items-center h-20">
       
-      <!-- 1. 左侧 Logo -->
+      <!-- 1. Logo -->
       <div class="flex-shrink-0 flex items-center cursor-pointer">
         <a href="/zh/" class="text-3xl font-extrabold text-[#003865] tracking-tighter no-underline">
           LASTING QUAL<span class="text-[#E63E00]">.</span>
         </a>
       </div>
       
-      <!-- 2. 中间/右侧 导航菜单 (桌面端显示) -->
+      <!-- 2. 桌面端菜单 (手机隐藏) -->
       <div class="hidden md:flex items-center space-x-8">
         <nav class="flex space-x-8">
           <a href="/zh/about" class="text-gray-700 hover:text-[#003865] font-bold text-sm uppercase tracking-wide no-underline">关于我们</a>
@@ -21,22 +21,46 @@
           <a href="/zh/solutions" class="text-gray-700 hover:text-[#003865] font-bold text-sm uppercase tracking-wide no-underline">解决方案</a>
           <a href="/zh/contact" class="text-gray-700 hover:text-[#003865] font-bold text-sm uppercase tracking-wide no-underline">联系方式</a>
         </nav>
-
-        <!-- 3. 语言切换按钮 (紧跟在菜单后面) -->
+        <!-- 桌面端切换按钮 -->
         <a href="/en" class="border border-[#003865] text-[#003865] px-3 py-1 rounded text-xs font-bold hover:bg-[#003865] hover:text-white transition no-underline">
           EN
         </a>
       </div>
 
-      <!-- 4. 移动端菜单按钮 (仅手机显示，占位用) -->
+      <!-- 3. 手机端汉堡按钮 (桌面隐藏) -->
       <div class="md:hidden flex items-center">
-        <button class="text-gray-500 hover:text-gray-900 focus:outline-none">
-          <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <button id="mobile-menu-btn" class="text-[#003865] hover:text-[#E63E00] focus:outline-none p-2">
+          <svg class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
           </svg>
         </button>
       </div>
+    </div>
+  </div>
 
+  <!-- 4. 手机端下拉菜单 (默认隐藏 hidden) -->
+  <div id="mobile-menu" class="hidden md:hidden bg-gray-50 border-t border-gray-200">
+    <div class="px-4 pt-4 pb-6 space-y-4 flex flex-col">
+      <a href="/zh/about" class="text-gray-700 font-bold hover:text-[#003865] no-underline">关于我们</a>
+      <a href="/zh/products" class="text-gray-700 font-bold hover:text-[#003865] no-underline">产品与服务</a>
+      <a href="/zh/solutions" class="text-gray-700 font-bold hover:text-[#003865] no-underline">解决方案</a>
+      <a href="/zh/contact" class="text-gray-700 font-bold hover:text-[#003865] no-underline">联系方式</a>
+      <!-- 手机端切换按钮 -->
+      <a href="/en" class="inline-block w-20 text-center border border-[#003865] text-[#003865] px-3 py-1 rounded text-xs font-bold hover:bg-[#003865] hover:text-white transition no-underline">
+        Switch to English
+      </a>
     </div>
   </div>
 </header>
+
+<!-- 5. 控制脚本 -->
+<script>
+  const btn = document.getElementById('mobile-menu-btn');
+  const menu = document.getElementById('mobile-menu');
+
+  if(btn && menu) {
+    btn.addEventListener('click', () => {
+      menu.classList.toggle('hidden');
+    });
+  }
+</script>
