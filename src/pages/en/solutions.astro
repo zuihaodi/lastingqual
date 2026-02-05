@@ -1,0 +1,94 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Header from '../../components/HeaderEN.astro'; // 确保引用英文Header
+---
+
+<Layout title="Solutions | Lasting Qual">
+  <Header />
+  
+  <main>
+    <!-- 顶部 Banner -->
+    <div class="bg-[#003865] py-16">
+      <div class="max-w-7xl mx-auto px-4 text-center">
+        <h1 class="text-4xl font-extrabold text-white">Our Solutions</h1>
+        <p class="mt-4 text-xl text-gray-300">Comprehensive Engineering & Support Services</p>
+      </div>
+    </div>
+
+    <!-- 解决方案 1: HSE -->
+    <section class="py-16 bg-white">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+        <div>
+          <h2 class="text-3xl font-bold text-[#003865] mb-4">HSE Management</h2>
+          <p class="text-gray-600 mb-6 leading-relaxed">
+            Adhering to the principle of "Safety First, Quality Foremost", Lasting Qual implements a strict HSE management system. We hold ISO 9001, ISO 14001, and ISO 45001 certifications.
+          </p>
+          <ul class="list-disc list-inside text-gray-600 space-y-2">
+             <li>Global standardized safety protocols</li>
+             <li>QCC activities to enhance team spirit</li>
+             <li>Zero-accident operational goals</li>
+          </ul>
+        </div>
+        <div class="rounded-lg overflow-hidden shadow-lg h-64">
+             <!-- 这里的图片建议换成 PDF 里的证书或现场图 -->
+          <img src="https://images.unsplash.com/photo-1581092921461-eab62e97a780?q=80&w=800" alt="HSE" class="w-full h-full object-cover">
+        </div>
+      </div>
+    </section>
+
+    <!-- 解决方案 2: 风险控制 -->
+    <section class="py-16 bg-gray-50">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-2 gap-12 items-center md:flex-row-reverse">
+         <!-- 图片在左 (大屏) -->
+        <div class="rounded-lg overflow-hidden shadow-lg h-64 md:order-2">
+          <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?q=80&w=800" alt="Risk Control" class="w-full h-full object-cover">
+        </div>
+        <!-- 文字在右 -->
+        <div class="md:order-1">
+          <h2 class="text-3xl font-bold text-[#003865] mb-4">Risk Control Network</h2>
+          <p class="text-gray-600 mb-6 leading-relaxed">
+            We provide a full-scenario risk control guarantee network, including real-time monitoring, regular maintenance, and risk assessment.
+          </p>
+          <div class="grid grid-cols-2 gap-4">
+              <div class="bg-white p-4 rounded shadow border-l-4 border-[#E63E00]">
+                  <h4 class="font-bold text-[#003865]">Real-time Monitoring</h4>
+                  <p class="text-xs text-gray-500">24/7 equipment status tracking</p>
+              </div>
+              <div class="bg-white p-4 rounded shadow border-l-4 border-[#E63E00]">
+                  <h4 class="font-bold text-[#003865]">Risk Assessment</h4>
+                  <p class="text-xs text-gray-500">Professional consultant team</p>
+              </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 解决方案 3: 技术培训 -->
+    <section class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 text-center mb-12">
+            <h2 class="text-3xl font-bold text-[#003865]">Customized Training</h2>
+            <p class="text-gray-500 mt-2">Empowering your team with professional skills</p>
+        </div>
+        <div class="max-w-7xl mx-auto px-4 grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div class="bg-gray-50 p-6 rounded hover:shadow-lg transition">
+                <h3 class="text-xl font-bold text-[#003865] mb-2">Safety Operation</h3>
+                <p class="text-gray-600 text-sm">Training on equipment operation manuals and safety procedures.</p>
+            </div>
+            <div class="bg-gray-50 p-6 rounded hover:shadow-lg transition">
+                <h3 class="text-xl font-bold text-[#003865] mb-2">Maintenance Skills</h3>
+                <p class="text-gray-600 text-sm">Fault diagnosis and repair skill training to reduce downtime.</p>
+            </div>
+            <div class="bg-gray-50 p-6 rounded hover:shadow-lg transition">
+                <h3 class="text-xl font-bold text-[#003865] mb-2">Remote Consulting</h3>
+                <p class="text-gray-600 text-sm">Online video support and expert Q&A sessions.</p>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-[#002845] text-white py-8">
+        <div class="max-w-7xl mx-auto px-4 text-center text-sm">
+            <p>&copy; 2026 Lasting Qual Pte. Ltd. All rights reserved.</p>
+        </div>
+    </footer>
+  </main>
+</Layout>
