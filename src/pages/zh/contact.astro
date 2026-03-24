@@ -1,9 +1,10 @@
 ---
 import Layout from '../../layouts/Layout.astro';
 import Header from '../../components/Header.astro';
+import { siteConfig } from '../../config/site';
 ---
 
-<Layout title="联系我们 | Lasting Qual">
+<Layout title="联系我们 | Lasting Qual" lang="zh-CN">
   <Header />
   
   <main>
@@ -23,16 +24,16 @@ import Header from '../../components/Header.astro';
           <div class="space-y-6 text-gray-600">
             <p>
               <strong class="block text-gray-900">公司地址:</strong>
-              123 Marina Bay Financial Centre, <br>
-              Singapore 018981
+              {siteConfig.addressLine1} <br>
+              {siteConfig.addressLine2}
             </p>
             <p>
               <strong class="block text-gray-900">电子邮箱:</strong>
-              <a href="mailto:info@lastingqual.com" class="text-[#E63E00] hover:underline">info@lastingqual.com</a>
+              <a href={`mailto:${siteConfig.email}`} class="text-[#E63E00] hover:underline">{siteConfig.email}</a>
             </p>
             <p>
               <strong class="block text-gray-900">联系电话:</strong>
-              +65 6789 1234
+              {siteConfig.phone}
             </p>
           </div>
         </div>
@@ -65,7 +66,7 @@ import Header from '../../components/Header.astro';
 
   <footer class="bg-[#002845] text-white py-8">
       <div class="max-w-7xl mx-auto px-4 text-center text-sm">
-          <p>&copy; 2026 Lasting Qual Pte. Ltd. All rights reserved.</p>
+          <p>&copy; {siteConfig.copyrightYear} {siteConfig.companyName} All rights reserved.</p>
       </div>
   </footer>
 </Layout>

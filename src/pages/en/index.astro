@@ -1,9 +1,16 @@
 ---
 import Layout from '../../layouts/Layout.astro';
 import Header from '../../components/HeaderEN.astro';
+import { productsEn } from '../../data/products.en';
+import { siteConfig } from '../../config/site';
+
+const topProducts = productsEn
+  .filter((item) => item.published)
+  .sort((a, b) => a.order - b.order)
+  .slice(0, 3);
 ---
 
-<Layout title="Lasting Qual - Integrated Energy Equipment Provider">
+<Layout title="Lasting Qual - Integrated Energy Equipment Provider" lang="en">
 	<Header />
 	
 	<main>
@@ -71,47 +78,18 @@ import Header from '../../components/HeaderEN.astro';
 				</div>
 
 				<div class="grid grid-cols-1 md:grid-cols-3 gap-10">
-					<!-- Card 1: Rental -->
-					<div class="group bg-white shadow-xl rounded overflow-hidden hover:-translate-y-2 transition duration-300">
-						<div class="h-56 overflow-hidden">
-                            <img src="/images/card1.jpg" alt="Equipment Rental" class="w-full h-full object-cover group-hover:scale-105 transition duration-500"/>
-                        </div>
-						<div class="p-8">
-							<h3 class="text-2xl font-bold mb-3 text-[#003865]">Equipment Rental</h3>
-							<p class="text-gray-600 mb-6 leading-relaxed">
-                                Providing direct and joint rental services based on drilling rigs. Operating high-end equipment like ZJ90DB in global oilfields including Tarim and Mexico.
-                            </p>
-							<a href="/en/products" class="text-[#E63E00] font-bold uppercase tracking-wide hover:underline">Read More &rarr;</a>
-						</div>
-					</div>
-
-					<!-- Card 2: Sales -->
-					<div class="group bg-white shadow-xl rounded overflow-hidden hover:-translate-y-2 transition duration-300">
-						<div class="h-56 overflow-hidden">
-                             <img src="/images/card2.jpg" alt="Special Vehicles" class="w-full h-full object-cover group-hover:scale-105 transition duration-500"/>
-                        </div>
-						<div class="p-8">
-							<h3 class="text-2xl font-bold mb-3 text-[#003865]">Vehicle Sales</h3>
-							<p class="text-gray-600 mb-6 leading-relaxed">
-                                Joint R&D with Sinotruk to provide special oilfield chassis for fracturing, sand blending, and coiled tubing units, achieving import substitution.
-                            </p>
-							<a href="/en/products" class="text-[#E63E00] font-bold uppercase tracking-wide hover:underline">Read More &rarr;</a>
-						</div>
-					</div>
-
-					<!-- Card 3: Service -->
-					<div class="group bg-white shadow-xl rounded overflow-hidden hover:-translate-y-2 transition duration-300">
-						<div class="h-56 overflow-hidden">
-                             <img src="/images/card3.jpg" alt="Technical Services" class="w-full h-full object-cover group-hover:scale-105 transition duration-500"/>
-                        </div>
-						<div class="p-8">
-							<h3 class="text-2xl font-bold mb-3 text-[#003865]">Power Packaging</h3>
-							<p class="text-gray-600 mb-6 leading-relaxed">
-                                One-stop power equipment operation, installation, commissioning, and HSE quality management. 24/7 response to ensure project stability.
-                            </p>
-							<a href="/en/products" class="text-[#E63E00] font-bold uppercase tracking-wide hover:underline">Read More &rarr;</a>
-						</div>
-					</div>
+          {topProducts.map((item) => (
+            <div class="group bg-white shadow-xl rounded overflow-hidden hover:-translate-y-2 transition duration-300">
+              <div class="h-56 overflow-hidden">
+                <img src={item.cover} alt={item.title} class="w-full h-full object-cover group-hover:scale-105 transition duration-500" />
+              </div>
+              <div class="p-8">
+                <h3 class="text-2xl font-bold mb-3 text-[#003865]">{item.title}</h3>
+                <p class="text-gray-600 mb-6 leading-relaxed">{item.summary}</p>
+                <a href="/en/products" class="text-[#E63E00] font-bold uppercase tracking-wide hover:underline">Read More &rarr;</a>
+              </div>
+            </div>
+          ))}
 				</div>
 			</div>
 		</section>
@@ -138,7 +116,7 @@ import Header from '../../components/HeaderEN.astro';
         <!-- Footer -->
         <footer class="bg-[#002845] text-white py-12 border-t-4 border-[#E63E00]">
             <div class="max-w-7xl mx-auto px-4 text-center text-sm text-gray-400">
-                <p class="mb-2">&copy; 2026 Lasting Qual Pte. Ltd. All rights reserved.</p>
+                <p class="mb-2">&copy; {siteConfig.copyrightYear} {siteConfig.companyName} All rights reserved.</p>
                 <p>Committed to promoting technological progress and efficiency in the energy industry.</p>
             </div>
         </footer>

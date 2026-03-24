@@ -1,13 +1,14 @@
 ---
 interface Props {
 	title: string;
+	lang?: string;
 }
 
-const { title } = Astro.props;
+const { title, lang = "zh-CN" } = Astro.props;
 ---
 
 <!doctype html>
-<html lang="zh-CN">
+<html lang={lang}>
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="description" content="Ever Wellspring - 工业解决方案" />

@@ -1,9 +1,10 @@
 ---
 import Layout from '../../layouts/Layout.astro';
 import Header from '../../components/HeaderEN.astro'; // 确保引用英文Header
+import { siteConfig } from '../../config/site';
 ---
 
-<Layout title="Solutions | Lasting Qual">
+<Layout title="Solutions | Lasting Qual" lang="en">
   <Header />
   
   <main>
@@ -87,7 +88,7 @@ import Header from '../../components/HeaderEN.astro'; // 确保引用英文Heade
 
     <footer class="bg-[#002845] text-white py-8">
         <div class="max-w-7xl mx-auto px-4 text-center text-sm">
-            <p>&copy; 2026 Lasting Qual Pte. Ltd. All rights reserved.</p>
+            <p>&copy; {siteConfig.copyrightYear} {siteConfig.companyName} All rights reserved.</p>
         </div>
     </footer>
   </main>

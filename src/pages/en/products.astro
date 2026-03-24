@@ -1,49 +1,15 @@
 ---
 import Layout from '../../layouts/Layout.astro';
 import Header from '../../components/HeaderEN.astro';
+import { productsEn } from '../../data/products.en';
+import { siteConfig } from '../../config/site';
 
-// English Data
-const products = [
-  {
-    title: "High-end Rig Rental (ZJ90DB)",
-    category: "Rental Service",
-    desc: "Offering high-end rig rentals including ZJ90DB. Capable of drilling 9,396m deep wells (Asian record), suitable for extreme environments like Tarim and Mexico.",
-    img: "/images/card1.jpg"
-  },
-  {
-    title: "Oilfield Special Chassis (Sinotruk)",
-    category: "Sales Business",
-    desc: "Joint R&D with Sinotruk. Providing 8x6 fracturing chassis, sand blenders, and 58t coiled tubing chassis. Fully replacing imported MAN and Mercedes chassis.",
-    img: "/images/card2.jpg"
-  },
-  {
-    title: "Power Packaging Services",
-    category: "Tech Service",
-    desc: "One-stop power solutions for drilling rigs. Covering Northeast China, North China, Sichuan, and Inner Mongolia, serving 30+ drilling teams.",
-    img: "/images/card3.jpg"
-  },
-  {
-    title: "Mexico PEMEX Project Support",
-    category: "Global Case",
-    desc: "Supported Greatwall Drilling in winning the PEMEX project by leasing three 3000HP rigs, responding quickly to asset-light strategies.",
-    img: "https://images.unsplash.com/photo-1581094794329-c8112a89af12?q=80&w=800"
-  },
-  {
-    title: "Customized Diesel Gensets",
-    category: "Joint R&D",
-    desc: "Strategic partnership with Jichai Power to develop customized high-performance generator sets for the oil and petrochemical industry.",
-    img: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?q=80&w=800"
-  },
-  {
-    title: "HSE Risk Control",
-    category: "Safety System",
-    desc: "15-minute response, 24/7 online. Providing full-scenario risk assessment, real-time monitoring, and customized technical training.",
-    img: "/images/product6.jpg"
-  }
-];
+const products = productsEn
+  .filter((item) => item.published)
+  .sort((a, b) => a.order - b.order);
 ---
 
-<Layout title="Products & Services | Lasting Qual">
+<Layout title="Products & Services | Lasting Qual" lang="en">
   <Header />
   
   <main>
@@ -64,11 +30,11 @@ const products = [
                 <span class="absolute top-0 right-0 bg-[#E63E00] text-white text-xs font-bold px-3 py-1 m-2 rounded">
                     {item.category}
                 </span>
-                <img src={item.img} alt={item.title} class="w-full h-full object-cover hover:scale-105 transition duration-500">
+                <img src={item.cover} alt={item.title} class="w-full h-full object-cover hover:scale-105 transition duration-500">
               </div>
               <div class="p-6 flex-1 flex flex-col">
                 <h3 class="text-xl font-bold text-[#003865] mb-2">{item.title}</h3>
-                <p class="text-gray-600 text-sm leading-relaxed mb-4 flex-1">{item.desc}</p>
+                <p class="text-gray-600 text-sm leading-relaxed mb-4 flex-1">{item.summary}</p>
                 <a href="/en/contact" class="text-[#E63E00] font-semibold text-sm hover:underline mt-auto">Learn More &rarr;</a>
               </div>
             </div>
@@ -94,7 +60,7 @@ const products = [
 
   <footer class="bg-[#002845] text-white py-8 border-t border-gray-700">
       <div class="max-w-7xl mx-auto px-4 text-center text-sm">
-          <p>&copy; 2026 Lasting Qual Pte. Ltd. All rights reserved.</p>
+          <p>&copy; {siteConfig.copyrightYear} {siteConfig.companyName} All rights reserved.</p>
       </div>
   </footer>
 </Layout>
