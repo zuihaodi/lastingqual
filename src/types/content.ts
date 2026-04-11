@@ -14,3 +14,11 @@ export interface NavItem {
   label: string;
   href: string;
 }
+
+export interface FinanceSolutionItem {
+  id: string;
+  title: string;
+  summary: string;
+  order: number;
+  published: boolean;
+}

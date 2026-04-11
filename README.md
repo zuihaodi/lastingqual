@@ -1,3 +1,8 @@
+本程序是一个对外展示公司产品与服务的网站程序，以图文内容展示为主，要求网站整体风格统一，结构清晰。
+
+框架：Astro
+部署：git仓库+Cloudflare域名与网页发布+域名解析
+
 # Astro Starter Kit: Basics
 
 ```sh
