@@ -1,99 +1,20 @@
----
-import Layout from '../../layouts/Layout.astro';
-import Header from '../../components/HeaderEN.astro';
-import { siteConfig } from '../../config/site';
+﻿---
+import Layout from "../../layouts/Layout.astro";
+import Header from "../../components/HeaderEN.astro";
+import UnifiedSimplePage from "../../components/UnifiedSimplePage.astro";
+import { siteConfig } from "../../config/site";
+import { loadCardsByLangPage, loadSimplePageByLang } from "../../lib/content-loader";
+
+const cfg = loadSimplePageByLang("about", "en");
+const cards = loadCardsByLangPage("en", "about").filter((c) => c.title && c.summary);
 ---
 
-<Layout title="About Us | Lasting Qual" lang="en">
+<Layout title={`${cfg?.heroTitle || "About Us"} | Lasting Qual`} lang="en">
   <Header />
-  
-  <main>
-    <div class="bg-[#003865] py-20 relative overflow-hidden">
-      <!-- 这里的背景图路径需要根据你的实际情况确认 -->
-      <div class="absolute inset-0 bg-slate-900 opacity-50"></div>
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
-        <h1 class="text-5xl font-extrabold text-white tracking-tight">About Us</h1>
-        <p class="mt-4 text-xl text-gray-300">Deeply rooted in the energy industry since 2002.</p>
-      </div>
+  <UnifiedSimplePage cfg={cfg} cards={cards} lang="en" />
+  <footer class="bg-[#002845] text-white py-8">
+    <div class="max-w-7xl mx-auto px-4 text-center text-sm">
+      <p>&copy; {siteConfig.copyrightYear} {siteConfig.companyName} All rights reserved.</p>
     </div>
-
-    <!-- Intro -->
-    <section class="py-16 bg-white">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-        <div>
-          <h2 class="text-3xl font-bold text-[#003865] mb-6">Overview</h2>
-          <p class="text-gray-600 mb-4 leading-relaxed text-justify">
-            Lasting Qual Pte. Ltd. (formerly known as Hengfeng Energy), founded in 2002, is an innovative enterprise integrating R&D, production, sales, and service of energy drilling equipment. Headquartered in Singapore, we are committed to providing comprehensive drilling solutions.
-          </p>
-          <p class="text-gray-600 mb-4 leading-relaxed text-justify">
-            As a <strong>Tier-1 Supplier for CNPC</strong> and a member of <strong>Sinopec Epec</strong>, we hold comprehensive qualifications. With strong R&D capabilities and a global supply chain, we maintain long-term strategic partnerships with top industry players like CNPC, Sinopec, Jereh, and Honghua.
-          </p>
-          <div class="mt-6 flex gap-4">
-             <span class="px-4 py-2 bg-gray-100 text-[#003865] font-bold rounded">Capital 500M+</span>
-             <span class="px-4 py-2 bg-gray-100 text-[#003865] font-bold rounded">Experience 15Y+</span>
-          </div>
-        </div>
-        <div class="rounded-lg overflow-hidden shadow-2xl rotate-2 hover:rotate-0 transition duration-500">
-          <img src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?q=80&w=1000" alt="About Us" class="w-full h-full object-cover">
-        </div>
-      </div>
-    </section>
-
-    <!-- Culture -->
-    <section class="py-16 bg-gray-50">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="text-center mb-12">
-          <h2 class="text-3xl font-bold text-[#003865]">Core Values</h2>
-        </div>
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
-          <div class="bg-white p-8 rounded-lg shadow-lg border-t-4 border-[#E63E00]">
-            <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4 text-2xl">🎯</div>
-            <h3 class="text-xl font-bold text-[#003865] mb-4">Mission</h3>
-            <p class="text-gray-600">To serve customers as our mission, creating value through high-quality products and services, and promoting the sustainable development of the energy industry.</p>
-          </div>
-          <div class="bg-white p-8 rounded-lg shadow-lg border-t-4 border-[#E63E00]">
-            <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4 text-2xl">🤝</div>
-            <h3 class="text-xl font-bold text-[#003865] mb-4">Philosophy</h3>
-            <p class="text-gray-600">Adhering to "Integrity, Win-Win, and Pioneering", we are dedicated to building long-term cooperative relationships based on trust and respect.</p>
-          </div>
-          <div class="bg-white p-8 rounded-lg shadow-lg border-t-4 border-[#E63E00]">
-            <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4 text-2xl">🚀</div>
-            <h3 class="text-xl font-bold text-[#003865] mb-4">Vision</h3>
-            <p class="text-gray-600">To become a comprehensive multinational enterprise integrating R&D, manufacturing, services, and trade, and to be the most trusted partner in the energy sector.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Certs -->
-    <section class="py-16 bg-white">
-        <div class="max-w-7xl mx-auto px-4 text-center">
-            <h2 class="text-3xl font-bold text-[#003865] mb-12">Qualifications & Certifications</h2>
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
-                <div class="border p-4 rounded">
-                    <h4 class="font-bold text-lg">ISO 9001</h4>
-                    <p class="text-sm text-gray-500">Quality Management</p>
-                </div>
-                <div class="border p-4 rounded">
-                    <h4 class="font-bold text-lg">ISO 14001</h4>
-                    <p class="text-sm text-gray-500">Environmental Mgmt</p>
-                </div>
-                <div class="border p-4 rounded">
-                    <h4 class="font-bold text-lg">ISO 45001</h4>
-                    <p class="text-sm text-gray-500">Occupational Health</p>
-                </div>
-                <div class="border p-4 rounded">
-                    <h4 class="font-bold text-lg">HSE</h4>
-                    <p class="text-sm text-gray-500">Health, Safety & Env</p>
-                </div>
-            </div>
-        </div>
-    </section>
-  </main>
-  
-  <footer class="bg-[#002845] text-white py-8 mt-auto">
-      <div class="max-w-7xl mx-auto px-4 text-center text-sm">
-          <p>&copy; {siteConfig.copyrightYear} {siteConfig.companyName} All rights reserved.</p>
-      </div>
   </footer>
 </Layout>

@@ -1,77 +1,24 @@
 ﻿---
 import Layout from "../../layouts/Layout.astro";
 import Header from "../../components/HeaderEN.astro";
+import UnifiedSimplePage from "../../components/UnifiedSimplePage.astro";
 import { siteConfig } from "../../config/site";
-import { financeSolutionsEn } from "../../data/finance.en";
+import { loadCardsByLangPage, loadFinanceByLang, loadSimplePageByLang } from "../../lib/content-loader";
 
-const items = financeSolutionsEn
-  .filter((item) => item.published)
-  .sort((a, b) => a.order - b.order);
+const cfg = loadSimplePageByLang("finance", "en");
+const cards = loadCardsByLangPage("en", "finance").filter((c) => c.title && c.summary);
+const legacyCards = loadFinanceByLang("en")
+  .filter((p) => p.title && p.summary)
+  .map((p) => ({ title: p.title, summary: p.summary, image: p.image, ctaText: "Read More", ctaHref: "/en/contact", order: p.order, published: p.published }));
+const mergedCards = cards.length > 0 ? cards : legacyCards;
 ---
 
-<Layout title="Financing Solutions | Lasting Qual" lang="en">
+<Layout title={`${cfg?.heroTitle || "Financing Solutions"} | Lasting Qual`} lang="en">
   <Header />
-
-  <main>
-    <div class="bg-[#003865] py-16">
-      <div class="max-w-7xl mx-auto px-4 text-center">
-        <h1 class="text-4xl font-extrabold text-white">Financing Solutions</h1>
-        <p class="mt-4 text-xl text-gray-300">Funding structures tailored for oilfield equipment and project cycles</p>
-      </div>
+  <UnifiedSimplePage cfg={cfg} cards={mergedCards} lang="en" />
+  <footer class="bg-[#002845] text-white py-8">
+    <div class="max-w-7xl mx-auto px-4 text-center text-sm">
+      <p>&copy; {siteConfig.copyrightYear} {siteConfig.companyName} All rights reserved.</p>
     </div>
-
-    <section class="py-16 bg-gray-50">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div id="finance-list-en" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {items.map((item) => (
-            <article class="bg-white p-6 rounded-lg shadow-sm border border-gray-100">
-              <h2 class="text-xl font-bold text-[#003865] mb-3">{item.title}</h2>
-              <p class="text-gray-600 text-sm leading-relaxed">{item.summary}</p>
-            </article>
-          ))}
-        </div>
-      </div>
-    </section>
-
-    <footer class="bg-[#002845] text-white py-8 border-t border-gray-700">
-      <div class="max-w-7xl mx-auto px-4 text-center text-sm">
-        <p>&copy; {siteConfig.copyrightYear} {siteConfig.companyName} All rights reserved.</p>
-      </div>
-    </footer>
-  </main>
+  </footer>
 </Layout>
-
-<script define:vars={{ defaultItems: financeSolutionsEn }}>
-  const key = "lq_finance_en";
-  const root = document.getElementById("finance-list-en");
-
-  const render = (list) => {
-    if (!root) return;
-    root.innerHTML = list
-      .filter((item) => item && item.published !== false)
-      .sort((a, b) => Number(a.order || 0) - Number(b.order || 0))
-      .map(
-        (item) => `
-          <article class="bg-white p-6 rounded-lg shadow-sm border border-gray-100">
-            <h2 class="text-xl font-bold text-[#003865] mb-3">${item.title || "Untitled"}</h2>
-            <p class="text-gray-600 text-sm leading-relaxed">${item.summary || ""}</p>
-          </article>
-        `,
-      )
-      .join("");
-  };
-
-  try {
-    const text = localStorage.getItem(key);
-    if (text) {
-      const localItems = JSON.parse(text);
-      if (Array.isArray(localItems)) {
-        render(localItems);
-      }
-    } else {
-      render(defaultItems);
-    }
-  } catch {
-    render(defaultItems);
-  }
-</script>

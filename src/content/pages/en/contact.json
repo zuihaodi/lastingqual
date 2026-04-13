@@ -1,0 +1,104 @@
+{
+  "heroSection": {
+    "show": true,
+    "heroTitle": "Contact (ZH)",
+    "heroSubtitle": "We look forward to working with you",
+    "heroBgImage": ""
+  },
+  "mainSection": {
+    "show": true,
+    "sectionTitle": "Contact Us",
+    "sectionBody": "Reach out for products and solution consultation.",
+    "sectionPrimaryButtonText": "",
+    "sectionPrimaryButtonHref": "",
+    "sectionSecondaryButtonText": "",
+    "sectionSecondaryButtonHref": "",
+    "legacyImage": "/images/card1.jpg",
+    "image": ""
+  },
+  "metricsSection": {
+    "show": false,
+    "metrics": []
+  },
+  "middleSection": {
+    "show": true,
+    "middleTitle": "Service Entry",
+    "middleSubtitle": "Manage inquiry entries with cards"
+  },
+  "cardsSection": {
+    "show": true,
+    "cards": [
+      {
+        "title": "业务咨询",
+        "summary": "面向products、technical和financing的一对一咨询services。",
+        "image": "/uploads/cards/zh/contact-01-sales/image.jpg",
+        "ctaText": "Contact Us",
+        "ctaHref": "/en/contact",
+        "order": 1,
+        "published": true
+      },
+      {
+        "title": "technicalsupport",
+        "summary": "提供运维答疑与远程协助，提高现场处置效率。",
+        "image": "/images/card2.jpg",
+        "ctaText": "提交需求",
+        "ctaHref": "/en/contact",
+        "order": 2,
+        "published": true
+      },
+      {
+        "title": "合作对接",
+        "summary": "针对跨区域合作、联合投标和供应链对接提供support。",
+        "image": "/images/card3.jpg",
+        "ctaText": "开始洽谈",
+        "ctaHref": "/en/contact",
+        "order": 3,
+        "published": true
+      }
+    ]
+  },
+  "bottomSection": {
+    "show": true,
+    "bottomTitle": "Common Channels",
+    "bottomSubtitle": "Quickly reach the right team"
+  },
+  "bottomListSection": {
+    "show": true,
+    "bottomList": [
+      {
+        "title": "Pre-sales",
+        "summary": "Requirement clarification",
+        "order": 1
+      },
+      {
+        "title": "Project Support",
+        "summary": "Technical collaboration",
+        "order": 2
+      },
+      {
+        "title": "Partnership",
+        "summary": "Joint project and channel",
+        "order": 3
+      },
+      {
+        "title": "After-sales",
+        "summary": "Operation and support",
+        "order": 4
+      }
+    ]
+  },
+  "contactSection": {
+    "show": true,
+    "title": "Contact Details",
+    "addressLine1": "123 Marina Bay Financial Centre",
+    "addressLine2": "Singapore 018981",
+    "email": "info@lastingqual.com",
+    "phone": "+65 6789 1234"
+  },
+  "translation": {
+    "mode": "auto",
+    "sourceHash": "b7386f223a085982",
+    "status": "synced",
+    "lastTranslatedAt": "2026-04-13T14:21:57.166Z"
+  }
+}

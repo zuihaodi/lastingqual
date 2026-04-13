@@ -1,66 +1,24 @@
----
-import Layout from '../../layouts/Layout.astro';
-import Header from '../../components/HeaderEN.astro';
-import { productsEn } from '../../data/products.en';
-import { siteConfig } from '../../config/site';
+﻿---
+import Layout from "../../layouts/Layout.astro";
+import Header from "../../components/HeaderEN.astro";
+import UnifiedSimplePage from "../../components/UnifiedSimplePage.astro";
+import { siteConfig } from "../../config/site";
+import { loadCardsByLangPage, loadProductsByLang, loadSimplePageByLang } from "../../lib/content-loader";
 
-const products = productsEn
-  .filter((item) => item.published)
-  .sort((a, b) => a.order - b.order);
+const cfg = loadSimplePageByLang("products", "en");
+const cards = loadCardsByLangPage("en", "products").filter((c) => c.title && c.summary);
+const legacyCards = loadProductsByLang("en")
+  .filter((p) => p.title && p.summary)
+  .map((p) => ({ title: p.title, summary: p.summary, image: p.cover, ctaText: "Read More", ctaHref: p.ctaHref || "/en/contact", order: p.order, published: p.published }));
+const mergedCards = cards.length > 0 ? cards : legacyCards;
 ---
 
-<Layout title="Products & Services | Lasting Qual" lang="en">
+<Layout title={`${cfg?.heroTitle || "Products"} | Lasting Qual`} lang="en">
   <Header />
-  
-  <main>
-    <div class="bg-[#003865] py-16">
-      <div class="max-w-7xl mx-auto px-4 text-center">
-        <h1 class="text-4xl font-extrabold text-white">Products & Services</h1>
-        <p class="mt-4 text-xl text-gray-300">Rig Sales & Rental | Power Packaging | Global Engineering</p>
-      </div>
+  <UnifiedSimplePage cfg={cfg} cards={mergedCards} lang="en" />
+  <footer class="bg-[#002845] text-white py-8">
+    <div class="max-w-7xl mx-auto px-4 text-center text-sm">
+      <p>&copy; {siteConfig.copyrightYear} {siteConfig.companyName} All rights reserved.</p>
     </div>
-
-    <section class="py-16 bg-gray-50">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
-          
-          {products.map((item) => (
-            <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:-translate-y-1 transition duration-300 flex flex-col">
-              <div class="h-48 overflow-hidden relative">
-                <span class="absolute top-0 right-0 bg-[#E63E00] text-white text-xs font-bold px-3 py-1 m-2 rounded">
-                    {item.category}
-                </span>
-                <img src={item.cover} alt={item.title} class="w-full h-full object-cover hover:scale-105 transition duration-500">
-              </div>
-              <div class="p-6 flex-1 flex flex-col">
-                <h3 class="text-xl font-bold text-[#003865] mb-2">{item.title}</h3>
-                <p class="text-gray-600 text-sm leading-relaxed mb-4 flex-1">{item.summary}</p>
-                <a href="/en/contact" class="text-[#E63E00] font-semibold text-sm hover:underline mt-auto">Learn More &rarr;</a>
-              </div>
-            </div>
-          ))}
-
-        </div>
-      </div>
-    </section>
-
-    <!-- CTA -->
-    <section class="bg-[#003865] py-12">
-        <div class="max-w-5xl mx-auto px-4 text-center">
-            <h2 class="text-2xl font-bold text-white mb-4">Industry-Leading Supply Chain</h2>
-            <p class="text-gray-300 mb-8">
-                From the Tarim Desert to Mexican oilfields, we provide precise, customized services.
-            </p>
-            <a href="/en/contact" class="bg-white text-[#003865] px-8 py-3 rounded font-bold hover:bg-gray-100 transition no-underline">
-                Get a Quote
-            </a>
-        </div>
-    </section>
-  </main>
-
-  <footer class="bg-[#002845] text-white py-8 border-t border-gray-700">
-      <div class="max-w-7xl mx-auto px-4 text-center text-sm">
-          <p>&copy; {siteConfig.copyrightYear} {siteConfig.companyName} All rights reserved.</p>
-      </div>
   </footer>
 </Layout>

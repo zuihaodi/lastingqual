@@ -1,5 +1,6 @@
 ﻿---
-import { navZh } from "../i18n/nav";
+import { getNavZh } from "../i18n/nav";
+const navZh = getNavZh();
 ---
 <header class="bg-white border-b border-gray-200 sticky top-0 z-50 shadow-sm">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -32,31 +33,3 @@ import { navZh } from "../i18n/nav";
     </div>
   </div>
 </header>
-
-<script>
-  const key = "lq_nav_zh";
-  const navNode = document.getElementById("main-nav-zh");
-
-  const safeHref = (href) => {
-    if (typeof href !== "string" || !href.startsWith("/")) return "/zh/";
-    return href;
-  };
-
-  if (navNode) {
-    try {
-      const text = localStorage.getItem(key);
-      if (text) {
-        const items = JSON.parse(text);
-        if (Array.isArray(items) && items.length > 0) {
-          navNode.innerHTML = items
-            .filter((item) => item && typeof item.label === "string" && typeof item.href === "string")
-            .map(
-              (item) =>
-                `<a href="${safeHref(item.href)}" class="text-gray-700 hover:text-[#003865] font-bold text-sm uppercase tracking-wide no-underline">${item.label}</a>`,
-            )
-            .join("");
-        }
-      }
-    } catch {}
-  }
-</script>

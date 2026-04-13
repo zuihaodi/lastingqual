@@ -26,29 +26,49 @@ const bootstrap = {
 
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
         <section class="bg-white rounded-lg p-6 shadow-sm">
-          <h2 class="text-xl font-bold text-[#003865] mb-4">中文导航</h2>
-          <div id="nav-zh-list" class="space-y-3"></div>
-          <button id="add-nav-zh" class="mt-4 bg-[#003865] text-white px-4 py-2 rounded text-sm">新增导航项</button>
+          <div class="flex items-center justify-between mb-4">
+            <h2 class="text-xl font-bold text-[#003865]">中文导航</h2>
+            <button data-toggle-target="panel-nav-zh" class="text-sm border border-gray-300 px-3 py-1 rounded">收起</button>
+          </div>
+          <div id="panel-nav-zh">
+            <div id="nav-zh-list" class="space-y-3"></div>
+            <button id="add-nav-zh" class="mt-4 bg-[#003865] text-white px-4 py-2 rounded text-sm">新增导航项</button>
+          </div>
         </section>
 
         <section class="bg-white rounded-lg p-6 shadow-sm">
-          <h2 class="text-xl font-bold text-[#003865] mb-4">英文导航</h2>
-          <div id="nav-en-list" class="space-y-3"></div>
-          <button id="add-nav-en" class="mt-4 bg-[#003865] text-white px-4 py-2 rounded text-sm">Add Nav Item</button>
+          <div class="flex items-center justify-between mb-4">
+            <h2 class="text-xl font-bold text-[#003865]">英文导航</h2>
+            <button data-toggle-target="panel-nav-en" class="text-sm border border-gray-300 px-3 py-1 rounded">收起</button>
+          </div>
+          <div id="panel-nav-en">
+            <div id="nav-en-list" class="space-y-3"></div>
+            <button id="add-nav-en" class="mt-4 bg-[#003865] text-white px-4 py-2 rounded text-sm">Add Nav Item</button>
+          </div>
         </section>
       </div>
 
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
         <section class="bg-white rounded-lg p-6 shadow-sm">
-          <h2 class="text-xl font-bold text-[#003865] mb-4">中文融资栏目</h2>
-          <div id="finance-zh-list" class="space-y-3"></div>
-          <button id="add-finance-zh" class="mt-4 bg-[#003865] text-white px-4 py-2 rounded text-sm">新增融资条目</button>
+          <div class="flex items-center justify-between mb-4">
+            <h2 class="text-xl font-bold text-[#003865]">中文融资栏目</h2>
+            <button data-toggle-target="panel-finance-zh" class="text-sm border border-gray-300 px-3 py-1 rounded">收起</button>
+          </div>
+          <div id="panel-finance-zh">
+            <div id="finance-zh-list" class="space-y-3"></div>
+            <button id="add-finance-zh" class="mt-4 bg-[#003865] text-white px-4 py-2 rounded text-sm">新增融资条目</button>
+          </div>
         </section>
 
         <section class="bg-white rounded-lg p-6 shadow-sm">
-          <h2 class="text-xl font-bold text-[#003865] mb-4">英文融资栏目</h2>
-          <div id="finance-en-list" class="space-y-3"></div>
-          <button id="add-finance-en" class="mt-4 bg-[#003865] text-white px-4 py-2 rounded text-sm">Add Finance Item</button>
+          <div class="flex items-center justify-between mb-4">
+            <h2 class="text-xl font-bold text-[#003865]">英文融资栏目</h2>
+            <button data-toggle-target="panel-finance-en" class="text-sm border border-gray-300 px-3 py-1 rounded">收起</button>
+          </div>
+          <div id="panel-finance-en">
+            <div id="finance-en-list" class="space-y-3"></div>
+            <button id="add-finance-en" class="mt-4 bg-[#003865] text-white px-4 py-2 rounded text-sm">Add Finance Item</button>
+          </div>
         </section>
       </div>
 
@@ -89,8 +109,42 @@ const bootstrap = {
   };
 
   const status = document.getElementById("save-status");
+  const panelStateKey = "lq_admin_lite_panels";
+  const panelState = (() => {
+    try {
+      const text = localStorage.getItem(panelStateKey);
+      if (!text) return {};
+      const parsed = JSON.parse(text);
+      return parsed && typeof parsed === "object" ? parsed : {};
+    } catch {
+      return {};
+    }
+  })();
   const touch = (text) => {
     if (status) status.textContent = text;
+  };
+
+  const updateToggleLabel = (btn, expanded) => {
+    btn.textContent = expanded ? "收起" : "展开";
+  };
+
+  const initPanelToggles = () => {
+    document.querySelectorAll("button[data-toggle-target]").forEach((btn) => {
+      const targetId = btn.dataset.toggleTarget;
+      if (!targetId) return;
+      const panel = document.getElementById(targetId);
+      if (!panel) return;
+      const expanded = panelState[targetId] !== false;
+      panel.classList.toggle("hidden", !expanded);
+      updateToggleLabel(btn, expanded);
+      btn.onclick = () => {
+        const nextExpanded = panel.classList.contains("hidden");
+        panel.classList.toggle("hidden", !nextExpanded);
+        panelState[targetId] = nextExpanded;
+        localStorage.setItem(panelStateKey, JSON.stringify(panelState));
+        updateToggleLabel(btn, nextExpanded);
+      };
+    });
   };
 
   const itemField = (value) => (value ?? "").toString().replaceAll('"', "&quot;");
@@ -225,4 +279,6 @@ const bootstrap = {
   });
 
   repaint();
+  initPanelToggles();
 </script>
+

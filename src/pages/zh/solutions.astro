@@ -1,97 +1,20 @@
----
-import Layout from '../../layouts/Layout.astro';
-import Header from '../../components/Header.astro';
-import { siteConfig } from '../../config/site';
+﻿---
+import Layout from "../../layouts/Layout.astro";
+import Header from "../../components/Header.astro";
+import UnifiedSimplePage from "../../components/UnifiedSimplePage.astro";
+import { siteConfig } from "../../config/site";
+import { loadCardsByLangPage, loadSimplePageByLang } from "../../lib/content-loader";
+
+const cfg = loadSimplePageByLang("solutions", "zh");
+const cards = loadCardsByLangPage("zh", "solutions").filter((c) => c.title && c.summary);
 ---
 
-<Layout title="解决方案 | Lasting Qual" lang="zh-CN">
+<Layout title={`${cfg?.heroTitle || "Support System"} | Lasting Qual`} lang="zh-CN">
   <Header />
-  
-  <main>
-    <!-- 顶部 Banner -->
-    <div class="bg-[#003865] py-16">
-      <div class="max-w-7xl mx-auto px-4 text-center">
-        <h1 class="text-4xl font-extrabold text-white">解决方案</h1>
-        <p class="mt-4 text-xl text-gray-300">全方位的工程技术与支持体系</p>
-      </div>
+  <UnifiedSimplePage cfg={cfg} cards={cards} lang="zh" />
+  <footer class="bg-[#002845] text-white py-8">
+    <div class="max-w-7xl mx-auto px-4 text-center text-sm">
+      <p>&copy; {siteConfig.copyrightYear} {siteConfig.companyName} All rights reserved.</p>
     </div>
-
-    <!-- 方案 1: HSE 质量管理 (PDF P24) -->
-    <section class="py-16 bg-white">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-        <div>
-          <h2 class="text-3xl font-bold text-[#003865] mb-4">全方位 HSE 质量管理</h2>
-          <p class="text-gray-600 mb-6 leading-relaxed">
-            坚持“安全第一，质量为本”的原则。Lasting Qual 严格实施 HSE 管理体系，并在全球范围内推行。我们倡导 QCC 活动，增强员工团队精神，共同促进安全生产环境。
-          </p>
-          <div class="bg-gray-50 p-4 rounded border-l-4 border-[#E63E00]">
-            <h4 class="font-bold text-[#003865] mb-2">体系认证</h4>
-            <p class="text-sm text-gray-600">ISO 9001 质量管理 / ISO 14001 环境管理 / ISO 45001 职业健康安全</p>
-          </div>
-        </div>
-        <div class="rounded-lg overflow-hidden shadow-lg h-64">
-             <!-- 建议以后换成证书墙图片 -->
-          <img src="https://images.unsplash.com/photo-1581092921461-eab62e97a780?q=80&w=800" alt="HSE Management" class="w-full h-full object-cover">
-        </div>
-      </div>
-    </section>
-
-    <!-- 方案 2: 全场景风控 (PDF P26) -->
-    <section class="py-16 bg-gray-50">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-2 gap-12 items-center md:flex-row-reverse">
-         <!-- 图片区域 -->
-        <div class="rounded-lg overflow-hidden shadow-lg h-64 md:order-2">
-          <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?q=80&w=800" alt="Risk Control" class="w-full h-full object-cover">
-        </div>
-        <!-- 文字区域 -->
-        <div class="md:order-1">
-          <h2 class="text-3xl font-bold text-[#003865] mb-4">全场景风险控制网络</h2>
-          <p class="text-gray-600 mb-6 leading-relaxed">
-            我们拥有风险评估顾问团队，提供从识别、量化到应对的全流程服务。确保项目在极端环境下也能稳健运行。
-          </p>
-          <div class="grid grid-cols-2 gap-4">
-              <div class="bg-white p-4 rounded shadow">
-                  <h4 class="font-bold text-[#003865]">实时监测</h4>
-                  <p class="text-xs text-gray-500">专人持续跟踪设备状态</p>
-              </div>
-              <div class="bg-white p-4 rounded shadow">
-                  <h4 class="font-bold text-[#003865]">定期维护</h4>
-                  <p class="text-xs text-gray-500">预防故障，减少停机</p>
-              </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- 方案 3: 定制化培训 (PDF P27) -->
-    <section class="py-16 bg-white">
-        <div class="max-w-7xl mx-auto px-4 text-center mb-12">
-            <h2 class="text-3xl font-bold text-[#003865]">定制化技术培训</h2>
-            <p class="text-gray-500 mt-2">授人以渔，共建安全可靠的工作环境</p>
-        </div>
-        <div class="max-w-7xl mx-auto px-4 grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div class="bg-gray-50 p-6 rounded hover:shadow-lg transition group hover:-translate-y-1">
-                <div class="text-4xl mb-4">👷‍♂️</div>
-                <h3 class="text-xl font-bold text-[#003865] mb-2">安全操作规程</h3>
-                <p class="text-gray-600 text-sm">制定设备操作手册，对工作人员进行深度培训，确保理解所有规程。</p>
-            </div>
-            <div class="bg-gray-50 p-6 rounded hover:shadow-lg transition group hover:-translate-y-1">
-                <div class="text-4xl mb-4">🔧</div>
-                <h3 class="text-xl font-bold text-[#003865] mb-2">设备维修技能</h3>
-                <p class="text-gray-600 text-sm">针对设备结构、故障诊断进行实操培训，减少待机时间。</p>
-            </div>
-            <div class="bg-gray-50 p-6 rounded hover:shadow-lg transition group hover:-translate-y-1">
-                <div class="text-4xl mb-4">📞</div>
-                <h3 class="text-xl font-bold text-[#003865] mb-2">远程技术咨询</h3>
-                <p class="text-gray-600 text-sm">通过电话和线上视频平台，快速提供专业的技术解决方案。</p>
-            </div>
-        </div>
-    </section>
-
-    <footer class="bg-[#002845] text-white py-8">
-        <div class="max-w-7xl mx-auto px-4 text-center text-sm">
-            <p>&copy; {siteConfig.copyrightYear} {siteConfig.companyName} All rights reserved.</p>
-        </div>
-    </footer>
-  </main>
+  </footer>
 </Layout>

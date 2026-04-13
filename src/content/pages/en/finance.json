@@ -1,0 +1,99 @@
+{
+  "heroSection": {
+    "show": true,
+    "heroTitle": "Financing Solutions",
+    "heroSubtitle": "Funding structures for equipment and project cycles",
+    "heroBgImage": ""
+  },
+  "mainSection": {
+    "show": true,
+    "sectionTitle": "Financing Overview",
+    "sectionBody": "Support delivery and growth with diversified financing tools.",
+    "sectionPrimaryButtonText": "",
+    "sectionPrimaryButtonHref": "",
+    "sectionSecondaryButtonText": "",
+    "sectionSecondaryButtonHref": "",
+    "legacyImage": "/images/card3.jpg",
+    "image": ""
+  },
+  "metricsSection": {
+    "show": false,
+    "metrics": []
+  },
+  "middleSection": {
+    "show": true,
+    "middleTitle": "Financing Cards",
+    "middleSubtitle": "Maintain financing options by scenarios"
+  },
+  "cardsSection": {
+    "show": true,
+    "cards": [
+      {
+        "title": "Finance Lease",
+        "summary": "Operating lease plan for equipment.",
+        "image": "/images/card1.jpg",
+        "ctaText": "View Details",
+        "ctaHref": "/en/finance",
+        "order": 1,
+        "published": true
+      },
+      {
+        "title": "Lease to Own",
+        "summary": "Stage payment model from usage to ownership.",
+        "image": "/images/card2.jpg",
+        "ctaText": "View Details",
+        "ctaHref": "/en/finance",
+        "order": 2,
+        "published": true
+      },
+      {
+        "title": "Consortium Delivery",
+        "summary": "Consortium mode for large projects and financing synergy.",
+        "image": "/images/card3.jpg",
+        "ctaText": "View Details",
+        "ctaHref": "/en/finance",
+        "order": 3,
+        "published": true
+      }
+    ]
+  },
+  "bottomSection": {
+    "show": true,
+    "bottomTitle": "Cooperation Models",
+    "bottomSubtitle": "Flexible combinations for cash-flow efficiency"
+  },
+  "bottomListSection": {
+    "show": true,
+    "bottomList": [
+      {
+        "title": "Equipment Leasing",
+        "summary": "Lower upfront cash pressure",
+        "order": 1
+      },
+      {
+        "title": "Lease-to-own",
+        "summary": "Installment structure",
+        "order": 2
+      },
+      {
+        "title": "Consortium Delivery",
+        "summary": "Joint financing capability",
+        "order": 3
+      }
+    ]
+  },
+  "contactSection": {
+    "show": false,
+    "title": "",
+    "addressLine1": "",
+    "addressLine2": "",
+    "email": "",
+    "phone": ""
+  },
+  "translation": {
+    "mode": "auto",
+    "sourceHash": "cd2f3e2ad6616cc0",
+    "status": "synced",
+    "lastTranslatedAt": "2026-04-13T14:21:57.166Z"
+  }
+}

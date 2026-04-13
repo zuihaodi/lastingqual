@@ -1,66 +1,24 @@
----
-import Layout from '../../layouts/Layout.astro';
-import Header from '../../components/Header.astro';
-import { productsZh } from '../../data/products.zh';
-import { siteConfig } from '../../config/site';
+﻿---
+import Layout from "../../layouts/Layout.astro";
+import Header from "../../components/Header.astro";
+import UnifiedSimplePage from "../../components/UnifiedSimplePage.astro";
+import { siteConfig } from "../../config/site";
+import { loadCardsByLangPage, loadProductsByLang, loadSimplePageByLang } from "../../lib/content-loader";
 
-const products = productsZh
-  .filter((item) => item.published)
-  .sort((a, b) => a.order - b.order);
+const cfg = loadSimplePageByLang("products", "zh");
+const cards = loadCardsByLangPage("zh", "products").filter((c) => c.title && c.summary);
+const legacyCards = loadProductsByLang("zh")
+  .filter((p) => p.title && p.summary)
+  .map((p) => ({ title: p.title, summary: p.summary, image: p.cover, ctaText: "了解更多", ctaHref: p.ctaHref || "/zh/contact", order: p.order, published: p.published }));
+const mergedCards = cards.length > 0 ? cards : legacyCards;
 ---
 
-<Layout title="产品与服务 | Lasting Qual" lang="zh-CN">
+<Layout title={`${cfg?.heroTitle || "Products & Services"} | Lasting Qual`} lang="zh-CN">
   <Header />
-  
-  <main>
-    <div class="bg-[#003865] py-16">
-      <div class="max-w-7xl mx-auto px-4 text-center">
-        <h1 class="text-4xl font-extrabold text-white">产品与服务</h1>
-        <p class="mt-4 text-xl text-gray-300">钻采装备销售租赁 | 动力总包 | 全球工程服务</p>
-      </div>
+  <UnifiedSimplePage cfg={cfg} cards={mergedCards} lang="zh" />
+  <footer class="bg-[#002845] text-white py-8">
+    <div class="max-w-7xl mx-auto px-4 text-center text-sm">
+      <p>&copy; {siteConfig.copyrightYear} {siteConfig.companyName} All rights reserved.</p>
     </div>
-
-    <section class="py-16 bg-gray-50">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
-          
-          {products.map((item) => (
-            <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:-translate-y-1 transition duration-300 flex flex-col">
-              <div class="h-48 overflow-hidden relative">
-                <span class="absolute top-0 right-0 bg-[#E63E00] text-white text-xs font-bold px-3 py-1 m-2 rounded">
-                    {item.category}
-                </span>
-                <img src={item.cover} alt={item.title} class="w-full h-full object-cover hover:scale-105 transition duration-500">
-              </div>
-              <div class="p-6 flex-1 flex flex-col">
-                <h3 class="text-xl font-bold text-[#003865] mb-2">{item.title}</h3>
-                <p class="text-gray-600 text-sm leading-relaxed mb-4 flex-1">{item.summary}</p>
-                <a href="/zh/contact" class="text-[#E63E00] font-semibold text-sm hover:underline mt-auto">咨询详情 &rarr;</a>
-              </div>
-            </div>
-          ))}
-
-        </div>
-      </div>
-    </section>
-
-    <!-- 底部呼吁行动 -->
-    <section class="bg-[#003865] py-12">
-        <div class="max-w-5xl mx-auto px-4 text-center">
-            <h2 class="text-2xl font-bold text-white mb-4">拥有业内领先的供应链体系</h2>
-            <p class="text-gray-300 mb-8">
-                无论是在塔里木的沙漠，还是墨西哥的油田，我们都能为您提供精准的定制化服务。
-            </p>
-            <a href="/zh/contact" class="bg-white text-[#003865] px-8 py-3 rounded font-bold hover:bg-gray-100 transition">
-                立即获取方案
-            </a>
-        </div>
-    </section>
-  </main>
-
-  <footer class="bg-[#002845] text-white py-8 border-t border-gray-700">
-      <div class="max-w-7xl mx-auto px-4 text-center text-sm">
-          <p>&copy; {siteConfig.copyrightYear} {siteConfig.companyName} All rights reserved.</p>
-      </div>
   </footer>
 </Layout>

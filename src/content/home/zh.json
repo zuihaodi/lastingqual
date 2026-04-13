@@ -1,0 +1,43 @@
+{
+  "hero": {
+    "titleLine1": "挑战地心深度",
+    "titleLine2": "刷新亚洲纪录",
+    "subtitle": "掌握12000米超深井钻采技术，创下9396米亚洲最深水平井纪录。\nLasting Qual —— 您最值得信赖的能源合作伙伴",
+    "buttonPrimaryText": "查看业务领域",
+    "buttonPrimaryHref": "/zh/products",
+    "buttonSecondaryText": "联系我们",
+    "buttonSecondaryHref": "/zh/contact",
+    "bgImage": "/uploads/home/zh/hero/bgImage.jpg"
+  },
+  "metrics": [
+    {
+      "value": "2002",
+      "unit": "年",
+      "desc": "行业积淀始于"
+    },
+    {
+      "value": "9396",
+      "unit": "米",
+      "desc": "亚洲钻探深度纪录"
+    },
+    {
+      "value": "CNPC",
+      "desc": "中石油一级供应商"
+    },
+    {
+      "value": "ISO",
+      "desc": "全体系质量认证"
+    }
+  ],
+  "businessSection": {
+    "show": true,
+    "title": "核心业务领域",
+    "desc": "集钻采装备研发、制造、租赁、贸易及服务于一体的综合性跨国企业。"
+  },
+  "cta": {
+    "title": "联系我们",
+    "desc": "石油装备供应链解决方案专家",
+    "buttonText": "索取解决方案",
+    "buttonHref": "/zh/contact"
+  }
+}

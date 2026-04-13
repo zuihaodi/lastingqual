@@ -1,15 +1,20 @@
-import { defineConfig } from 'astro/config';
+import { defineConfig } from "astro/config";
 import tailwind from "@astrojs/tailwind";
+import react from "@astrojs/react";
+import keystatic from "@keystatic/astro";
 
-// https://astro.build/config
+const isDev = process.env.NODE_ENV !== "production";
+
 export default defineConfig({
-  integrations: [tailwind()],
-  // 新增下面这段配置
+  integrations: isDev ? [tailwind(), react(), keystatic()] : [tailwind(), react()],
+  vite: {
+    cacheDir: ".vite-local",
+  },
   i18n: {
-    defaultLocale: "zh", // 默认语言是中文
-    locales: ["zh", "en"], // 支持中文和英文
+    defaultLocale: "zh",
+    locales: ["zh", "en"],
     routing: {
-        prefixDefaultLocale: false // 中文版不强制加 /zh 前缀（直接访问域名就是中文）
+      prefixDefaultLocale: false
     }
   }
 });

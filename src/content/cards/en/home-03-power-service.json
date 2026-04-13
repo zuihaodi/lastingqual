@@ -1,0 +1,17 @@
+{
+  "pageKey": "home",
+  "key": "home-power-service",
+  "title": "动力总包services",
+  "summary": "为钻机提供一站式动力系统solutions。",
+  "image": "/images/card3.jpg",
+  "ctaText": "Learn More",
+  "ctaHref": "/en/products",
+  "order": 3,
+  "published": true,
+  "translation": {
+    "mode": "auto",
+    "sourceHash": "94f0604206fb6892",
+    "status": "synced",
+    "lastTranslatedAt": "2026-04-13T14:21:57.161Z"
+  }
+}

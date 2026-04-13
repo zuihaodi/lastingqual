@@ -49,3 +49,19 @@ All commands are run from the root of the project, from a terminal:
 ## 👀 Want to learn more?
 
 Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+
+## Keystatic 发布流程（最小SOP）
+1. 运行 `npm run dev`，打开 `http://localhost:4322/keystatic`（以终端端口为准）。
+2. 在后台编辑导航、融资栏目、首页配置并点击 `Save`。
+3. 本地预览 `/zh`、`/en`、`/zh/finance-solutions`、`/en/finance-solutions`。
+4. 提交内容文件：`git add src/content keystatic.config.ts src/lib src/i18n src/pages src/components`。
+5. 推送后由 Cloudflare 自动构建发布。
+6. 若发布异常，回滚到上一个 commit。
+
+## ZH to EN Auto Sync
+- Run: 
+pm run content:translate`n- Lock any EN record by setting 	ranslation.mode = manual_locked in Keystatic.
+- In locked mode, ZH updates only mark EN as outdated and do not overwrite EN content.
+- Use 
+ode scripts/sync-zh-to-en.mjs --force to override locked entries when needed.
+

@@ -1,0 +1,84 @@
+{
+  "heroSection": {
+    "show": true,
+    "heroTitle": "Products & Services",
+    "heroSubtitle": "products"
+  },
+  "mainSection": {
+    "show": false,
+    "sectionTitle": "5555"
+  },
+  "metricsSection": {
+    "show": false,
+    "metrics": []
+  },
+  "middleSection": {
+    "show": false
+  },
+  "cardsSection": {
+    "show": true,
+    "cards": [
+      {
+        "title": "高端钻机租赁",
+        "summary": "面向极端工况的钻机租赁services，快速匹配项目进度。",
+        "ctaText": "Learn More",
+        "ctaHref": "/en/products",
+        "order": 1,
+        "published": true
+      },
+      {
+        "title": "油田特种底盘",
+        "summary": "提供压裂车底盘、混砂车底盘等定制化底盘products。",
+        "ctaText": "Learn More",
+        "ctaHref": "/en/products",
+        "order": 2,
+        "published": true
+      },
+      {
+        "title": "动力总包services",
+        "summary": "以动力系统为核心，提供工程集成与现场运维services。",
+        "ctaText": "Learn More",
+        "ctaHref": "/en/products",
+        "order": 3,
+        "published": true
+      }
+    ]
+  },
+  "bottomSection": {
+    "show": true
+  },
+  "bottomListSection": {
+    "show": true,
+    "bottomList": [
+      {
+        "title": "Fast Response",
+        "summary": "Multi-region supply chain linkage",
+        "order": 1
+      },
+      {
+        "title": "Standard Build",
+        "summary": "Unified quality and inspection",
+        "order": 2
+      },
+      {
+        "title": "On-site Service",
+        "summary": "Field and remote collaboration",
+        "order": 3
+      },
+      {
+        "title": "Spare Parts",
+        "summary": "Critical parts support",
+        "order": 4
+      }
+    ]
+  },
+  "contactSection": {
+    "show": false
+  },
+  "translation": {
+    "mode": "auto",
+    "sourceHash": "3d05da0abb6efeb7",
+    "status": "synced",
+    "lastTranslatedAt": "2026-04-13T14:21:57.167Z"
+  }
+}
