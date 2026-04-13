@@ -1,8 +1,8 @@
 {
   "pageKey": "solutions",
   "key": "solutions-risk-control",
-  "title": "全场景风险控制网络",
-  "summary": "覆盖风险识别、量化与应对，assurance项目在复杂环境下稳定运行。",
+  "title": "Full-Scenario Risk Control Network",
+  "summary": "覆盖风险识别、量化与应对，保障项目在复杂环境下稳定运行。",
   "image": "/images/card2.jpg",
   "ctaText": "查看详情",
   "ctaHref": "/en/contact",
@@ -12,6 +12,6 @@
     "mode": "auto",
     "sourceHash": "7df48272d11e8582",
     "status": "synced",
-    "lastTranslatedAt": "2026-04-13T14:21:57.163Z"
+    "lastTranslatedAt": "2026-04-13T15:41:31.374Z"
   }
 }

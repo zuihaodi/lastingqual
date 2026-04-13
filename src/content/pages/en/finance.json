@@ -2,26 +2,20 @@
   "heroSection": {
     "show": true,
     "heroTitle": "Financing Solutions",
-    "heroSubtitle": "Funding structures for equipment and project cycles",
-    "heroBgImage": ""
+    "heroSubtitle": "聚焦油气工程装备与项目周期的资金解决方案"
   },
   "mainSection": {
-    "show": true,
+    "show": false,
     "sectionTitle": "Financing Overview",
     "sectionBody": "Support delivery and growth with diversified financing tools.",
-    "sectionPrimaryButtonText": "",
-    "sectionPrimaryButtonHref": "",
-    "sectionSecondaryButtonText": "",
-    "sectionSecondaryButtonHref": "",
-    "legacyImage": "/images/card3.jpg",
-    "image": ""
+    "legacyImage": "/images/card3.jpg"
   },
   "metricsSection": {
     "show": false,
     "metrics": []
   },
   "middleSection": {
-    "show": true,
+    "show": false,
     "middleTitle": "Financing Cards",
     "middleSubtitle": "Maintain financing options by scenarios"
   },
@@ -29,41 +23,39 @@
     "show": true,
     "cards": [
       {
-        "title": "Finance Lease",
-        "summary": "Operating lease plan for equipment.",
-        "image": "/images/card1.jpg",
-        "ctaText": "View Details",
-        "ctaHref": "/en/finance",
+        "title": "石油设备租赁",
+        "summary": "设备经营性租赁，合作期限灵活协商",
         "order": 1,
         "published": true
       },
       {
-        "title": "Lease to Own",
-        "summary": "Stage payment model from usage to ownership.",
-        "image": "/images/card2.jpg",
-        "ctaText": "View Details",
-        "ctaHref": "/en/finance",
+        "title": "石油设备以租代买",
+        "summary": "设备以租代买，分期付款",
         "order": 2,
         "published": true
       },
       {
-        "title": "Consortium Delivery",
-        "summary": "Consortium mode for large projects and financing synergy.",
-        "image": "/images/card3.jpg",
-        "ctaText": "View Details",
-        "ctaHref": "/en/finance",
+        "title": "联合体承接-I",
+        "summary": "共同承接业务，整体打包融资，业务协议分包",
         "order": 3,
+        "published": true
+      },
+      {
+        "title": "联合体承接-II",
+        "summary": "共同承接业务，整体打包融资，业务协议分包",
+        "ctaText": "Learn More",
+        "order": 4,
         "published": true
       }
     ]
   },
   "bottomSection": {
-    "show": true,
+    "show": false,
     "bottomTitle": "Cooperation Models",
     "bottomSubtitle": "Flexible combinations for cash-flow efficiency"
   },
   "bottomListSection": {
-    "show": true,
+    "show": false,
     "bottomList": [
       {
         "title": "Equipment Leasing",
@@ -83,17 +75,12 @@
     ]
   },
   "contactSection": {
-    "show": false,
-    "title": "",
-    "addressLine1": "",
-    "addressLine2": "",
-    "email": "",
-    "phone": ""
+    "show": false
   },
   "translation": {
     "mode": "auto",
-    "sourceHash": "cd2f3e2ad6616cc0",
+    "sourceHash": "c750b8d2940447e7",
     "status": "synced",
-    "lastTranslatedAt": "2026-04-13T14:21:57.166Z"
+    "lastTranslatedAt": "2026-04-13T15:41:31.378Z"
   }
 }

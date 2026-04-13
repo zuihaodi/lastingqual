@@ -1,27 +1,19 @@
 {
   "heroSection": {
     "show": true,
-    "heroTitle": "Contact (ZH)",
-    "heroSubtitle": "We look forward to working with you",
-    "heroBgImage": ""
+    "heroTitle": "Contact",
+    "heroSubtitle": "We look forward to working with you"
   },
   "mainSection": {
     "show": true,
-    "sectionTitle": "Contact Us",
-    "sectionBody": "Reach out for products and solution consultation.",
-    "sectionPrimaryButtonText": "",
-    "sectionPrimaryButtonHref": "",
-    "sectionSecondaryButtonText": "",
-    "sectionSecondaryButtonHref": "",
-    "legacyImage": "/images/card1.jpg",
-    "image": ""
+    "sectionBody": "公司Address:\n123 Marina Bay Financial Centre,\nSingapore 018981\n\n电子Email:\ninfo@lastingqual.com\n\n联系Phone:\n+65 6789 1234"
   },
   "metricsSection": {
     "show": false,
     "metrics": []
   },
   "middleSection": {
-    "show": true,
+    "show": false,
     "middleTitle": "Service Entry",
     "middleSubtitle": "Manage inquiry entries with cards"
   },
@@ -30,8 +22,7 @@
     "cards": [
       {
         "title": "业务咨询",
-        "summary": "面向products、technical和financing的一对一咨询services。",
-        "image": "/uploads/cards/zh/contact-01-sales/image.jpg",
+        "summary": "面向产品、技术和融资的一对一咨询服务。",
         "ctaText": "Contact Us",
         "ctaHref": "/en/contact",
         "order": 1,
@@ -40,7 +31,6 @@
       {
         "title": "technicalsupport",
         "summary": "提供运维答疑与远程协助，提高现场处置效率。",
-        "image": "/images/card2.jpg",
         "ctaText": "提交需求",
         "ctaHref": "/en/contact",
         "order": 2,
@@ -48,8 +38,7 @@
       },
       {
         "title": "合作对接",
-        "summary": "针对跨区域合作、联合投标和供应链对接提供support。",
-        "image": "/images/card3.jpg",
+        "summary": "针对跨区域合作、联合投标和供应链对接提供支持。",
         "ctaText": "开始洽谈",
         "ctaHref": "/en/contact",
         "order": 3,
@@ -58,12 +47,12 @@
     ]
   },
   "bottomSection": {
-    "show": true,
+    "show": false,
     "bottomTitle": "Common Channels",
     "bottomSubtitle": "Quickly reach the right team"
   },
   "bottomListSection": {
-    "show": true,
+    "show": false,
     "bottomList": [
       {
         "title": "Pre-sales",
@@ -88,7 +77,7 @@
     ]
   },
   "contactSection": {
-    "show": true,
+    "show": false,
     "title": "Contact Details",
     "addressLine1": "123 Marina Bay Financial Centre",
     "addressLine2": "Singapore 018981",
@@ -97,8 +86,8 @@
   },
   "translation": {
     "mode": "auto",
-    "sourceHash": "b7386f223a085982",
+    "sourceHash": "3f80ee72cdbee08c",
     "status": "synced",
-    "lastTranslatedAt": "2026-04-13T14:21:57.166Z"
+    "lastTranslatedAt": "2026-04-13T15:41:31.377Z"
   }
 }

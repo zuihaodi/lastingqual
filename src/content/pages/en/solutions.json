@@ -1,27 +1,21 @@
 {
   "heroSection": {
     "show": true,
-    "heroTitle": "Support System (ZH)",
-    "heroSubtitle": "Comprehensive engineering and support system",
-    "heroBgImage": ""
+    "heroTitle": "Support & Assurance",
+    "heroSubtitle": "Comprehensive Engineering and Support Services"
   },
   "mainSection": {
-    "show": true,
+    "show": false,
     "sectionTitle": "Support Overview",
     "sectionBody": "Focused on **HSE**, ==risk control== and customized training.",
-    "sectionPrimaryButtonText": "",
-    "sectionPrimaryButtonHref": "",
-    "sectionSecondaryButtonText": "",
-    "sectionSecondaryButtonHref": "",
-    "legacyImage": "/images/card3.jpg",
-    "image": ""
+    "legacyImage": "/images/card3.jpg"
   },
   "metricsSection": {
     "show": false,
     "metrics": []
   },
   "middleSection": {
-    "show": true,
+    "show": false,
     "middleTitle": "Support Cards",
     "middleSubtitle": "Manage support modules with cards"
   },
@@ -29,27 +23,23 @@
     "show": true,
     "cards": [
       {
-        "title": "全方位 HSE 质量管理",
-        "summary": "坚持“安全第一、质量为本”，推进 HSE 体系持续改进。坚持“安全第一、质量为本”，推进 HSE 体系持续改进。",
-        "image": "",
-        "ctaText": "查看详情",
-        "ctaHref": "/en/contact",
+        "title": "Comprehensive HSE Quality Management",
+        "summary": "坚持“安全第一、质量为本”，推进 HSE 体系持续改进。",
+        "image": "/uploads/pages/zh/solutions/cards/cardsSection/cards/0/image.jpg",
         "order": 1,
         "published": true
       },
       {
-        "title": "全场景风险控制网络",
-        "summary": "覆盖风险识别、量化与应对，assurance项目在复杂环境下稳定运行。",
-        "image": "/images/card2.jpg",
-        "ctaText": "查看详情",
-        "ctaHref": "/en/contact",
+        "title": "Full-Scenario Risk Control Network",
+        "summary": "覆盖风险识别、量化与应对，保障项目在复杂环境下稳定运行。",
+        "image": "/uploads/pages/zh/solutions/cards/cardsSection/cards/1/image.jpg",
         "order": 2,
         "published": true
       },
       {
-        "title": "定制化technical培训",
+        "title": "Customized Technical Training",
         "summary": "围绕设备运维与安全流程开展分层培训，强化一线能力。",
-        "image": "/images/card3.jpg",
+        "image": "/uploads/pages/zh/solutions/cards/cardsSection/cards/2/image.jpg",
         "ctaText": "查看详情",
         "ctaHref": "/en/contact",
         "order": 3,
@@ -59,46 +49,40 @@
   },
   "bottomSection": {
     "show": true,
-    "bottomTitle": "Qualifications",
-    "bottomSubtitle": "Standardized system"
+    "bottomTitle": "System Certification"
   },
   "bottomListSection": {
     "show": true,
     "bottomList": [
       {
         "title": "ISO 9001",
-        "summary": "Quality management",
+        "summary": "Quality Management System Certification",
         "order": 1
       },
       {
         "title": "ISO 14001",
-        "summary": "Environmental management",
+        "summary": "Environmental Management System Certification",
         "order": 2
       },
       {
         "title": "ISO 45001",
-        "summary": "Occupational health and safety",
+        "summary": "Occupational Health and Safety Management",
         "order": 3
       },
       {
         "title": "HSE",
-        "summary": "Health Safety Environment",
+        "summary": "Health, Safety and Environment Management System",
         "order": 4
       }
     ]
   },
   "contactSection": {
-    "show": false,
-    "title": "",
-    "addressLine1": "",
-    "addressLine2": "",
-    "email": "",
-    "phone": ""
+    "show": false
   },
   "translation": {
     "mode": "auto",
-    "sourceHash": "a6cf2738cb1a1f0c",
+    "sourceHash": "dd71d9c25176ba65",
     "status": "synced",
-    "lastTranslatedAt": "2026-04-13T14:21:57.168Z"
+    "lastTranslatedAt": "2026-04-13T15:41:31.380Z"
   }
 }

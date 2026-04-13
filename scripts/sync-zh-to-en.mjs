@@ -1,18 +1,12 @@
-import fs from "node:fs";
+﻿import fs from "node:fs";
 import path from "node:path";
 import crypto from "node:crypto";
-import {
-  EXACT_TEXT_MAP,
-  KEY_ALIASES,
-  NAV_SEMANTIC_EN,
-  PHRASE_MAP,
-  TERM_MAP,
-} from "./translation-glossary.mjs";
+import { EXACT_TEXT_MAP, KEY_ALIASES, NAV_SEMANTIC_EN, PHRASE_MAP } from "./translation-glossary.mjs";
+import { checkOpenAIAvailability, hasChinese, isMixedZhEn, translateStringsWithOpenAI } from "./translator-openai.mjs";
 
 const FORCE = process.argv.includes("--force");
-
+const DRY_CHECK = process.argv.includes("--check");
 const ROOT = process.cwd();
-const CHINESE_RE = /[\u3400-\u9fff]/;
 
 const CONTENT_PAIRS = [
   { kind: "nav", zh: "src/content/nav/zh", en: "src/content/nav/en" },
@@ -20,6 +14,8 @@ const CONTENT_PAIRS = [
   { kind: "pages", zh: "src/content/pages/zh", en: "src/content/pages/en" },
   { kind: "home", zhFile: "src/content/home/zh.json", enFile: "src/content/home/en.json" },
 ];
+
+const NON_TRANSLATE_FIELDS = new Set(["key", "pageKey", "translation"]);
 
 function isObject(v) {
   return v && typeof v === "object" && !Array.isArray(v);
@@ -39,29 +35,15 @@ function writeJson(filePath, data) {
 }
 
 function stable(value) {
-  if (Array.isArray(value)) return value.map((v) => stable(v));
+  if (Array.isArray(value)) return value.map(stable);
   if (!isObject(value)) return value;
-  const keys = Object.keys(value).sort();
   const out = {};
-  for (const key of keys) out[key] = stable(value[key]);
+  for (const key of Object.keys(value).sort()) out[key] = stable(value[key]);
   return out;
 }
 
 function sourceHash(payload) {
-  return crypto
-    .createHash("sha256")
-    .update(JSON.stringify(stable(payload)))
-    .digest("hex")
-    .slice(0, 16);
-}
-
-function mapHref(value) {
-  if (typeof value !== "string") return value;
-  return value.replace(/^\/zh(?=\/|$)/, "/en");
-}
-
-function containsChinese(text) {
-  return typeof text === "string" && CHINESE_RE.test(text);
+  return crypto.createHash("sha256").update(JSON.stringify(stable(payload))).digest("hex").slice(0, 16);
 }
 
 function normalizeSemantic(raw) {
@@ -71,69 +53,75 @@ function normalizeSemantic(raw) {
   return KEY_ALIASES[clean] || KEY_ALIASES[lower] || lower;
 }
 
-function translateText(input, context = {}) {
-  if (typeof input !== "string") return input;
-  if (!containsChinese(input)) return input;
+function mapHref(value) {
+  if (typeof value !== "string") return value;
+  return value.replace(/^\/zh(?=\/|$)/, "/en");
+}
 
-  if (context.isNavTitle) {
-    const semantic = normalizeSemantic(context.semantic || "");
-    if (semantic && NAV_SEMANTIC_EN[semantic]) {
-      return NAV_SEMANTIC_EN[semantic];
-    }
+function directTranslate(text, kind, semantic) {
+  if (!hasChinese(text)) return text;
+  if (kind === "nav" && semantic && NAV_SEMANTIC_EN[semantic]) return NAV_SEMANTIC_EN[semantic];
+  if (EXACT_TEXT_MAP[text]) return EXACT_TEXT_MAP[text];
+
+  let out = text;
+  for (const key of Object.keys(PHRASE_MAP).sort((a, b) => b.length - a.length)) {
+    if (out.includes(key)) out = out.split(key).join(PHRASE_MAP[key]);
   }
-
-  if (EXACT_TEXT_MAP[input]) return EXACT_TEXT_MAP[input];
-
-  let out = input;
-
-  const phraseKeys = Object.keys(PHRASE_MAP).sort((a, b) => b.length - a.length);
-  for (const key of phraseKeys) {
-    if (out.includes(key)) {
-      out = out.split(key).join(PHRASE_MAP[key]);
-    }
-  }
-
-  const termKeys = Object.keys(TERM_MAP).sort((a, b) => b.length - a.length);
-  for (const key of termKeys) {
-    if (out.includes(key)) {
-      out = out.split(key).join(TERM_MAP[key]);
-    }
-  }
-
   return out;
 }
 
-function getSemanticForNav(obj, fileStem) {
-  return normalizeSemantic(obj?.key || obj?.href || obj?.title || fileStem);
-}
+function collectCandidates(node, oldNode, opts, pathName = "", parentKey = "") {
+  const rows = [];
 
-function translateNode(node, keyName, context = {}) {
   if (Array.isArray(node)) {
-    return node.map((item) => translateNode(item, keyName, context));
+    node.forEach((item, idx) => {
+      rows.push(...collectCandidates(item, Array.isArray(oldNode) ? oldNode[idx] : undefined, opts, `${pathName}[${idx}]`, parentKey));
+    });
+    return rows;
   }
 
   if (isObject(node)) {
-    const out = {};
-    for (const [k, v] of Object.entries(node)) {
-      if (k === "translation") continue;
-      out[k] = translateNode(v, k, context);
-    }
-    return out;
+    Object.entries(node).forEach(([key, value]) => {
+      if (NON_TRANSLATE_FIELDS.has(key)) return;
+      const prev = isObject(oldNode) ? oldNode[key] : undefined;
+      rows.push(...collectCandidates(value, prev, opts, pathName ? `${pathName}.${key}` : key, key));
+    });
+    return rows;
   }
 
   if (typeof node === "string") {
-    if (keyName === "key" || keyName === "pageKey") return node;
-    if (keyName === "href" || keyName.endsWith("Href")) return mapHref(node);
-    if (keyName === "image" || keyName === "cover" || keyName === "bgImage" || keyName === "heroBgImage" || keyName === "legacyImage") {
-      return node;
+    if (NON_TRANSLATE_FIELDS.has(parentKey)) return rows;
+    if (parentKey === "href" || parentKey.endsWith("Href")) {
+      rows.push({ path: pathName, type: "href", value: node });
+      return rows;
     }
-    if (keyName === "title" && context.kind === "nav") {
-      return translateText(node, { isNavTitle: true, semantic: context.semantic });
+    if (["image", "cover", "bgImage", "heroBgImage", "legacyImage"].includes(parentKey)) {
+      rows.push({ path: pathName, type: "passthrough", value: node });
+      return rows;
     }
-    return translateText(node, context);
+
+    const semantic = opts.kind === "nav" ? normalizeSemantic(opts.semanticRaw || "") : "";
+    const pre = directTranslate(node, opts.kind, semantic);
+    const oldValue = typeof oldNode === "string" ? oldNode : "";
+
+    rows.push({
+      path: pathName,
+      type: "text",
+      value: node,
+      oldValue,
+      pre,
+      needLLM: hasChinese(pre),
+    });
   }
 
-  return node;
+  return rows;
+}
+
+function setByPath(target, pathExpr, value) {
+  const parts = pathExpr.replace(/\[(\d+)\]/g, ".$1").split(".");
+  let cur = target;
+  for (let i = 0; i < parts.length - 1; i++) cur = cur[parts[i]];
+  cur[parts[parts.length - 1]] = value;
 }
 
 function mergeTranslationMeta(existingMeta, hash, status, shouldSetTime) {
@@ -146,11 +134,12 @@ function mergeTranslationMeta(existingMeta, hash, status, shouldSetTime) {
   };
 }
 
-function shouldWrite(oldValue, newValue) {
-  return JSON.stringify(oldValue) !== JSON.stringify(newValue);
+function listJsonFiles(dirPath) {
+  if (!fs.existsSync(dirPath)) return [];
+  return fs.readdirSync(dirPath).filter((n) => n.endsWith(".json"));
 }
 
-function syncRecord({ kind, zhPath, enPath, fileStem }) {
+async function syncRecord({ kind, zhPath, enPath, fileStem }) {
   const zhData = readJson(zhPath);
   if (!isObject(zhData)) return { updated: false, skipped: true, reason: "invalid_zh", enPath };
 
@@ -165,63 +154,81 @@ function syncRecord({ kind, zhPath, enPath, fileStem }) {
     const nextStatus = sameHash ? "synced" : "outdated";
     const next = isObject(existingEn) ? { ...existingEn } : {};
     next.translation = mergeTranslationMeta(existingMeta, zhHash, nextStatus, false);
-    if (shouldWrite(existingEn, next)) {
-      writeJson(enPath, next);
-      return { updated: true, skipped: false, reason: "locked_meta_updated", enPath };
-    }
-    return { updated: false, skipped: true, reason: "locked_no_change", enPath };
+    if (JSON.stringify(existingEn) !== JSON.stringify(next) && !DRY_CHECK) writeJson(enPath, next);
+    return { updated: JSON.stringify(existingEn) !== JSON.stringify(next), skipped: false, reason: "locked_meta_updated", enPath };
   }
 
-  const semantic = kind === "nav" ? getSemanticForNav(zhData, fileStem) : "";
-  const translated = translateNode(zhData, "", { kind, semantic });
+  const semanticRaw = isObject(zhData) ? (zhData.key || zhData.href || zhData.title || fileStem) : fileStem;
+  const translated = JSON.parse(JSON.stringify(zhData));
+  const candidates = collectCandidates(zhData, existingEn, { kind, semanticRaw });
+
+  const llmItems = [];
+  candidates.forEach((c, idx) => {
+    if (c.type === "href") {
+      setByPath(translated, c.path, mapHref(c.value));
+      return;
+    }
+    if (c.type === "passthrough") {
+      setByPath(translated, c.path, c.value);
+      return;
+    }
+    if (!c.needLLM) {
+      setByPath(translated, c.path, c.pre);
+      return;
+    }
+    llmItems.push({ id: String(idx), text: c.pre, path: c.path, oldValue: c.oldValue });
+  });
+
+  if (llmItems.length > 0) {
+    const result = await translateStringsWithOpenAI(
+      llmItems.map((i) => ({ id: i.id, text: i.text })),
+      `kind=${kind}; file=${fileStem}`,
+    );
+
+    llmItems.forEach((item) => {
+      const nextText = result.get(item.id) || item.text;
+      const chosen = !hasChinese(nextText) && !isMixedZhEn(nextText)
+        ? nextText
+        : (!hasChinese(item.oldValue) && !isMixedZhEn(item.oldValue) && item.oldValue ? item.oldValue : nextText);
+      setByPath(translated, item.path, chosen);
+    });
+  }
+
   translated.translation = mergeTranslationMeta(existingMeta, zhHash, "synced", true);
 
-  if (shouldWrite(existingEn, translated)) {
-    writeJson(enPath, translated);
-    return { updated: true, skipped: false, reason: "translated", enPath };
+  const changed = JSON.stringify(existingEn) !== JSON.stringify(translated);
+  if (changed && !DRY_CHECK) writeJson(enPath, translated);
+  return { updated: changed, skipped: !changed, reason: changed ? "translated" : "no_change", enPath };
+}
+
+async function run() {
+  const health = await checkOpenAIAvailability();
+  if (!health.ok) {
+    console.error(`[content:translate] OpenAI unavailable: ${health.reason}`);
+    process.exit(2);
   }
 
-  return { updated: false, skipped: true, reason: "no_change", enPath };
-}
-
-function listJsonFiles(dirPath) {
-  if (!fs.existsSync(dirPath)) return [];
-  return fs.readdirSync(dirPath).filter((n) => n.endsWith(".json"));
-}
-
-function run() {
   const logs = [];
 
   for (const pair of CONTENT_PAIRS) {
     if (pair.kind === "home") {
-      const zhPath = path.resolve(ROOT, pair.zhFile);
-      const enPath = path.resolve(ROOT, pair.enFile);
-      logs.push(syncRecord({ kind: "home", zhPath, enPath, fileStem: "home" }));
+      logs.push(await syncRecord({ kind: "home", zhPath: path.resolve(ROOT, pair.zhFile), enPath: path.resolve(ROOT, pair.enFile), fileStem: "home" }));
       continue;
     }
 
     const zhDir = path.resolve(ROOT, pair.zh);
     const enDir = path.resolve(ROOT, pair.en);
-    const files = listJsonFiles(zhDir);
-
-    for (const name of files) {
-      const zhPath = path.join(zhDir, name);
-      const enPath = path.join(enDir, name);
-      const fileStem = name.replace(/\.json$/i, "");
-      logs.push(syncRecord({ kind: pair.kind, zhPath, enPath, fileStem }));
+    for (const name of listJsonFiles(zhDir)) {
+      logs.push(await syncRecord({ kind: pair.kind, zhPath: path.join(zhDir, name), enPath: path.join(enDir, name), fileStem: name.replace(/\.json$/i, "") }));
     }
   }
 
   const updated = logs.filter((i) => i.updated).length;
   const skipped = logs.filter((i) => i.skipped).length;
-  const total = logs.length;
-
-  console.log(`[content:translate] total=${total} updated=${updated} skipped=${skipped} force=${FORCE}`);
-
-  const lockedOutdated = logs.filter((i) => i.reason === "locked_meta_updated").length;
-  if (lockedOutdated > 0) {
-    console.log(`[content:translate] locked entries marked/updated: ${lockedOutdated}`);
-  }
+  console.log(`[content:translate] total=${logs.length} updated=${updated} skipped=${skipped} force=${FORCE} check=${DRY_CHECK}`);
 }
 
-run();
+run().catch((error) => {
+  console.error(`[content:translate] failed: ${error?.message || error}`);
+  process.exit(1);
+});

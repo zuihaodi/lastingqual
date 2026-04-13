@@ -1,8 +1,8 @@
 {
   "pageKey": "products",
   "key": "products-power-package",
-  "title": "动力总包services",
-  "summary": "以动力系统为核心，提供工程集成与现场运维services。",
+  "title": "动力总包服务",
+  "summary": "以动力系统为核心，提供工程集成与现场运维服务。",
   "image": "/images/card3.jpg",
   "ctaText": "Learn More",
   "ctaHref": "/en/products",
@@ -12,6 +12,6 @@
     "mode": "auto",
     "sourceHash": "78e53c129641091a",
     "status": "synced",
-    "lastTranslatedAt": "2026-04-13T14:21:57.162Z"
+    "lastTranslatedAt": "2026-04-13T15:41:31.373Z"
   }
 }

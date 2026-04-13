@@ -6,7 +6,8 @@
   },
   "mainSection": {
     "show": false,
-    "sectionTitle": "5555"
+    "sectionTitle": "5555",
+    "sectionBody": "战略合作伙伴\nCNPC 中国石油\nSINOPEC 中国石化\nCNOOC 中国海油\nJereh 杰瑞股份\nSinotruk 中国重汽\nAramco\nPEMEX\nBOMCO 宝石机械\nKunlun Bank\nShell"
   },
   "metricsSection": {
     "show": false,
@@ -63,7 +64,9 @@
     ]
   },
   "bottomSection": {
-    "show": false
+    "show": true,
+    "bottomTitle": "拥有业内领先的供应链体系",
+    "bottomSubtitle": "无论是在塔里木的沙漠，还是墨西哥的油田，我们都能为您提供精准的定制化服务。"
   },
   "bottomListSection": {
     "show": false,

@@ -15,16 +15,24 @@ export const EXACT_TEXT_MAP = {
   "支持与保障": "Support & Assurance",
   "融资解决方案": "Financing Solutions",
   "联系方式": "Contact",
+  "联系我们": "Contact Us",
   "首页": "Home",
   "查看更多": "Learn More",
   "了解更多": "Learn More",
   "立即联系": "Contact Us",
+  "查看业务领域": "View Business Areas",
+  "索取解决方案": "Get Solution",
+  "挑战地心深度": "Challenge Deep Earth",
+  "刷新亚洲纪录": "Set a New Asia Record",
+  "掌握12000米超深井钻采技术，创下9396米亚洲最深水平井纪录。\nLasting Qual —— 您最值得信赖的能源合作伙伴":
+    "Mastering 12,000m ultra-deep drilling technology and setting the 9,396m Asia record for deepest horizontal well.\nLasting Qual — Your most trusted energy partner.",
 };
 
 export const PHRASE_MAP = {
   "核心业务领域": "Core Business Areas",
   "资质与认证": "Qualifications & Certifications",
   "全方位工程技术与支持体系": "Comprehensive Engineering and Support Services",
+  "全方位的工程技术与支持体系": "Comprehensive Engineering and Support Services",
   "公司概况": "Company Overview",
   "主要产品与服务": "Main Products & Services",
   "融资能力简介": "Financing Capability Overview",
@@ -39,20 +47,20 @@ export const PHRASE_MAP = {
   "副标题": "Subtitle",
   "正文": "Body",
   "图片": "Image",
-};
-
-export const TERM_MAP = {
-  "融资": "financing",
-  "解决方案": "solutions",
-  "产品": "products",
-  "服务": "services",
-  "技术": "technical",
-  "支持": "support",
-  "保障": "assurance",
-  "联系": "contact",
-  "关于": "about",
-  "公司": "company",
-  "首页": "home",
+  "行业积淀始于": "Industry foundation since",
+  "亚洲钻探深度纪录": "Asia drilling depth record",
+  "中石油一级供应商": "CNPC tier-1 supplier",
+  "全体系质量认证": "Full-system quality certification",
+  "石油装备供应链解决方案专家": "Oil equipment supply chain solution experts",
+  "钻采装备销售租赁 | 动力总包 | 全球工程服务": "Drilling equipment sales & leasing | Power package | Global engineering services",
+  "全方位 HSE 质量管理": "Comprehensive HSE Quality Management",
+  "全场景风险控制网络": "Full-Scenario Risk Control Network",
+  "定制化技术培训": "Customized Technical Training",
+  "体系认证": "System Certification",
+  "质量管理体系认证": "Quality Management System Certification",
+  "环境管理体系认证": "Environmental Management System Certification",
+  "职业健康安全管理": "Occupational Health and Safety Management",
+  "安全与环境管理体系": "Health, Safety and Environment Management System",
 };
 
 export const KEY_ALIASES = {
