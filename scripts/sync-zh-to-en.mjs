@@ -20,6 +20,10 @@ function isObject(v) {
   return v && typeof v === "object" && !Array.isArray(v);
 }
 
+function hasText(v) {
+  return typeof v === "string" && v.trim().length > 0;
+}
+
 function readJson(filePath) {
   try {
     return JSON.parse(fs.readFileSync(filePath, "utf8"));
@@ -95,7 +99,7 @@ function collectCandidates(node, oldNode, opts, pathName = "", parentKey = "") {
       return rows;
     }
     if (["image", "cover", "bgImage", "heroBgImage", "legacyImage"].includes(parentKey)) {
-      rows.push({ path: pathName, type: "passthrough", value: node });
+      rows.push({ path: pathName, type: "passthrough", value: node, oldValue: typeof oldNode === "string" ? oldNode : "" });
       return rows;
     }
 
@@ -168,7 +172,7 @@ async function syncRecord({ kind, zhPath, enPath, fileStem }) {
       return;
     }
     if (c.type === "passthrough") {
-      setByPath(translated, c.path, c.value);
+      setByPath(translated, c.path, hasText(c.oldValue) ? c.oldValue : c.value);
       return;
     }
     if (!c.needLLM) {

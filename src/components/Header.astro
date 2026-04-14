@@ -1,6 +1,25 @@
 ﻿---
 import { getNavZh } from "../i18n/nav";
 const navZh = getNavZh();
+const enPagePaths = new Set([
+  "/en",
+  "/en/about",
+  "/en/products",
+  "/en/solutions",
+  "/en/finance",
+  "/en/contact",
+  "/en/finance-solutions",
+]);
+
+const normalizePath = (path: string) => {
+  if (!path) return "/zh";
+  return path.length > 1 && path.endsWith("/") ? path.slice(0, -1) : path;
+};
+
+const currentPath = normalizePath(Astro.url.pathname);
+const mappedEnPath =
+  currentPath === "/zh" ? "/en" : currentPath.startsWith("/zh/") ? `/en${currentPath.slice(3)}` : "/en";
+const switchHref = enPagePaths.has(mappedEnPath) ? mappedEnPath : "/en/";
 ---
 <header class="bg-white border-b border-gray-200 sticky top-0 z-50 shadow-sm">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -18,7 +37,7 @@ const navZh = getNavZh();
           ))}
         </nav>
 
-        <a href="/en" class="border border-[#003865] text-[#003865] px-3 py-1 rounded text-xs font-bold hover:bg-[#003865] hover:text-white transition no-underline">
+        <a href={switchHref} class="border border-[#003865] text-[#003865] px-3 py-1 rounded text-xs font-bold hover:bg-[#003865] hover:text-white transition no-underline">
           EN
         </a>
       </div>
@@ -44,7 +63,7 @@ const navZh = getNavZh();
         {navZh.map((item) => (
           <a href={item.href} class="text-gray-700 hover:text-[#003865] font-bold text-sm no-underline" data-mobile-menu-link>{item.label}</a>
         ))}
-        <a href="/en" class="inline-flex w-fit border border-[#003865] text-[#003865] px-3 py-1 rounded text-xs font-bold hover:bg-[#003865] hover:text-white transition no-underline" data-mobile-menu-link>
+        <a href={switchHref} class="inline-flex w-fit border border-[#003865] text-[#003865] px-3 py-1 rounded text-xs font-bold hover:bg-[#003865] hover:text-white transition no-underline" data-mobile-menu-link>
           EN
         </a>
       </nav>
@@ -83,3 +102,4 @@ const navZh = getNavZh();
     });
   });
 </script>
+

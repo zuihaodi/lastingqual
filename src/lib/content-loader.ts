@@ -85,6 +85,11 @@ function textOr(primary?: string, fallback?: string) {
   return hasText(primary) ? primary : fallback || "";
 }
 
+function resolveLocalizedImage(localized?: string, shared?: string, prefer: "main" | "small" = "main") {
+  const raw = hasText(localized) ? localized : shared;
+  return resolveOptimizedImage(raw, prefer) || raw;
+}
+
 const FOCUS_PRESETS = new Set([
   "left top",
   "center top",
@@ -101,6 +106,10 @@ function normalizeFocus(value?: string, fallback = "center center") {
   if (!hasText(value)) return fallback;
   const lower = value.trim().toLowerCase();
   return FOCUS_PRESETS.has(lower) ? lower : fallback;
+}
+
+function resolveLocalizedFocus(localized?: string, shared?: string, fallback = "center center") {
+  return normalizeFocus(localized, normalizeFocus(shared, fallback));
 }
 
 function boolOr(primary?: boolean, fallback?: boolean, defaultValue = true) {
@@ -155,6 +164,49 @@ function normalizeInlineCards(list?: CmsCardItem[]) {
       image: resolveOptimizedImage(item.image, "small"),
       imageFocus: normalizeFocus(item.imageFocus),
     }));
+}
+
+function mergeLocalizedCards(zhList?: CmsCardItem[], enList?: CmsCardItem[]) {
+  const zhCards = Array.isArray(zhList) ? zhList : [];
+  const enCards = Array.isArray(enList) ? enList : [];
+  if (enCards.length === 0) return zhCards;
+  if (zhCards.length === 0) return enCards;
+
+  const enByKey = new Map<string, CmsCardItem>();
+  for (const card of enCards) {
+    const key = normalizeKey(card?.key);
+    if (key) enByKey.set(key, card);
+  }
+
+  const usedKeys = new Set<string>();
+  const usedIndex = new Set<number>();
+  const merged = zhCards.map((zhCard, idx) => {
+    const key = normalizeKey(zhCard?.key);
+    const enCard = key ? enByKey.get(key) : enCards[idx];
+    if (key) usedKeys.add(key);
+    if (!key && enCards[idx]) usedIndex.add(idx);
+    return {
+      ...zhCard,
+      ...enCard,
+      title: textOr(enCard?.title, zhCard?.title),
+      summary: textOr(enCard?.summary, zhCard?.summary),
+      image: resolveLocalizedImage(enCard?.image, zhCard?.image, "small"),
+      imageFocus: resolveLocalizedFocus(enCard?.imageFocus, zhCard?.imageFocus),
+      ctaText: textOr(enCard?.ctaText, zhCard?.ctaText),
+      ctaHref: textOr(enCard?.ctaHref, zhCard?.ctaHref),
+      order: typeof enCard?.order === "number" ? enCard.order : zhCard.order,
+      published: enCard?.published ?? zhCard.published,
+    };
+  });
+
+  for (let i = 0; i < enCards.length; i++) {
+    const enCard = enCards[i];
+    const key = normalizeKey(enCard?.key);
+    if ((key && usedKeys.has(key)) || usedIndex.has(i)) continue;
+    merged.push(enCard);
+  }
+
+  return merged;
 }
 
 function normalizeKey(key?: string) {
@@ -262,6 +314,7 @@ export function loadProductsByLang(lang: "zh" | "en"): CmsProductItem[] {
 export function loadHomeByLang(lang: "zh" | "en"): CmsHomeConfig | null {
   let cfg = readJsonFile<CmsHomeConfig>(`src/content/home/${lang}.json`);
   if (lang === "en") {
+    const enCfg = cfg;
     const zhCfg = readJsonFile<CmsHomeConfig>("src/content/home/zh.json");
     if (zhCfg && cfg) {
       cfg = {
@@ -304,6 +357,16 @@ export function loadHomeByLang(lang: "zh" | "en"): CmsHomeConfig | null {
               }))
             : zhCfg.metrics,
       };
+      const zhCards = sectionContent(zhCfg.cardsSection)?.cards;
+      const enCards = sectionContent(enCfg?.cardsSection)?.cards;
+      const mergedCards = mergeLocalizedCards(zhCards, enCards);
+      if (mergedCards.length > 0) {
+        cfg.cardsSection = {
+          ...(zhCfg.cardsSection || {}),
+          ...(enCfg?.cardsSection || {}),
+          cards: mergedCards,
+        };
+      }
     } else if (!cfg && zhCfg) {
       cfg = zhCfg;
     }
@@ -318,7 +381,7 @@ export function loadHomeByLang(lang: "zh" | "en"): CmsHomeConfig | null {
     ...cfg,
     hero: {
       ...cfg.hero,
-      bgImage: resolveOptimizedImage(cfg.hero?.bgImage) || cfg.hero?.bgImage,
+      bgImage: resolveLocalizedImage(cfg.hero?.bgImage),
       bgImageFocus: normalizeFocus(cfg.hero?.bgImageFocus),
     },
     cardsSection: {
@@ -425,8 +488,10 @@ function getSimplePageDefaults(page: "about" | "products" | "solutions" | "finan
 export function loadSimplePageByLang(page: "about" | "products" | "solutions" | "finance" | "contact", lang: "zh" | "en"): CmsSimplePageConfig {
   const defaults = getSimplePageDefaults(page, lang);
   let cfg = readJsonFile<CmsSimplePageConfig>(`src/content/pages/${lang}/${page}.json`);
+  let zhCfg: CmsSimplePageConfig | null = null;
+  const enCfg = lang === "en" ? cfg : null;
   if (lang === "en") {
-    const zhCfg = readJsonFile<CmsSimplePageConfig>(`src/content/pages/zh/${page}.json`);
+    zhCfg = readJsonFile<CmsSimplePageConfig>(`src/content/pages/zh/${page}.json`);
     if (zhCfg && cfg) {
       cfg = { ...zhCfg, ...cfg };
     } else if (!cfg && zhCfg) {
@@ -446,16 +511,42 @@ export function loadSimplePageByLang(page: "about" | "products" | "solutions" | 
 
   const hasMainSection = !!cfg.mainSection;
   const hasHeroSection = !!cfg.heroSection;
+  const zhMainSectionValue = sectionContent(zhCfg?.mainSection);
+  const zhHeroSectionValue = sectionContent(zhCfg?.heroSection);
+  const enMainSectionValue = sectionContent(enCfg?.mainSection);
+  const enHeroSectionValue = sectionContent(enCfg?.heroSection);
+  const zhCards = sectionContent(zhCfg?.cardsSection)?.cards;
+  const enCards = sectionContent(enCfg?.cardsSection)?.cards;
+
   const finalImage = hasMainSection
-    ? textOr(mainSectionValue?.image, textOr(mainSectionValue?.legacyImage, ""))
-    : textOr(cfg.image, textOr(cfg.legacyImage, defaults.image));
-  const finalBg = hasHeroSection ? textOr(heroSectionValue?.heroBgImage, "") : textOr(cfg.heroBgImage, defaults.heroBgImage);
+    ? resolveLocalizedImage(
+        lang === "en" ? textOr(enMainSectionValue?.image, enMainSectionValue?.legacyImage) : mainSectionValue?.image,
+        lang === "en"
+          ? textOr(zhMainSectionValue?.image, textOr(zhMainSectionValue?.legacyImage, textOr(zhCfg?.image, textOr(zhCfg?.legacyImage, defaults.image))))
+          : textOr(mainSectionValue?.legacyImage, ""),
+      )
+    : resolveLocalizedImage(
+        lang === "en" ? textOr(enCfg?.image, enCfg?.legacyImage) : cfg.image,
+        lang === "en" ? textOr(zhCfg?.image, textOr(zhCfg?.legacyImage, defaults.image)) : textOr(cfg.legacyImage, defaults.image),
+      );
+  const finalBg = hasHeroSection
+    ? resolveLocalizedImage(
+        lang === "en" ? enHeroSectionValue?.heroBgImage : heroSectionValue?.heroBgImage,
+        lang === "en" ? textOr(zhHeroSectionValue?.heroBgImage, zhCfg?.heroBgImage) : "",
+      )
+    : resolveLocalizedImage(lang === "en" ? enCfg?.heroBgImage : cfg.heroBgImage, lang === "en" ? zhCfg?.heroBgImage : defaults.heroBgImage);
   const finalImageFocus = hasMainSection
-    ? normalizeFocus(mainSectionValue?.imageFocus, normalizeFocus(cfg.imageFocus, "center center"))
-    : normalizeFocus(cfg.imageFocus, "center center");
+    ? resolveLocalizedFocus(
+        lang === "en" ? textOr(enMainSectionValue?.imageFocus, enCfg?.imageFocus) : mainSectionValue?.imageFocus,
+        lang === "en" ? textOr(zhMainSectionValue?.imageFocus, zhCfg?.imageFocus) : cfg.imageFocus,
+      )
+    : resolveLocalizedFocus(lang === "en" ? enCfg?.imageFocus : cfg.imageFocus, lang === "en" ? zhCfg?.imageFocus : undefined);
   const finalBgFocus = hasHeroSection
-    ? normalizeFocus(heroSectionValue?.heroBgFocus, normalizeFocus(cfg.heroBgFocus, "center center"))
-    : normalizeFocus(cfg.heroBgFocus, "center center");
+    ? resolveLocalizedFocus(
+        lang === "en" ? textOr(enHeroSectionValue?.heroBgFocus, enCfg?.heroBgFocus) : heroSectionValue?.heroBgFocus,
+        lang === "en" ? textOr(zhHeroSectionValue?.heroBgFocus, zhCfg?.heroBgFocus) : cfg.heroBgFocus,
+      )
+    : resolveLocalizedFocus(lang === "en" ? enCfg?.heroBgFocus : cfg.heroBgFocus, lang === "en" ? zhCfg?.heroBgFocus : undefined);
   const heroShow = boolOr(sectionToggle(cfg.heroSection), boolOr(cfg.heroShow, defaults.heroShow, true), true);
   const mainShow = boolOr(sectionToggle(cfg.mainSection), boolOr(cfg.mainShow, defaults.mainShow, true), true);
   const metricsShow = boolOr(sectionToggle(cfg.metricsSection), boolOr(cfg.metricsShow, defaults.metricsShow, false), false);
@@ -487,17 +578,17 @@ export function loadSimplePageByLang(page: "about" | "products" | "solutions" | 
     bottomShow,
     bottomListShow,
     metricsShow,
-    image: resolveOptimizedImage(finalImage) || finalImage,
+    image: finalImage,
     imageFocus: finalImageFocus,
     legacyImage: textOr(mainSectionValue?.legacyImage, textOr(cfg.legacyImage, defaults.legacyImage)),
-    heroBgImage: resolveOptimizedImage(finalBg) || finalBg,
+    heroBgImage: finalBg,
     heroBgFocus: finalBgFocus,
     metrics: normalizeMetrics(metricsSectionValue?.metrics, normalizeMetrics(cfg.metrics, defaults.metrics)),
     bottomList: normalizeBottomList(bottomListSectionValue?.bottomList, normalizeBottomList(cfg.bottomList, defaults.bottomList)),
     cardsSection: {
       ...(cfg.cardsSection || {}),
       show: cardsShow,
-      cards: normalizeInlineCards(cardsSectionValue?.cards),
+      cards: normalizeInlineCards(lang === "en" ? mergeLocalizedCards(zhCards, enCards) : cardsSectionValue?.cards),
     },
     contactInfo: normalizeContactInfo(
       {
