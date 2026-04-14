@@ -37,6 +37,24 @@ function translationMetaField() {
   );
 }
 
+function focusPositionField(label: string) {
+  return fields.select({
+    label,
+    options: [
+      { label: "Center", value: "center center" },
+      { label: "Top", value: "center top" },
+      { label: "Bottom", value: "center bottom" },
+      { label: "Left", value: "left center" },
+      { label: "Right", value: "right center" },
+      { label: "Top Left", value: "left top" },
+      { label: "Top Right", value: "right top" },
+      { label: "Bottom Left", value: "left bottom" },
+      { label: "Bottom Right", value: "right bottom" },
+    ],
+    defaultValue: "center center",
+  });
+}
+
 const navZh = collection({
   label: "ZH - Navigation (5 pages)",
   slugField: "key",
@@ -93,6 +111,7 @@ const homeZh = singleton({
           directory: "public/uploads/home/zh",
           publicPath: "/uploads/home/zh/",
         }),
+        bgImageFocus: focusPositionField("Hero Background Focus"),
       },
       { label: "Hero Section" },
     ),
@@ -128,6 +147,7 @@ const homeZh = singleton({
                 directory: "public/uploads/home/zh/cards",
                 publicPath: "/uploads/home/zh/cards/",
               }),
+              imageFocus: focusPositionField("Card Focus"),
               ctaText: fields.text({ label: "CTA Text", defaultValue: "了解更多" }),
               ctaHref: fields.text({ label: "CTA Href", defaultValue: "/zh/contact" }),
               order: fields.integer({ label: "Order", defaultValue: 1 }),
@@ -188,6 +208,7 @@ const homeEn = singleton({
           directory: "public/uploads/home/en",
           publicPath: "/uploads/home/en/",
         }),
+        bgImageFocus: focusPositionField("Hero Background Focus"),
       },
       { label: "Hero Section" },
     ),
@@ -223,6 +244,7 @@ const homeEn = singleton({
                 directory: "public/uploads/home/en/cards",
                 publicPath: "/uploads/home/en/cards/",
               }),
+              imageFocus: focusPositionField("Card Focus"),
               ctaText: fields.text({ label: "CTA Text", defaultValue: "Read More" }),
               ctaHref: fields.text({ label: "CTA Href", defaultValue: "/en/contact" }),
               order: fields.integer({ label: "Order", defaultValue: 1 }),
@@ -281,6 +303,7 @@ function pageSchema(lang: Lang, page: PageKey) {
           directory: `public/uploads/pages/${lang}/${page}/hero`,
           publicPath: `/uploads/pages/${lang}/${page}/hero/`,
         }),
+        heroBgFocus: focusPositionField("Background Focus"),
       },
       { label: l("首屏区域", "Hero Section") },
     ),
@@ -302,6 +325,7 @@ function pageSchema(lang: Lang, page: PageKey) {
           directory: `public/uploads/pages/${lang}/${page}`,
           publicPath: `/uploads/pages/${lang}/${page}/`,
         }),
+        imageFocus: focusPositionField("Main Image Focus"),
       },
       { label: l("主体区域", "Main Section") },
     ),
@@ -343,6 +367,7 @@ function pageSchema(lang: Lang, page: PageKey) {
                 directory: `public/uploads/pages/${lang}/${page}/cards`,
                 publicPath: `/uploads/pages/${lang}/${page}/cards/`,
               }),
+              imageFocus: focusPositionField("Card Focus"),
               ctaText: fields.text({ label: l("按钮文案", "CTA Text"), defaultValue: l("了解更多", "Read More") }),
               ctaHref: fields.text({ label: l("按钮链接", "CTA Href"), defaultValue: defaultHref }),
               order: fields.integer({ label: l("排序", "Order"), defaultValue: 1 }),

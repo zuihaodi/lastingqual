@@ -38,6 +38,7 @@ export interface CmsFinanceItem {
   title?: string;
   summary?: string;
   image?: string;
+  imageFocus?: string;
   order?: number;
   published?: boolean;
 }
@@ -48,6 +49,7 @@ export interface CmsProductItem {
   title?: string;
   summary?: string;
   cover?: string;
+  coverFocus?: string;
   ctaHref?: string;
   order?: number;
   published?: boolean;
@@ -59,6 +61,7 @@ export interface CmsCardItem {
   title?: string;
   summary?: string;
   image?: string;
+  imageFocus?: string;
   ctaText?: string;
   ctaHref?: string;
   order?: number;
@@ -120,6 +123,7 @@ export interface HomeHeroConfig {
   buttonSecondaryText: string;
   buttonSecondaryHref: string;
   bgImage: string;
+  bgImageFocus?: string;
 }
 
 export interface HomeCtaConfig {
@@ -164,6 +168,8 @@ export interface CmsSimplePageConfig {
   bottomListShow?: boolean;
   metricsShow?: boolean;
   heroBgImage?: string;
+  heroBgFocus?: string;
+  imageFocus?: string;
   sectionPrimaryButtonText?: string;
   sectionPrimaryButtonHref?: string;
   sectionSecondaryButtonText?: string;
@@ -179,6 +185,7 @@ export interface CmsSimplePageConfig {
     heroTitle?: string;
     heroSubtitle?: string;
     heroBgImage?: string;
+    heroBgFocus?: string;
   }>;
   mainSection?: CmsSectionToggle<{
     sectionTitle?: string;
@@ -189,6 +196,7 @@ export interface CmsSimplePageConfig {
     sectionSecondaryButtonHref?: string;
     legacyImage?: string;
     image?: string;
+    imageFocus?: string;
   }>;
   metricsSection?: CmsSectionToggle<{
     metrics?: CmsMetricItem[];

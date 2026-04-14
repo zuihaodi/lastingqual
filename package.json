@@ -4,7 +4,7 @@
   "version": "0.0.1",
   "scripts": {
     "dev": "astro dev",
-    "build": "npm run check:utf8 && astro build",
+    "build": "npm run check:utf8 && npm run content:prepare && astro build",
     "preview": "astro preview",
     "astro": "astro",
     "images:process": "node scripts/process-images.mjs",

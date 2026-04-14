@@ -66,11 +66,14 @@ function normalizeSort<T extends SortablePublished>(items: T[]) {
     .sort((a, b) => (a.order ?? 0) - (b.order ?? 0));
 }
 
-function resolveOptimizedImage(assetPath?: string): string | undefined {
+function resolveOptimizedImage(assetPath?: string, prefer: "main" | "small" = "main"): string | undefined {
   if (!assetPath || !assetPath.startsWith("/")) return assetPath;
   const noExt = assetPath.replace(/\.[^/.]+$/, "");
   const webp = `${noExt}.webp`;
+  const webpSmall = `${noExt}.sm.webp`;
+  const webpSmallAbs = path.resolve(`public${webpSmall}`);
   const webpAbs = path.resolve(`public${webp}`);
+  if (prefer === "small" && fs.existsSync(webpSmallAbs)) return webpSmall;
   return fs.existsSync(webpAbs) ? webp : assetPath;
 }
 
@@ -80,6 +83,24 @@ function hasText(value?: string): value is string {
 
 function textOr(primary?: string, fallback?: string) {
   return hasText(primary) ? primary : fallback || "";
+}
+
+const FOCUS_PRESETS = new Set([
+  "left top",
+  "center top",
+  "right top",
+  "left center",
+  "center center",
+  "right center",
+  "left bottom",
+  "center bottom",
+  "right bottom",
+]);
+
+function normalizeFocus(value?: string, fallback = "center center") {
+  if (!hasText(value)) return fallback;
+  const lower = value.trim().toLowerCase();
+  return FOCUS_PRESETS.has(lower) ? lower : fallback;
 }
 
 function boolOr(primary?: boolean, fallback?: boolean, defaultValue = true) {
@@ -129,7 +150,11 @@ function normalizeInlineCards(list?: CmsCardItem[]) {
   return list
     .filter((item) => item?.published !== false && (hasText(item?.title) || hasText(item?.summary)))
     .sort((a, b) => (a.order ?? 0) - (b.order ?? 0))
-    .map((item) => ({ ...item, image: resolveOptimizedImage(item.image) }));
+    .map((item) => ({
+      ...item,
+      image: resolveOptimizedImage(item.image, "small"),
+      imageFocus: normalizeFocus(item.imageFocus),
+    }));
 }
 
 function normalizeKey(key?: string) {
@@ -203,7 +228,8 @@ export function loadFinanceByLang(lang: "zh" | "en"): CmsFinanceItem[] {
   }
   return normalizeSort(items).map((item) => ({
     ...item,
-    image: resolveOptimizedImage(item.image),
+    image: resolveOptimizedImage(item.image, "small"),
+    imageFocus: normalizeFocus(item.imageFocus),
   }));
 }
 
@@ -228,7 +254,8 @@ export function loadProductsByLang(lang: "zh" | "en"): CmsProductItem[] {
   }
   return normalizeSort(items).map((item) => ({
     ...item,
-    cover: resolveOptimizedImage(item.cover),
+    cover: resolveOptimizedImage(item.cover, "small"),
+    coverFocus: normalizeFocus(item.coverFocus),
   }));
 }
 
@@ -251,6 +278,7 @@ export function loadHomeByLang(lang: "zh" | "en"): CmsHomeConfig | null {
           buttonSecondaryText: hasText(cfg.hero?.buttonSecondaryText) ? cfg.hero.buttonSecondaryText : zhCfg.hero.buttonSecondaryText,
           buttonSecondaryHref: hasText(cfg.hero?.buttonSecondaryHref) ? cfg.hero.buttonSecondaryHref : zhCfg.hero.buttonSecondaryHref,
           bgImage: hasText(cfg.hero?.bgImage) ? cfg.hero.bgImage : zhCfg.hero.bgImage,
+          bgImageFocus: hasText(cfg.hero?.bgImageFocus) ? cfg.hero.bgImageFocus : zhCfg.hero.bgImageFocus,
         },
         cta: {
           ...zhCfg.cta,
@@ -291,6 +319,7 @@ export function loadHomeByLang(lang: "zh" | "en"): CmsHomeConfig | null {
     hero: {
       ...cfg.hero,
       bgImage: resolveOptimizedImage(cfg.hero?.bgImage) || cfg.hero?.bgImage,
+      bgImageFocus: normalizeFocus(cfg.hero?.bgImageFocus),
     },
     cardsSection: {
       ...(cfg.cardsSection || {}),
@@ -385,6 +414,8 @@ function getSimplePageDefaults(page: "about" | "products" | "solutions" | "finan
     sectionSecondaryButtonText: "",
     sectionSecondaryButtonHref: "",
     heroBgImage: "",
+    heroBgFocus: "center center",
+    imageFocus: "center center",
     metrics: [],
     bottomList: [],
     contactInfo: normalizeContactInfo(base.contactInfo, undefined),
@@ -419,6 +450,12 @@ export function loadSimplePageByLang(page: "about" | "products" | "solutions" | 
     ? textOr(mainSectionValue?.image, textOr(mainSectionValue?.legacyImage, ""))
     : textOr(cfg.image, textOr(cfg.legacyImage, defaults.image));
   const finalBg = hasHeroSection ? textOr(heroSectionValue?.heroBgImage, "") : textOr(cfg.heroBgImage, defaults.heroBgImage);
+  const finalImageFocus = hasMainSection
+    ? normalizeFocus(mainSectionValue?.imageFocus, normalizeFocus(cfg.imageFocus, "center center"))
+    : normalizeFocus(cfg.imageFocus, "center center");
+  const finalBgFocus = hasHeroSection
+    ? normalizeFocus(heroSectionValue?.heroBgFocus, normalizeFocus(cfg.heroBgFocus, "center center"))
+    : normalizeFocus(cfg.heroBgFocus, "center center");
   const heroShow = boolOr(sectionToggle(cfg.heroSection), boolOr(cfg.heroShow, defaults.heroShow, true), true);
   const mainShow = boolOr(sectionToggle(cfg.mainSection), boolOr(cfg.mainShow, defaults.mainShow, true), true);
   const metricsShow = boolOr(sectionToggle(cfg.metricsSection), boolOr(cfg.metricsShow, defaults.metricsShow, false), false);
@@ -451,8 +488,10 @@ export function loadSimplePageByLang(page: "about" | "products" | "solutions" | 
     bottomListShow,
     metricsShow,
     image: resolveOptimizedImage(finalImage) || finalImage,
+    imageFocus: finalImageFocus,
     legacyImage: textOr(mainSectionValue?.legacyImage, textOr(cfg.legacyImage, defaults.legacyImage)),
     heroBgImage: resolveOptimizedImage(finalBg) || finalBg,
+    heroBgFocus: finalBgFocus,
     metrics: normalizeMetrics(metricsSectionValue?.metrics, normalizeMetrics(cfg.metrics, defaults.metrics)),
     bottomList: normalizeBottomList(bottomListSectionValue?.bottomList, normalizeBottomList(cfg.bottomList, defaults.bottomList)),
     cardsSection: {
@@ -514,6 +553,7 @@ export function loadCardsByLangPage(
 
   return normalizeSort(items).map((item) => ({
     ...item,
-    image: resolveOptimizedImage(item.image),
+    image: resolveOptimizedImage(item.image, "small"),
+    imageFocus: normalizeFocus(item.imageFocus),
   }));
 }

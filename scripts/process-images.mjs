@@ -10,7 +10,7 @@ if (!fs.existsSync(uploadsRoot)) {
   process.exit(0);
 }
 
-const IMAGE_EXT = new Set([".jpg", ".jpeg", ".png", ".webp"]);
+const SOURCE_IMAGE_EXT = new Set([".jpg", ".jpeg", ".png"]);
 
 const presets = {
   home: { width: 1920, height: 900 },
@@ -38,9 +38,9 @@ function walk(dir) {
       out.push(...walk(full));
       continue;
     }
+    if (name.includes(".tmp.")) continue;
     const ext = path.extname(name).toLowerCase();
-    if (!IMAGE_EXT.has(ext)) continue;
-    if (name.endsWith(".sm.webp") || name.endsWith(".webp") && fs.existsSync(full.replace(/\.webp$/i, ".jpg"))) continue;
+    if (!SOURCE_IMAGE_EXT.has(ext)) continue;
     out.push(full);
   }
   return out;

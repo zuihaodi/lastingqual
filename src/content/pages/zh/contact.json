@@ -2,11 +2,14 @@
   "heroSection": {
     "show": true,
     "heroTitle": "联系方式",
-    "heroSubtitle": "期待与您合作"
+    "heroSubtitle": "期待与您合作",
+    "heroBgFocus": "center center"
   },
   "mainSection": {
     "show": true,
-    "sectionBody": "公司地址:\n123 Marina Bay Financial Centre,\nSingapore 018981\n\n电子邮箱:\ninfo@lastingqual.com\n\n联系电话:\n+65 6789 1234"
+    "sectionBody": "公司地址:\n123 Marina Bay Financial Centre,\nSingapore 018981\n\n电子邮箱:\ninfo@lastingqual.com\n\n联系电话:\n+65 6789 1234",
+    "image": "/uploads/pages/zh/contact/mainSection/image.png",
+    "imageFocus": "center top"
   },
   "metricsSection": {
     "show": false,
@@ -23,6 +26,7 @@
       {
         "title": "业务咨询",
         "summary": "面向产品、技术和融资的一对一咨询服务。",
+        "imageFocus": "center center",
         "ctaText": "立即联系",
         "ctaHref": "/zh/contact",
         "order": 1,
@@ -31,6 +35,7 @@
       {
         "title": "技术支持",
         "summary": "提供运维答疑与远程协助，提高现场处置效率。",
+        "imageFocus": "center center",
         "ctaText": "提交需求",
         "ctaHref": "/zh/contact",
         "order": 2,
@@ -39,6 +44,7 @@
       {
         "title": "合作对接",
         "summary": "针对跨区域合作、联合投标和供应链对接提供支持。",
+        "imageFocus": "center center",
         "ctaText": "开始洽谈",
         "ctaHref": "/zh/contact",
         "order": 3,
