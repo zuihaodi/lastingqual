@@ -80,13 +80,13 @@ const topProducts = (
         title: c.title || "",
         summary: c.summary || "",
         cover: c.image || "/images/card1.jpg",
-        ctaText: c.ctaText || "了解更多",
+        ctaText: c.ctaText || "浜嗚В鏇村",
         ctaHref: c.ctaHref || "/zh/contact",
       }))
     : cmsProducts.length
       ? cmsProducts.map((p) => ({
           ...p,
-          ctaText: "了解更多",
+          ctaText: "浜嗚В鏇村",
         }))
       : productFallback
 );
@@ -128,7 +128,7 @@ const topProducts = (
       <section class="py-24 bg-gray-50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div class="text-center mb-16">
-            <h2 class="text-4xl font-extrabold text-[#003865] mb-4">{homeConfig.businessSection?.title || "核心业务领域"}</h2>
+            <h2 class="text-4xl font-extrabold text-[#003865] mb-4">{homeConfig.businessSection?.title || "鏍稿績涓氬姟棰嗗煙"}</h2>
             <div class="w-20 h-1 bg-[#E63E00] mx-auto"></div>
             <p class="mt-4 text-gray-600 max-w-2xl mx-auto">{homeConfig.businessSection?.desc || ""}</p>
           </div>
@@ -142,7 +142,7 @@ const topProducts = (
                 <div class="p-8">
                   <h3 class="text-2xl font-bold mb-3 text-[#003865]">{item.title}</h3>
                   <p class="text-gray-600 mb-6 leading-relaxed">{item.summary}</p>
-                  <a href={item.ctaHref || "/zh/contact"} class="text-[#E63E00] font-bold uppercase tracking-wide hover:underline">{item.ctaText || "了解更多"} &rarr;</a>
+                  <a href={item.ctaHref || "/zh/contact"} class="text-[#E63E00] font-bold uppercase tracking-wide hover:underline">{item.ctaText || "浜嗚В鏇村"} &rarr;</a>
                 </div>
               </div>
             ))}
@@ -154,7 +154,7 @@ const topProducts = (
     {bottomListEnabled && bottomList.length > 0 && (
       <section class="py-16 bg-gray-50">
         <div class="max-w-5xl mx-auto px-4">
-          <h2 class="text-3xl font-extrabold text-[#003865] mb-8 text-center">底部列表区域</h2>
+          <h2 class="text-3xl font-extrabold text-[#003865] mb-8 text-center">搴曢儴鍒楄〃鍖哄煙</h2>
           <div class="bg-white border border-gray-200 rounded divide-y divide-gray-200">
             {bottomList.map((item) => (
               <div class="p-6">
@@ -178,7 +178,7 @@ const topProducts = (
     <footer class="bg-[#002845] text-white py-12 border-t-4 border-[#E63E00]">
       <div class="max-w-7xl mx-auto px-4 text-center text-sm text-gray-400">
         <p class="mb-2">&copy; {siteConfig.copyrightYear} {siteConfig.companyName} All rights reserved.</p>
-        <p>致力于推动能源行业的技术进步和效率提升</p>
+        <p>鑷村姏浜庢帹鍔ㄨ兘婧愯涓氱殑鎶�鏈繘姝ュ拰鏁堢巼鎻愬崌</p>
       </div>
     </footer>
   </main>
