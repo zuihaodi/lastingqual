@@ -6,18 +6,17 @@
     "buttonPrimaryText": "View Business Areas",
     "buttonPrimaryHref": "/en/products",
     "buttonSecondaryText": "Contact Us",
-    "buttonSecondaryHref": "/en/contact",
-    "bgImage": "/uploads/home/zh/hero/bgImage.jpg"
+    "buttonSecondaryHref": "/en/contact"
   },
   "metrics": [
     {
       "value": "2002",
-      "unit": "年",
+      "unit": "Year",
       "desc": "Industry foundation since"
     },
     {
       "value": "9396",
-      "unit": "米",
+      "unit": "M",
       "desc": "Asia drilling depth record"
     },
     {
@@ -32,7 +31,40 @@
   "businessSection": {
     "show": true,
     "title": "Core Business Areas",
-    "desc": "集钻采装备研发、制造、租赁、贸易及服务于一体的综合性跨国企业。"
+    "desc": "A comprehensive multinational corporation that integrates the research and development, manufacturing, leasing, trading, and servicing of drilling and production equipment."
+  },
+  "cardsSection": {
+    "show": true,
+    "cards": [
+      {
+        "title": "High-End Drilling Rig Rental (ZJ90DB)",
+        "summary": "We offer high-end drilling rig rentals suitable for ultra-deep well operations.",
+        "ctaText": "Learn More",
+        "ctaHref": "/en/products",
+        "order": 1,
+        "published": true
+      },
+      {
+        "title": "Specialized Chassis for Oil Fields (China National Heavy Duty Truck Group Joint Research)",
+        "summary": "r 8x6 fracturing truck chassis, sand-mixing truck chassis, and 58-ton coiled tubing truck chassis. These products fully replace imported MAN and Mercedes-Benz chassis, thereby reducing overall costs.",
+        "ctaText": "Learn More",
+        "ctaHref": "/en/products",
+        "order": 3,
+        "published": true
+      },
+      {
+        "title": "Power System Turnkey Services",
+        "summary": "Providing one-stop power system solutions for drilling rigs.",
+        "ctaText": "Learn More",
+        "ctaHref": "/en/products",
+        "order": 3,
+        "published": true
+      }
+    ]
+  },
+  "bottomListSection": {
+    "show": true,
+    "bottomList": []
   },
   "cta": {
     "title": "Contact Us",
@@ -42,8 +74,8 @@
   },
   "translation": {
     "mode": "auto",
-    "sourceHash": "8ceb73c96d09be0f",
     "status": "synced",
+    "sourceHash": "8ceb73c96d09be0f",
     "lastTranslatedAt": "2026-04-13T15:41:31.381Z"
   }
 }

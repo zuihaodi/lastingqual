@@ -20,44 +20,44 @@
     "show": true,
     "cards": [
       {
-        "title": "高端钻机租赁",
-        "summary": "面向极端工况的钻机租赁服务，快速匹配项目进度。",
-        "image": "/uploads/pages/zh/products/cards/cardsSection/cards/0/image.jpg",
+        "title": "High-End Drilling Rig Rental (ZJ90DB)",
+        "summary": "We offer high-end drilling rig rentals suitable for ultra-deep well operations.",
+        "image": "/uploads/pages/en/products/cards/cardsSection/cards/0/image.jpg",
         "order": 1,
         "published": true
       },
       {
-        "title": "油田特种底盘",
-        "summary": "提供压裂车底盘、混砂车底盘等定制化底盘产品。",
-        "image": "/uploads/pages/zh/products/cards/cardsSection/cards/1/image.jpg",
+        "title": "Specialized Chassis for Oil Fields (China National Heavy Duty Truck Group Joint Research)",
+        "summary": "r 8x6 fracturing truck chassis, sand-mixing truck chassis, and 58-ton coiled tubing truck chassis. These products fully replace imported MAN and Mercedes-Benz chassis, thereby reducing overall costs.",
+        "image": "/uploads/pages/en/products/cards/cardsSection/cards/1/image.jpg",
         "order": 2,
         "published": true
       },
       {
-        "title": "动力总包服务",
-        "summary": "以动力系统为核心，提供工程集成与现场运维服务。",
-        "image": "/uploads/pages/zh/products/cards/cardsSection/cards/2/image.jpg",
+        "title": "Power System Turnkey Services",
+        "summary": "Providing one-stop power system solutions for drilling rigs.",
+        "image": "/uploads/pages/en/products/cards/cardsSection/cards/2/image.jpg",
         "order": 3,
         "published": true
       },
       {
-        "title": "墨西哥 PEMEX 项目支持",
-        "summary": "助力长城钻探中标墨西哥国家石油公司项目，租赁 3 台 3000HP 钻机，迅速响应资产轻量化战略。",
-        "image": "/uploads/pages/zh/products/cards/cardsSection/cards/3/image.jpg",
+        "title": "Support for the PEMEX Project in Mexico",
+        "summary": "Helped Great Wall Drilling secure a contract with Mexico’s national oil company, leasing three 3,000-horsepower drilling rigs, and swiftly responding to the asset-light strategy.",
+        "image": "/uploads/pages/en/products/cards/cardsSection/cards/3/image.jpg",
         "order": 4,
         "published": true
       },
       {
-        "title": "定制化柴油机组",
-        "summary": "与济柴机械建立战略合作，开发定制化高性能发电机组，共同推动产品在石油石化行业的应用。",
-        "image": "/uploads/pages/zh/products/cards/cardsSection/cards/4/image.jpg",
+        "title": "Customized Diesel Generator Sets",
+        "summary": "We have established a strategic partnership with Jichai Machinery to develop customized, high-performance generator sets and jointly promote their application in the oil and petrochemical industries.",
+        "image": "/uploads/pages/en/products/cards/cardsSection/cards/4/image.jpg",
         "order": 5,
         "published": true
       },
       {
-        "title": "HSE 全方位风控",
-        "summary": "15分钟内响应，24小时在线。提供全场景风险评估、实时监测及Customized Technical Training。",
-        "image": "/uploads/pages/zh/products/cards/cardsSection/cards/5/image.jpg",
+        "title": "HSE Comprehensive Risk Management",
+        "summary": "15-minute response time, 24/7 online support. We provide full-scenario risk assessments, real-time monitoring, and customized technical training.",
+        "image": "/uploads/pages/en/products/cards/cardsSection/cards/5/image.jpg",
         "order": 6,
         "published": true
       }
@@ -65,8 +65,8 @@
   },
   "bottomSection": {
     "show": true,
-    "bottomTitle": "拥有业内领先的供应链体系",
-    "bottomSubtitle": "无论是在塔里木的沙漠，还是墨西哥的油田，我们都能为您提供精准的定制化服务。"
+    "bottomTitle": "With an industry-leading supply chain system",
+    "bottomSubtitle": "Whether in the deserts of the Tarim Basin or the oil fields of Mexico, we can provide you with precise, customized services."
   },
   "bottomListSection": {
     "show": false,
@@ -98,8 +98,8 @@
   },
   "translation": {
     "mode": "auto",
-    "sourceHash": "1acfbe67377cd7a8",
     "status": "synced",
+    "sourceHash": "1acfbe67377cd7a8",
     "lastTranslatedAt": "2026-04-13T15:41:31.380Z"
   }
 }

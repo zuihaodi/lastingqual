@@ -39,5 +39,41 @@
     "desc": "石油装备供应链解决方案专家",
     "buttonText": "索取解决方案",
     "buttonHref": "/zh/contact"
+  },
+  "cardsSection": {
+    "show": true,
+    "cards": [
+      {
+        "title": "高端钻机租赁 (ZJ90DB)",
+        "summary": "提供高端钻机租赁，适配超深井作业场景。",
+        "image": "/images/card1.jpg",
+        "ctaText": "了解更多",
+        "ctaHref": "/zh/products",
+        "order": 1,
+        "published": true
+      },
+      {
+        "title": "油田特种底盘 (中国重汽联研)",
+        "summary": "与中国重汽联合研发，提供 8x6 压裂车底盘、混砂车底盘及 58吨 连续油管车底盘。全面替代进口 MAN 及奔驰底盘，降低综合成本。",
+        "image": "/uploads/cards/zh/home-02/image.jpg",
+        "ctaText": "了解更多",
+        "ctaHref": "/zh/products",
+        "order": 2,
+        "published": true
+      },
+      {
+        "title": "动力总包服务",
+        "summary": "为钻机提供一站式动力系统解决方案。",
+        "image": "/images/card3.jpg",
+        "ctaText": "了解更多",
+        "ctaHref": "/zh/products",
+        "order": 3,
+        "published": true
+      }
+    ]
+  },
+  "bottomListSection": {
+    "show": true,
+    "bottomList": []
   }
 }

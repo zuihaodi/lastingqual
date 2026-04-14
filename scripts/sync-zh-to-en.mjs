@@ -10,7 +10,6 @@ const ROOT = process.cwd();
 
 const CONTENT_PAIRS = [
   { kind: "nav", zh: "src/content/nav/zh", en: "src/content/nav/en" },
-  { kind: "cards", zh: "src/content/cards/zh", en: "src/content/cards/en" },
   { kind: "pages", zh: "src/content/pages/zh", en: "src/content/pages/en" },
   { kind: "home", zhFile: "src/content/home/zh.json", enFile: "src/content/home/en.json" },
 ];

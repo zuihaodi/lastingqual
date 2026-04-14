@@ -32,7 +32,7 @@ const KEY_ALIASES: Record<string, string> = {
 function readJsonDir<T>(dir: string): T[] {
   const abs = path.resolve(dir);
   if (!fs.existsSync(abs)) return [];
-  const files = fs.readdirSync(abs).filter((f) => f.endsWith(".json"));
+  const files = fs.readdirSync(abs).filter((f: string) => f.endsWith(".json"));
   const list: T[] = [];
 
   for (const file of files) {
@@ -281,12 +281,28 @@ export function loadHomeByLang(lang: "zh" | "en"): CmsHomeConfig | null {
     }
   }
   if (!cfg) return null;
+  const cardsSectionValue = sectionContent(cfg.cardsSection);
+  const bottomListSectionValue = sectionContent(cfg.bottomListSection);
+  const cardsShow = boolOr(sectionToggle(cfg.cardsSection), true, true);
+  const bottomListShow = boolOr(sectionToggle(cfg.bottomListSection), true, true);
+
   return {
     ...cfg,
     hero: {
       ...cfg.hero,
       bgImage: resolveOptimizedImage(cfg.hero?.bgImage) || cfg.hero?.bgImage,
     },
+    cardsSection: {
+      ...(cfg.cardsSection || {}),
+      show: cardsShow,
+      cards: normalizeInlineCards(cardsSectionValue?.cards),
+    },
+    bottomListSection: {
+      ...(cfg.bottomListSection || {}),
+      show: bottomListShow,
+      bottomList: normalizeBottomList(bottomListSectionValue?.bottomList, normalizeBottomList(cfg.bottomList)),
+    },
+    bottomList: normalizeBottomList(bottomListSectionValue?.bottomList, normalizeBottomList(cfg.bottomList)),
   };
 }
 
@@ -466,7 +482,11 @@ export function loadCardsByLangPage(
   lang: "zh" | "en",
   pageKey: "home" | "about" | "products" | "finance" | "solutions" | "contact",
 ): CmsCardItem[] {
-  if (pageKey !== "home") {
+  if (pageKey === "home") {
+    const homeCfg = loadHomeByLang(lang);
+    const inlineCards = normalizeInlineCards(homeCfg?.cardsSection?.cards);
+    if (inlineCards.length > 0) return inlineCards;
+  } else {
     const pageCfg = loadSimplePageByLang(pageKey, lang);
     const inlineCards = normalizeInlineCards(pageCfg.cardsSection?.cards);
     if (inlineCards.length > 0) return inlineCards;

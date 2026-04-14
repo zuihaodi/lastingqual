@@ -94,16 +94,16 @@ export interface CmsContactInfo {
   phone?: string;
 }
 
-export interface CmsLegacyConditionalSection<T> {
+export interface CmsLegacyConditionalSection<T extends object> {
   discriminant?: boolean;
   value?: T;
 }
 
-export interface CmsSectionToggle<T> extends T {
+export type CmsSectionToggle<T extends object> = T & {
   show?: boolean;
   discriminant?: boolean;
   value?: T;
-}
+};
 
 export interface HomeMetricItem {
   value: string;
@@ -139,7 +139,14 @@ export interface CmsHomeConfig {
   hero: HomeHeroConfig;
   metrics: HomeMetricItem[];
   businessSection: HomeBusinessSection;
+  cardsSection?: CmsSectionToggle<{
+    cards?: CmsCardItem[];
+  }>;
+  bottomListSection?: CmsSectionToggle<{
+    bottomList?: CmsBottomListItem[];
+  }>;
   cta: HomeCtaConfig;
+  bottomList?: CmsBottomListItem[];
 }
 
 export interface CmsSimplePageConfig {

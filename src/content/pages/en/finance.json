@@ -2,7 +2,7 @@
   "heroSection": {
     "show": true,
     "heroTitle": "Financing Solutions",
-    "heroSubtitle": "聚焦油气工程装备与项目周期的资金解决方案"
+    "heroSubtitle": "Focus on Financing Solutions for Oil and Gas Engineering Equipment and Project Lifecycles"
   },
   "mainSection": {
     "show": false,
@@ -23,27 +23,26 @@
     "show": true,
     "cards": [
       {
-        "title": "石油设备租赁",
-        "summary": "设备经营性租赁，合作期限灵活协商",
+        "title": "Oilfield Equipment Rental",
+        "summary": "Operating leases for equipment; flexible terms available upon negotiation",
         "order": 1,
         "published": true
       },
       {
-        "title": "石油设备以租代买",
-        "summary": "设备以租代买，分期付款",
+        "title": "Leasing Oil Equipment Instead of Purchasing It",
+        "summary": "Leasing Equipment Instead of Purchasing It, with Installment Payments",
         "order": 2,
         "published": true
       },
       {
-        "title": "联合体承接-I",
-        "summary": "共同承接业务，整体打包融资，业务协议分包",
+        "title": "Consortium Bidding - I",
+        "summary": "Joint bidding, bundled financing, and subcontracting of business agreements",
         "order": 3,
         "published": true
       },
       {
-        "title": "联合体承接-II",
-        "summary": "共同承接业务，整体打包融资，业务协议分包",
-        "ctaText": "Learn More",
+        "title": "Consortium Bidding - II",
+        "summary": "Joint bidding, bundled financing, and subcontracting of business agreements",
         "order": 4,
         "published": true
       }
@@ -79,8 +78,8 @@
   },
   "translation": {
     "mode": "auto",
-    "sourceHash": "c750b8d2940447e7",
     "status": "synced",
+    "sourceHash": "c750b8d2940447e7",
     "lastTranslatedAt": "2026-04-13T15:41:31.378Z"
   }
 }

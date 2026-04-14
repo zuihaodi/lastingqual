@@ -6,7 +6,7 @@
   },
   "mainSection": {
     "show": true,
-    "sectionBody": "公司Address:\n123 Marina Bay Financial Centre,\nSingapore 018981\n\n电子Email:\ninfo@lastingqual.com\n\n联系Phone:\n+65 6789 1234"
+    "sectionBody": "Address:\n123 Marina Bay Financial Centre,\nSingapore 018981\n\nEmail:\ninfo@lastingqual.com\n\nPhone:\n+65 6789 1234"
   },
   "metricsSection": {
     "show": false,
@@ -21,26 +21,20 @@
     "show": true,
     "cards": [
       {
-        "title": "业务咨询",
-        "summary": "面向产品、技术和融资的一对一咨询服务。",
-        "ctaText": "Contact Us",
-        "ctaHref": "/en/contact",
+        "title": "Business Consulting",
+        "summary": "One-on-one consulting services focused on products, technology, and financing.",
         "order": 1,
         "published": true
       },
       {
         "title": "technicalsupport",
-        "summary": "提供运维答疑与远程协助，提高现场处置效率。",
-        "ctaText": "提交需求",
-        "ctaHref": "/en/contact",
+        "summary": "Provide operational support and remote assistance to improve on-site response efficiency.",
         "order": 2,
         "published": true
       },
       {
-        "title": "合作对接",
-        "summary": "针对跨区域合作、联合投标和供应链对接提供支持。",
-        "ctaText": "开始洽谈",
-        "ctaHref": "/en/contact",
+        "title": "Partnership Matchmaking",
+        "summary": "Provides support for cross-regional cooperation, joint bidding, and supply chain integration.",
         "order": 3,
         "published": true
       }
@@ -86,8 +80,8 @@
   },
   "translation": {
     "mode": "auto",
-    "sourceHash": "3f80ee72cdbee08c",
     "status": "synced",
+    "sourceHash": "3f80ee72cdbee08c",
     "lastTranslatedAt": "2026-04-13T15:41:31.377Z"
   }
 }

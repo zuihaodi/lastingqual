@@ -24,24 +24,22 @@
     "cards": [
       {
         "title": "Comprehensive HSE Quality Management",
-        "summary": "坚持“安全第一、质量为本”，推进 HSE 体系持续改进。",
-        "image": "/uploads/pages/zh/solutions/cards/cardsSection/cards/0/image.jpg",
+        "summary": "Adhering to the principle of “safety first, quality foremost,” we are committed to the continuous improvement of our HSE system.",
+        "image": "/uploads/pages/en/solutions/cards/cardsSection/cards/0/image.jpg",
         "order": 1,
         "published": true
       },
       {
         "title": "Full-Scenario Risk Control Network",
-        "summary": "覆盖风险识别、量化与应对，保障项目在复杂环境下稳定运行。",
-        "image": "/uploads/pages/zh/solutions/cards/cardsSection/cards/1/image.jpg",
+        "summary": "Covering risk identification, quantification, and mitigation to ensure the stable operation of projects in complex environments.",
+        "image": "/uploads/pages/en/solutions/cards/cardsSection/cards/1/image.jpg",
         "order": 2,
         "published": true
       },
       {
         "title": "Customized Technical Training",
-        "summary": "围绕设备运维与安全流程开展分层培训，强化一线能力。",
-        "image": "/uploads/pages/zh/solutions/cards/cardsSection/cards/2/image.jpg",
-        "ctaText": "查看详情",
-        "ctaHref": "/en/contact",
+        "summary": "Conduct tiered training focused on equipment operation, maintenance, and safety procedures to strengthen frontline capabilities.",
+        "image": "/uploads/pages/en/solutions/cards/cardsSection/cards/2/image.jpg",
         "order": 3,
         "published": true
       }
@@ -81,8 +79,8 @@
   },
   "translation": {
     "mode": "auto",
-    "sourceHash": "dd71d9c25176ba65",
     "status": "synced",
+    "sourceHash": "dd71d9c25176ba65",
     "lastTranslatedAt": "2026-04-13T15:41:31.380Z"
   }
 }
