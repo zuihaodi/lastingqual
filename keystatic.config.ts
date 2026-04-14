@@ -99,92 +99,101 @@ const homeZh = singleton({
   schema: {
     hero: fields.object(
       {
-        titleLine1: fields.text({ label: "Hero Title Line 1" }),
-        titleLine2: fields.text({ label: "Hero Title Line 2" }),
-        subtitle: fields.text({ label: "Hero Subtitle", multiline: true }),
-        buttonPrimaryText: fields.text({ label: "Primary Button Text" }),
-        buttonPrimaryHref: fields.text({ label: "Primary Button Href", defaultValue: "/zh/products" }),
-        buttonSecondaryText: fields.text({ label: "Secondary Button Text" }),
-        buttonSecondaryHref: fields.text({ label: "Secondary Button Href", defaultValue: "/zh/contact" }),
+        titleLine1: fields.text({ label: "\u4e3b\u6807\u9898\u7b2c\u4e00\u884c" }),
+        titleLine2: fields.text({ label: "\u4e3b\u6807\u9898\u7b2c\u4e8c\u884c" }),
+        subtitle: fields.text({ label: "\u9996\u5c4f\u526f\u6807\u9898", multiline: true }),
+        buttonPrimaryText: fields.text({ label: "\u4e3b\u6309\u94ae\u6587\u6848" }),
+        buttonPrimaryHref: fields.text({ label: "\u4e3b\u6309\u94ae\u94fe\u63a5", defaultValue: "/zh/products" }),
+        buttonSecondaryText: fields.text({ label: "\u6b21\u6309\u94ae\u6587\u6848" }),
+        buttonSecondaryHref: fields.text({ label: "\u6b21\u6309\u94ae\u94fe\u63a5", defaultValue: "/zh/contact" }),
         bgImage: fields.image({
-          label: "Hero Background",
+          label: "\u9996\u5c4f\u80cc\u666f\u56fe",
           directory: "public/uploads/home/zh",
           publicPath: "/uploads/home/zh/",
         }),
-        bgImageFocus: focusPositionField("Hero Background Focus"),
+        bgImageFocus: focusPositionField("\u9996\u5c4f\u80cc\u666f\u7126\u70b9"),
       },
-      { label: "Hero Section" },
+      { label: "\u9996\u5c4f\u533a\u57df" },
     ),
     metrics: fields.array(
       fields.object(
         {
-          value: fields.text({ label: "Value" }),
-          unit: fields.text({ label: "Unit", defaultValue: "" }),
-          desc: fields.text({ label: "Description" }),
+          value: fields.text({ label: "\u6570\u503c" }),
+          unit: fields.text({ label: "\u5355\u4f4d", defaultValue: "" }),
+          desc: fields.text({ label: "\u63cf\u8ff0" }),
         },
-        { label: "Metric" },
+        { label: "\u6307\u6807\u9879" },
       ),
-      { label: "Core Metrics", itemLabel: (props) => props.fields.value.value || "Metric" },
+      { label: "\u6838\u5fc3\u6307\u6807", itemLabel: (props) => props.fields.value.value || "\u6307\u6807\u9879" },
     ),
     businessSection: fields.object(
       {
-        show: fields.checkbox({ label: "Show Core Business", defaultValue: true }),
-        title: fields.text({ label: "Section Title" }),
-        desc: fields.text({ label: "Section Description", multiline: true }),
+        show: fields.checkbox({ label: "\u663e\u793a\u6838\u5fc3\u4e1a\u52a1\u533a\u5757", defaultValue: true }),
+        title: fields.text({ label: "\u533a\u5757\u6807\u9898" }),
+        desc: fields.text({ label: "\u533a\u5757\u63cf\u8ff0", multiline: true }),
       },
-      { label: "Core Business Section" },
+      { label: "\u6838\u5fc3\u4e1a\u52a1\u533a\u57df" },
     ),
     cardsSection: fields.object(
       {
-        show: fields.checkbox({ label: "Show Cards Section", defaultValue: true }),
+        show: fields.checkbox({ label: "\u663e\u793a\u5361\u7247\u533a\u57df", defaultValue: true }),
         cards: fields.array(
           fields.object(
             {
-              title: fields.text({ label: "Card Title" }),
-              summary: fields.text({ label: "Card Summary", multiline: true }),
+              title: fields.text({ label: "\u5361\u7247\u6807\u9898" }),
+              summary: fields.text({ label: "\u5361\u7247\u6458\u8981", multiline: true }),
               image: fields.image({
-                label: "Card Image Upload",
+                label: "\u5361\u7247\u56fe\u7247\u4e0a\u4f20",
                 directory: "public/uploads/home/zh/cards",
                 publicPath: "/uploads/home/zh/cards/",
               }),
-              imageFocus: focusPositionField("Card Focus"),
-              ctaText: fields.text({ label: "CTA Text", defaultValue: "了解更多" }),
-              ctaHref: fields.text({ label: "CTA Href", defaultValue: "/zh/contact" }),
-              order: fields.integer({ label: "Order", defaultValue: 1 }),
-              published: fields.checkbox({ label: "Published", defaultValue: true }),
+              imageFocus: focusPositionField("\u5361\u7247\u56fe\u7247\u7126\u70b9"),
+              ctaText: fields.text({ label: "\u6309\u94ae\u6587\u6848", defaultValue: "\u4e86\u89e3\u66f4\u591a" }),
+              ctaHref: fields.text({ label: "\u6309\u94ae\u94fe\u63a5", defaultValue: "/zh/contact" }),
+              order: fields.integer({ label: "\u6392\u5e8f", defaultValue: 1 }),
+              published: fields.checkbox({ label: "\u53d1\u5e03", defaultValue: true }),
             },
-            { label: "Card Item" },
+            { label: "\u5361\u7247\u9879" },
           ),
-          { label: "Page Cards", itemLabel: (props) => props.fields.title.value || "Card Item" },
+          { label: "\u9875\u9762\u5361\u7247", itemLabel: (props) => props.fields.title.value || "\u5361\u7247\u9879" },
         ),
       },
-      { label: "Cards Section" },
+      { label: "\u5361\u7247\u533a\u57df" },
+    ),
+    bottomSection: fields.object(
+      {
+        show: fields.checkbox({ label: "\u663e\u793a\u5e95\u90e8\u6807\u9898\u533a", defaultValue: true }),
+        bottomTitle: fields.text({ label: "\u5e95\u90e8\u6807\u9898", defaultValue: "" }),
+        bottomSubtitle: fields.text({ label: "\u5e95\u90e8\u526f\u6807\u9898", multiline: true, defaultValue: "" }),
+      },
+      { label: "\u5e95\u90e8\u533a\u57df" },
     ),
     bottomListSection: fields.object(
       {
-        show: fields.checkbox({ label: "Show Bottom List", defaultValue: true }),
+        show: fields.checkbox({ label: "\u663e\u793a\u5e95\u90e8\u5217\u8868", defaultValue: true }),
         bottomList: fields.array(
           fields.object(
             {
-              title: fields.text({ label: "Title" }),
-              summary: fields.text({ label: "Summary", multiline: true }),
-              order: fields.integer({ label: "Order", defaultValue: 1 }),
+              title: fields.text({ label: "\u6807\u9898" }),
+              summary: fields.text({ label: "\u6458\u8981", multiline: true }),
+              order: fields.integer({ label: "\u6392\u5e8f", defaultValue: 1 }),
             },
-            { label: "Bottom Item" },
+            { label: "\u5e95\u90e8\u9879" },
           ),
-          { label: "Bottom List Items", itemLabel: (props) => props.fields.title.value || "Bottom Item" },
+          { label: "\u5e95\u90e8\u5217\u8868\u9879", itemLabel: (props) => props.fields.title.value || "\u5e95\u90e8\u9879" },
         ),
       },
-      { label: "Bottom List Section" },
+      { label: "\u5e95\u90e8\u5217\u8868\u533a\u57df" },
     ),
     cta: fields.object(
       {
-        title: fields.text({ label: "CTA Title" }),
-        desc: fields.text({ label: "CTA Description", multiline: true }),
-        buttonText: fields.text({ label: "CTA Button Text" }),
-        buttonHref: fields.text({ label: "CTA Button Href", defaultValue: "/zh/contact" }),
+        show: fields.checkbox({ label: "\u663e\u793a\u8054\u7cfb\u533a\u57df", defaultValue: true }),
+        title: fields.text({ label: "\u8054\u7cfb\u6807\u9898" }),
+        desc: fields.text({ label: "\u8054\u7cfb\u63cf\u8ff0", multiline: true }),
+        buttonText: fields.text({ label: "\u6309\u94ae\u6587\u6848" }),
+        buttonHref: fields.text({ label: "\u6309\u94ae\u94fe\u63a5", defaultValue: "/zh/contact" }),
       },
-      { label: "CTA Section" },
+      { label: "\u8054\u7cfb\u533a\u57df" },
     ),
   },
 });
@@ -257,6 +266,14 @@ const homeEn = singleton({
       },
       { label: "Cards Section" },
     ),
+    bottomSection: fields.object(
+      {
+        show: fields.checkbox({ label: "Show Bottom Header", defaultValue: true }),
+        bottomTitle: fields.text({ label: "Bottom Title", defaultValue: "" }),
+        bottomSubtitle: fields.text({ label: "Bottom Subtitle", multiline: true, defaultValue: "" }),
+      },
+      { label: "Bottom Section" },
+    ),
     bottomListSection: fields.object(
       {
         show: fields.checkbox({ label: "Show Bottom List", defaultValue: true }),
@@ -276,6 +293,7 @@ const homeEn = singleton({
     ),
     cta: fields.object(
       {
+        show: fields.checkbox({ label: "Show CTA Section", defaultValue: true }),
         title: fields.text({ label: "CTA Title" }),
         desc: fields.text({ label: "CTA Description", multiline: true }),
         buttonText: fields.text({ label: "CTA Button Text" }),

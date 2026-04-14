@@ -139,8 +139,7 @@ function normalizeMetrics(list?: CmsMetricItem[], fallback?: CmsMetricItem[]) {
 function normalizeBottomList(list?: CmsBottomListItem[], fallback?: CmsBottomListItem[]) {
   const source = list && list.length > 0 ? list : fallback && fallback.length > 0 ? fallback : [];
   return source
-    .filter((item) => hasText(item?.title) || hasText(item?.summary))
-    .sort((a, b) => (a.order ?? 0) - (b.order ?? 0));
+    .filter((item) => hasText(item?.title) || hasText(item?.summary));
 }
 
 function normalizeContactInfo(primary?: CmsContactInfo, fallback?: CmsContactInfo): CmsContactInfo {
@@ -158,7 +157,6 @@ function normalizeInlineCards(list?: CmsCardItem[]) {
   if (!Array.isArray(list)) return [];
   return list
     .filter((item) => item?.published !== false && (hasText(item?.title) || hasText(item?.summary)))
-    .sort((a, b) => (a.order ?? 0) - (b.order ?? 0))
     .map((item) => ({
       ...item,
       image: resolveOptimizedImage(item.image, "small"),

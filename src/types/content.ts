@@ -127,6 +127,7 @@ export interface HomeHeroConfig {
 }
 
 export interface HomeCtaConfig {
+  show?: boolean;
   title: string;
   desc: string;
   buttonText: string;
