@@ -71,10 +71,21 @@ function resolveOptimizedImage(assetPath?: string, prefer: "main" | "small" = "m
   const noExt = assetPath.replace(/\.[^/.]+$/, "");
   const webp = `${noExt}.webp`;
   const webpSmall = `${noExt}.sm.webp`;
+  const sourceAbs = path.resolve(`public${assetPath}`);
   const webpSmallAbs = path.resolve(`public${webpSmall}`);
   const webpAbs = path.resolve(`public${webp}`);
-  if (prefer === "small" && fs.existsSync(webpSmallAbs)) return webpSmall;
-  return fs.existsSync(webpAbs) ? webp : assetPath;
+
+  if (!fs.existsSync(sourceAbs)) {
+    if (prefer === "small" && fs.existsSync(webpSmallAbs)) return webpSmall;
+    return fs.existsSync(webpAbs) ? webp : assetPath;
+  }
+
+  const sourceMtime = fs.statSync(sourceAbs).mtimeMs;
+  const isFresh = (candidateAbs: string) => fs.existsSync(candidateAbs) && fs.statSync(candidateAbs).mtimeMs >= sourceMtime;
+
+  if (prefer === "small" && isFresh(webpSmallAbs)) return webpSmall;
+  if (isFresh(webpAbs)) return webp;
+  return assetPath;
 }
 
 function hasText(value?: string): value is string {

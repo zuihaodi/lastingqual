@@ -7,7 +7,7 @@
   },
   "mainSection": {
     "show": true,
-    "sectionTitle": "可根据项目需求，进行方式、内容、条件定制解决方案",
+    "sectionTitle": "可根据项目需求，进行方式、内容、条件定制解决方案。",
     "sectionBody": "方式自由\n设备自由\n条件自由",
     "legacyImage": "/images/card3.jpg",
     "image": "/uploads/pages/zh/finance/mainSection/image.jpg",
@@ -36,7 +36,7 @@
       {
         "title": "石油设备以租代买",
         "summary": "设备以租代买，分期付款",
-        "image": "/uploads/pages/zh/finance/cards/cardsSection/cards/1/image.png",
+        "image": "/uploads/pages/zh/finance/cards/cardsSection/cards/1/image.jpg",
         "imageFocus": "center center",
         "order": 2,
         "published": true
@@ -44,7 +44,7 @@
       {
         "title": "联合体承接-I",
         "summary": "共同承接业务，整体打包融资，业务协议分包",
-        "image": "/uploads/pages/zh/finance/cards/cardsSection/cards/2/image.png",
+        "image": "/uploads/pages/zh/finance/cards/cardsSection/cards/2/image.jpg",
         "imageFocus": "center center",
         "order": 3,
         "published": true
@@ -52,7 +52,7 @@
       {
         "title": "联合体承接-II",
         "summary": "共同承接业务，整体打包融资，业务协议分包",
-        "image": "/uploads/pages/zh/finance/cards/cardsSection/cards/3/image.png",
+        "image": "/uploads/pages/zh/finance/cards/cardsSection/cards/3/image.jpg",
         "imageFocus": "center center",
         "order": 4,
         "published": true
