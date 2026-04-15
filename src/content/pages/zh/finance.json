@@ -7,8 +7,8 @@
   },
   "mainSection": {
     "show": true,
-    "sectionTitle": "可根据项目需求，进行方式、内容、条件定制解决方案。",
-    "sectionBody": "方式自由\n设备自由\n条件自由",
+    "sectionTitle": "合作优势",
+    "sectionBody": "降低综合成本，降低企业人力、资金、设备等综合成本\n降低项目运营风险，降低设备、人员等整体项目运营风险\n转移公司负债，项目负债转移出公司，可选择由我司承担\n减轻项目压力，可提供后续运营、人员、配件、维修等服务\n优化公司财务管理，缓解公司现金流压力，优化财务结构，便于信息管理",
     "legacyImage": "/images/card3.jpg",
     "image": "/uploads/pages/zh/finance/mainSection/image.jpg",
     "imageFocus": "center center"
@@ -18,9 +18,9 @@
     "metrics": []
   },
   "middleSection": {
-    "show": false,
-    "middleTitle": "Financing Cards",
-    "middleSubtitle": "Maintain financing options by scenarios"
+    "show": true,
+    "middleTitle": "定制解决方案",
+    "middleSubtitle": "方式自由\n设备自由\n条件自由"
   },
   "cardsSection": {
     "show": true,
@@ -36,7 +36,7 @@
       {
         "title": "石油设备以租代买",
         "summary": "设备以租代买，分期付款",
-        "image": "/uploads/pages/zh/finance/cards/cardsSection/cards/1/image.jpg",
+        "image": "/uploads/pages/zh/finance/cards/cardsSection/cards/1/image.png",
         "imageFocus": "center center",
         "order": 2,
         "published": true
@@ -44,7 +44,7 @@
       {
         "title": "联合体承接-I",
         "summary": "共同承接业务，整体打包融资，业务协议分包",
-        "image": "/uploads/pages/zh/finance/cards/cardsSection/cards/2/image.jpg",
+        "image": "/uploads/pages/zh/finance/cards/cardsSection/cards/2/image.png",
         "imageFocus": "center center",
         "order": 3,
         "published": true
