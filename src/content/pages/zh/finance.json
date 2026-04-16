@@ -27,7 +27,7 @@
     "cards": [
       {
         "title": "石油设备租赁",
-        "summary": "设备经营性租赁，合作期限灵活协商",
+        "summary": "设备经营性租赁，合作期限灵活协商\n1.租期灵活；2.改善现金流；3.消除大额固定资产投资风险；4.提升项目效率",
         "image": "/uploads/pages/zh/finance/cards/cardsSection/cards/0/image.png",
         "imageFocus": "center center",
         "order": 1,
@@ -35,7 +35,7 @@
       },
       {
         "title": "石油设备以租代买",
-        "summary": "设备以租代买，分期付款",
+        "summary": "设备以租代买，分期付款\n1.资产费用化；2.租期灵活；3.平滑现金流支出；4.降低大额固定资产投资风险",
         "image": "/uploads/pages/zh/finance/cards/cardsSection/cards/1/image.png",
         "imageFocus": "center center",
         "order": 2,
@@ -43,7 +43,7 @@
       },
       {
         "title": "联合体承接-I",
-        "summary": "共同承接业务，整体打包融资，业务协议分包",
+        "summary": "共同承接业务，整体打包融资，业务协议分包\n1. 转移融资主体；2. 分散项目风险；3. 平滑现金流支出；4.降低大额固定资产投资风险",
         "image": "/uploads/pages/zh/finance/cards/cardsSection/cards/2/image.png",
         "imageFocus": "center center",
         "order": 3,
@@ -51,8 +51,8 @@
       },
       {
         "title": "联合体承接-II",
-        "summary": "共同承接业务，整体打包融资，业务协议分包",
-        "image": "/uploads/pages/zh/finance/cards/cardsSection/cards/3/image.jpg",
+        "summary": "共同承接业务，整体打包融资，业务协议分包\n1. 转移融资主体；2. 分散项目风险；3. 平滑现金流支出；4.降低大额固定资产投资风险\n",
+        "image": "/uploads/pages/zh/finance/cards/cardsSection/cards/3/image.png",
         "imageFocus": "center center",
         "order": 4,
         "published": true
