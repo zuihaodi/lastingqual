@@ -52,13 +52,14 @@ async function processImage(file) {
   const webpMain = `${noExt}.webp`;
   const webpSmall = `${noExt}.sm.webp`;
 
+  // Keep crop deterministic across local/dev and Cloudflare builds.
   await sharp(file)
-    .resize(preset.width, preset.height, { fit: "cover", position: "attention" })
+    .resize(preset.width, preset.height, { fit: "cover", position: "center" })
     .webp({ quality: 82 })
     .toFile(webpMain);
 
   await sharp(file)
-    .resize(Math.round(preset.width * 0.5), Math.round(preset.height * 0.5), { fit: "cover", position: "attention" })
+    .resize(Math.round(preset.width * 0.5), Math.round(preset.height * 0.5), { fit: "cover", position: "center" })
     .webp({ quality: 78 })
     .toFile(webpSmall);
 

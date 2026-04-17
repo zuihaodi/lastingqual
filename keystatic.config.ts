@@ -108,6 +108,7 @@ const homeZh = singleton({
         buttonSecondaryHref: fields.text({ label: "\u6b21\u6309\u94ae\u94fe\u63a5", defaultValue: "/zh/contact" }),
         bgImage: fields.image({
           label: "\u9996\u5c4f\u80cc\u666f\u56fe",
+          description: "\u5efa\u8bae 2560x1200\uff08\u6700\u4f4e 1920x900\uff09\uff0c\u6bd4\u4f8b 32:15\uff0c\u4e3b\u4f53\u5c45\u4e2d\u3002",
           directory: "public/uploads/home/zh",
           publicPath: "/uploads/home/zh/",
         }),
@@ -144,6 +145,7 @@ const homeZh = singleton({
               summary: fields.text({ label: "\u5361\u7247\u6458\u8981", multiline: true }),
               image: fields.image({
                 label: "\u5361\u7247\u56fe\u7247\u4e0a\u4f20",
+                description: "\u5efa\u8bae 1600x900\uff08\u6216 1280x720\uff09\uff0c\u6bd4\u4f8b 16:9\uff0c\u5173\u952e\u5185\u5bb9\u653e\u5728\u4e2d\u95f4 60%\u533a\u57df\u3002",
                 directory: "public/uploads/home/zh/cards",
                 publicPath: "/uploads/home/zh/cards/",
               }),
@@ -214,6 +216,7 @@ const homeEn = singleton({
         buttonSecondaryHref: fields.text({ label: "Secondary Button Href", defaultValue: "/en/contact" }),
         bgImage: fields.image({
           label: "Hero Background",
+          description: "Recommended 2560x1200 (min 1920x900), ratio 32:15, keep the subject centered.",
           directory: "public/uploads/home/en",
           publicPath: "/uploads/home/en/",
         }),
@@ -250,6 +253,7 @@ const homeEn = singleton({
               summary: fields.text({ label: "Card Summary", multiline: true }),
               image: fields.image({
                 label: "Card Image Upload",
+                description: "Recommended 1600x900 (or 1280x720), ratio 16:9, keep key content in the center 60% area.",
                 directory: "public/uploads/home/en/cards",
                 publicPath: "/uploads/home/en/cards/",
               }),
@@ -318,6 +322,7 @@ function pageSchema(lang: Lang, page: PageKey) {
         heroSubtitle: fields.text({ label: l("页面副标题", "Page Subtitle"), multiline: true }),
         heroBgImage: fields.image({
           label: l("背景图片（可选）", "Background Image (Optional)"),
+          description: l("建议 1920x900，比例 32:15，主体居中。", "Recommended 1920x900, ratio 32:15, keep the subject centered."),
           directory: `public/uploads/pages/${lang}/${page}/hero`,
           publicPath: `/uploads/pages/${lang}/${page}/hero/`,
         }),
@@ -340,6 +345,7 @@ function pageSchema(lang: Lang, page: PageKey) {
         }),
         image: fields.image({
           label: l("主图上传", "Main Image Upload"),
+          description: l("建议 1200x700，比例 12:7。", "Recommended 1200x700, ratio 12:7."),
           directory: `public/uploads/pages/${lang}/${page}`,
           publicPath: `/uploads/pages/${lang}/${page}/`,
         }),
@@ -382,6 +388,7 @@ function pageSchema(lang: Lang, page: PageKey) {
               summary: fields.text({ label: l("卡片摘要", "Card Summary"), multiline: true }),
               image: fields.image({
                 label: l("卡片图片上传", "Card Image Upload"),
+                description: l("建议 1200x700，比例 12:7，关键内容放在中间 60% 区域。", "Recommended 1200x700, ratio 12:7, keep key content in the center 60% area."),
                 directory: `public/uploads/pages/${lang}/${page}/cards`,
                 publicPath: `/uploads/pages/${lang}/${page}/cards/`,
               }),
