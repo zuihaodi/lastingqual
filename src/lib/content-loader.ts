@@ -1,6 +1,4 @@
-﻿import fs from "node:fs";
-import path from "node:path";
-import type {
+﻿import type {
   CmsCardItem,
   CmsFinanceItem,
   CmsBottomListItem,
@@ -14,6 +12,26 @@ import type {
 
 type SortablePublished = { order?: number; published?: boolean };
 
+type JsonValue = Record<string, unknown> | unknown[] | string | number | boolean | null;
+
+const contentJsonModules = import.meta.glob<JsonValue>("/src/content/**/*.json", {
+  eager: true,
+  import: "default",
+});
+
+const publicWebpModules = import.meta.glob("/public/**/*.webp", { eager: true });
+const publicWebpSet = new Set(
+  Object.keys(publicWebpModules).map((k) => k.replace(/^\/public/, "")),
+);
+
+function normalizeModulePath(input: string) {
+  const normalized = input.replace(/\\/g, "/").replace(/\/+/g, "/");
+  return normalized.startsWith("/") ? normalized : `/${normalized}`;
+}
+
+function cloneJson<T>(value: T): T {
+  return JSON.parse(JSON.stringify(value)) as T;
+}
 const KEY_ALIASES: Record<string, string> = {
   "关于我们": "about",
   "产品与服务": "products",
@@ -30,18 +48,24 @@ const KEY_ALIASES: Record<string, string> = {
 };
 
 function readJsonDir<T>(dir: string): T[] {
-  const abs = path.resolve(dir);
-  if (!fs.existsSync(abs)) return [];
-  const files = fs.readdirSync(abs).filter((f: string) => f.endsWith(".json"));
+  const prefix = normalizeModulePath(dir).replace(/\/$/, "");
+  const files = Object.keys(contentJsonModules)
+    .filter((filePath) => {
+      if (!filePath.startsWith(`${prefix}/`) || !filePath.endsWith(".json")) return false;
+      const remainder = filePath.slice(prefix.length + 1);
+      return !remainder.includes("/");
+    })
+    .sort((a, b) => a.localeCompare(b, "en"));
   const list: T[] = [];
 
-  for (const file of files) {
+  for (const filePath of files) {
     try {
-      const raw = fs.readFileSync(path.join(abs, file), "utf-8");
-      const parsed = JSON.parse(raw) as T;
+      const raw = contentJsonModules[filePath];
+      if (raw === undefined) continue;
+      const parsed = cloneJson(raw) as T;
       const maybeObj = parsed as unknown as Record<string, unknown>;
       if (maybeObj && typeof maybeObj === "object" && !Array.isArray(maybeObj) && !("key" in maybeObj)) {
-        maybeObj.key = file.replace(/\.json$/i, "");
+        maybeObj.key = filePath.split("/").pop()?.replace(/\.json$/i, "") || "";
       }
       list.push(parsed);
     } catch {}
@@ -50,11 +74,11 @@ function readJsonDir<T>(dir: string): T[] {
 }
 
 function readJsonFile<T>(filePath: string): T | null {
-  const abs = path.resolve(filePath);
-  if (!fs.existsSync(abs)) return null;
+  const normalized = normalizeModulePath(filePath);
+  const raw = contentJsonModules[normalized];
+  if (raw === undefined) return null;
   try {
-    const raw = fs.readFileSync(abs, "utf-8");
-    return JSON.parse(raw) as T;
+    return cloneJson(raw) as T;
   } catch {
     return null;
   }
@@ -71,20 +95,9 @@ function resolveOptimizedImage(assetPath?: string, prefer: "main" | "small" = "m
   const noExt = assetPath.replace(/\.[^/.]+$/, "");
   const webp = `${noExt}.webp`;
   const webpSmall = `${noExt}.sm.webp`;
-  const sourceAbs = path.resolve(`public${assetPath}`);
-  const webpSmallAbs = path.resolve(`public${webpSmall}`);
-  const webpAbs = path.resolve(`public${webp}`);
 
-  if (!fs.existsSync(sourceAbs)) {
-    if (prefer === "small" && fs.existsSync(webpSmallAbs)) return webpSmall;
-    return fs.existsSync(webpAbs) ? webp : assetPath;
-  }
-
-  const sourceMtime = fs.statSync(sourceAbs).mtimeMs;
-  const isFresh = (candidateAbs: string) => fs.existsSync(candidateAbs) && fs.statSync(candidateAbs).mtimeMs >= sourceMtime;
-
-  if (prefer === "small" && isFresh(webpSmallAbs)) return webpSmall;
-  if (isFresh(webpAbs)) return webp;
+  if (prefer === "small" && publicWebpSet.has(webpSmall)) return webpSmall;
+  if (publicWebpSet.has(webp)) return webp;
   return assetPath;
 }
 
@@ -657,3 +670,4 @@ export function loadCardsByLangPage(
     imageFocus: normalizeFocus(item.imageFocus),
   }));
 }
+

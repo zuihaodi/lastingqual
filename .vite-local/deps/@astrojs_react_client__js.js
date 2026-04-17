@@ -1,13 +1,13 @@
 import {
   require_client
-} from "./chunk-UV5CPRAM.js";
-import "./chunk-YH3LZGTY.js";
+} from "./chunk-CCL5QK6Q.js";
+import "./chunk-Q5FL5RC7.js";
 import {
   require_react
-} from "./chunk-E3EC3WKU.js";
+} from "./chunk-YU7GW4OB.js";
 import {
   __toESM
-} from "./chunk-SNAQBZPT.js";
+} from "./chunk-5WRI5ZAA.js";
 
 // node_modules/@astrojs/react/dist/client.js
 var import_react2 = __toESM(require_react());
