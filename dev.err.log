@@ -1,0 +1,2000 @@
+2026-04-17T15:15:06.452Z astro:cli --verbose flag enabled! Enabling: DEBUG="astro:*,vite:*"
+2026-04-17T15:15:06.455Z astro:cli Tip: Set the DEBUG env variable directly for more control. Example: "DEBUG=astro:*,vite:* astro build".
+2026-04-17T15:15:07.488Z astro:telemetry [notify] last notified on 1768296482779
+2026-04-17T15:15:10.789Z astro:telemetry {
+  context: {
+    isGit: true,
+    anonymousProjectId: 'd865c0ef0fa9f0b6f6e9252abc6aea0e0323dd43c661e6f93e5099c7879d5520',
+    packageManager: 'npm',
+    packageManagerVersion: '11.6.2',
+    anonymousId: 'c344a76b3a7b8a393c3914afcc115c10e5d126d73d9d2e0e0d7951048092debc',
+    anonymousSessionId: 'eb2a29edb716662000ed6a629800d25460a37e4692f6de36ffa62e7e8c41be68'
+  },
+  meta: {
+    nodeVersion: '24.12.0',
+    viteVersion: '6.4.1',
+    astroVersion: '5.16.9',
+    systemPlatform: 'win32',
+    systemRelease: '10.0.22621',
+    systemArchitecture: 'x64',
+    cpuCount: 8,
+    cpuModel: '11th Gen Intel(R) Core(TM) i7-1185G7 @ 3.00GHz',
+    cpuSpeed: 2995,
+    memoryInMb: 16218,
+    isDocker: false,
+    isTTY: undefined,
+    isWSL: false,
+    isCI: false,
+    ciName: null
+  }
+}
+2026-04-17T15:15:10.791Z astro:telemetry [
+  {
+    "eventName": "ASTRO_CLI_SESSION_STARTED",
+    "payload": {
+      "cliCommand": "dev",
+      "config": {
+        "output": "server",
+        "adapter": "@astrojs/cloudflare",
+        "integrations": [
+          "@astrojs/tailwind",
+          "@astrojs/react",
+          "keystatic"
+        ],
+        "build": {},
+        "server": true,
+        "image": {},
+        "markdown": {},
+        "vite": {
+          "cacheDir": true
+        },
+        "i18n": true,
+        "experimental": {},
+        "legacy": {}
+      }
+    }
+  }
+]
+2026-04-17T15:15:10.809Z astro:middleware The integration @astrojs/cloudflare has added middleware that runs before any application middleware you define.
+2026-04-17T15:15:10.972Z vite:env loading env files: [
+  'D:/恒沣/【8行政】/website/lastingqual/.env',
+  'D:/恒沣/【8行政】/website/lastingqual/.env.local',
+  'D:/恒沣/【8行政】/website/lastingqual/.env.development',
+  'D:/恒沣/【8行政】/website/lastingqual/.env.development.local'
+]
+2026-04-17T15:15:10.973Z vite:env env files loaded in 1.34ms
+2026-04-17T15:15:10.974Z vite:env using resolved env: {
+  ALLUSERSPROFILE: 'C:\\ProgramData',
+  APPDATA: 'C:\\Users\\Administrator\\AppData\\Roaming',
+  CODEX_INTERNAL_ORIGINATOR_OVERRIDE: 'Codex Desktop',
+  CODEX_SANDBOX_NETWORK_DISABLED: '1',
+  CODEX_SHELL: '1',
+  CODEX_THREAD_ID: '019d9b26-5e5d-74f2-be01-c96307b692cf',
+  COLOR: '0',
+  CommonProgramFiles: 'C:\\Program Files\\Common Files',
+  'CommonProgramFiles(x86)': 'C:\\Program Files (x86)\\Common Files',
+  CommonProgramW6432: 'C:\\Program Files\\Common Files',
+  COMPUTERNAME: 'WIN-20230704HAS',
+  ComSpec: 'C:\\WINDOWS\\system32\\cmd.exe',
+  DEBUG: 'astro:*,vite:*',
+  DISABLE_AUTO_UPDATE: 'true',
+  DriverData: 'C:\\Windows\\System32\\Drivers\\DriverData',
+  EDITOR: 'C:\\WINDOWS\\notepad.exe',
+  HOME: 'C:\\Users\\Administrator',
+  HOMEDRIVE: 'C:',
+  HOMEPATH: '\\Users\\Administrator',
+  HYOFFICEAI_PATH: 'C:\\Users\\Administrator\\AppData\\Local\\Programs\\HaiYingSoft\\OfficeAI',
+  IGCCSVC_DB: 'AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAVEWfMr5Dsk6wZKrhSrdfyQQAAAACAAAAAAAQZgAAAAEAACAAAAAvI+wBoPV465M8cRQr3IBUYls6RaubDhqZZOk9MRDbQgAAAAAOgAAAAAIAACAAAAB/KEyfJAWuxRR89y/h110xO3DzZkE4apekhi5sY4s0fmAAAADaCoowUD2Sfb4+eWTz1V6r8hUOwO8ZBr7yrCR7kt1p8dgP3d5LPn2QfSzT72S18Y7HoASETgdFgKPD6KIDDKgXocbU9N9LrJhU/3kikNgb+IT4bSJnco3XxQ/oK5tUsPtAAAAAR9jaF+oI29L/Qe/rBh+NxD8JceoYwRG6Q88HBoyDxl/G/k7/MH8Hl6JoZMTIq1OGBYXHeRRHGnNtQpqiQO/Dcw==',
+  INIT_CWD: 'D:\\恒沣\\【8行政】\\website\\lastingqual',
+  LOCALAPPDATA: 'C:\\Users\\Administrator\\AppData\\Local',
+  LOGONSERVER: '\\\\WIN-20230704HAS',
+  LOG_FORMAT: 'json',
+  NODE: 'C:\\Program Files\\nodejs\\node.exe',
+  NODE_ENV: 'development',
+  NODE_EXE: 'C:\\Program Files\\nodejs\\\\node.exe',
+  NPM_CLI_JS: 'C:\\Program Files\\nodejs\\\\node_modules\\npm\\bin\\npm-cli.js',
+  npm_command: 'run',
+  npm_config_cache: 'C:\\Users\\Administrator\\AppData\\Local\\npm-cache',
+  npm_config_globalconfig: 'C:\\Users\\Administrator\\AppData\\Roaming\\npm\\etc\\npmrc',
+  npm_config_global_prefix: 'C:\\Users\\Administrator\\AppData\\Roaming\\npm',
+  npm_config_init_module: 'C:\\Users\\Administrator\\.npm-init.js',
+  npm_config_local_prefix: 'D:\\恒沣\\【8行政】\\website\\lastingqual',
+  npm_config_node_gyp: 'C:\\Program Files\\nodejs\\node_modules\\npm\\node_modules\\node-gyp\\bin\\node-gyp.js',
+  npm_config_noproxy: '',
+  npm_config_npm_version: '11.6.2',
+  npm_config_prefix: 'C:\\Users\\Administrator\\AppData\\Roaming\\npm',
+  npm_config_userconfig: 'C:\\Users\\Administrator\\.npmrc',
+  npm_config_user_agent: 'npm/11.6.2 node/v24.12.0 win32 x64 workspaces/false',
+  npm_execpath: 'C:\\Program Files\\nodejs\\node_modules\\npm\\bin\\npm-cli.js',
+  npm_lifecycle_event: 'dev',
+  npm_lifecycle_script: 'astro dev',
+  npm_node_execpath: 'C:\\Program Files\\nodejs\\node.exe',
+  npm_package_json: 'D:\\恒沣\\【8行政】\\website\\lastingqual\\package.json',
+  npm_package_name: 'lastingqual',
+  npm_package_version: '0.0.1',
+  NPM_PREFIX_JS: 'C:\\Program Files\\nodejs\\\\node_modules\\npm\\bin\\npm-prefix.js',
+  NPM_PREFIX_NPM_CLI_JS: 'C:\\Users\\Administrator\\AppData\\Roaming\\npm\\node_modules\\npm\\bin\\npm-cli.js',
+  NUMBER_OF_PROCESSORS: '8',
+  OneDrive: 'C:\\Users\\Administrator\\OneDrive',
+  OS: 'Windows_NT',
+  Path: 'D:\\恒沣\\【8行政】\\website\\lastingqual\\node_modules\\.bin;D:\\恒沣\\【8行政】\\website\\node_modules\\.bin;D:\\恒沣\\【8行政】\\node_modules\\.bin;D:\\恒沣\\node_modules\\.bin;D:\\node_modules\\.bin;C:\\Program Files\\nodejs\\node_modules\\npm\\node_modules\\@npmcli\\run-script\\lib\\node-gyp-bin;C:\\Users\\Administrator\\.codex\\tmp\\arg0\\codex-arg0wKOik7;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\WINDOWS\\System32\\OpenSSH\\;C:\\Program Files\\dotnet\\;C:\\Program Files\\Git\\cmd;C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common;C:\\Program Files (x86)\\NetSarang\\Xftp 7\\;C:\\Program Files (x86)\\NetSarang\\Xshell 8\\;C:\\Program Files\\nodejs\\;C:\\Program Files\\Tailscale\\;C:\\Program Files\\cursor\\resources\\app\\bin;E:\\soft\\【网络开发】\\ripgrep-15.1.0-aarch64-pc-windows-msvc;C:\\Users\\Administrator\\AppData\\Local\\Programs\\Python\\Python313\\Scripts\\;C:\\Users\\Administrator\\AppData\\Local\\Programs\\Python\\Python313\\;C:\\Users\\Administrator\\AppData\\Local\\Programs\\Python\\Launcher\\;C:\\Users\\Administrator\\AppData\\Local\\Microsoft\\WindowsApps;D:\\Program Files\\Fiddler;C:\\Users\\Administrator\\AppData\\Roaming\\npm;C:\\Users\\Administrator\\AppData\\Local\\OpenAI\\Codex\\bin;C:\\Program Files\\WindowsApps\\OpenAI.Codex_26.415.1938.0_x64__2p2nqsd0c76g0\\app\\resources',
+  PATHEXT: '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC;.CPL',
+  PROCESSOR_ARCHITECTURE: 'AMD64',
+  PROCESSOR_IDENTIFIER: 'Intel64 Family 6 Model 140 Stepping 1, GenuineIntel',
+  PROCESSOR_LEVEL: '6',
+  PROCESSOR_REVISION: '8c01',
+  ProgramData: 'C:\\ProgramData',
+  ProgramFiles: 'C:\\Program Files',
+  'ProgramFiles(x86)': 'C:\\Program Files (x86)',
+  ProgramW6432: 'C:\\Program Files',
+  PROMPT: '$P$G',
+  PSModulePath: 'C:\\Users\\Administrator\\Documents\\WindowsPowerShell\\Modules;C:\\Program Files\\WindowsPowerShell\\Modules;C:\\WINDOWS\\system32\\WindowsPowerShell\\v1.0\\Modules',
+  PUBLIC: 'C:\\Users\\Public',
+  RUST_LOG: 'warn',
+  SHELL: 'C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\powershell.exe',
+  SystemDrive: 'C:',
+  SystemRoot: 'C:\\WINDOWS',
+  TEMP: 'e:\\Temp',
+  TMP: 'C:\\Users\\ADMINI~1\\AppData\\Local\\Temp',
+  USERDOMAIN: 'WIN-20230704HAS',
+  USERDOMAIN_ROAMINGPROFILE: 'WIN-20230704HAS',
+  USERNAME: 'Administrator',
+  USERPROFILE: 'C:\\Users\\Administrator',
+  windir: 'C:\\WINDOWS',
+  ZES_ENABLE_SYSMAN: '1',
+  ZSH_TMUX_AUTOSTART: 'false',
+  ZSH_TMUX_AUTOSTARTED: 'true'
+}
+2026-04-17T15:15:10.982Z vite:env loading env files: [
+  'D:/恒沣/【8行政】/website/lastingqual/.env',
+  'D:/恒沣/【8行政】/website/lastingqual/.env.local',
+  'D:/恒沣/【8行政】/website/lastingqual/.env.development',
+  'D:/恒沣/【8行政】/website/lastingqual/.env.development.local'
+]
+2026-04-17T15:15:10.982Z vite:env env files loaded in 0.43ms
+2026-04-17T15:15:10.983Z vite:env using resolved env: {}
+2026-04-17T15:15:10.997Z vite:config using resolved config: {
+  configFile: undefined,
+  mode: 'development',
+  cacheDir: 'D:/恒沣/【8行政】/website/lastingqual/.vite-local',
+  clearScreen: false,
+  customLogger: {
+    hasWarned: false,
+    info: [Function: info],
+    warn: [Function: warn],
+    warnOnce: [Function: warnOnce],
+    error: [Function: error],
+    clearScreen: [Function: clearScreen],
+    hasErrorLogged: [Function: hasErrorLogged]
+  },
+  appType: 'custom',
+  optimizeDeps: {
+    include: [
+      '@astrojs/react/client.js',
+      'react',
+      'react-dom',
+      'react/jsx-dev-runtime',
+      'react/jsx-runtime',
+      'astro > cssesc',
+      'astro > aria-query',
+      'astro > axobject-query',
+      'react',
+      'react/jsx-runtime',
+      'react/jsx-dev-runtime',
+      'react-dom',
+      'react-dom/client',
+      '@astrojs/react/client.js'
+    ],
+    exclude: [ 'astro', 'node-fetch', '@astrojs/react/server.js' ],
+    needsInterop: [],
+    extensions: [],
+    disabled: undefined,
+    holdUntilCrawlEnd: true,
+    force: false,
+    noDiscovery: false,
+    esbuildOptions: { preserveSymlinks: false, jsx: 'automatic' },
+    entries: [
+      'D:/恒沣/【8行政】/website/lastingqual/src/**/*.{jsx,tsx,vue,svelte,html,astro}',
+      'keystatic.config.*',
+      '.astro/keystatic-imports.js'
+    ]
+  },
+  plugins: [
+    'vite:optimized-deps',
+    'vite:watch-package-data',
+    'vite:pre-alias',
+    'alias',
+    'astro-manifest-plugin',
+    'astro:build',
+    'astro-env-plugin',
+    'astro:markdown',
+    'astro:head-metadata',
+    'astro-content-virtual-mod-plugin',
+    'astro:content-asset-propagation',
+    'astro:assets:esm',
+    'astro:vite-plugin-file-url',
+    'astro:i18n',
+    'astro:actions',
+    'astro:container',
+    'vite:cf-module-loader',
+    'vite:cf-imports',
+    'vite:react-babel',
+    'vite:react-refresh',
+    'vite:modulepreload-polyfill',
+    'vite:resolve',
+    'vite:html-inline-proxy',
+    'vite:css',
+    'vite:esbuild',
+    'vite:json',
+    'vite:wasm-helper',
+    'vite:worker',
+    'vite:asset',
+    'astro:build:normal',
+    'astro:scripts',
+    'astro:server',
+    'astro:adapter-config',
+    'astro:html',
+    'astro:postprocess',
+    'astro:integration-container',
+    'astro:content-imports',
+    '@astro/plugin-middleware',
+    'astro:assets',
+    'astro:fonts:fallback',
+    'astro:prefetch',
+    'astro:transitions',
+    'astro:dev-toolbar',
+    'vite:react-virtual-preamble',
+    '@astrojs/react:opts',
+    '@astrojs/react:environment',
+    'keystatic',
+    'vite:wasm-fallback',
+    'astro:vite-plugin-env',
+    'vite:define',
+    'vite:css-post',
+    'vite:worker-import-meta-url',
+    'vite:asset-import-meta-url',
+    'vite:dynamic-import-vars',
+    'vite:import-glob',
+    'astro:scripts:page-ssr',
+    'astro:scanner',
+    '@astrojs/vite-plugin-astro-ssr-manifest',
+    'astro:server-islands',
+    'astro:hmr-reload',
+    'vite:client-inject',
+    'vite:css-analysis',
+    'vite:import-analysis'
+  ],
+  publicDir: 'D:/恒沣/【8行政】/website/lastingqual/public',
+  root: 'D:/恒沣/【8行政】/website/lastingqual',
+  envPrefix: 'PUBLIC_',
+  define: {
+    'import.meta.env.SITE': 'undefined',
+    'import.meta.env.BASE_URL': '"/"',
+    'import.meta.env.ASSETS_PREFIX': 'undefined',
+    __ASTRO_INTERNAL_I18N_CONFIG__: '{"base":"/","format":"directory","trailingSlash":"ignore","i18n":{"defaultLocale":"zh","locales":["zh","en"],"routing":{"prefixDefaultLocale":false,"redirectToDefaultLocale":true,"fallbackType":"redirect"}},"isBuild":false}'
+  },
+  server: {
+    port: 5173,
+    strictPort: false,
+    host: '127.0.0.1',
+    allowedHosts: [],
+    https: undefined,
+    open: false,
+    proxy: undefined,
+    cors: {
+      origin: /^https?:\/\/(?:(?:[^:]+\.)?localhost|127\.0\.0\.1|\[::1\])(?::\d+)?$/
+    },
+    headers: {},
+    warmup: { clientFiles: [], ssrFiles: [] },
+    middlewareMode: false,
+    fs: {
+      strict: true,
+      deny: [ '.env', '.env.*', '*.{crt,pem}', '**/.git/**' ],
+      allow: [ 'D:/恒沣/【8行政】/website/lastingqual' ]
+    },
+    preTransformRequests: true,
+    perEnvironmentStartEndDuringDev: false,
+    sourcemapIgnoreList: [Function: isInNodeModules$1],
+    watch: { ignored: undefined }
+  },
+  resolve: {
+    externalConditions: [ 'node' ],
+    extensions: [
+      '.mjs',  '.js',
+      '.mts',  '.ts',
+      '.jsx',  '.tsx',
+      '.json'
+    ],
+    dedupe: [ 'astro' ],
+    noExternal: [],
+    external: [],
+    preserveSymlinks: false,
+    alias: [
+      { find: 'randombytes', replacement: 'randombytes/browser' },
+      {
+        find: /^astro$/,
+        replacement: 'D:\\恒沣\\【8行政】\\website\\lastingqual\\node_modules\\astro\\dist\\types\\public\\index.js'
+      },
+      {
+        find: 'astro:middleware',
+        replacement: 'astro/virtual-modules/middleware.js'
+      },
+      { find: 'astro:schema', replacement: 'astro/zod' },
+      { find: 'astro:components', replacement: 'astro/components' },
+      {
+        find: /^\/?@vite\/env/,
+        replacement: '/@fs/D:/恒沣/【8行政】/website/lastingqual/node_modules/vite/dist/client/env.mjs'
+      },
+      {
+        find: /^\/?@vite\/client/,
+        replacement: '/@fs/D:/恒沣/【8行政】/website/lastingqual/node_modules/vite/dist/client/client.mjs'
+      }
+    ],
+    mainFields: [ 'browser', 'module', 'jsnext:main', 'jsnext' ],
+    conditions: [ 'module', 'browser', 'development|production', 'astro' ],
+    builtins: []
+  },
+  ssr: {
+    target: 'node',
+    optimizeDeps: {
+      esbuildOptions: { preserveSymlinks: false },
+      include: [],
+      exclude: [],
+      needsInterop: [],
+      extensions: [],
+      holdUntilCrawlEnd: true,
+      force: false,
+      noDiscovery: true
+    },
+    noExternal: [
+      'astro',
+      'astro/components',
+      '@nanostores/preact',
+      '@fontsource/*',
+      '@astrojs/react',
+      '@astrojs/cloudflare',
+      '@astrojs/tailwind',
+      '@keystatic/astro',
+      '@astrojs/internal-helpers',
+      '@astrojs/underscore-redirects',
+      '@mui/material',
+      '@mui/base',
+      '@babel/runtime',
+      'use-immer',
+      '@material-tailwind/react'
+    ],
+    external: [
+      'prismjs/components/index.js',
+      'string-width',
+      'cssesc',
+      '@vitejs/plugin-react',
+      'devalue',
+      'ultrahtml',
+      'tinyglobby',
+      'wrangler',
+      'postcss-load-config',
+      'set-cookie-parser',
+      '@cloudflare/workers-types',
+      'picomatch'
+    ],
+    resolve: {
+      conditions: [ 'module', 'node', 'development|production', 'astro' ],
+      externalConditions: [ 'node' ]
+    }
+  },
+  build: {
+    target: [ 'es2020', 'edge88', 'firefox78', 'chrome87', 'safari14' ],
+    polyfillModulePreload: true,
+    modulePreload: { polyfill: true },
+    outDir: 'dist',
+    assetsDir: '_astro',
+    assetsInlineLimit: 4096,
+    sourcemap: false,
+    terserOptions: {},
+    rollupOptions: {
+      external: [
+        /^__CLOUDFLARE_ASSET__.+\.wasm\?module.mjs$/i,
+        /^__CLOUDFLARE_ASSET__.+\.wasm.mjs$/i,
+        /^__CLOUDFLARE_ASSET__.+\.bin.mjs$/i,
+        /^__CLOUDFLARE_ASSET__.+\.txt.mjs$/i
+      ],
+      onwarn: [Function: onwarn]
+    },
+    commonjsOptions: { include: [ /node_modules/ ], extensions: [ '.js', '.cjs' ] },
+    dynamicImportVarsOptions: { warnOnError: true, exclude: [ /node_modules/ ] },
+    write: true,
+    emptyOutDir: null,
+    copyPublicDir: true,
+    manifest: false,
+    lib: false,
+    ssrManifest: false,
+    ssrEmitAssets: false,
+    reportCompressedSize: true,
+    chunkSizeWarningLimit: 500,
+    watch: null,
+    cssCodeSplit: true,
+    minify: 'esbuild',
+    ssr: false,
+    emitAssets: false,
+    createEnvironment: [Function: createEnvironment],
+    cssTarget: [ 'es2020', 'edge88', 'firefox78', 'chrome87', 'safari14' ],
+    cssMinify: true
+  },
+  css: {
+    transformer: 'postcss',
+    preprocessorMaxWorkers: 0,
+    devSourcemap: false,
+    postcss: {
+      plugins: [
+        {
+          postcssPlugin: 'tailwindcss',
+          plugins: [ [AsyncFunction (anonymous)] ]
+        },
+        {
+          browsers: undefined,
+          info: [Function: info],
+          options: {},
+          postcssPlugin: 'autoprefixer',
+          prepare: [Function: prepare]
+        }
+      ]
+    }
+  },
+  assetsInclude: [Function: assetsInclude],
+  esbuild: { jsxDev: true, jsx: 'automatic', jsxImportSource: undefined },
+  environments: {
+    client: {
+      define: {
+        'import.meta.env.SITE': 'undefined',
+        'import.meta.env.BASE_URL': '"/"',
+        'import.meta.env.ASSETS_PREFIX': 'undefined',
+        __ASTRO_INTERNAL_I18N_CONFIG__: '{"base":"/","format":"directory","trailingSlash":"ignore","i18n":{"defaultLocale":"zh","locales":["zh","en"],"routing":{"prefixDefaultLocale":false,"redirectToDefaultLocale":true,"fallbackType":"redirect"}},"isBuild":false}'
+      },
+      resolve: {
+        externalConditions: [ 'node' ],
+        extensions: [
+          '.mjs',  '.js',
+          '.mts',  '.ts',
+          '.jsx',  '.tsx',
+          '.json'
+        ],
+        dedupe: [ 'astro', 'react', 'react-dom' ],
+        noExternal: [],
+        external: [],
+        preserveSymlinks: false,
+        alias: [
+          { find: 'randombytes', replacement: 'randombytes/browser' },
+          {
+            find: /^astro$/,
+            replacement: 'D:\\恒沣\\【8行政】\\website\\lastingqual\\node_modules\\astro\\dist\\types\\public\\index.js'
+          },
+          {
+            find: 'astro:middleware',
+            replacement: 'astro/virtual-modules/middleware.js'
+          },
+          { find: 'astro:schema', replacement: 'astro/zod' },
+          { find: 'astro:components', replacement: 'astro/components' },
+          {
+            find: /^\/?@vite\/env/,
+            replacement: '/@fs/D:/恒沣/【8行政】/website/lastingqual/node_modules/vite/dist/client/env.mjs'
+          },
+          {
+            find: /^\/?@vite\/client/,
+            replacement: '/@fs/D:/恒沣/【8行政】/website/lastingqual/node_modules/vite/dist/client/client.mjs'
+          }
+        ],
+        mainFields: [ 'browser', 'module', 'jsnext:main', 'jsnext' ],
+        conditions: [ 'module', 'browser', 'development|production', 'astro' ],
+        builtins: []
+      },
+      keepProcessEnv: false,
+      consumer: 'client',
+      optimizeDeps: {
+        include: [
+          '@astrojs/react/client.js',
+          'react',
+          'react-dom',
+          'react/jsx-dev-runtime',
+          'react/jsx-runtime',
+          'astro > cssesc',
+          'astro > aria-query',
+          'astro > axobject-query',
+          'react',
+          'react/jsx-runtime',
+          'react/jsx-dev-runtime',
+          'react-dom',
+          'react-dom/client',
+          '@astrojs/react/client.js'
+        ],
+        exclude: [ 'astro', 'node-fetch', '@astrojs/react/server.js' ],
+        needsInterop: [],
+        extensions: [],
+        disabled: undefined,
+        holdUntilCrawlEnd: true,
+        force: false,
+        noDiscovery: false,
+        esbuildOptions: { preserveSymlinks: false, jsx: 'automatic' },
+        entries: [
+          'D:/恒沣/【8行政】/website/lastingqual/src/**/*.{jsx,tsx,vue,svelte,html,astro}',
+          'keystatic.config.*',
+          '.astro/keystatic-imports.js'
+        ]
+      },
+      dev: {
+        warmup: [],
+        sourcemap: { js: true },
+        sourcemapIgnoreList: [Function: isInNodeModules$1],
+        preTransformRequests: true,
+        createEnvironment: [Function: defaultCreateClientDevEnvironment],
+        recoverable: true,
+        moduleRunnerTransform: false
+      },
+      build: {
+        target: [ 'es2020', 'edge88', 'firefox78', 'chrome87', 'safari14' ],
+        polyfillModulePreload: true,
+        modulePreload: { polyfill: true },
+        outDir: 'dist',
+        assetsDir: '_astro',
+        assetsInlineLimit: 4096,
+        sourcemap: false,
+        terserOptions: {},
+        rollupOptions: {
+          external: [
+            /^__CLOUDFLARE_ASSET__.+\.wasm\?module.mjs$/i,
+            /^__CLOUDFLARE_ASSET__.+\.wasm.mjs$/i,
+            /^__CLOUDFLARE_ASSET__.+\.bin.mjs$/i,
+            /^__CLOUDFLARE_ASSET__.+\.txt.mjs$/i
+          ],
+          onwarn: [Function: onwarn]
+        },
+        commonjsOptions: { include: [ /node_modules/ ], extensions: [ '.js', '.cjs' ] },
+        dynamicImportVarsOptions: { warnOnError: true, exclude: [ /node_modules/ ] },
+        write: true,
+        emptyOutDir: null,
+        copyPublicDir: true,
+        manifest: false,
+        lib: false,
+        ssrManifest: false,
+        ssrEmitAssets: false,
+        reportCompressedSize: true,
+        chunkSizeWarningLimit: 500,
+        watch: null,
+        cssCodeSplit: true,
+        minify: 'esbuild',
+        ssr: false,
+        emitAssets: true,
+        createEnvironment: [Function: createEnvironment],
+        cssTarget: [ 'es2020', 'edge88', 'firefox78', 'chrome87', 'safari14' ],
+        cssMinify: true
+      }
+    },
+    ssr: {
+      define: {
+        'import.meta.env.SITE': 'undefined',
+        'import.meta.env.BASE_URL': '"/"',
+        'import.meta.env.ASSETS_PREFIX': 'undefined',
+        __ASTRO_INTERNAL_I18N_CONFIG__: '{"base":"/","format":"directory","trailingSlash":"ignore","i18n":{"defaultLocale":"zh","locales":["zh","en"],"routing":{"prefixDefaultLocale":false,"redirectToDefaultLocale":true,"fallbackType":"redirect"}},"isBuild":false}'
+      },
+      resolve: {
+        externalConditions: [ 'node' ],
+        extensions: [
+          '.mjs',  '.js',
+          '.mts',  '.ts',
+          '.jsx',  '.tsx',
+          '.json'
+        ],
+        dedupe: [ 'astro', 'react', 'react-dom' ],
+        noExternal: [
+          'astro',
+          'astro/components',
+          '@nanostores/preact',
+          '@fontsource/*',
+          '@astrojs/react',
+          '@astrojs/cloudflare',
+          '@astrojs/tailwind',
+          '@keystatic/astro',
+          '@astrojs/internal-helpers',
+          '@astrojs/underscore-redirects',
+          '@mui/material',
+          '@mui/base',
+          '@babel/runtime',
+          'use-immer',
+          '@material-tailwind/react'
+        ],
+        external: [
+          'prismjs/components/index.js',
+          'string-width',
+          'cssesc',
+          '@vitejs/plugin-react',
+          'devalue',
+          'ultrahtml',
+          'tinyglobby',
+          'wrangler',
+          'postcss-load-config',
+          'set-cookie-parser',
+          '@cloudflare/workers-types',
+          'picomatch'
+        ],
+        preserveSymlinks: false,
+        alias: [
+          { find: 'randombytes', replacement: 'randombytes/browser' },
+          {
+            find: /^astro$/,
+            replacement: 'D:\\恒沣\\【8行政】\\website\\lastingqual\\node_modules\\astro\\dist\\types\\public\\index.js'
+          },
+          {
+            find: 'astro:middleware',
+            replacement: 'astro/virtual-modules/middleware.js'
+          },
+          { find: 'astro:schema', replacement: 'astro/zod' },
+          { find: 'astro:components', replacement: 'astro/components' },
+          {
+            find: /^\/?@vite\/env/,
+            replacement: '/@fs/D:/恒沣/【8行政】/website/lastingqual/node_modules/vite/dist/client/env.mjs'
+          },
+          {
+            find: /^\/?@vite\/client/,
+            replacement: '/@fs/D:/恒沣/【8行政】/website/lastingqual/node_modules/vite/dist/client/client.mjs'
+          }
+        ],
+        mainFields: [ 'module', 'jsnext:main', 'jsnext' ],
+        conditions: [ 'module', 'node', 'development|production', 'astro' ],
+        builtins: [
+          '_http_agent',         '_http_client',        '_http_common',
+          '_http_incoming',      '_http_outgoing',      '_http_server',
+          '_stream_duplex',      '_stream_passthrough', '_stream_readable',
+          '_stream_transform',   '_stream_wrap',        '_stream_writable',
+          '_tls_common',         '_tls_wrap',           'assert',
+          'assert/strict',       'async_hooks',         'buffer',
+          'child_process',       'cluster',             'console',
+          'constants',           'crypto',              'dgram',
+          'diagnostics_channel', 'dns',                 'dns/promises',
+          'domain',              'events',              'fs',
+          'fs/promises',         'http',                'http2',
+          'https',               'inspector',           'inspector/promises',
+          'module',              'net',                 'os',
+          'path',                'path/posix',          'path/win32',
+          'perf_hooks',          'process',             'punycode',
+          'querystring',         'readline',            'readline/promises',
+          'repl',                'stream',              'stream/consumers',
+          'stream/promises',     'stream/web',          'string_decoder',
+          'sys',                 'timers',              'timers/promises',
+          'tls',                 'trace_events',        'tty',
+          'url',                 'util',                'util/types',
+          'v8',                  'vm',                  'wasi',
+          'worker_threads',      'zlib',                /^node:/,
+          /^npm:/,               /^bun:/
+        ]
+      },
+      keepProcessEnv: true,
+      consumer: 'server',
+      optimizeDeps: {
+        include: [],
+        exclude: [],
+        needsInterop: [],
+        extensions: [],
+        disabled: undefined,
+        holdUntilCrawlEnd: true,
+        force: false,
+        noDiscovery: true,
+        esbuildOptions: { preserveSymlinks: false }
+      },
+      dev: {
+        warmup: [],
+        sourcemap: { js: true },
+        sourcemapIgnoreList: [Function: isInNodeModules$1],
+        preTransformRequests: false,
+        createEnvironment: [Function: defaultCreateDevEnvironment],
+        recoverable: false,
+        moduleRunnerTransform: true
+      },
+      build: {
+        target: [ 'es2020', 'edge88', 'firefox78', 'chrome87', 'safari14' ],
+        polyfillModulePreload: true,
+        modulePreload: { polyfill: true },
+        outDir: 'dist',
+        assetsDir: '_astro',
+        assetsInlineLimit: 4096,
+        sourcemap: false,
+        terserOptions: {},
+        rollupOptions: {
+          external: [
+            /^__CLOUDFLARE_ASSET__.+\.wasm\?module.mjs$/i,
+            /^__CLOUDFLARE_ASSET__.+\.wasm.mjs$/i,
+            /^__CLOUDFLARE_ASSET__.+\.bin.mjs$/i,
+            /^__CLOUDFLARE_ASSET__.+\.txt.mjs$/i
+          ],
+          onwarn: [Function: onwarn]
+        },
+        commonjsOptions: { include: [ /node_modules/ ], extensions: [ '.js', '.cjs' ] },
+        dynamicImportVarsOptions: { warnOnError: true, exclude: [ /node_modules/ ] },
+        write: true,
+        emptyOutDir: null,
+        copyPublicDir: true,
+        manifest: false,
+        lib: false,
+        ssrManifest: false,
+        ssrEmitAssets: false,
+        reportCompressedSize: true,
+        chunkSizeWarningLimit: 500,
+        watch: null,
+        cssCodeSplit: true,
+        minify: false,
+        ssr: true,
+        emitAssets: false,
+        createEnvironment: [Function: createEnvironment],
+        cssTarget: [ 'es2020', 'edge88', 'firefox78', 'chrome87', 'safari14' ],
+        cssMinify: 'esbuild'
+      }
+    }
+  },
+  configFileDependencies: [],
+  inlineConfig: {
+    configFile: false,
+    mode: 'development',
+    cacheDir: '.vite-local',
+    clearScreen: false,
+    customLogger: {
+      hasWarned: false,
+      info: [Function: info],
+      warn: [Function: warn],
+      warnOnce: [Function: warnOnce],
+      error: [Function: error],
+      clearScreen: [Function: clearScreen],
+      hasErrorLogged: [Function: hasErrorLogged]
+    },
+    appType: 'custom',
+    optimizeDeps: {
+      entries: [
+        'D:/恒沣/【8行政】/website/lastingqual/src/**/*.{jsx,tsx,vue,svelte,html,astro}',
+        'keystatic.config.*',
+        '.astro/keystatic-imports.js'
+      ],
+      exclude: [ 'astro', 'node-fetch' ],
+      include: [ '@astrojs/react/client.js' ]
+    },
+    plugins: [
+      {
+        enforce: 'pre',
+        name: 'astro-manifest-plugin',
+        resolveId: [Function: resolveId],
+        load: [Function: load]
+      },
+      null,
+      false,
+      [
+        {
+          name: 'astro:build',
+          enforce: 'pre',
+          configEnvironment: [AsyncFunction: configEnvironment],
+          configResolved: [Function: configResolved],
+          configureServer: [Function: configureServer],
+          buildStart: [Function: buildStart],
+          load: [AsyncFunction: load],
+          transform: [AsyncFunction: transform],
+          handleHotUpdate: [AsyncFunction: handleHotUpdate]
+        },
+        {
+          name: 'astro:build:normal',
+          resolveId: [Function: resolveId]
+        }
+      ],
+      {
+        name: 'astro:scripts',
+        config: [Function: config],
+        resolveId: [AsyncFunction: resolveId],
+        load: [AsyncFunction: load],
+        buildStart: [Function: buildStart]
+      },
+      {
+        name: 'astro:server',
+        buildEnd: [Function: buildEnd],
+        configureServer: [AsyncFunction: configureServer],
+        transform: [Function: transform]
+      },
+      {
+        name: 'astro:vite-plugin-env',
+        config: [Function: config],
+        configResolved: [Function: configResolved],
+        transform: [Function: transform]
+      },
+      {
+        name: 'astro-env-plugin',
+        enforce: 'pre',
+        config: [Function: config],
+        buildStart: [Function: buildStart],
+        resolveId: [Function: resolveId],
+        load: [Function: load]
+      },
+      {
+        name: 'astro:adapter-config',
+        resolveId: [Function: resolveId],
+        load: [Function: load]
+      },
+      {
+        enforce: 'pre',
+        name: 'astro:markdown',
+        buildEnd: [Function: buildEnd],
+        resolveId: [AsyncFunction: resolveId],
+        load: [AsyncFunction: load]
+      },
+      {
+        name: 'astro:html',
+        options: [Function: options],
+        transform: [AsyncFunction: transform]
+      },
+      {
+        name: 'astro:postprocess',
+        transform: [AsyncFunction: transform]
+      },
+      {
+        name: 'astro:integration-container',
+        configureServer: [AsyncFunction: configureServer],
+        buildStart: [AsyncFunction: buildStart]
+      },
+      {
+        name: 'astro:scripts:page-ssr',
+        enforce: 'post',
+        transform: [Function: transform]
+      },
+      {
+        name: 'astro:head-metadata',
+        enforce: 'pre',
+        apply: 'serve',
+        configureServer: [Function: configureServer],
+        resolveId: [Function: resolveId],
+        transform: [Function: transform]
+      },
+      {
+        name: 'astro:scanner',
+        enforce: 'post',
+        transform: [AsyncFunction: transform],
+        handleHotUpdate: [AsyncFunction: handleHotUpdate]
+      },
+      {
+        name: 'astro-content-virtual-mod-plugin',
+        enforce: 'pre',
+        config: [Function: config],
+        buildStart: [Function: buildStart],
+        resolveId: [AsyncFunction: resolveId],
+        load: [AsyncFunction: load],
+        configureServer: [Function: configureServer]
+      },
+      [
+        {
+          name: 'astro:content-imports',
+          config: [Function: config],
+          buildStart: [AsyncFunction: buildStart],
+          transform: [AsyncFunction: transform],
+          configureServer: [Function: configureServer]
+        }
+      ],
+      {
+        name: 'astro:content-asset-propagation',
+        enforce: 'pre',
+        resolveId: [AsyncFunction: resolveId],
+        configureServer: [Function: configureServer],
+        transform: [AsyncFunction: transform]
+      },
+      {
+        name: '@astro/plugin-middleware',
+        resolveId: [AsyncFunction: resolveId],
+        load: [AsyncFunction: load]
+      },
+      {
+        name: '@astrojs/vite-plugin-astro-ssr-manifest',
+        enforce: 'post',
+        resolveId: [Function: resolveId],
+        load: [Function: load]
+      },
+      [
+        {
+          name: 'astro:assets',
+          config: [Function: config],
+          resolveId: [AsyncFunction: resolveId],
+          load: [Function: load],
+          buildStart: [Function: buildStart],
+          renderChunk: [AsyncFunction: renderChunk]
+        },
+        {
+          name: 'astro:assets:esm',
+          enforce: 'pre',
+          config: [Function: config],
+          configResolved: [Function: configResolved],
+          load: [AsyncFunction: load]
+        },
+        {
+          name: 'astro:fonts:fallback',
+          resolveId: [Function: resolveId],
+          load: [Function: load]
+        }
+      ],
+      {
+        name: 'astro:prefetch',
+        resolveId: [AsyncFunction: resolveId],
+        load: [Function: load],
+        transform: [Function: transform]
+      },
+      {
+        name: 'astro:transitions',
+        config: [Function: config],
+        resolveId: [AsyncFunction: resolveId],
+        load: [Function: load],
+        transform: [Function: transform]
+      },
+      {
+        name: 'astro:dev-toolbar',
+        config: [Function: config],
+        resolveId: [Function: resolveId],
+        configureServer: [Function: configureServer],
+        load: [AsyncFunction: load]
+      },
+      {
+        name: 'astro:vite-plugin-file-url',
+        enforce: 'pre',
+        resolveId: [Function: resolveId]
+      },
+      {
+        name: 'astro:i18n',
+        enforce: 'pre',
+        config: [Function: config],
+        resolveId: [Function: resolveId]
+      },
+      {
+        name: 'astro:actions',
+        enforce: 'pre',
+        resolveId: [AsyncFunction: resolveId],
+        configureServer: [AsyncFunction: configureServer],
+        load: [AsyncFunction: load]
+      },
+      {
+        name: 'astro:server-islands',
+        enforce: 'post',
+        config: [Function: config],
+        configureServer: [Function: configureServer],
+        resolveId: [Function: resolveId],
+        load: [Function: load],
+        transform: [Function: transform],
+        renderChunk: [Function: renderChunk]
+      },
+      {
+        name: 'astro:container',
+        enforce: 'pre',
+        resolveId: [Function: resolveId]
+      },
+      {
+        name: 'astro:hmr-reload',
+        enforce: 'post',
+        hotUpdate: { order: 'post', handler: [Function: handler] }
+      },
+      {
+        name: 'vite:cf-module-loader',
+        enforce: 'pre',
+        configResolved: [Function: configResolved],
+        config: [Function: config],
+        load: [AsyncFunction: load],
+        renderChunk: [Function: renderChunk],
+        generateBundle: [Function: generateBundle],
+        afterBuildCompleted: [AsyncFunction: afterBuildCompleted]
+      },
+      {
+        name: 'vite:cf-imports',
+        enforce: 'pre',
+        resolveId: [Function: resolveId]
+      },
+      {
+        name: 'vite:react-babel',
+        enforce: 'pre',
+        config: [Function: config],
+        configResolved: [Function: configResolved],
+        options: [Function: options],
+        transform: {
+          filter: {
+            id: {
+              include: /\.[tj]sx?(?:\?.*)?$/,
+              exclude: /\/node_modules\//
+            }
+          },
+          handler: [AsyncFunction: handler]
+        }
+      },
+      {
+        name: 'vite:react-refresh',
+        enforce: 'pre',
+        config: [Function: config],
+        resolveId: {
+          filter: { id: /^\/@react\-refresh$/ },
+          handler: [Function: handler]
+        },
+        load: {
+          filter: { id: /^\/@react\-refresh$/ },
+          handler: [Function: handler]
+        },
+        transformIndexHtml: [Function: transformIndexHtml]
+      },
+      {
+        name: 'vite:react-virtual-preamble',
+        resolveId: {
+          order: 'pre',
+          filter: { id: /^@vitejs\/plugin\-react\/preamble$/ },
+          handler: [Function: handler]
+        },
+        load: {
+          filter: { id: /^ @vitejs\/plugin\-react\/preamble$/ },
+          handler: [Function: handler]
+        }
+      },
+      {
+        name: '@astrojs/react:opts',
+        resolveId: {
+          filter: { id: /^astro:react:opts$/ },
+          handler: [Function: handler]
+        },
+        load: {
+          filter: { id: /^ astro:react:opts$/ },
+          handler: [Function: handler]
+        }
+      },
+      {
+        name: '@astrojs/react:environment',
+        configEnvironment: [Function: configEnvironment]
+      },
+      { name: 'keystatic', resolveId: [Function: resolveId] }
+    ],
+    publicDir: 'D:\\恒沣\\【8行政】\\website\\lastingqual\\public\\',
+    root: 'D:\\恒沣\\【8行政】\\website\\lastingqual\\',
+    envPrefix: 'PUBLIC_',
+    define: {
+      'import.meta.env.SITE': 'undefined',
+      'import.meta.env.BASE_URL': '"/"',
+      'import.meta.env.ASSETS_PREFIX': 'undefined'
+    },
+    server: {
+      hmr: undefined,
+      watch: { ignored: undefined },
+      host: '127.0.0.1',
+      open: false,
+      allowedHosts: []
+    },
+    resolve: {
+      alias: [
+        { find: 'randombytes', replacement: 'randombytes/browser' },
+        {
+          find: /^astro$/,
+          replacement: 'D:\\恒沣\\【8行政】\\website\\lastingqual\\node_modules\\astro\\dist\\types\\public\\index.js'
+        },
+        {
+          find: 'astro:middleware',
+          replacement: 'astro/virtual-modules/middleware.js'
+        },
+        { find: 'astro:schema', replacement: 'astro/zod' },
+        { find: 'astro:components', replacement: 'astro/components' }
+      ],
+      dedupe: [ 'astro' ],
+      conditions: [ 'module', 'browser', 'development|production', 'astro' ],
+      mainFields: undefined
+    },
+    ssr: {
+      noExternal: [
+        'astro',
+        'astro/components',
+        '@nanostores/preact',
+        '@fontsource/*',
+        '@astrojs/react',
+        '@astrojs/cloudflare',
+        '@astrojs/tailwind',
+        '@keystatic/astro',
+        '@astrojs/internal-helpers',
+        '@astrojs/underscore-redirects',
+        '@mui/material',
+        '@mui/base',
+        '@babel/runtime',
+        'use-immer',
+        '@material-tailwind/react'
+      ],
+      external: [
+        'prismjs/components/index.js',
+        'string-width',
+        'cssesc',
+        '@vitejs/plugin-react',
+        'devalue',
+        'ultrahtml',
+        'tinyglobby',
+        'wrangler',
+        'postcss-load-config',
+        'set-cookie-parser',
+        '@cloudflare/workers-types',
+        'picomatch'
+      ]
+    },
+    build: { assetsDir: '_astro' },
+    css: {
+      postcss: {
+        plugins: [
+          {
+            postcssPlugin: 'tailwindcss',
+            plugins: [ [AsyncFunction (anonymous)] ]
+          },
+          {
+            browsers: undefined,
+            info: [Function: info],
+            options: {},
+            postcssPlugin: 'autoprefixer',
+            prepare: [Function: prepare]
+          }
+        ]
+      }
+    }
+  },
+  base: '/',
+  decodedBase: '/',
+  rawBase: '/',
+  command: 'serve',
+  isWorker: false,
+  mainConfig: null,
+  bundleChain: [],
+  isProduction: false,
+  json: { namedExports: true, stringify: 'auto' },
+  builder: undefined,
+  preview: {
+    port: 4173,
+    strictPort: false,
+    host: '127.0.0.1',
+    allowedHosts: [],
+    https: undefined,
+    open: false,
+    proxy: undefined,
+    cors: {
+      origin: /^https?:\/\/(?:(?:[^:]+\.)?localhost|127\.0\.0\.1|\[::1\])(?::\d+)?$/
+    },
+    headers: {}
+  },
+  envDir: 'D:/恒沣/【8行政】/website/lastingqual',
+  env: { BASE_URL: '/', MODE: 'development', DEV: true, PROD: false },
+  logger: {
+    hasWarned: false,
+    info: [Function: info],
+    warn: [Function: warn],
+    warnOnce: [Function: warnOnce],
+    error: [Function: error],
+    clearScreen: [Function: clearScreen],
+    hasErrorLogged: [Function: hasErrorLogged]
+  },
+  packageCache: Map(1) {
+    'fnpd_D:/恒沣/【8行政】/website/lastingqual' => {
+      dir: 'D:/恒沣/【8行政】/website/lastingqual',
+      data: {
+        name: 'lastingqual',
+        type: 'module',
+        version: '0.0.1',
+        scripts: {
+          dev: 'astro dev',
+          build: 'npm run check:utf8 && npm run content:prepare && astro build',
+          preview: 'astro preview',
+          astro: 'astro',
+          'images:process': 'node scripts/process-images.mjs',
+          'content:prepare': 'npm run images:process',
+          'check:encoding': 'node scripts/check-utf8.mjs',
+          'check:utf8': 'node scripts/check-utf8.mjs',
+          'content:translate': 'node scripts/sync-zh-to-en.mjs',
+          'content:translate:check': 'node scripts/check-openai.mjs'
+        },
+        dependencies: {
+          '@astrojs/cloudflare': '^12.6.13',
+          '@astrojs/react': '^5.0.3',
+          '@astrojs/tailwind': '^6.0.2',
+          '@keystatic/astro': '^5.0.6',
+          '@keystatic/core': '^0.5.50',
+          astro: '^5.16.9',
+          react: '^19.2.5',
+          'react-dom': '^19.2.5',
+          tailwindcss: '^3.4.19'
+        },
+        devDependencies: { sharp: '^0.34.5' }
+      },
+      hasSideEffects: [Function: hasSideEffects],
+      setResolvedCache: [Function: setResolvedCache],
+      getResolvedCache: [Function: getResolvedCache]
+    },
+    set: [Function (anonymous)]
+  },
+  worker: { format: 'iife', plugins: '() => plugins', rollupOptions: {} },
+  experimental: { importGlobRestoreExtension: false, hmrPartialAccept: false },
+  future: undefined,
+  dev: {
+    warmup: [],
+    sourcemap: { js: true },
+    sourcemapIgnoreList: [Function: isInNodeModules$1],
+    preTransformRequests: false,
+    createEnvironment: [Function: defaultCreateDevEnvironment],
+    recoverable: false,
+    moduleRunnerTransform: false
+  },
+  webSocketToken: 'gIuHQud9bVLQ',
+  getSortedPlugins: [Function: getSortedPlugins],
+  getSortedPluginHooks: [Function: getSortedPluginHooks],
+  createResolver: [Function: createResolver],
+  fsDenyGlob: [Function: arrayMatcher],
+  safeModulePaths: Set(0) {},
+  additionalAllowedHosts: [ '127.0.0.1', '127.0.0.1' ],
+  Symbol(vite:resolved-config): true
+}
+2026-04-17T15:15:11.642Z vite:hmr [file change] [2m.astro/types.d.ts[22m
+2026-04-17T15:15:11.644Z vite:hmr (client) [no modules matched] [2m.astro/types.d.ts[22m
+2026-04-17T15:15:11.644Z vite:hmr (ssr) [no modules matched] [2m.astro/types.d.ts[22m
+2026-04-17T15:15:11.665Z vite:resolve [32m9.48ms[39m [36mD:\恒沣\【8行政】\website\lastingqual\src\content.config.ts[39m -> [2mD:/恒沣/【8行政】/website/lastingqual/src/content.config.ts[22m
+2026-04-17T15:15:11.672Z vite:load [32m4.21ms[39m [fs] [2mD:\恒沣\【8行政】\website\lastingqual\src\content.config.ts[22m
+2026-04-17T15:15:11.715Z vite:resolve [32m0.04ms[39m [36mastro:content[39m -> [2m astro:content[22m
+2026-04-17T15:15:11.716Z vite:import-analysis [32m5.84ms[39m [2m[1 imports rewritten] [2msrc/content.config.ts[22m[2m[22m
+2026-04-17T15:15:11.717Z vite:transform [33m44.75ms[39m [2mD:\恒沣\【8行政】\website\lastingqual\src\content.config.ts[22m
+2026-04-17T15:15:11.729Z vite:load [32m1.03ms[39m [plugin] [2m astro:content[22m
+2026-04-17T15:15:11.734Z vite:resolve [32m2.23ms[39m [36mastro/content/runtime[39m -> [2mD:/恒沣/【8行政】/website/lastingqual/node_modules/astro/dist/content/runtime.js[22m
+2026-04-17T15:15:11.734Z vite:resolve [32m2.40ms[39m [36mastro/zod[39m -> [2mD:/恒沣/【8行政】/website/lastingqual/node_modules/astro/dist/zod.js[22m
+2026-04-17T15:15:11.734Z vite:import-analysis [32m3.65ms[39m [2m[2 imports rewritten] [2m astro:content[22m[2m[22m
+2026-04-17T15:15:11.735Z vite:transform [32m4.94ms[39m [2m astro:content[22m
+2026-04-17T15:15:11.740Z vite:load [32m1.18ms[39m [fs] [2m/node_modules/astro/dist/content/runtime.js[22m
+2026-04-17T15:15:11.763Z vite:resolve [32m0.66ms[39m [36mastro:asset-imports[39m -> [2mD:\恒沣\【8行政】\website\lastingqual\.astro\content-assets.mjs[22m
+2026-04-17T15:15:11.763Z vite:resolve [32m0.97ms[39m [36mastro:content-module-imports[39m -> [2mD:\恒沣\【8行政】\website\lastingqual\.astro\content-modules.mjs[22m
+2026-04-17T15:15:11.763Z vite:resolve [32m3.46ms[39m [36mastro:asset-imports[39m -> [2mD:/恒沣/【8行政】/website/lastingqual/.astro/content-assets.mjs[22m
+2026-04-17T15:15:11.763Z vite:resolve [32m1.57ms[39m [36mastro:content-module-imports[39m -> [2mD:/恒沣/【8行政】/website/lastingqual/.astro/content-modules.mjs[22m
+2026-04-17T15:15:11.766Z vite:resolve [32m4.37ms[39m [36m../assets/utils/resolveImports.js[39m -> [2mD:/恒沣/【8行政】/website/lastingqual/node_modules/astro/dist/assets/utils/resolveImports.js[22m
+2026-04-17T15:15:11.766Z vite:resolve [32m4.50ms[39m [36m../core/errors/index.js[39m -> [2mD:/恒沣/【8行政】/website/lastingqual/node_modules/astro/dist/core/errors/index.js[22m
+2026-04-17T15:15:11.766Z vite:resolve [32m4.60ms[39m [36m../core/path.js[39m -> [2mD:/恒沣/【8行政】/website/lastingqual/node_modules/astro/dist/core/path.js[22m
+2026-04-17T15:15:11.767Z vite:resolve [32m4.69ms[39m [36m../runtime/server/index.js[39m -> [2mD:/恒沣/【8行政】/website/lastingqual/node_modules/astro/dist/runtime/server/index.js[22m
+2026-04-17T15:15:11.767Z vite:resolve [32m4.77ms[39m [36m./config.js[39m -> [2mD:/恒沣/【8行政】/website/lastingqual/node_modules/astro/dist/content/config.js[22m
+2026-04-17T15:15:11.767Z vite:resolve [32m4.85ms[39m [36m./consts.js[39m -> [2mD:/恒沣/【8行政】/website/lastingqual/node_modules/astro/dist/content/consts.js[22m
+2026-04-17T15:15:11.767Z vite:resolve [32m4.93ms[39m [36m./data-store.js[39m -> [2mD:/恒沣/【8行政】/website/lastingqual/node_modules/astro/dist/content/data-store.js[22m
+2026-04-17T15:15:11.767Z vite:resolve [32m5.00ms[39m [36m./loaders/errors.js[39m -> [2mD:/恒沣/【8行政】/website/lastingqual/node_modules/astro/dist/content/loaders/errors.js[22m
+2026-04-17T15:15:11.768Z vite:resolve [32m6.13ms[39m [36mastro:assets[39m -> [2m astro:assets[22m
+2026-04-17T15:15:11.769Z vite:import-analysis [33m20.47ms[39m [2m[11 imports rewritten] [2mnode_modules/astro/dist/content/runtime.js[22m[2m[22m
+2026-04-17T15:15:11.769Z vite:transform [33m28.12ms[39m [2m/node_modules/astro/dist/content/runtime.js[22m
+2026-04-17T15:15:11.807Z vite:load [32m0.93ms[39m [fs] [2m/node_modules/astro/dist/assets/utils/resolveImports.js[22m
+2026-04-17T15:15:11.810Z vite:resolve [32m2.03ms[39m [36m@astrojs/internal-helpers/path[39m -> [2mD:/恒沣/【8行政】/website/lastingqual/node_modules/@astrojs/internal-helpers/dist/path.js[22m
+2026-04-17T15:15:11.810Z vite:resolve [32m2.19ms[39m [36m../../content/consts.js[39m -> [2mD:/恒沣/【8行政】/website/lastingqual/node_modules/astro/dist/content/consts.js[22m
+2026-04-17T15:15:11.810Z vite:resolve [32m2.29ms[39m [36m../../runtime/server/shorthash.js[39m -> [2mD:/恒沣/【8行政】/website/lastingqual/node_modules/astro/dist/runtime/server/shorthash.js[22m
+2026-04-17T15:15:11.810Z vite:resolve [32m2.38ms[39m [36m../consts.js[39m -> [2mD:/恒沣/【8行政】/website/lastingqual/node_modules/astro/dist/assets/consts.js[22m
+2026-04-17T15:15:11.811Z vite:import-analysis [32m3.11ms[39m [2m[4 imports rewritten] [2mnode_modules/astro/dist/assets/utils/resolveImports.js[22m[2m[22m
+2026-04-17T15:15:11.811Z vite:transform [32m3.59ms[39m [2m/node_modules/astro/dist/assets/utils/resolveImports.js[22m
+2026-04-17T15:15:11.813Z vite:load [32m0.84ms[39m [fs] [2m/node_modules/@astrojs/internal-helpers/dist/path.js[22m
+2026-04-17T15:15:11.813Z vite:import-analysis [32m0.09ms[39m [2m[no imports] [2mnode_modules/@astrojs/internal-helpers/dist/path.js[22m[2m[22m
+2026-04-17T15:15:11.814Z vite:transform [32m0.57ms[39m[2m [skipped] [2m/node_modules/@astrojs/internal-helpers/dist/path.js[22m[2m[22m
+2026-04-17T15:15:11.817Z vite:load [32m0.59ms[39m [fs] [2m/node_modules/astro/dist/content/consts.js[22m
+2026-04-17T15:15:11.818Z vite:import-analysis [32m0.10ms[39m [2m[no imports] [2mnode_modules/astro/dist/content/consts.js[22m[2m[22m
+2026-04-17T15:15:11.818Z vite:transform [32m0.54ms[39m[2m [skipped] [2m/node_modules/astro/dist/content/consts.js[22m[2m[22m
+2026-04-17T15:15:11.821Z vite:load [32m0.83ms[39m [fs] [2m/node_modules/astro/dist/runtime/server/shorthash.js[22m
+2026-04-17T15:15:11.821Z vite:import-analysis [32m0.23ms[39m [2m[no imports] [2mnode_modules/astro/dist/runtime/server/shorthash.js[22m[2m[22m
+2026-04-17T15:15:11.822Z vite:transform [32m0.91ms[39m[2m [skipped] [2m/node_modules/astro/dist/runtime/server/shorthash.js[22m[2m[22m
+2026-04-17T15:15:11.825Z vite:load [32m0.75ms[39m [fs] [2m/node_modules/astro/dist/assets/consts.js[22m
+2026-04-17T15:15:11.826Z vite:import-analysis [32m0.05ms[39m [2m[no imports] [2mnode_modules/astro/dist/assets/consts.js[22m[2m[22m
+2026-04-17T15:15:11.826Z vite:transform [32m0.91ms[39m[2m [skipped] [2m/node_modules/astro/dist/assets/consts.js[22m[2m[22m
+2026-04-17T15:15:11.828Z vite:load [32m0.71ms[39m [fs] [2m/node_modules/astro/dist/core/errors/index.js[22m
+2026-04-17T15:15:11.830Z vite:resolve [32m0.95ms[39m [36m./errors.js[39m -> [2mD:/恒沣/【8行政】/website/lastingqual/node_modules/astro/dist/core/errors/errors.js[22m
+2026-04-17T15:15:11.830Z vite:resolve [32m1.15ms[39m [36m./errors-data.js[39m -> [2mD:/恒沣/【8行政】/website/lastingqual/node_modules/astro/dist/core/errors/errors-data.js[22m
+2026-04-17T15:15:11.830Z vite:resolve [32m1.25ms[39m [36m./utils.js[39m -> [2mD:/恒沣/【8行政】/website/lastingqual/node_modules/astro/dist/core/errors/utils.js[22m
+2026-04-17T15:15:11.830Z vite:resolve [32m1.42ms[39m [36m./zod-error-map.js[39m -> [2mD:/恒沣/【8行政】/website/lastingqual/node_modules/astro/dist/core/errors/zod-error-map.js[22m
+2026-04-17T15:15:11.831Z vite:import-analysis [32m1.93ms[39m [2m[4 imports rewritten] [2mnode_modules/astro/dist/core/errors/index.js[22m[2m[22m
+2026-04-17T15:15:11.831Z vite:transform [32m2.33ms[39m [2m/node_modules/astro/dist/core/errors/index.js[22m
+2026-04-17T15:15:11.833Z vite:load [32m0.64ms[39m [fs] [2m/node_modules/astro/dist/core/errors/errors.js[22m
+2026-04-17T15:15:11.833Z vite:resolve [32m0.35ms[39m [36m./printer.js[39m -> [2mD:/恒沣/【8行政】/website/lastingqual/node_modules/astro/dist/core/errors/printer.js[22m
+2026-04-17T15:15:11.834Z vite:import-analysis [32m0.72ms[39m [2m[1 imports rewritten] [2mnode_modules/astro/dist/core/errors/errors.js[22m[2m[22m
+2026-04-17T15:15:11.834Z vite:transform [32m1.10ms[39m [2m/node_modules/astro/dist/core/errors/errors.js[22m
+2026-04-17T15:15:11.837Z vite:load [32m0.63ms[39m [fs] [2m/node_modules/astro/dist/core/errors/printer.js[22m
+2026-04-17T15:15:11.838Z vite:import-analysis [32m0.55ms[39m [2m[1 imports rewritten] [2mnode_modules/astro/dist/core/errors/printer.js[22m[2m[22m
+2026-04-17T15:15:11.838Z vite:transform [32m1.00ms[39m [2m/node_modules/astro/dist/core/errors/printer.js[22m
+2026-04-17T15:15:11.840Z vite:load [32m0.76ms[39m [fs] [2m/node_modules/astro/dist/core/errors/utils.js[22m
+2026-04-17T15:15:11.841Z vite:import-analysis [32m0.11ms[39m [2m[no imports] [2mnode_modules/astro/dist/core/errors/utils.js[22m[2m[22m
+2026-04-17T15:15:11.841Z vite:transform [32m0.51ms[39m[2m [skipped] [2m/node_modules/astro/dist/core/errors/utils.js[22m[2m[22m
+2026-04-17T15:15:11.843Z vite:load [32m0.66ms[39m [fs] [2m/node_modules/astro/dist/core/errors/errors-data.js[22m
+2026-04-17T15:15:11.851Z vite:import-analysis [32m0.39ms[39m [2m[no imports] [2mnode_modules/astro/dist/core/errors/errors-data.js[22m[2m[22m
+2026-04-17T15:15:11.851Z vite:transform [32m7.36ms[39m[2m [skipped] [2m/node_modules/astro/dist/core/errors/errors-data.js[22m[2m[22m
+2026-04-17T15:15:11.866Z vite:load [32m0.90ms[39m [fs] [2m/node_modules/astro/dist/core/errors/zod-error-map.js[22m
+2026-04-17T15:15:11.866Z vite:import-analysis [32m0.06ms[39m [2m[no imports] [2mnode_modules/astro/dist/core/errors/zod-error-map.js[22m[2m[22m
+2026-04-17T15:15:11.867Z vite:transform [32m0.51ms[39m[2m [skipped] [2m/node_modules/astro/dist/core/errors/zod-error-map.js[22m[2m[22m
+2026-04-17T15:15:11.870Z vite:load [32m0.65ms[39m [fs] [2m/node_modules/astro/dist/core/path.js[22m
+2026-04-17T15:15:11.871Z vite:import-analysis [32m0.55ms[39m [2m[1 imports rewritten] [2mnode_modules/astro/dist/core/path.js[22m[2m[22m
+2026-04-17T15:15:11.871Z vite:transform [32m0.92ms[39m [2m/node_modules/astro/dist/core/path.js[22m
+2026-04-17T15:15:11.873Z vite:load [32m0.82ms[39m [fs] [2m/node_modules/astro/dist/runtime/server/index.js[22m
+2026-04-17T15:15:11.876Z vite:resolve [32m2.20ms[39m [36m./astro-component.js[39m -> [2mD:/恒沣/【8行政】/website/lastingqual/node_modules/astro/dist/runtime/server/astro-component.js[22m
+2026-04-17T15:15:11.876Z vite:resolve [32m2.37ms[39m [36m./astro-global.js[39m -> [2mD:/恒沣/【8行政】/website/lastingqual/node_modules/astro/dist/runtime/server/astro-global.js[22m
+2026-04-17T15:15:11.876Z vite:resolve [32m2.45ms[39m [36m./endpoint.js[39m -> [2mD:/恒沣/【8行政】/website/lastingqual/node_modules/astro/dist/runtime/server/endpoint.js[22m
+2026-04-17T15:15:11.876Z vite:resolve [32m2.51ms[39m [36m./escape.js[39m -> [2mD:/恒沣/【8行政】/website/lastingqual/node_modules/astro/dist/runtime/server/escape.js[22m
+2026-04-17T15:15:11.876Z vite:resolve [32m2.57ms[39m [36m./jsx.js[39m -> [2mD:/恒沣/【8行政】/website/lastingqual/node_modules/astro/dist/runtime/server/jsx.js[22m
+2026-04-17T15:15:11.876Z vite:resolve [32m2.63ms[39m [36m./render/index.js[39m -> [2mD:/恒沣/【8行政】/website/lastingqual/node_modules/astro/dist/runtime/server/render/index.js[22m
+2026-04-17T15:15:11.876Z vite:resolve [32m2.66ms[39m [36m./transition.js[39m -> [2mD:/恒沣/【8行政】/website/lastingqual/node_modules/astro/dist/runtime/server/transition.js[22m
+2026-04-17T15:15:11.877Z vite:import-analysis [32m3.44ms[39m [2m[7 imports rewritten] [2mnode_modules/astro/dist/runtime/server/index.js[22m[2m[22m
+2026-04-17T15:15:11.877Z vite:transform [32m3.86ms[39m [2m/node_modules/astro/dist/runtime/server/index.js[22m
+2026-04-17T15:15:11.880Z vite:load [32m0.81ms[39m [fs] [2m/node_modules/astro/dist/runtime/server/astro-component.js[22m
+2026-04-17T15:15:11.881Z vite:resolve [32m0.34ms[39m [36m../../core/errors/index.js[39m -> [2mD:/恒沣/【8行政】/website/lastingqual/node_modules/astro/dist/core/errors/index.js[22m
+2026-04-17T15:15:11.881Z vite:import-analysis [32m0.64ms[39m [2m[1 imports rewritten] [2mnode_modules/astro/dist/runtime/server/astro-component.js[22m[2m[22m
+2026-04-17T15:15:11.881Z vite:transform [32m1.02ms[39m [2m/node_modules/astro/dist/runtime/server/astro-component.js[22m
+2026-04-17T15:15:11.883Z vite:load [32m0.63ms[39m [fs] [2m/node_modules/astro/dist/runtime/server/astro-global.js[22m
+2026-04-17T15:15:11.884Z vite:resolve [32m0.46ms[39m [36m../../core/constants.js[39m -> [2mD:/恒沣/【8行政】/website/lastingqual/node_modules/astro/dist/core/constants.js[22m
+2026-04-17T15:15:11.884Z vite:import-analysis [32m0.81ms[39m [2m[2 imports rewritten] [2mnode_modules/astro/dist/runtime/server/astro-global.js[22m[2m[22m
+2026-04-17T15:15:11.885Z vite:transform [32m1.49ms[39m [2m/node_modules/astro/dist/runtime/server/astro-global.js[22m
+2026-04-17T15:15:11.886Z vite:load [32m0.64ms[39m [fs] [2m/node_modules/astro/dist/core/constants.js[22m
+2026-04-17T15:15:11.887Z vite:import-analysis [32m0.03ms[39m [2m[no imports] [2mnode_modules/astro/dist/core/constants.js[22m[2m[22m
+2026-04-17T15:15:11.887Z vite:transform [32m0.32ms[39m[2m [skipped] [2m/node_modules/astro/dist/core/constants.js[22m[2m[22m
+2026-04-17T15:15:11.889Z vite:load [32m0.84ms[39m [fs] [2m/node_modules/astro/dist/runtime/server/endpoint.js[22m
+2026-04-17T15:15:11.892Z vite:resolve [32m0.61ms[39m [36m../../core/errors/errors.js[39m -> [2mD:/恒沣/【8行政】/website/lastingqual/node_modules/astro/dist/core/errors/errors.js[22m
+2026-04-17T15:15:11.892Z vite:resolve [32m0.76ms[39m [36m../../core/errors/errors-data.js[39m -> [2mD:/恒沣/【8行政】/website/lastingqual/node_modules/astro/dist/core/errors/errors-data.js[22m
+2026-04-17T15:15:11.893Z vite:import-analysis [32m3.14ms[39m [2m[3 imports rewritten] [2mnode_modules/astro/dist/runtime/server/endpoint.js[22m[2m[22m
+2026-04-17T15:15:11.893Z vite:transform [32m3.69ms[39m [2m/node_modules/astro/dist/runtime/server/endpoint.js[22m
+2026-04-17T15:15:11.897Z vite:load [32m0.64ms[39m [fs] [2m/node_modules/astro/dist/runtime/server/escape.js[22m
+2026-04-17T15:15:11.898Z vite:resolve [32m0.26ms[39m [36m./util.js[39m -> [2mD:/恒沣/【8行政】/website/lastingqual/node_modules/astro/dist/runtime/server/util.js[22m
+2026-04-17T15:15:11.898Z vite:import-analysis [32m0.62ms[39m [2m[1 imports rewritten] [2mnode_modules/astro/dist/runtime/server/escape.js[22m[2m[22m
+2026-04-17T15:15:11.898Z vite:transform [32m0.97ms[39m [2m/node_modules/astro/dist/runtime/server/escape.js[22m
+2026-04-17T15:15:11.901Z vite:load [32m0.64ms[39m [fs] [2m/node_modules/astro/dist/runtime/server/util.js[22m
+2026-04-17T15:15:11.901Z vite:import-analysis [32m0.02ms[39m [2m[no imports] [2mnode_modules/astro/dist/runtime/server/util.js[22m[2m[22m
+2026-04-17T15:15:11.901Z vite:transform [32m0.42ms[39m[2m [skipped] [2m/node_modules/astro/dist/runtime/server/util.js[22m[2m[22m
+2026-04-17T15:15:11.903Z vite:load [32m0.62ms[39m [fs] [2m/node_modules/astro/dist/runtime/server/jsx.js[22m
+2026-04-17T15:15:11.905Z vite:resolve [32m1.26ms[39m [36m../../jsx-runtime/index.js[39m -> [2mD:/恒沣/【8行政】/website/lastingqual/node_modules/astro/dist/jsx-runtime/index.js[22m
+2026-04-17T15:15:11.905Z vite:resolve [32m1.49ms[39m [36m./index.js[39m -> [2mD:/恒沣/【8行政】/website/lastingqual/node_modules/astro/dist/runtime/server/index.js[22m
+2026-04-17T15:15:11.905Z vite:resolve [32m1.67ms[39m [36m./render/astro/factory.js[39m -> [2mD:/恒沣/【8行政】/website/lastingqual/node_modules/astro/dist/runtime/server/render/astro/factory.js[22m
+2026-04-17T15:15:11.905Z vite:resolve [32m1.78ms[39m [36m./render/component.js[39m -> [2mD:/恒沣/【8行政】/website/lastingqual/node_modules/astro/dist/runtime/server/render/component.js[22m
+2026-04-17T15:15:11.905Z vite:resolve [32m1.96ms[39m [36m./render/slot.js[39m -> [2mD:/恒沣/【8行政】/website/lastingqual/node_modules/astro/dist/runtime/server/render/slot.js[22m
+2026-04-17T15:15:11.906Z vite:import-analysis [32m2.50ms[39m [2m[5 imports rewritten] [2mnode_modules/astro/dist/runtime/server/jsx.js[22m[2m[22m
+2026-04-17T15:15:11.906Z vite:transform [32m2.84ms[39m [2m/node_modules/astro/dist/runtime/server/jsx.js[22m
+2026-04-17T15:15:11.910Z vite:load [32m0.79ms[39m [fs] [2m/node_modules/astro/dist/jsx-runtime/index.js[22m
+2026-04-17T15:15:11.911Z vite:import-analysis [32m0.58ms[39m [2m[1 imports rewritten] [2mnode_modules/astro/dist/jsx-runtime/index.js[22m[2m[22m
+2026-04-17T15:15:11.911Z vite:transform [32m0.99ms[39m [2m/node_modules/astro/dist/jsx-runtime/index.js[22m
+2026-04-17T15:15:11.914Z vite:load [32m0.64ms[39m [fs] [2m/node_modules/astro/dist/runtime/server/render/astro/factory.js[22m
+2026-04-17T15:15:11.914Z vite:import-analysis [32m0.02ms[39m [2m[no imports] [2mnode_modules/astro/dist/runtime/server/render/astro/factory.js[22m[2m[22m
+2026-04-17T15:15:11.914Z vite:transform [32m0.34ms[39m[2m [skipped] [2m/node_modules/astro/dist/runtime/server/render/astro/factory.js[22m[2m[22m
+2026-04-17T15:15:11.916Z vite:load [32m0.70ms[39m [fs] [2m/node_modules/astro/dist/runtime/server/render/component.js[22m
+2026-04-17T15:15:11.922Z vite:resolve [32m3.81ms[39m [36m../../../core/errors/index.js[39m -> [2mD:/恒沣/【8行政】/website/lastingqual/node_modules/astro/dist/core/errors/index.js[22m
+2026-04-17T15:15:11.922Z vite:resolve [32m4.05ms[39m [36m../escape.js[39m -> [2mD:/恒沣/【8行政】/website/lastingqual/node_modules/astro/dist/runtime/server/escape.js[22m
+2026-04-17T15:15:11.922Z vite:resolve [32m4.19ms[39m [36m../hydration.js[39m -> [2mD:/恒沣/【8行政】/website/lastingqual/node_modules/astro/dist/runtime/server/hydration.js[22m
+2026-04-17T15:15:11.922Z vite:resolve [32m4.26ms[39m [36m../serialize.js[39m -> [2mD:/恒沣/【8行政】/website/lastingqual/node_modules/astro/dist/runtime/server/serialize.js[22m
+2026-04-17T15:15:11.922Z vite:resolve [32m4.33ms[39m [36m../shorthash.js[39m -> [2mD:/恒沣/【8行政】/website/lastingqual/node_modules/astro/dist/runtime/server/shorthash.js[22m
+2026-04-17T15:15:11.922Z vite:resolve [32m4.39ms[39m [36m../util.js[39m -> [2mD:/恒沣/【8行政】/website/lastingqual/node_modules/astro/dist/runtime/server/util.js[22m
+2026-04-17T15:15:11.922Z vite:resolve [32m4.45ms[39m [36m./astro/factory.js[39m -> [2mD:/恒沣/【8行政】/website/lastingqual/node_modules/astro/dist/runtime/server/render/astro/factory.js[22m
+2026-04-17T15:15:11.923Z vite:resolve [32m4.51ms[39m [36m./astro/index.js[39m -> [2mD:/恒沣/【8行政】/website/lastingqual/node_modules/astro/dist/runtime/server/render/astro/index.js[22m
+2026-04-17T15:15:11.923Z vite:resolve [32m4.58ms[39m [36m./astro/instance.js[39m -> [2mD:/恒沣/【8行政】/website/lastingqual/node_modules/astro/dist/runtime/server/render/astro/instance.js[22m
+2026-04-17T15:15:11.923Z vite:resolve [32m4.65ms[39m [36m./astro/render.js[39m -> [2mD:/恒沣/【8行政】/website/lastingqual/node_modules/astro/dist/runtime/server/render/astro/render.js[22m
+2026-04-17T15:15:11.923Z vite:resolve [32m4.71ms[39m [36m./common.js[39m -> [2mD:/恒沣/【8行政】/website/lastingqual/node_modules/astro/dist/runtime/server/render/common.js[22m
+2026-04-17T15:15:11.923Z vite:resolve [32m4.78ms[39m [36m./dom.js[39m -> [2mD:/恒沣/【8行政】/website/lastingqual/node_modules/astro/dist/runtime/server/render/dom.js[22m
+2026-04-17T15:15:11.923Z vite:resolve [32m4.84ms[39m [36m./head.js[39m -> [2mD:/恒沣/【8行政】/website/lastingqual/node_modules/astro/dist/runtime/server/render/head.js[22m
+2026-04-17T15:15:11.923Z vite:resolve [32m4.91ms[39m [36m./instruction.js[39m -> [2mD:/恒沣/【8行政】/website/lastingqual/node_modules/astro/dist/runtime/server/render/instruction.js[22m
+2026-04-17T15:15:11.923Z vite:resolve [32m5.08ms[39m [36m./server-islands.js[39m -> [2mD:/恒沣/【8行政】/website/lastingqual/node_modules/astro/dist/runtime/server/render/server-islands.js[22m
+2026-04-17T15:15:11.923Z vite:resolve [32m5.15ms[39m [36m./slot.js[39m -> [2mD:/恒沣/【8行政】/website/lastingqual/node_modules/astro/dist/runtime/server/render/slot.js[22m
+2026-04-17T15:15:11.923Z vite:resolve [32m5.21ms[39m [36m./util.js[39m -> [2mD:/恒沣/【8行政】/website/lastingqual/node_modules/astro/dist/runtime/server/render/util.js[22m
+2026-04-17T15:15:11.924Z vite:import-analysis [32m7.99ms[39m [2m[17 imports rewritten] [2mnode_modules/astro/dist/runtime/server/render/component.js[22m[2m[22m
+2026-04-17T15:15:11.924Z vite:transform [32m8.40ms[39m [2m/node_modules/astro/dist/runtime/server/render/component.js[22m
+2026-04-17T15:15:11.932Z vite:load [32m0.73ms[39m [fs] [2m/node_modules/astro/dist/runtime/server/hydration.js[22m
+2026-04-17T15:15:11.934Z vite:resolve [32m0.66ms[39m [36m./serialize.js[39m -> [2mD:/恒沣/【8行政】/website/lastingqual/node_modules/astro/dist/runtime/server/serialize.js[22m
+2026-04-17T15:15:11.934Z vite:import-analysis [32m1.15ms[39m [2m[3 imports rewritten] [2mnode_modules/astro/dist/runtime/server/hydration.js[22m[2m[22m
+2026-04-17T15:15:11.934Z vite:transform [32m1.58ms[39m [2m/node_modules/astro/dist/runtime/server/hydration.js[22m
+2026-04-17T15:15:11.937Z vite:load [32m0.71ms[39m [fs] [2m/node_modules/astro/dist/runtime/server/serialize.js[22m
+2026-04-17T15:15:11.938Z vite:import-analysis [32m0.04ms[39m [2m[no imports] [2mnode_modules/astro/dist/runtime/server/serialize.js[22m[2m[22m
+2026-04-17T15:15:11.938Z vite:transform [32m0.45ms[39m[2m [skipped] [2m/node_modules/astro/dist/runtime/server/serialize.js[22m[2m[22m
+2026-04-17T15:15:11.941Z vite:load [32m0.91ms[39m [fs] [2m/node_modules/astro/dist/runtime/server/render/astro/index.js[22m
+2026-04-17T15:15:11.943Z vite:resolve [32m1.21ms[39m [36m./factory.js[39m -> [2mD:/恒沣/【8行政】/website/lastingqual/node_modules/astro/dist/runtime/server/render/astro/factory.js[22m
+2026-04-17T15:15:11.943Z vite:resolve [32m1.31ms[39m [36m./head-and-content.js[39m -> [2mD:/恒沣/【8行政】/website/lastingqual/node_modules/astro/dist/runtime/server/render/astro/head-and-content.js[22m
+2026-04-17T15:15:11.943Z vite:resolve [32m1.39ms[39m [36m./instance.js[39m -> [2mD:/恒沣/【8行政】/website/lastingqual/node_modules/astro/dist/runtime/server/render/astro/instance.js[22m
+2026-04-17T15:15:11.943Z vite:resolve [32m1.46ms[39m [36m./render.js[39m -> [2mD:/恒沣/【8行政】/website/lastingqual/node_modules/astro/dist/runtime/server/render/astro/render.js[22m
+2026-04-17T15:15:11.943Z vite:resolve [32m1.52ms[39m [36m./render-template.js[39m -> [2mD:/恒沣/【8行政】/website/lastingqual/node_modules/astro/dist/runtime/server/render/astro/render-template.js[22m
+2026-04-17T15:15:11.943Z vite:import-analysis [32m1.97ms[39m [2m[5 imports rewritten] [2mnode_modules/astro/dist/runtime/server/render/astro/index.js[22m[2m[22m
+2026-04-17T15:15:11.944Z vite:transform [32m2.29ms[39m [2m/node_modules/astro/dist/runtime/server/render/astro/index.js[22m
+2026-04-17T15:15:11.945Z vite:load [32m0.57ms[39m [fs] [2m/node_modules/astro/dist/runtime/server/render/astro/head-and-content.js[22m
+2026-04-17T15:15:11.945Z vite:import-analysis [32m0.02ms[39m [2m[no imports] [2mnode_modules/astro/dist/runtime/server/render/astro/head-and-content.js[22m[2m[22m
+2026-04-17T15:15:11.945Z vite:transform [32m0.33ms[39m[2m [skipped] [2m/node_modules/astro/dist/runtime/server/render/astro/head-and-content.js[22m[2m[22m
+2026-04-17T15:15:11.947Z vite:load [32m0.66ms[39m [fs] [2m/node_modules/astro/dist/runtime/server/render/astro/instance.js[22m
+2026-04-17T15:15:11.948Z vite:resolve [32m0.92ms[39m [36m../../util.js[39m -> [2mD:/恒沣/【8行政】/website/lastingqual/node_modules/astro/dist/runtime/server/util.js[22m
+2026-04-17T15:15:11.949Z vite:resolve [32m1.14ms[39m [36m../any.js[39m -> [2mD:/恒沣/【8行政】/website/lastingqual/node_modules/astro/dist/runtime/server/render/any.js[22m
+2026-04-17T15:15:11.949Z vite:import-analysis [32m1.71ms[39m [2m[4 imports rewritten] [2mnode_modules/astro/dist/runtime/server/render/astro/instance.js[22m[2m[22m
+2026-04-17T15:15:11.949Z vite:transform [32m2.09ms[39m [2m/node_modules/astro/dist/runtime/server/render/astro/instance.js[22m
+2026-04-17T15:15:11.952Z vite:load [32m0.68ms[39m [fs] [2m/node_modules/astro/dist/runtime/server/render/any.js[22m
+2026-04-17T15:15:11.954Z vite:import-analysis [32m1.75ms[39m [2m[6 imports rewritten] [2mnode_modules/astro/dist/runtime/server/render/any.js[22m[2m[22m
+2026-04-17T15:15:11.954Z vite:transform [32m2.20ms[39m [2m/node_modules/astro/dist/runtime/server/render/any.js[22m
+2026-04-17T15:15:11.958Z vite:load [32m0.90ms[39m [fs] [2m/node_modules/astro/dist/runtime/server/render/common.js[22m
+2026-04-17T15:15:11.960Z vite:resolve [32m1.91ms[39m [36m../scripts.js[39m -> [2mD:/恒沣/【8行政】/website/lastingqual/node_modules/astro/dist/runtime/server/scripts.js[22m
+2026-04-17T15:15:11.961Z vite:import-analysis [32m2.59ms[39m [2m[6 imports rewritten] [2mnode_modules/astro/dist/runtime/server/render/common.js[22m[2m[22m
+2026-04-17T15:15:11.961Z vite:transform [32m3.04ms[39m [2m/node_modules/astro/dist/runtime/server/render/common.js[22m
+2026-04-17T15:15:11.964Z vite:load [32m0.68ms[39m [fs] [2m/node_modules/astro/dist/runtime/server/scripts.js[22m
+2026-04-17T15:15:11.965Z vite:resolve [32m0.72ms[39m [36m./astro-island.prebuilt.js[39m -> [2mD:/恒沣/【8行政】/website/lastingqual/node_modules/astro/dist/runtime/server/astro-island.prebuilt.js[22m
+2026-04-17T15:15:11.965Z vite:resolve [32m0.83ms[39m [36m./astro-island.prebuilt-dev.js[39m -> [2mD:/恒沣/【8行政】/website/lastingqual/node_modules/astro/dist/runtime/server/astro-island.prebuilt-dev.js[22m
+2026-04-17T15:15:11.965Z vite:resolve [32m0.90ms[39m [36m./astro-island-styles.js[39m -> [2mD:/恒沣/【8行政】/website/lastingqual/node_modules/astro/dist/runtime/server/astro-island-styles.js[22m
+2026-04-17T15:15:11.965Z vite:import-analysis [32m1.43ms[39m [2m[3 imports rewritten] [2mnode_modules/astro/dist/runtime/server/scripts.js[22m[2m[22m
+2026-04-17T15:15:11.966Z vite:transform [32m1.79ms[39m [2m/node_modules/astro/dist/runtime/server/scripts.js[22m
+2026-04-17T15:15:11.967Z vite:load [32m0.70ms[39m [fs] [2m/node_modules/astro/dist/runtime/server/astro-island.prebuilt.js[22m
+2026-04-17T15:15:11.968Z vite:import-analysis [32m0.03ms[39m [2m[no imports] [2mnode_modules/astro/dist/runtime/server/astro-island.prebuilt.js[22m[2m[22m
+2026-04-17T15:15:11.968Z vite:transform [32m0.37ms[39m[2m [skipped] [2m/node_modules/astro/dist/runtime/server/astro-island.prebuilt.js[22m[2m[22m
+2026-04-17T15:15:11.970Z vite:load [32m0.69ms[39m [fs] [2m/node_modules/astro/dist/runtime/server/astro-island.prebuilt-dev.js[22m
+2026-04-17T15:15:11.970Z vite:import-analysis [32m0.03ms[39m [2m[no imports] [2mnode_modules/astro/dist/runtime/server/astro-island.prebuilt-dev.js[22m[2m[22m
+2026-04-17T15:15:11.970Z vite:transform [32m0.32ms[39m[2m [skipped] [2m/node_modules/astro/dist/runtime/server/astro-island.prebuilt-dev.js[22m[2m[22m
+2026-04-17T15:15:11.973Z vite:load [32m1.14ms[39m [fs] [2m/node_modules/astro/dist/runtime/server/astro-island-styles.js[22m
+2026-04-17T15:15:11.973Z vite:import-analysis [32m0.02ms[39m [2m[no imports] [2mnode_modules/astro/dist/runtime/server/astro-island-styles.js[22m[2m[22m
+2026-04-17T15:15:11.973Z vite:transform [32m0.43ms[39m[2m [skipped] [2m/node_modules/astro/dist/runtime/server/astro-island-styles.js[22m[2m[22m
+2026-04-17T15:15:11.975Z vite:load [32m0.69ms[39m [fs] [2m/node_modules/astro/dist/runtime/server/render/head.js[22m
+2026-04-17T15:15:11.977Z vite:resolve [32m1.02ms[39m [36m./csp.js[39m -> [2mD:/恒沣/【8行政】/website/lastingqual/node_modules/astro/dist/runtime/server/render/csp.js[22m
+2026-04-17T15:15:11.977Z vite:import-analysis [32m1.57ms[39m [2m[4 imports rewritten] [2mnode_modules/astro/dist/runtime/server/render/head.js[22m[2m[22m
+2026-04-17T15:15:11.977Z vite:transform [32m2.00ms[39m [2m/node_modules/astro/dist/runtime/server/render/head.js[22m
+2026-04-17T15:15:11.979Z vite:load [32m0.68ms[39m [fs] [2m/node_modules/astro/dist/runtime/server/render/csp.js[22m
+2026-04-17T15:15:11.980Z vite:import-analysis [32m0.03ms[39m [2m[no imports] [2mnode_modules/astro/dist/runtime/server/render/csp.js[22m[2m[22m
+2026-04-17T15:15:11.980Z vite:transform [32m0.38ms[39m[2m [skipped] [2m/node_modules/astro/dist/runtime/server/render/csp.js[22m[2m[22m
+2026-04-17T15:15:11.981Z vite:load [32m0.52ms[39m [fs] [2m/node_modules/astro/dist/runtime/server/render/instruction.js[22m
+2026-04-17T15:15:11.982Z vite:import-analysis [32m0.02ms[39m [2m[no imports] [2mnode_modules/astro/dist/runtime/server/render/instruction.js[22m[2m[22m
+2026-04-17T15:15:11.982Z vite:transform [32m0.35ms[39m[2m [skipped] [2m/node_modules/astro/dist/runtime/server/render/instruction.js[22m[2m[22m
+2026-04-17T15:15:11.983Z vite:load [32m0.62ms[39m [fs] [2m/node_modules/astro/dist/runtime/server/render/util.js[22m
+2026-04-17T15:15:11.984Z vite:import-analysis [32m0.78ms[39m [2m[2 imports rewritten] [2mnode_modules/astro/dist/runtime/server/render/util.js[22m[2m[22m
+2026-04-17T15:15:11.984Z vite:transform [32m1.08ms[39m [2m/node_modules/astro/dist/runtime/server/render/util.js[22m
+2026-04-17T15:15:11.989Z vite:load [32m0.72ms[39m [fs] [2m/node_modules/astro/dist/runtime/server/render/server-islands.js[22m
+2026-04-17T15:15:11.991Z vite:resolve [32m1.81ms[39m [36m../../../core/encryption.js[39m -> [2mD:/恒沣/【8行政】/website/lastingqual/node_modules/astro/dist/core/encryption.js[22m
+2026-04-17T15:15:11.992Z vite:resolve [32m2.05ms[39m [36m./any.js[39m -> [2mD:/恒沣/【8行政】/website/lastingqual/node_modules/astro/dist/runtime/server/render/any.js[22m
+2026-04-17T15:15:11.992Z vite:resolve [32m2.12ms[39m [36m./astro/head-and-content.js[39m -> [2mD:/恒沣/【8行政】/website/lastingqual/node_modules/astro/dist/runtime/server/render/astro/head-and-content.js[22m
+2026-04-17T15:15:11.992Z vite:import-analysis [32m2.82ms[39m [2m[6 imports rewritten] [2mnode_modules/astro/dist/runtime/server/render/server-islands.js[22m[2m[22m
+2026-04-17T15:15:11.992Z vite:transform [32m3.22ms[39m [2m/node_modules/astro/dist/runtime/server/render/server-islands.js[22m
+2026-04-17T15:15:11.996Z vite:load [32m0.64ms[39m [fs] [2m/node_modules/astro/dist/core/encryption.js[22m
+2026-04-17T15:15:11.998Z vite:resolve [32m0.22ms[39m [36m./csp/config.js[39m -> [2mD:/恒沣/【8行政】/website/lastingqual/node_modules/astro/dist/core/csp/config.js[22m
+2026-04-17T15:15:11.998Z vite:import-analysis [32m1.87ms[39m [2m[1 imports rewritten] [2mnode_modules/astro/dist/core/encryption.js[22m[2m[22m
+2026-04-17T15:15:11.998Z vite:transform [32m2.19ms[39m [2m/node_modules/astro/dist/core/encryption.js[22m
+2026-04-17T15:15:12.002Z vite:load [32m0.66ms[39m [fs] [2m/node_modules/astro/dist/core/csp/config.js[22m
+2026-04-17T15:15:12.003Z vite:import-analysis [32m0.09ms[39m [2m[0 imports rewritten] [2mnode_modules/astro/dist/core/csp/config.js[22m[2m[22m
+2026-04-17T15:15:12.003Z vite:transform [32m0.45ms[39m[2m [skipped] [2m/node_modules/astro/dist/core/csp/config.js[22m[2m[22m
+2026-04-17T15:15:12.005Z vite:load [32m0.60ms[39m [fs] [2m/node_modules/astro/dist/runtime/server/render/slot.js[22m
+2026-04-17T15:15:12.007Z vite:resolve [32m0.91ms[39m [36m./astro/render-template.js[39m -> [2mD:/恒沣/【8行政】/website/lastingqual/node_modules/astro/dist/runtime/server/render/astro/render-template.js[22m
+2026-04-17T15:15:12.007Z vite:import-analysis [32m1.39ms[39m [2m[4 imports rewritten] [2mnode_modules/astro/dist/runtime/server/render/slot.js[22m[2m[22m
+2026-04-17T15:15:12.007Z vite:transform [32m1.74ms[39m [2m/node_modules/astro/dist/runtime/server/render/slot.js[22m
+2026-04-17T15:15:12.010Z vite:load [32m0.68ms[39m [fs] [2m/node_modules/astro/dist/runtime/server/render/astro/render-template.js[22m
+2026-04-17T15:15:12.011Z vite:resolve [32m0.93ms[39m [36m../../escape.js[39m -> [2mD:/恒沣/【8行政】/website/lastingqual/node_modules/astro/dist/runtime/server/escape.js[22m
+2026-04-17T15:15:12.011Z vite:resolve [32m1.04ms[39m [36m../util.js[39m -> [2mD:/恒沣/【8行政】/website/lastingqual/node_modules/astro/dist/runtime/server/render/util.js[22m
+2026-04-17T15:15:12.012Z vite:import-analysis [32m1.42ms[39m [2m[4 imports rewritten] [2mnode_modules/astro/dist/runtime/server/render/astro/render-template.js[22m[2m[22m
+2026-04-17T15:15:12.012Z vite:transform [32m1.73ms[39m [2m/node_modules/astro/dist/runtime/server/render/astro/render-template.js[22m
+2026-04-17T15:15:12.014Z vite:load [32m0.45ms[39m [fs] [2m/node_modules/astro/dist/runtime/server/render/astro/render.js[22m
+2026-04-17T15:15:12.016Z vite:resolve [32m1.41ms[39m [36m../../../../core/errors/index.js[39m -> [2mD:/恒沣/【8行政】/website/lastingqual/node_modules/astro/dist/core/errors/index.js[22m
+2026-04-17T15:15:12.016Z vite:resolve [32m1.52ms[39m [36m../common.js[39m -> [2mD:/恒沣/【8行政】/website/lastingqual/node_modules/astro/dist/runtime/server/render/common.js[22m
+2026-04-17T15:15:12.016Z vite:import-analysis [32m2.07ms[39m [2m[6 imports rewritten] [2mnode_modules/astro/dist/runtime/server/render/astro/render.js[22m[2m[22m
+2026-04-17T15:15:12.017Z vite:transform [32m2.39ms[39m [2m/node_modules/astro/dist/runtime/server/render/astro/render.js[22m
+2026-04-17T15:15:12.021Z vite:load [32m0.74ms[39m [fs] [2m/node_modules/astro/dist/runtime/server/render/dom.js[22m
+2026-04-17T15:15:12.024Z vite:import-analysis [32m2.35ms[39m [2m[3 imports rewritten] [2mnode_modules/astro/dist/runtime/server/render/dom.js[22m[2m[22m
+2026-04-17T15:15:12.024Z vite:transform [32m3.10ms[39m [2m/node_modules/astro/dist/runtime/server/render/dom.js[22m
+2026-04-17T15:15:12.028Z vite:load [32m1.21ms[39m [fs] [2m/node_modules/astro/dist/runtime/server/render/index.js[22m
+2026-04-17T15:15:12.032Z vite:resolve [32m3.69ms[39m [36m./component.js[39m -> [2mD:/恒沣/【8行政】/website/lastingqual/node_modules/astro/dist/runtime/server/render/component.js[22m
+2026-04-17T15:15:12.033Z vite:resolve [32m3.94ms[39m [36m./page.js[39m -> [2mD:/恒沣/【8行政】/website/lastingqual/node_modules/astro/dist/runtime/server/render/page.js[22m
+2026-04-17T15:15:12.033Z vite:resolve [32m4.12ms[39m [36m./script.js[39m -> [2mD:/恒沣/【8行政】/website/lastingqual/node_modules/astro/dist/runtime/server/render/script.js[22m
+2026-04-17T15:15:12.033Z vite:resolve [32m4.28ms[39m [36m./tags.js[39m -> [2mD:/恒沣/【8行政】/website/lastingqual/node_modules/astro/dist/runtime/server/render/tags.js[22m
+2026-04-17T15:15:12.034Z vite:import-analysis [32m5.34ms[39m [2m[10 imports rewritten] [2mnode_modules/astro/dist/runtime/server/render/index.js[22m[2m[22m
+2026-04-17T15:15:12.034Z vite:transform [32m5.88ms[39m [2m/node_modules/astro/dist/runtime/server/render/index.js[22m
+2026-04-17T15:15:12.037Z vite:load [32m1.11ms[39m [fs] [2m/node_modules/astro/dist/runtime/server/render/page.js[22m
+2026-04-17T15:15:12.041Z vite:import-analysis [32m3.27ms[39m [2m[6 imports rewritten] [2mnode_modules/astro/dist/runtime/server/render/page.js[22m[2m[22m
+2026-04-17T15:15:12.042Z vite:transform [32m4.01ms[39m [2m/node_modules/astro/dist/runtime/server/render/page.js[22m
+2026-04-17T15:15:12.045Z vite:load [32m0.64ms[39m [fs] [2m/node_modules/astro/dist/runtime/server/render/script.js[22m
+2026-04-17T15:15:12.045Z vite:import-analysis [32m0.47ms[39m [2m[1 imports rewritten] [2mnode_modules/astro/dist/runtime/server/render/script.js[22m[2m[22m
+2026-04-17T15:15:12.046Z vite:transform [32m0.82ms[39m [2m/node_modules/astro/dist/runtime/server/render/script.js[22m
+2026-04-17T15:15:12.048Z vite:load [32m0.98ms[39m [fs] [2m/node_modules/astro/dist/runtime/server/render/tags.js[22m
+2026-04-17T15:15:12.049Z vite:import-analysis [32m0.51ms[39m [2m[1 imports rewritten] [2mnode_modules/astro/dist/runtime/server/render/tags.js[22m[2m[22m
+2026-04-17T15:15:12.049Z vite:transform [32m1.05ms[39m [2m/node_modules/astro/dist/runtime/server/render/tags.js[22m
+2026-04-17T15:15:12.051Z vite:load [32m0.62ms[39m [fs] [2m/node_modules/astro/dist/runtime/server/transition.js[22m
+2026-04-17T15:15:12.052Z vite:resolve [32m0.50ms[39m [36m../../transitions/index.js[39m -> [2mD:/恒沣/【8行政】/website/lastingqual/node_modules/astro/dist/transitions/index.js[22m
+2026-04-17T15:15:12.053Z vite:import-analysis [32m0.91ms[39m [2m[2 imports rewritten] [2mnode_modules/astro/dist/runtime/server/transition.js[22m[2m[22m
+2026-04-17T15:15:12.053Z vite:transform [32m1.26ms[39m [2m/node_modules/astro/dist/runtime/server/transition.js[22m
+2026-04-17T15:15:12.061Z vite:load [32m1.01ms[39m [fs] [2m/node_modules/astro/dist/transitions/index.js[22m
+2026-04-17T15:15:12.062Z vite:resolve [32m0.34ms[39m [36m../runtime/server/transition.js[39m -> [2mD:/恒沣/【8行政】/website/lastingqual/node_modules/astro/dist/runtime/server/transition.js[22m
+2026-04-17T15:15:12.062Z vite:import-analysis [32m0.71ms[39m [2m[1 imports rewritten] [2mnode_modules/astro/dist/transitions/index.js[22m[2m[22m
+2026-04-17T15:15:12.062Z vite:transform [32m1.06ms[39m [2m/node_modules/astro/dist/transitions/index.js[22m
+2026-04-17T15:15:12.064Z vite:load [32m0.63ms[39m [fs] [2m/node_modules/astro/dist/content/config.js[22m
+2026-04-17T15:15:12.065Z vite:import-analysis [32m0.74ms[39m [2m[2 imports rewritten] [2mnode_modules/astro/dist/content/config.js[22m[2m[22m
+2026-04-17T15:15:12.065Z vite:transform [32m1.06ms[39m [2m/node_modules/astro/dist/content/config.js[22m
+2026-04-17T15:15:12.068Z vite:load [32m0.70ms[39m [fs] [2m/node_modules/astro/dist/content/data-store.js[22m
+2026-04-17T15:15:12.069Z vite:resolve [32m0.02ms[39m [36mastro:data-layer-content[39m -> [2m astro:data-layer-content[22m
+2026-04-17T15:15:12.069Z vite:import-analysis [32m1.35ms[39m [2m[1 imports rewritten] [2mnode_modules/astro/dist/content/data-store.js[22m[2m[22m
+2026-04-17T15:15:12.069Z vite:transform [32m1.65ms[39m [2m/node_modules/astro/dist/content/data-store.js[22m
+2026-04-17T15:15:12.073Z vite:load [32m0.60ms[39m [fs] [2m/node_modules/astro/dist/content/loaders/errors.js[22m
+2026-04-17T15:15:12.074Z vite:import-analysis [32m0.05ms[39m [2m[no imports] [2mnode_modules/astro/dist/content/loaders/errors.js[22m[2m[22m
+2026-04-17T15:15:12.074Z vite:transform [32m0.51ms[39m[2m [skipped] [2m/node_modules/astro/dist/content/loaders/errors.js[22m[2m[22m
+2026-04-17T15:15:12.078Z vite:load [32m0.74ms[39m [fs] [2m/node_modules/astro/dist/zod.js[22m
+2026-04-17T15:15:12.079Z vite:import-analysis [32m0.06ms[39m [2m[0 imports rewritten] [2mnode_modules/astro/dist/zod.js[22m[2m[22m
+2026-04-17T15:15:12.079Z vite:transform [32m0.53ms[39m[2m [skipped] [2m/node_modules/astro/dist/zod.js[22m[2m[22m
+2026-04-17T15:15:12.093Z vite:hmr [file change] [2m.astro/collections/cards.schema.json[22m
+2026-04-17T15:15:12.093Z vite:hmr (client) [no modules matched] [2m.astro/collections/cards.schema.json[22m
+2026-04-17T15:15:12.093Z vite:hmr (ssr) [no modules matched] [2m.astro/collections/cards.schema.json[22m
+2026-04-17T15:15:12.101Z vite:hmr [file change] [2m.astro/collections/finance.schema.json[22m
+2026-04-17T15:15:12.101Z vite:hmr (client) [no modules matched] [2m.astro/collections/finance.schema.json[22m
+2026-04-17T15:15:12.101Z vite:hmr (ssr) [no modules matched] [2m.astro/collections/finance.schema.json[22m
+2026-04-17T15:15:12.106Z vite:hmr [file change] [2m.astro/collections/home.schema.json[22m
+2026-04-17T15:15:12.106Z vite:hmr (client) [no modules matched] [2m.astro/collections/home.schema.json[22m
+2026-04-17T15:15:12.107Z vite:hmr (ssr) [no modules matched] [2m.astro/collections/home.schema.json[22m
+2026-04-17T15:15:12.113Z vite:hmr [file change] [2m.astro/collections/nav.schema.json[22m
+2026-04-17T15:15:12.113Z vite:hmr (client) [no modules matched] [2m.astro/collections/nav.schema.json[22m
+2026-04-17T15:15:12.113Z vite:hmr (ssr) [no modules matched] [2m.astro/collections/nav.schema.json[22m
+2026-04-17T15:15:12.118Z vite:hmr [file change] [2m.astro/collections/pages.schema.json[22m
+2026-04-17T15:15:12.118Z vite:hmr (client) [no modules matched] [2m.astro/collections/pages.schema.json[22m
+2026-04-17T15:15:12.119Z vite:hmr (ssr) [no modules matched] [2m.astro/collections/pages.schema.json[22m
+2026-04-17T15:15:12.126Z vite:hmr [file change] [2m.astro/collections/products.schema.json[22m
+2026-04-17T15:15:12.127Z vite:hmr (client) [no modules matched] [2m.astro/collections/products.schema.json[22m
+2026-04-17T15:15:12.127Z vite:hmr (ssr) [no modules matched] [2m.astro/collections/products.schema.json[22m
+2026-04-17T15:15:12.132Z vite:hmr [file change] [2m.astro/content.d.ts[22m
+2026-04-17T15:15:12.132Z vite:hmr (client) [no modules matched] [2m.astro/content.d.ts[22m
+2026-04-17T15:15:12.132Z vite:hmr (ssr) [no modules matched] [2m.astro/content.d.ts[22m
+2026-04-17T15:15:12.133Z astro:content Types generated
+2026-04-17T15:15:12.190Z vite:resolve [32m3.99ms[39m [36m@keystatic/astro/internal/keystatic-astro-page.astro[39m -> [2mD:/恒沣/【8行政】/website/lastingqual/node_modules/@keystatic/astro/internal/keystatic-astro-page.astro[22m
+2026-04-17T15:15:12.191Z vite:resolve [32m4.42ms[39m [36m@keystatic/astro/internal/keystatic-api.js[39m -> [2mD:/恒沣/【8行政】/website/lastingqual/.vite-local/deps/@keystatic_astro_internal_keystatic-api__js.js?v=90929892[22m
+2026-04-17T15:15:12.196Z vite:deps (client) Hash is consistent. Skipping. Use --force to override.
+2026-04-17T15:15:12.298Z vite:deps [32mnew dependencies found: [33m[32m[39m
+2026-04-17T15:15:12.301Z vite:deps [32mcreating package.json in D:/恒沣/【8行政】/website/lastingqual/.vite-local/deps_temp_ced7962a[39m
+2026-04-17T15:15:12.348Z vite:resolve [32m3.34ms[39m [36mreact[39m -> [2mD:/恒沣/【8行政】/website/lastingqual/node_modules/react/index.js[22m
+2026-04-17T15:15:12.353Z vite:resolve [32m3.09ms[39m [36m@keystatic/core/api/generic[39m -> [2mD:/恒沣/【8行政】/website/lastingqual/node_modules/@keystatic/core/dist/keystatic-core-api-generic.js[22m
+2026-04-17T15:15:12.355Z vite:resolve [32m1.11ms[39m [36m@keystatic/core/ui[39m -> [2mD:/恒沣/【8行政】/website/lastingqual/node_modules/@keystatic/core/dist/keystatic-core-ui.js[22m
+2026-04-17T15:15:12.360Z vite:resolve [32m2.68ms[39m [36mset-cookie-parser[39m -> [2mD:/恒沣/【8行政】/website/lastingqual/node_modules/set-cookie-parser/lib/set-cookie.js[22m
+2026-04-17T15:15:12.361Z vite:resolve [32m0.98ms[39m [36mreact/jsx-runtime[39m -> [2mD:/恒沣/【8行政】/website/lastingqual/node_modules/react/jsx-runtime.js[22m
+2026-04-17T15:15:12.368Z vite:resolve [32m3.27ms[39m [36mreact[39m -> [2mD:/恒沣/【8行政】/website/lastingqual/node_modules/react/index.js[22m
+2026-04-17T15:15:12.371Z vite:resolve [32m1.91ms[39m [36mreact-dom/client[39m -> [2mD:/恒沣/【8行政】/website/lastingqual/node_modules/react-dom/client.js[22m
+2026-04-17T15:15:12.383Z vite:resolve [32m2.59ms[39m [36mcookie[39m -> [2mD:/恒沣/【8行政】/website/lastingqual/node_modules/cookie/dist/index.js[22m
+2026-04-17T15:15:12.387Z vite:resolve [32m1.27ms[39m [36msuperstruct[39m -> [2mD:/恒沣/【8行政】/website/lastingqual/node_modules/superstruct/dist/index.mjs[22m
+2026-04-17T15:15:12.436Z vite:resolve [32m4.23ms[39m [36m@keystar/ui/picker[39m -> [2mD:/恒沣/【8行政】/website/lastingqual/node_modules/@keystar/ui/dist/keystar-ui-picker.js[22m
+2026-04-17T15:15:12.442Z vite:resolve [32m1.14ms[39m [36m@keystar/ui/button[39m -> [2mD:/恒沣/【8行政】/website/lastingqual/node_modules/@keystar/ui/dist/keystar-ui-button.js[22m
+2026-04-17T15:15:12.443Z vite:resolve [32m0.92ms[39m [36m@keystar/ui/icon[39m -> [2mD:/恒沣/【8行政】/website/lastingqual/node_modules/@keystar/ui/dist/keystar-ui-icon.js[22m
+2026-04-17T15:15:12.444Z vite:resolve [32m0.70ms[39m [36m@keystar/ui/dialog[39m -> [2mD:/恒沣/【8行政】/website/lastingqual/node_modules/@keystar/ui/dist/keystar-ui-dialog.js[22m
+2026-04-17T15:15:12.445Z vite:resolve [32m0.82ms[39m [36m@keystar/ui/icon/icons/fileX2Icon[39m -> [2mD:/恒沣/【8行政】/website/lastingqual/node_modules/@keystar/ui/dist/keystar-ui-icon-icons-fileX2Icon.js[22m
+2026-04-17T15:15:12.448Z vite:resolve [32m0.72ms[39m [36m@keystar/ui/field[39m -> [2mD:/恒沣/【8行政】/website/lastingqual/node_modules/@keystar/ui/dist/keystar-ui-field.js[22m
+2026-04-17T15:15:12.450Z vite:resolve [32m0.88ms[39m [36m@keystar/ui/icon/icons/githubIcon[39m -> [2mD:/恒沣/【8行政】/website/lastingqual/node_modules/@keystar/ui/dist/keystar-ui-icon-icons-githubIcon.js[22m
+2026-04-17T15:15:12.450Z vite:resolve [32m0.65ms[39m [36m@keystar/ui/layout[39m -> [2mD:/恒沣/【8行政】/website/lastingqual/node_modules/@keystar/ui/dist/keystar-ui-layout.js[22m
+2026-04-17T15:15:12.452Z vite:resolve [32m0.62ms[39m [36m@keystar/ui/menu[39m -> [2mD:/恒沣/【8行政】/website/lastingqual/node_modules/@keystar/ui/dist/keystar-ui-menu.js[22m
+2026-04-17T15:15:12.453Z vite:resolve [32m0.64ms[39m [36m@keystar/ui/typography[39m -> [2mD:/恒沣/【8行政】/website/lastingqual/node_modules/@keystar/ui/dist/keystar-ui-typography.js[22m
+2026-04-17T15:15:12.454Z vite:resolve [32m0.79ms[39m [36m@keystar/ui/slots[39m -> [2mD:/恒沣/【8行政】/website/lastingqual/node_modules/@keystar/ui/dist/keystar-ui-slots.js[22m
+2026-04-17T15:15:12.456Z vite:resolve [32m1.45ms[39m [36m@react-aria/i18n[39m -> [2mD:/恒沣/【8行政】/website/lastingqual/node_modules/@react-aria/i18n/dist/import.mjs[22m
+2026-04-17T15:15:12.457Z vite:resolve [32m1.16ms[39m [36mis-hotkey[39m -> [2mD:/恒沣/【8行政】/website/lastingqual/node_modules/is-hotkey/lib/index.js[22m
+2026-04-17T15:15:12.459Z vite:resolve [32m0.71ms[39m [36m@keystar/ui/icon/icons/alertCircleIcon[39m -> [2mD:/恒沣/【8行政】/website/lastingqual/node_modules/@keystar/ui/dist/keystar-ui-icon-icons-alertCircleIcon.js[22m
+2026-04-17T15:15:12.460Z vite:resolve [32m0.87ms[39m [36m@react-aria/label[39m -> [2mD:/恒沣/【8行政】/website/lastingqual/node_modules/@react-aria/label/dist/import.mjs[22m
+2026-04-17T15:15:12.461Z vite:resolve [32m0.58ms[39m [36m@keystar/ui/icon/icons/listXIcon[39m -> [2mD:/恒沣/【8行政】/website/lastingqual/node_modules/@keystar/ui/dist/keystar-ui-icon-icons-listXIcon.js[22m
+2026-04-17T15:15:12.461Z vite:resolve [32m0.53ms[39m [36m@keystar/ui/icon/icons/searchIcon[39m -> [2mD:/恒沣/【8行政】/website/lastingqual/node_modules/@keystar/ui/dist/keystar-ui-icon-icons-searchIcon.js[22m
+2026-04-17T15:15:12.462Z vite:resolve [32m0.51ms[39m [36m@keystar/ui/checkbox[39m -> [2mD:/恒沣/【8行政】/website/lastingqual/node_modules/@keystar/ui/dist/keystar-ui-checkbox.js[22m
+2026-04-17T15:15:12.463Z vite:resolve [32m0.56ms[39m [36m@keystar/ui/icon/icons/searchXIcon[39m -> [2mD:/恒沣/【8行政】/website/lastingqual/node_modules/@keystar/ui/dist/keystar-ui-icon-icons-searchXIcon.js[22m
+2026-04-17T15:15:12.464Z vite:resolve [32m0.51ms[39m [36m@keystar/ui/icon/icons/diffIcon[39m -> [2mD:/恒沣/【8行政】/website/lastingqual/node_modules/@keystar/ui/dist/keystar-ui-icon-icons-diffIcon.js[22m
+2026-04-17T15:15:12.465Z vite:resolve [32m0.55ms[39m [36m@keystar/ui/icon/icons/imageIcon[39m -> [2mD:/恒沣/【8行政】/website/lastingqual/node_modules/@keystar/ui/dist/keystar-ui-icon-icons-imageIcon.js[22m
+2026-04-17T15:15:12.465Z vite:resolve [32m0.61ms[39m [36m@keystar/ui/icon/icons/plusSquareIcon[39m -> [2mD:/恒沣/【8行政】/website/lastingqual/node_modules/@keystar/ui/dist/keystar-ui-icon-icons-plusSquareIcon.js[22m
+2026-04-17T15:15:12.466Z vite:resolve [32m0.50ms[39m [36m@keystar/ui/link[39m -> [2mD:/恒沣/【8行政】/website/lastingqual/node_modules/@keystar/ui/dist/keystar-ui-link.js[22m
+2026-04-17T15:15:12.467Z vite:resolve [32m0.54ms[39m [36m@keystar/ui/icon/icons/dotSquareIcon[39m -> [2mD:/恒沣/【8行政】/website/lastingqual/node_modules/@keystar/ui/dist/keystar-ui-icon-icons-dotSquareIcon.js[22m
+2026-04-17T15:15:12.468Z vite:resolve [32m0.50ms[39m [36m@keystar/ui/progress[39m -> [2mD:/恒沣/【8行政】/website/lastingqual/node_modules/@keystar/ui/dist/keystar-ui-progress.js[22m
+2026-04-17T15:15:12.469Z vite:resolve [32m0.53ms[39m [36m@keystar/ui/style[39m -> [2mD:/恒沣/【8行政】/website/lastingqual/node_modules/@keystar/ui/dist/keystar-ui-style.js[22m
+2026-04-17T15:15:12.470Z vite:resolve [32m0.55ms[39m [36m@keystar/ui/text-field[39m -> [2mD:/恒沣/【8行政】/website/lastingqual/node_modules/@keystar/ui/dist/keystar-ui-text-field.js[22m
+2026-04-17T15:15:12.470Z vite:resolve [32m0.53ms[39m [36m@keystar/ui/search-field[39m -> [2mD:/恒沣/【8行政】/website/lastingqual/node_modules/@keystar/ui/dist/keystar-ui-search-field.js[22m
+2026-04-17T15:15:12.472Z vite:resolve [32m1.64ms[39m [36m@react-stately/collections[39m -> [2mD:/恒沣/【8行政】/website/lastingqual/node_modules/@react-stately/collections/dist/import.mjs[22m
+2026-04-17T15:15:12.475Z vite:resolve [32m0.91ms[39m [36m@keystar/ui/action-bar[39m -> [2mD:/恒沣/【8行政】/website/lastingqual/node_modules/@keystar/ui/dist/keystar-ui-action-bar.js[22m
+2026-04-17T15:15:12.476Z vite:resolve [32m0.84ms[39m [36m@keystar/ui/table[39m -> [2mD:/恒沣/【8行政】/website/lastingqual/node_modules/@keystar/ui/dist/keystar-ui-table.js[22m
+2026-04-17T15:15:12.478Z vite:resolve [32m0.77ms[39m [36m@keystar/ui/combobox[39m -> [2mD:/恒沣/【8行政】/website/lastingqual/node_modules/@keystar/ui/dist/keystar-ui-combobox.js[22m
+2026-04-17T15:15:12.479Z vite:resolve [32m0.54ms[39m [36m@keystar/ui/drag-and-drop[39m -> [2mD:/恒沣/【8行政】/website/lastingqual/node_modules/@keystar/ui/dist/keystar-ui-drag-and-drop.js[22m
+2026-04-17T15:15:12.481Z vite:resolve [32m1.75ms[39m [36mlru-cache[39m -> [2mD:/恒沣/【8行政】/website/lastingqual/node_modules/lru-cache/dist/esm/index.js[22m
+2026-04-17T15:15:12.481Z vite:resolve [32m1.84ms[39m [36mscheduler[39m -> [2mD:/恒沣/【8行政】/website/lastingqual/node_modules/scheduler/index.js[22m
+2026-04-17T15:15:12.482Z vite:resolve [32m0.55ms[39m [36m@keystar/ui/icon/icons/trash2Icon[39m -> [2mD:/恒沣/【8行政】/website/lastingqual/node_modules/@keystar/ui/dist/keystar-ui-icon-icons-trash2Icon.js[22m
+2026-04-17T15:15:12.483Z vite:resolve [32m0.54ms[39m [36m@keystar/ui/list-view[39m -> [2mD:/恒沣/【8行政】/website/lastingqual/node_modules/@keystar/ui/dist/keystar-ui-list-view.js[22m
+2026-04-17T15:15:12.484Z vite:resolve [32m0.76ms[39m [36mreact-dom[39m -> [2mD:/恒沣/【8行政】/website/lastingqual/node_modules/react-dom/index.js[22m
+2026-04-17T15:15:12.485Z vite:resolve [32m0.92ms[39m [36memery[39m -> [2mD:/恒沣/【8行政】/website/lastingqual/node_modules/emery/dist/emery.esm.js[22m
+2026-04-17T15:15:12.486Z vite:resolve [32m0.52ms[39m [36m@keystar/ui/number-field[39m -> [2mD:/恒沣/【8行政】/website/lastingqual/node_modules/@keystar/ui/dist/keystar-ui-number-field.js[22m
+2026-04-17T15:15:12.487Z vite:resolve [32m0.83ms[39m [36mminimatch[39m -> [2mD:/恒沣/【8行政】/website/lastingqual/node_modules/minimatch/dist/esm/index.js[22m
+2026-04-17T15:15:12.488Z vite:resolve [32m0.57ms[39m [36m@keystar/ui/icon/icons/refreshCwIcon[39m -> [2mD:/恒沣/【8行政】/website/lastingqual/node_modules/@keystar/ui/dist/keystar-ui-icon-icons-refreshCwIcon.js[22m
+2026-04-17T15:15:12.489Z vite:resolve [32m0.84ms[39m [36m@sindresorhus/slugify[39m -> [2mD:/恒沣/【8行政】/website/lastingqual/node_modules/@sindresorhus/slugify/index.js[22m
+2026-04-17T15:15:12.491Z vite:resolve [32m0.86ms[39m [36m@markdoc/markdoc/dist/index.mjs[39m -> [2mD:/恒沣/【8行政】/website/lastingqual/node_modules/@markdoc/markdoc/dist/index.mjs[22m
+2026-04-17T15:15:12.493Z vite:resolve [32m1.04ms[39m [36mprosemirror-commands[39m -> [2mD:/恒沣/【8行政】/website/lastingqual/node_modules/prosemirror-commands/dist/index.js[22m
+2026-04-17T15:15:12.494Z vite:resolve [32m0.71ms[39m [36mprosemirror-state[39m -> [2mD:/恒沣/【8行政】/website/lastingqual/node_modules/prosemirror-state/dist/index.js[22m
+2026-04-17T15:15:12.495Z vite:resolve [32m0.53ms[39m [36m@keystar/ui/tooltip[39m -> [2mD:/恒沣/【8行政】/website/lastingqual/node_modules/@keystar/ui/dist/keystar-ui-tooltip.js[22m
+2026-04-17T15:15:12.495Z vite:resolve [32m0.71ms[39m [36mprosemirror-transform[39m -> [2mD:/恒沣/【8行政】/website/lastingqual/node_modules/prosemirror-transform/dist/index.js[22m
+2026-04-17T15:15:12.496Z vite:resolve [32m0.55ms[39m [36m@keystar/ui/editor[39m -> [2mD:/恒沣/【8行政】/website/lastingqual/node_modules/@keystar/ui/dist/keystar-ui-editor.js[22m
+2026-04-17T15:15:12.497Z vite:resolve [32m0.78ms[39m [36mslate[39m -> [2mD:/恒沣/【8行政】/website/lastingqual/node_modules/slate/dist/index.es.js[22m
+2026-04-17T15:15:12.498Z vite:resolve [32m0.64ms[39m [36m@keystar/ui/icon/icons/boldIcon[39m -> [2mD:/恒沣/【8行政】/website/lastingqual/node_modules/@keystar/ui/dist/keystar-ui-icon-icons-boldIcon.js[22m
+2026-04-17T15:15:12.500Z vite:resolve [32m0.87ms[39m [36mslate-react[39m -> [2mD:/恒沣/【8行政】/website/lastingqual/node_modules/slate-react/dist/index.es.js[22m
+2026-04-17T15:15:12.500Z vite:resolve [32m0.55ms[39m [36m@keystar/ui/icon/icons/chevronDownIcon[39m -> [2mD:/恒沣/【8行政】/website/lastingqual/node_modules/@keystar/ui/dist/keystar-ui-icon-icons-chevronDownIcon.js[22m
+2026-04-17T15:15:12.501Z vite:resolve [32m0.63ms[39m [36m@keystar/ui/split-view[39m -> [2mD:/恒沣/【8行政】/website/lastingqual/node_modules/@keystar/ui/dist/keystar-ui-split-view.js[22m
+2026-04-17T15:15:12.502Z vite:resolve [32m0.54ms[39m [36m@keystar/ui/icon/icons/codeIcon[39m -> [2mD:/恒沣/【8行政】/website/lastingqual/node_modules/@keystar/ui/dist/keystar-ui-icon-icons-codeIcon.js[22m
+2026-04-17T15:15:12.503Z vite:resolve [32m0.53ms[39m [36m@keystar/ui/icon/icons/panelLeftOpenIcon[39m -> [2mD:/恒沣/【8行政】/website/lastingqual/node_modules/@keystar/ui/dist/keystar-ui-icon-icons-panelLeftOpenIcon.js[22m
+2026-04-17T15:15:12.504Z vite:resolve [32m1.04ms[39m [36m@keystar/ui/icon/icons/italicIcon[39m -> [2mD:/恒沣/【8行政】/website/lastingqual/node_modules/@keystar/ui/dist/keystar-ui-icon-icons-italicIcon.js[22m
+2026-04-17T15:15:12.504Z vite:resolve [32m1.14ms[39m [36m@keystar/ui/icon/icons/panelLeftCloseIcon[39m -> [2mD:/恒沣/【8行政】/website/lastingqual/node_modules/@keystar/ui/dist/keystar-ui-icon-icons-panelLeftCloseIcon.js[22m
+2026-04-17T15:15:12.505Z vite:resolve [32m1.08ms[39m [36m@keystar/ui/icon/icons/listIcon[39m -> [2mD:/恒沣/【8行政】/website/lastingqual/node_modules/@keystar/ui/dist/keystar-ui-icon-icons-listIcon.js[22m
+2026-04-17T15:15:12.505Z vite:resolve [32m1.19ms[39m [36m@keystar/ui/icon/icons/panelRightOpenIcon[39m -> [2mD:/恒沣/【8行政】/website/lastingqual/node_modules/@keystar/ui/dist/keystar-ui-icon-icons-panelRightOpenIcon.js[22m
+2026-04-17T15:15:12.507Z vite:resolve [32m1.29ms[39m [36m@keystar/ui/icon/icons/panelRightCloseIcon[39m -> [2mD:/恒沣/【8行政】/website/lastingqual/node_modules/@keystar/ui/dist/keystar-ui-icon-icons-panelRightCloseIcon.js[22m
+2026-04-17T15:15:12.507Z vite:resolve [32m1.39ms[39m [36m@keystar/ui/icon/icons/listOrderedIcon[39m -> [2mD:/恒沣/【8行政】/website/lastingqual/node_modules/@keystar/ui/dist/keystar-ui-icon-icons-listOrderedIcon.js[22m
+2026-04-17T15:15:12.508Z vite:resolve [32m0.69ms[39m [36m@keystar/ui/icon/icons/minusIcon[39m -> [2mD:/恒沣/【8行政】/website/lastingqual/node_modules/@keystar/ui/dist/keystar-ui-icon-icons-minusIcon.js[22m
+2026-04-17T15:15:12.510Z vite:resolve [32m0.89ms[39m [36m@keystar/ui/icon/icons/plusIcon[39m -> [2mD:/恒沣/【8行政】/website/lastingqual/node_modules/@keystar/ui/dist/keystar-ui-icon-icons-plusIcon.js[22m
+2026-04-17T15:15:12.511Z vite:resolve [32m0.62ms[39m [36m@keystar/ui/icon/icons/quoteIcon[39m -> [2mD:/恒沣/【8行政】/website/lastingqual/node_modules/@keystar/ui/dist/keystar-ui-icon-icons-quoteIcon.js[22m
+2026-04-17T15:15:12.512Z vite:resolve [32m0.56ms[39m [36m@keystar/ui/icon/icons/removeFormattingIcon[39m -> [2mD:/恒沣/【8行政】/website/lastingqual/node_modules/@keystar/ui/dist/keystar-ui-icon-icons-removeFormattingIcon.js[22m
+2026-04-17T15:15:12.513Z vite:resolve [32m0.52ms[39m [36m@keystar/ui/icon/icons/strikethroughIcon[39m -> [2mD:/恒沣/【8行政】/website/lastingqual/node_modules/@keystar/ui/dist/keystar-ui-icon-icons-strikethroughIcon.js[22m
+2026-04-17T15:15:12.514Z vite:resolve [32m0.86ms[39m [36m@braintree/sanitize-url[39m -> [2mD:/恒沣/【8行政】/website/lastingqual/node_modules/@braintree/sanitize-url/dist/index.js[22m
+2026-04-17T15:15:12.515Z vite:resolve [32m0.55ms[39m [36m@keystar/ui/icon/icons/tableIcon[39m -> [2mD:/恒沣/【8行政】/website/lastingqual/node_modules/@keystar/ui/dist/keystar-ui-icon-icons-tableIcon.js[22m
+2026-04-17T15:15:12.516Z vite:resolve [32m0.54ms[39m [36m@keystar/ui/icon/icons/fileCodeIcon[39m -> [2mD:/恒沣/【8行政】/website/lastingqual/node_modules/@keystar/ui/dist/keystar-ui-icon-icons-fileCodeIcon.js[22m
+2026-04-17T15:15:12.517Z vite:resolve [32m0.57ms[39m [36m@keystar/ui/icon/icons/heading1Icon[39m -> [2mD:/恒沣/【8行政】/website/lastingqual/node_modules/@keystar/ui/dist/keystar-ui-icon-icons-heading1Icon.js[22m
+2026-04-17T15:15:12.518Z vite:resolve [32m0.50ms[39m [36m@keystar/ui/icon/icons/heading2Icon[39m -> [2mD:/恒沣/【8行政】/website/lastingqual/node_modules/@keystar/ui/dist/keystar-ui-icon-icons-heading2Icon.js[22m
+2026-04-17T15:15:12.519Z vite:resolve [32m0.54ms[39m [36m@keystar/ui/icon/icons/heading3Icon[39m -> [2mD:/恒沣/【8行政】/website/lastingqual/node_modules/@keystar/ui/dist/keystar-ui-icon-icons-heading3Icon.js[22m
+2026-04-17T15:15:12.520Z vite:resolve [32m0.51ms[39m [36m@keystar/ui/icon/icons/heading4Icon[39m -> [2mD:/恒沣/【8行政】/website/lastingqual/node_modules/@keystar/ui/dist/keystar-ui-icon-icons-heading4Icon.js[22m
+2026-04-17T15:15:12.521Z vite:resolve [32m1.09ms[39m [36myjs[39m -> [2mD:/恒沣/【8行政】/website/lastingqual/node_modules/yjs/dist/yjs.mjs[22m
+2026-04-17T15:15:12.523Z vite:resolve [32m0.74ms[39m [36m@keystar/ui/icon/icons/heading5Icon[39m -> [2mD:/恒沣/【8行政】/website/lastingqual/node_modules/@keystar/ui/dist/keystar-ui-icon-icons-heading5Icon.js[22m
+2026-04-17T15:15:12.524Z vite:resolve [32m0.58ms[39m [36m@keystar/ui/icon/icons/heading6Icon[39m -> [2mD:/恒沣/【8行政】/website/lastingqual/node_modules/@keystar/ui/dist/keystar-ui-icon-icons-heading6Icon.js[22m
+2026-04-17T15:15:12.526Z vite:resolve [32m0.73ms[39m [36m@keystar/ui/icon/icons/historyIcon[39m -> [2mD:/恒沣/【8行政】/website/lastingqual/node_modules/@keystar/ui/dist/keystar-ui-icon-icons-historyIcon.js[22m
+2026-04-17T15:15:12.526Z vite:resolve [32m0.51ms[39m [36m@keystar/ui/icon/icons/separatorHorizontalIcon[39m -> [2mD:/恒沣/【8行政】/website/lastingqual/node_modules/@keystar/ui/dist/keystar-ui-icon-icons-separatorHorizontalIcon.js[22m
+2026-04-17T15:15:12.527Z vite:resolve [32m0.52ms[39m [36m@keystar/ui/notice[39m -> [2mD:/恒沣/【8行政】/website/lastingqual/node_modules/@keystar/ui/dist/keystar-ui-notice.js[22m
+2026-04-17T15:15:12.528Z vite:resolve [32m0.82ms[39m [36mprosemirror-model[39m -> [2mD:/恒沣/【8行政】/website/lastingqual/node_modules/prosemirror-model/dist/index.js[22m
+2026-04-17T15:15:12.529Z vite:resolve [32m0.53ms[39m [36m@keystar/ui/toast[39m -> [2mD:/恒沣/【8行政】/website/lastingqual/node_modules/@keystar/ui/dist/keystar-ui-toast.js[22m
+2026-04-17T15:15:12.530Z vite:resolve [32m0.51ms[39m [36m@keystar/ui/action-group[39m -> [2mD:/恒沣/【8行政】/website/lastingqual/node_modules/@keystar/ui/dist/keystar-ui-action-group.js[22m
+2026-04-17T15:15:12.531Z vite:resolve [32m0.55ms[39m [36m@keystar/ui/badge[39m -> [2mD:/恒沣/【8行政】/website/lastingqual/node_modules/@keystar/ui/dist/keystar-ui-badge.js[22m
+2026-04-17T15:15:12.532Z vite:resolve [32m0.50ms[39m [36m@keystar/ui/icon/icons/copyPlusIcon[39m -> [2mD:/恒沣/【8行政】/website/lastingqual/node_modules/@keystar/ui/dist/keystar-ui-icon-icons-copyPlusIcon.js[22m
+2026-04-17T15:15:12.533Z vite:resolve [32m0.50ms[39m [36m@keystar/ui/icon/icons/clipboardCopyIcon[39m -> [2mD:/恒沣/【8行政】/website/lastingqual/node_modules/@keystar/ui/dist/keystar-ui-icon-icons-clipboardCopyIcon.js[22m
+2026-04-17T15:15:12.534Z vite:resolve [32m0.52ms[39m [36m@keystar/ui/icon/icons/clipboardPasteIcon[39m -> [2mD:/恒沣/【8行政】/website/lastingqual/node_modules/@keystar/ui/dist/keystar-ui-icon-icons-clipboardPasteIcon.js[22m
+2026-04-17T15:15:12.534Z vite:resolve [32m0.55ms[39m [36m@keystar/ui/icon/icons/externalLinkIcon[39m -> [2mD:/恒沣/【8行政】/website/lastingqual/node_modules/@keystar/ui/dist/keystar-ui-icon-icons-externalLinkIcon.js[22m
+2026-04-17T15:15:12.535Z vite:resolve [32m0.33ms[39m [36memery/assertions[39m -> [2mD:/恒沣/【8行政】/website/lastingqual/node_modules/emery/assertions/dist/emery-assertions.esm.js[22m
+2026-04-17T15:15:12.537Z vite:resolve [32m0.87ms[39m [36murql[39m -> [2mD:/恒沣/【8行政】/website/lastingqual/node_modules/urql/dist/urql.es.js[22m
+2026-04-17T15:15:12.538Z vite:resolve [32m0.81ms[39m [36m@react-aria/overlays[39m -> [2mD:/恒沣/【8行政】/website/lastingqual/node_modules/@react-aria/overlays/dist/import.mjs[22m
+2026-04-17T15:15:12.538Z vite:resolve [32m0.53ms[39m [36m@keystar/ui/breadcrumbs[39m -> [2mD:/恒沣/【8行政】/website/lastingqual/node_modules/@keystar/ui/dist/keystar-ui-breadcrumbs.js[22m
+2026-04-17T15:15:12.539Z vite:resolve [32m0.93ms[39m [36m@react-aria/utils[39m -> [2mD:/恒沣/【8行政】/website/lastingqual/node_modules/@react-aria/utils/dist/import.mjs[22m
+2026-04-17T15:15:12.540Z vite:resolve [32m0.58ms[39m [36m@keystar/ui/avatar[39m -> [2mD:/恒沣/【8行政】/website/lastingqual/node_modules/@keystar/ui/dist/keystar-ui-avatar.js[22m
+2026-04-17T15:15:12.541Z vite:resolve [32m0.68ms[39m [36m@react-stately/overlays[39m -> [2mD:/恒沣/【8行政】/website/lastingqual/node_modules/@react-stately/overlays/dist/import.mjs[22m
+2026-04-17T15:15:12.542Z vite:resolve [32m0.72ms[39m [36m@ts-gql/tag/no-transform[39m -> [2mD:/恒沣/【8行政】/website/lastingqual/node_modules/@ts-gql/tag/no-transform/dist/tag.esm.js[22m
+2026-04-17T15:15:12.543Z vite:resolve [32m0.76ms[39m [36mjs-yaml[39m -> [2mD:/恒沣/【8行政】/website/lastingqual/node_modules/js-yaml/dist/js-yaml.mjs[22m
+2026-04-17T15:15:12.544Z vite:resolve [32m0.63ms[39m [36m@keystar/ui/nav-list[39m -> [2mD:/恒沣/【8行政】/website/lastingqual/node_modules/@keystar/ui/dist/keystar-ui-nav-list.js[22m
+2026-04-17T15:15:12.545Z vite:resolve [32m0.54ms[39m [36m@keystar/ui/core[39m -> [2mD:/恒沣/【8行政】/website/lastingqual/node_modules/@keystar/ui/dist/keystar-ui-core.js[22m
+2026-04-17T15:15:12.546Z vite:resolve [32m0.52ms[39m [36m@keystar/ui/overlays[39m -> [2mD:/恒沣/【8行政】/website/lastingqual/node_modules/@keystar/ui/dist/keystar-ui-overlays.js[22m
+2026-04-17T15:15:12.547Z vite:resolve [32m0.85ms[39m [36m@urql/exchange-graphcache[39m -> [2mD:/恒沣/【8行政】/website/lastingqual/node_modules/@urql/exchange-graphcache/dist/urql-exchange-graphcache.mjs[22m
+2026-04-17T15:15:12.548Z vite:resolve [32m0.50ms[39m [36m@keystar/ui/status-light[39m -> [2mD:/恒沣/【8行政】/website/lastingqual/node_modules/@keystar/ui/dist/keystar-ui-status-light.js[22m
+2026-04-17T15:15:12.549Z vite:resolve [32m0.72ms[39m [36m@urql/exchange-auth[39m -> [2mD:/恒沣/【8行政】/website/lastingqual/node_modules/@urql/exchange-auth/dist/urql-exchange-auth.mjs[22m
+2026-04-17T15:15:12.549Z vite:resolve [32m0.49ms[39m [36m@keystar/ui/utils[39m -> [2mD:/恒沣/【8行政】/website/lastingqual/node_modules/@keystar/ui/dist/keystar-ui-utils.js[22m
+2026-04-17T15:15:12.550Z vite:resolve [32m0.84ms[39m [36m@urql/exchange-persisted[39m -> [2mD:/恒沣/【8行政】/website/lastingqual/node_modules/@urql/exchange-persisted/dist/urql-exchange-persisted.mjs[22m
+2026-04-17T15:15:12.551Z vite:resolve [32m0.32ms[39m [36m@urql/exchange-graphcache/extras[39m -> [2mD:/恒沣/【8行政】/website/lastingqual/node_modules/@urql/exchange-graphcache/dist/urql-exchange-graphcache-extras.mjs[22m
+2026-04-17T15:15:12.552Z vite:resolve [32m0.70ms[39m [36mfast-deep-equal[39m -> [2mD:/恒沣/【8行政】/website/lastingqual/node_modules/fast-deep-equal/index.js[22m
+2026-04-17T15:15:12.553Z vite:resolve [32m0.49ms[39m [36m@keystar/ui/icon/icons/gitBranchIcon[39m -> [2mD:/恒沣/【8行政】/website/lastingqual/node_modules/@keystar/ui/dist/keystar-ui-icon-icons-gitBranchIcon.js[22m
+2026-04-17T15:15:12.554Z vite:resolve [32m0.50ms[39m [36m@keystar/ui/icon/icons/gitBranchPlusIcon[39m -> [2mD:/恒沣/【8行政】/website/lastingqual/node_modules/@keystar/ui/dist/keystar-ui-icon-icons-gitBranchPlusIcon.js[22m
+2026-04-17T15:15:12.555Z vite:resolve [32m0.55ms[39m [36m@keystar/ui/icon/icons/logOutIcon[39m -> [2mD:/恒沣/【8行政】/website/lastingqual/node_modules/@keystar/ui/dist/keystar-ui-icon-icons-logOutIcon.js[22m
+2026-04-17T15:15:12.556Z vite:resolve [32m0.78ms[39m [36m@keystar/ui/icon/icons/gitPullRequestIcon[39m -> [2mD:/恒沣/【8行政】/website/lastingqual/node_modules/@keystar/ui/dist/keystar-ui-icon-icons-gitPullRequestIcon.js[22m
+2026-04-17T15:15:12.558Z vite:resolve [32m0.65ms[39m [36m@keystar/ui/icon/icons/gitForkIcon[39m -> [2mD:/恒沣/【8行政】/website/lastingqual/node_modules/@keystar/ui/dist/keystar-ui-icon-icons-gitForkIcon.js[22m
+2026-04-17T15:15:12.560Z vite:resolve [32m0.58ms[39m [36m@keystar/ui/icon/icons/monitorIcon[39m -> [2mD:/恒沣/【8行政】/website/lastingqual/node_modules/@keystar/ui/dist/keystar-ui-icon-icons-monitorIcon.js[22m
+2026-04-17T15:15:12.561Z vite:resolve [32m0.51ms[39m [36m@keystar/ui/icon/icons/moonIcon[39m -> [2mD:/恒沣/【8行政】/website/lastingqual/node_modules/@keystar/ui/dist/keystar-ui-icon-icons-moonIcon.js[22m
+2026-04-17T15:15:12.562Z vite:resolve [32m0.47ms[39m [36m@keystar/ui/icon/icons/sunIcon[39m -> [2mD:/恒沣/【8行政】/website/lastingqual/node_modules/@keystar/ui/dist/keystar-ui-icon-icons-sunIcon.js[22m
+2026-04-17T15:15:12.563Z vite:resolve [32m0.49ms[39m [36m@keystar/ui/icon/icons/userIcon[39m -> [2mD:/恒沣/【8行政】/website/lastingqual/node_modules/@keystar/ui/dist/keystar-ui-icon-icons-userIcon.js[22m
+2026-04-17T15:15:12.564Z vite:resolve [32m0.48ms[39m [36m@keystar/ui/radio[39m -> [2mD:/恒沣/【8行政】/website/lastingqual/node_modules/@keystar/ui/dist/keystar-ui-radio.js[22m
+2026-04-17T15:15:12.565Z vite:resolve [32m0.55ms[39m [36m@keystar/ui/icon/icons/editIcon[39m -> [2mD:/恒沣/【8行政】/website/lastingqual/node_modules/@keystar/ui/dist/keystar-ui-icon-icons-editIcon.js[22m
+2026-04-17T15:15:12.566Z vite:resolve [32m0.50ms[39m [36m@keystar/ui/icon/icons/linkIcon[39m -> [2mD:/恒沣/【8行政】/website/lastingqual/node_modules/@keystar/ui/dist/keystar-ui-icon-icons-linkIcon.js[22m
+2026-04-17T15:15:12.567Z vite:resolve [32m0.48ms[39m [36m@keystar/ui/icon/icons/unlinkIcon[39m -> [2mD:/恒沣/【8行政】/website/lastingqual/node_modules/@keystar/ui/dist/keystar-ui-icon-icons-unlinkIcon.js[22m
+2026-04-17T15:15:12.568Z vite:resolve [32m0.44ms[39m [36m@keystar/ui/icon/icons/maximizeIcon[39m -> [2mD:/恒沣/【8行政】/website/lastingqual/node_modules/@keystar/ui/dist/keystar-ui-icon-icons-maximizeIcon.js[22m
+2026-04-17T15:15:12.569Z vite:resolve [32m0.47ms[39m [36m@keystar/ui/icon/icons/minimizeIcon[39m -> [2mD:/恒沣/【8行政】/website/lastingqual/node_modules/@keystar/ui/dist/keystar-ui-icon-icons-minimizeIcon.js[22m
+2026-04-17T15:15:12.570Z vite:resolve [32m0.53ms[39m [36m@keystar/ui/icon/icons/subscriptIcon[39m -> [2mD:/恒沣/【8行政】/website/lastingqual/node_modules/@keystar/ui/dist/keystar-ui-icon-icons-subscriptIcon.js[22m
+2026-04-17T15:15:12.571Z vite:resolve [32m0.60ms[39m [36m@keystar/ui/icon/icons/superscriptIcon[39m -> [2mD:/恒沣/【8行政】/website/lastingqual/node_modules/@keystar/ui/dist/keystar-ui-icon-icons-superscriptIcon.js[22m
+2026-04-17T15:15:12.572Z vite:resolve [32m0.61ms[39m [36m@keystar/ui/icon/icons/typeIcon[39m -> [2mD:/恒沣/【8行政】/website/lastingqual/node_modules/@keystar/ui/dist/keystar-ui-icon-icons-typeIcon.js[22m
+2026-04-17T15:15:12.573Z vite:resolve [32m0.62ms[39m [36m@keystar/ui/icon/icons/underlineIcon[39m -> [2mD:/恒沣/【8行政】/website/lastingqual/node_modules/@keystar/ui/dist/keystar-ui-icon-icons-underlineIcon.js[22m
+2026-04-17T15:15:12.574Z vite:resolve [32m0.51ms[39m [36m@keystar/ui/icon/icons/alignLeftIcon[39m -> [2mD:/恒沣/【8行政】/website/lastingqual/node_modules/@keystar/ui/dist/keystar-ui-icon-icons-alignLeftIcon.js[22m
+2026-04-17T15:15:12.575Z vite:resolve [32m0.48ms[39m [36m@keystar/ui/icon/icons/alignRightIcon[39m -> [2mD:/恒沣/【8行政】/website/lastingqual/node_modules/@keystar/ui/dist/keystar-ui-icon-icons-alignRightIcon.js[22m
+2026-04-17T15:15:12.576Z vite:resolve [32m0.47ms[39m [36m@keystar/ui/icon/icons/alignCenterIcon[39m -> [2mD:/恒沣/【8行政】/website/lastingqual/node_modules/@keystar/ui/dist/keystar-ui-icon-icons-alignCenterIcon.js[22m
+2026-04-17T15:15:12.577Z vite:resolve [32m0.81ms[39m [36mmatch-sorter[39m -> [2mD:/恒沣/【8行政】/website/lastingqual/node_modules/match-sorter/dist/match-sorter.esm.js[22m
+2026-04-17T15:15:12.579Z vite:resolve [32m0.53ms[39m [36m@keystar/ui/icon/icons/trashIcon[39m -> [2mD:/恒沣/【8行政】/website/lastingqual/node_modules/@keystar/ui/dist/keystar-ui-icon-icons-trashIcon.js[22m
+2026-04-17T15:15:12.580Z vite:resolve [32m0.80ms[39m [36m@emotion/weak-memoize[39m -> [2mD:/恒沣/【8行政】/website/lastingqual/node_modules/@emotion/weak-memoize/dist/emotion-weak-memoize.esm.js[22m
+2026-04-17T15:15:12.581Z vite:resolve [32m0.62ms[39m [36m@keystar/ui/icon/icons/columnsIcon[39m -> [2mD:/恒沣/【8行政】/website/lastingqual/node_modules/@keystar/ui/dist/keystar-ui-icon-icons-columnsIcon.js[22m
+2026-04-17T15:15:12.582Z vite:resolve [32m0.55ms[39m [36m@keystar/ui/icon/icons/fileUpIcon[39m -> [2mD:/恒沣/【8行政】/website/lastingqual/node_modules/@keystar/ui/dist/keystar-ui-icon-icons-fileUpIcon.js[22m
+2026-04-17T15:15:12.583Z vite:resolve [32m0.78ms[39m [36my-prosemirror[39m -> [2mD:/恒沣/【8行政】/website/lastingqual/node_modules/y-prosemirror/src/y-prosemirror.js[22m
+2026-04-17T15:15:12.584Z vite:resolve [32m0.50ms[39m [36m@keystar/ui/icon/icons/sheetIcon[39m -> [2mD:/恒沣/【8行政】/website/lastingqual/node_modules/@keystar/ui/dist/keystar-ui-icon-icons-sheetIcon.js[22m
+2026-04-17T15:15:12.585Z vite:resolve [32m0.77ms[39m [36mscroll-into-view-if-needed[39m -> [2mD:/恒沣/【8行政】/website/lastingqual/node_modules/scroll-into-view-if-needed/dist/index.js[22m
+2026-04-17T15:15:12.586Z vite:resolve [32m0.66ms[39m [36m@react-stately/list[39m -> [2mD:/恒沣/【8行政】/website/lastingqual/node_modules/@react-stately/list/dist/import.mjs[22m
+2026-04-17T15:15:12.587Z vite:resolve [32m0.56ms[39m [36m@keystar/ui/listbox[39m -> [2mD:/恒沣/【8行政】/website/lastingqual/node_modules/@keystar/ui/dist/keystar-ui-listbox.js[22m
+2026-04-17T15:15:12.588Z vite:resolve [32m0.76ms[39m [36mslate-history[39m -> [2mD:/恒沣/【8行政】/website/lastingqual/node_modules/slate-history/dist/index.es.js[22m
+2026-04-17T15:15:12.590Z vite:resolve [32m0.81ms[39m [36mmdast-util-from-markdown[39m -> [2mD:/恒沣/【8行政】/website/lastingqual/node_modules/mdast-util-from-markdown/dev/index.js[22m
+2026-04-17T15:15:12.591Z vite:resolve [32m0.80ms[39m [36mmdast-util-gfm-autolink-literal[39m -> [2mD:/恒沣/【8行政】/website/lastingqual/node_modules/mdast-util-gfm-autolink-literal/index.js[22m
+2026-04-17T15:15:12.592Z vite:resolve [32m0.98ms[39m [36mmicromark-extension-gfm-autolink-literal[39m -> [2mD:/恒沣/【8行政】/website/lastingqual/node_modules/micromark-extension-gfm-autolink-literal/dev/index.js[22m
+2026-04-17T15:15:12.594Z vite:resolve [32m0.83ms[39m [36mmdast-util-gfm-strikethrough[39m -> [2mD:/恒沣/【8行政】/website/lastingqual/node_modules/mdast-util-gfm-strikethrough/index.js[22m
+2026-04-17T15:15:12.595Z vite:resolve [32m0.75ms[39m [36mmicromark-extension-gfm-strikethrough[39m -> [2mD:/恒沣/【8行政】/website/lastingqual/node_modules/micromark-extension-gfm-strikethrough/dev/index.js[22m
+2026-04-17T15:15:12.596Z vite:resolve [32m0.77ms[39m [36mprosemirror-view[39m -> [2mD:/恒沣/【8行政】/website/lastingqual/node_modules/prosemirror-view/dist/index.js[22m
+2026-04-17T15:15:12.597Z vite:resolve [32m0.65ms[39m [36m@react-aria/selection[39m -> [2mD:/恒沣/【8行政】/website/lastingqual/node_modules/@react-aria/selection/dist/import.mjs[22m
+2026-04-17T15:15:12.598Z vite:resolve [32m0.71ms[39m [36mprosemirror-tables[39m -> [2mD:/恒沣/【8行政】/website/lastingqual/node_modules/prosemirror-tables/dist/index.js[22m
+2026-04-17T15:15:12.599Z vite:resolve [32m0.52ms[39m [36m@keystar/ui/icon/icons/pencilIcon[39m -> [2mD:/恒沣/【8行政】/website/lastingqual/node_modules/@keystar/ui/dist/keystar-ui-icon-icons-pencilIcon.js[22m
+2026-04-17T15:15:12.600Z vite:resolve [32m0.28ms[39m [36mreact-dom[39m -> [2mD:/恒沣/【8行政】/website/lastingqual/node_modules/react-dom/index.js[22m
+2026-04-17T15:15:12.601Z vite:resolve [32m0.80ms[39m [36mprosemirror-history[39m -> [2mD:/恒沣/【8行政】/website/lastingqual/node_modules/prosemirror-history/dist/index.js[22m
+2026-04-17T15:15:12.602Z vite:resolve [32m0.67ms[39m [36mprosemirror-keymap[39m -> [2mD:/恒沣/【8行政】/website/lastingqual/node_modules/prosemirror-keymap/dist/index.js[22m
+2026-04-17T15:15:12.603Z vite:resolve [32m0.57ms[39m [36mescape-string-regexp[39m -> [2mD:/恒沣/【8行政】/website/lastingqual/node_modules/@keystatic/core/node_modules/escape-string-regexp/index.js[22m
+2026-04-17T15:15:12.604Z vite:resolve [32m0.79ms[39m [36mmdast-util-to-markdown[39m -> [2mD:/恒沣/【8行政】/website/lastingqual/node_modules/mdast-util-to-markdown/index.js[22m
+2026-04-17T15:15:12.607Z vite:resolve [32m1.49ms[39m [36mmdast-util-gfm-table[39m -> [2mD:/恒沣/【8行政】/website/lastingqual/node_modules/mdast-util-gfm-table/index.js[22m
+2026-04-17T15:15:12.608Z vite:resolve [32m0.86ms[39m [36mmdast-util-mdx[39m -> [2mD:/恒沣/【8行政】/website/lastingqual/node_modules/mdast-util-mdx/index.js[22m
+2026-04-17T15:15:12.609Z vite:resolve [32m1.13ms[39m [36mmicromark-extension-gfm-table[39m -> [2mD:/恒沣/【8行政】/website/lastingqual/node_modules/micromark-extension-gfm-table/dev/index.js[22m
+2026-04-17T15:15:12.611Z vite:resolve [32m1.15ms[39m [36mmicromark-extension-mdxjs[39m -> [2mD:/恒沣/【8行政】/website/lastingqual/node_modules/micromark-extension-mdxjs/index.js[22m
+2026-04-17T15:15:12.612Z vite:resolve [32m0.88ms[39m [36munist-util-visit[39m -> [2mD:/恒沣/【8行政】/website/lastingqual/node_modules/unist-util-visit/index.js[22m
+2026-04-17T15:15:12.613Z vite:resolve [32m0.49ms[39m [36m@keystar/ui/icon/icons/link2Icon[39m -> [2mD:/恒沣/【8行政】/website/lastingqual/node_modules/@keystar/ui/dist/keystar-ui-icon-icons-link2Icon.js[22m
+2026-04-17T15:15:12.614Z vite:resolve [32m0.51ms[39m [36m@keystar/ui/icon/icons/link2OffIcon[39m -> [2mD:/恒沣/【8行政】/website/lastingqual/node_modules/@keystar/ui/dist/keystar-ui-icon-icons-link2OffIcon.js[22m
+2026-04-17T15:15:12.615Z vite:resolve [32m0.49ms[39m [36m@keystar/ui/icon/icons/undo2Icon[39m -> [2mD:/恒沣/【8行政】/website/lastingqual/node_modules/@keystar/ui/dist/keystar-ui-icon-icons-undo2Icon.js[22m
+2026-04-17T15:15:12.617Z vite:resolve [32m0.73ms[39m [36my-protocols/awareness[39m -> [2mD:/恒沣/【8行政】/website/lastingqual/node_modules/y-protocols/awareness.js[22m
+2026-04-17T15:15:12.618Z vite:resolve [32m0.72ms[39m [36m@toeverything/y-indexeddb[39m -> [2mD:/恒沣/【8行政】/website/lastingqual/node_modules/@toeverything/y-indexeddb/dist/index.js[22m
+2026-04-17T15:15:12.619Z vite:resolve [32m0.91ms[39m [36mlib0/broadcastchannel[39m -> [2mD:/恒沣/【8行政】/website/lastingqual/node_modules/lib0/broadcastchannel.js[22m
+2026-04-17T15:15:12.620Z vite:resolve [32m0.32ms[39m [36mlib0/time[39m -> [2mD:/恒沣/【8行政】/website/lastingqual/node_modules/lib0/time.js[22m
+2026-04-17T15:15:12.621Z vite:resolve [32m0.38ms[39m [36mlib0/encoding[39m -> [2mD:/恒沣/【8行政】/website/lastingqual/node_modules/lib0/encoding.js[22m
+2026-04-17T15:15:12.622Z vite:resolve [32m0.54ms[39m [36mlib0/decoding[39m -> [2mD:/恒沣/【8行政】/website/lastingqual/node_modules/lib0/decoding.js[22m
+2026-04-17T15:15:12.623Z vite:resolve [32m0.29ms[39m [36my-protocols/sync[39m -> [2mD:/恒沣/【8行政】/website/lastingqual/node_modules/y-protocols/sync.js[22m
+2026-04-17T15:15:12.624Z vite:resolve [32m0.30ms[39m [36my-protocols/auth[39m -> [2mD:/恒沣/【8行政】/website/lastingqual/node_modules/y-protocols/auth.js[22m
+2026-04-17T15:15:12.624Z vite:resolve [32m0.30ms[39m [36mlib0/mutex[39m -> [2mD:/恒沣/【8行政】/website/lastingqual/node_modules/lib0/mutex.js[22m
+2026-04-17T15:15:12.625Z vite:resolve [32m0.33ms[39m [36mlib0/math[39m -> [2mD:/恒沣/【8行政】/website/lastingqual/node_modules/lib0/math.js[22m
+2026-04-17T15:15:12.627Z vite:resolve [32m0.79ms[39m [36midb-keyval[39m -> [2mD:/恒沣/【8行政】/website/lastingqual/node_modules/idb-keyval/dist/index.js[22m
+2026-04-17T15:15:12.629Z vite:resolve [32m0.74ms[39m [36mpartysocket/ws[39m -> [2mD:/恒沣/【8行政】/website/lastingqual/node_modules/partysocket/dist/ws.mjs[22m
+2026-04-17T15:15:12.629Z vite:resolve [32m0.32ms[39m [36mlib0/encoding.js[39m -> [2mD:/恒沣/【8行政】/website/lastingqual/node_modules/lib0/encoding.js[22m
+2026-04-17T15:15:12.636Z vite:resolve [32m1.46ms[39m [36mis-plain-object[39m -> [2mD:/恒沣/【8行政】/website/lastingqual/node_modules/is-plain-object/dist/is-plain-object.mjs[22m
+2026-04-17T15:15:12.643Z vite:resolve [32m1.31ms[39m [36m@react-aria/interactions[39m -> [2mD:/恒沣/【8行政】/website/lastingqual/node_modules/@react-aria/interactions/dist/import.mjs[22m
+2026-04-17T15:15:12.654Z vite:resolve [32m5.29ms[39m [36m@react-aria/visually-hidden[39m -> [2mD:/恒沣/【8行政】/website/lastingqual/node_modules/@react-aria/visually-hidden/dist/import.mjs[22m
+2026-04-17T15:15:12.660Z vite:resolve [32m4.96ms[39m [36mrope-sequence[39m -> [2mD:/恒沣/【8行政】/website/lastingqual/node_modules/rope-sequence/dist/index.js[22m
+2026-04-17T15:15:12.661Z vite:resolve [32m5.27ms[39m [36midb[39m -> [2mD:/恒沣/【8行政】/website/lastingqual/node_modules/idb/build/index.js[22m
+2026-04-17T15:15:12.671Z vite:resolve [32m5.81ms[39m [36m@react-aria/select[39m -> [2mD:/恒沣/【8行政】/website/lastingqual/node_modules/@react-aria/select/dist/import.mjs[22m
+2026-04-17T15:15:12.671Z vite:resolve [32m5.87ms[39m [36m@react-aria/checkbox[39m -> [2mD:/恒沣/【8行政】/website/lastingqual/node_modules/@react-aria/checkbox/dist/import.mjs[22m
+2026-04-17T15:15:12.671Z vite:resolve [32m5.97ms[39m [36m@react-aria/link[39m -> [2mD:/恒沣/【8行政】/website/lastingqual/node_modules/@react-aria/link/dist/import.mjs[22m
+2026-04-17T15:15:12.672Z vite:resolve [32m6.07ms[39m [36mremove-accents[39m -> [2mD:/恒沣/【8行政】/website/lastingqual/node_modules/remove-accents/index.js[22m
+2026-04-17T15:15:12.681Z vite:resolve [32m8.86ms[39m [36mdevlop[39m -> [2mD:/恒沣/【8行政】/website/lastingqual/node_modules/devlop/lib/development.js[22m
+2026-04-17T15:15:12.681Z vite:resolve [32m9.03ms[39m [36mcompute-scroll-into-view[39m -> [2mD:/恒沣/【8行政】/website/lastingqual/node_modules/compute-scroll-into-view/dist/index.js[22m
+2026-04-17T15:15:12.682Z vite:resolve [32m9.16ms[39m [36m@react-stately/toast[39m -> [2mD:/恒沣/【8行政】/website/lastingqual/node_modules/@react-stately/toast/dist/import.mjs[22m
+2026-04-17T15:15:12.682Z vite:resolve [32m9.14ms[39m [36mmicromark-util-sanitize-uri[39m -> [2mD:/恒沣/【8行政】/website/lastingqual/node_modules/micromark-util-sanitize-uri/dev/index.js[22m
+2026-04-17T15:15:12.686Z vite:resolve [32m3.72ms[39m [36m@keystar/ui/icon/icons/checkIcon[39m -> [2mD:/恒沣/【8行政】/website/lastingqual/node_modules/@keystar/ui/dist/keystar-ui-icon-icons-checkIcon.js[22m
+2026-04-17T15:15:12.686Z vite:resolve [32m3.91ms[39m [36mw3c-keyname[39m -> [2mD:/恒沣/【8行政】/website/lastingqual/node_modules/w3c-keyname/index.js[22m
+2026-04-17T15:15:12.690Z vite:resolve [32m2.34ms[39m [36mccount[39m -> [2mD:/恒沣/【8行政】/website/lastingqual/node_modules/ccount/index.js[22m
+2026-04-17T15:15:12.695Z vite:resolve [32m4.47ms[39m [36m@react-stately/selection[39m -> [2mD:/恒沣/【8行政】/website/lastingqual/node_modules/@react-stately/selection/dist/import.mjs[22m
+2026-04-17T15:15:12.695Z vite:resolve [32m4.66ms[39m [36m@react-stately/utils[39m -> [2mD:/恒沣/【8行政】/website/lastingqual/node_modules/@react-stately/utils/dist/import.mjs[22m
+2026-04-17T15:15:12.695Z vite:resolve [32m4.59ms[39m [36mmicromark-util-character[39m -> [2mD:/恒沣/【8行政】/website/lastingqual/node_modules/micromark-util-character/dev/index.js[22m
+2026-04-17T15:15:12.706Z vite:resolve [33m10.43ms[39m [36m@react-aria/tooltip[39m -> [2mD:/恒沣/【8行政】/website/lastingqual/node_modules/@react-aria/tooltip/dist/import.mjs[22m
+2026-04-17T15:15:12.707Z vite:resolve [33m10.90ms[39m [36munist-util-visit-parents[39m -> [2mD:/恒沣/【8行政】/website/lastingqual/node_modules/unist-util-visit-parents/index.js[22m
+2026-04-17T15:15:12.707Z vite:resolve [33m10.98ms[39m [36m@react-stately/toggle[39m -> [2mD:/恒沣/【8行政】/website/lastingqual/node_modules/@react-stately/toggle/dist/import.mjs[22m
+2026-04-17T15:15:12.707Z vite:resolve [33m11.08ms[39m [36m@emotion/css[39m -> [2mD:/恒沣/【8行政】/website/lastingqual/node_modules/@emotion/css/dist/emotion-css.development.esm.js[22m
+2026-04-17T15:15:12.707Z vite:resolve [33m11.15ms[39m [36my-provider[39m -> [2mD:/恒沣/【8行政】/website/lastingqual/node_modules/y-provider/dist/index.js[22m
+2026-04-17T15:15:12.707Z vite:resolve [33m11.23ms[39m [36mmdast-util-to-string[39m -> [2mD:/恒沣/【8行政】/website/lastingqual/node_modules/mdast-util-to-string/index.js[22m
+2026-04-17T15:15:12.719Z vite:resolve [33m11.09ms[39m [36mmicromark-util-symbol[39m -> [2mD:/恒沣/【8行政】/website/lastingqual/node_modules/micromark-util-symbol/lib/default.js[22m
+2026-04-17T15:15:12.720Z vite:resolve [33m11.29ms[39m [36m@keystar/ui/primitives[39m -> [2mD:/恒沣/【8行政】/website/lastingqual/node_modules/@keystar/ui/dist/keystar-ui-primitives.js[22m
+2026-04-17T15:15:12.720Z vite:resolve [33m11.41ms[39m [36m@keystar/ui/utils/ts[39m -> [2mD:/恒沣/【8行政】/website/lastingqual/node_modules/@keystar/ui/dist/keystar-ui-utils-ts.js[22m
+2026-04-17T15:15:12.720Z vite:resolve [33m11.63ms[39m [36mlib0/observable[39m -> [2mD:/恒沣/【8行政】/website/lastingqual/node_modules/lib0/observable.js[22m
+2026-04-17T15:15:12.720Z vite:resolve [33m11.85ms[39m [36mdirection[39m -> [2mD:/恒沣/【8行政】/website/lastingqual/node_modules/direction/index.js[22m
+2026-04-17T15:15:12.721Z vite:resolve [33m12.05ms[39m [36m@react-aria/radio[39m -> [2mD:/恒沣/【8行政】/website/lastingqual/node_modules/@react-aria/radio/dist/import.mjs[22m
+2026-04-17T15:15:12.721Z vite:resolve [33m12.14ms[39m [36m@react-aria/meter[39m -> [2mD:/恒沣/【8行政】/website/lastingqual/node_modules/@react-aria/meter/dist/import.mjs[22m
+2026-04-17T15:15:12.748Z vite:resolve [33m26.39ms[39m [36m@internationalized/message[39m -> [2mD:/恒沣/【8行政】/website/lastingqual/node_modules/@internationalized/message/dist/import.mjs[22m
+2026-04-17T15:15:12.749Z vite:resolve [33m26.86ms[39m [36m@internationalized/string[39m -> [2mD:/恒沣/【8行政】/website/lastingqual/node_modules/@internationalized/string/dist/import.mjs[22m
+2026-04-17T15:15:12.749Z vite:resolve [33m26.94ms[39m [36m@internationalized/date[39m -> [2mD:/恒沣/【8行政】/website/lastingqual/node_modules/@internationalized/date/dist/import.mjs[22m
+2026-04-17T15:15:12.749Z vite:resolve [33m27.06ms[39m [36m@internationalized/number[39m -> [2mD:/恒沣/【8行政】/website/lastingqual/node_modules/@internationalized/number/dist/import.mjs[22m
+2026-04-17T15:15:12.749Z vite:resolve [33m27.08ms[39m [36m@react-aria/combobox[39m -> [2mD:/恒沣/【8行政】/website/lastingqual/node_modules/@react-aria/combobox/dist/import.mjs[22m
+2026-04-17T15:15:12.749Z vite:resolve [33m27.16ms[39m [36mmdast-util-mdx-expression[39m -> [2mD:/恒沣/【8行政】/website/lastingqual/node_modules/mdast-util-mdx-expression/index.js[22m
+2026-04-17T15:15:12.749Z vite:resolve [33m27.30ms[39m [36m@react-aria/actiongroup[39m -> [2mD:/恒沣/【8行政】/website/lastingqual/node_modules/@react-aria/actiongroup/dist/import.mjs[22m
+2026-04-17T15:15:12.750Z vite:resolve [33m27.33ms[39m [36mbrace-expansion[39m -> [2mD:/恒沣/【8行政】/website/lastingqual/node_modules/brace-expansion/index.js[22m
+2026-04-17T15:15:12.750Z vite:resolve [33m27.23ms[39m [36mescape-string-regexp[39m -> [2mD:/恒沣/【8行政】/website/lastingqual/node_modules/@sindresorhus/slugify/node_modules/escape-string-regexp/index.js[22m
+2026-04-17T15:15:12.750Z vite:resolve [33m27.11ms[39m [36mgraphql-tag[39m -> [2mD:/恒沣/【8行政】/website/lastingqual/node_modules/graphql-tag/lib/index.js[22m
+2026-04-17T15:15:12.750Z vite:resolve [33m26.52ms[39m [36m@react-stately/select[39m -> [2mD:/恒沣/【8行政】/website/lastingqual/node_modules/@react-stately/select/dist/import.mjs[22m
+2026-04-17T15:15:12.750Z vite:resolve [33m26.51ms[39m [36morderedmap[39m -> [2mD:/恒沣/【8行政】/website/lastingqual/node_modules/orderedmap/dist/index.js[22m
+2026-04-17T15:15:12.750Z vite:resolve [33m26.54ms[39m [36munist-util-is[39m -> [2mD:/恒沣/【8行政】/website/lastingqual/node_modules/unist-util-is/index.js[22m
+2026-04-17T15:15:12.750Z vite:resolve [33m26.59ms[39m [36m@react-aria/focus[39m -> [2mD:/恒沣/【8行政】/website/lastingqual/node_modules/@react-aria/focus/dist/import.mjs[22m
+2026-04-17T15:15:12.778Z vite:resolve [33m26.56ms[39m [36mmicromark[39m -> [2mD:/恒沣/【8行政】/website/lastingqual/node_modules/micromark/dev/index.js[22m
+2026-04-17T15:15:12.782Z vite:resolve [33m30.45ms[39m [36mmicromark-util-encode[39m -> [2mD:/恒沣/【8行政】/website/lastingqual/node_modules/micromark-util-encode/index.js[22m
+2026-04-17T15:15:12.782Z vite:resolve [33m30.56ms[39m [36mmicromark-factory-space[39m -> [2mD:/恒沣/【8行政】/website/lastingqual/node_modules/micromark-factory-space/dev/index.js[22m
+2026-04-17T15:15:12.782Z vite:resolve [33m30.63ms[39m [36mlib0/array[39m -> [2mD:/恒沣/【8行政】/website/lastingqual/node_modules/lib0/array.js[22m
+2026-04-17T15:15:12.782Z vite:resolve [33m30.63ms[39m [36m@react-aria/numberfield[39m -> [2mD:/恒沣/【8行政】/website/lastingqual/node_modules/@react-aria/numberfield/dist/import.mjs[22m
+2026-04-17T15:15:12.782Z vite:resolve [33m30.71ms[39m [36mlodash/debounce[39m -> [2mD:/恒沣/【8行政】/website/lastingqual/node_modules/lodash/debounce.js[22m
+2026-04-17T15:15:12.782Z vite:resolve [33m30.72ms[39m [36mdequal[39m -> [2mD:/恒沣/【8行政】/website/lastingqual/node_modules/dequal/dist/index.mjs[22m
+2026-04-17T15:15:12.783Z vite:resolve [33m30.73ms[39m [36m@react-aria/gridlist[39m -> [2mD:/恒沣/【8行政】/website/lastingqual/node_modules/@react-aria/gridlist/dist/import.mjs[22m
+2026-04-17T15:15:12.783Z vite:resolve [33m30.77ms[39m [36mzwitch[39m -> [2mD:/恒沣/【8行政】/website/lastingqual/node_modules/zwitch/index.js[22m
+2026-04-17T15:15:12.783Z vite:resolve [33m30.76ms[39m [36mlongest-streak[39m -> [2mD:/恒沣/【8行政】/website/lastingqual/node_modules/longest-streak/index.js[22m
+2026-04-17T15:15:12.783Z vite:resolve [33m30.80ms[39m [36m@urql/core[39m -> [2mD:/恒沣/【8行政】/website/lastingqual/node_modules/@urql/core/dist/urql-core.mjs[22m
+2026-04-17T15:15:12.783Z vite:resolve [33m30.81ms[39m [36mmicromark-util-classify-character[39m -> [2mD:/恒沣/【8行政】/website/lastingqual/node_modules/micromark-util-classify-character/dev/index.js[22m
+2026-04-17T15:15:12.783Z vite:resolve [33m30.84ms[39m [36mmdast-util-phrasing[39m -> [2mD:/恒沣/【8行政】/website/lastingqual/node_modules/mdast-util-phrasing/index.js[22m
+2026-04-17T15:15:12.783Z vite:resolve [33m30.87ms[39m [36macorn[39m -> [2mD:/恒沣/【8行政】/website/lastingqual/node_modules/acorn/dist/acorn.mjs[22m
+2026-04-17T15:15:12.801Z vite:resolve [33m16.55ms[39m [36mmarkdown-table[39m -> [2mD:/恒沣/【8行政】/website/lastingqual/node_modules/markdown-table/index.js[22m
+2026-04-17T15:15:12.802Z vite:resolve [33m16.72ms[39m [36mmdast-util-mdx-jsx[39m -> [2mD:/恒沣/【8行政】/website/lastingqual/node_modules/mdast-util-mdx-jsx/index.js[22m
+2026-04-17T15:15:12.802Z vite:resolve [33m16.80ms[39m [36mimmer[39m -> [2mD:/恒沣/【8行政】/website/lastingqual/node_modules/immer/dist/immer.esm.mjs[22m
+2026-04-17T15:15:12.802Z vite:resolve [33m16.88ms[39m [36m@sindresorhus/transliterate[39m -> [2mD:/恒沣/【8行政】/website/lastingqual/node_modules/@sindresorhus/transliterate/index.js[22m
+2026-04-17T15:15:12.802Z vite:resolve [33m16.94ms[39m [36m@react-aria/ssr[39m -> [2mD:/恒沣/【8行政】/website/lastingqual/node_modules/@react-aria/ssr/dist/import.mjs[22m
+2026-04-17T15:15:12.802Z vite:resolve [33m16.91ms[39m [36mmicromark-util-chunked[39m -> [2mD:/恒沣/【8行政】/website/lastingqual/node_modules/micromark-util-chunked/dev/index.js[22m
+2026-04-17T15:15:12.802Z vite:resolve [33m17.03ms[39m [36mtslib[39m -> [2mD:/恒沣/【8行政】/website/lastingqual/node_modules/tslib/tslib.es6.mjs[22m
+2026-04-17T15:15:12.802Z vite:resolve [33m17.07ms[39m [36mmdast-util-find-and-replace[39m -> [2mD:/恒沣/【8行政】/website/lastingqual/node_modules/mdast-util-find-and-replace/index.js[22m
+2026-04-17T15:15:12.802Z vite:resolve [33m17.06ms[39m [36munist-util-visit-parents/do-not-use-color[39m -> [2mD:/恒沣/【8行政】/website/lastingqual/node_modules/unist-util-visit-parents/lib/color.js[22m
+2026-04-17T15:15:12.802Z vite:resolve [33m16.95ms[39m [36m@react-aria/live-announcer[39m -> [2mD:/恒沣/【8行政】/website/lastingqual/node_modules/@react-aria/live-announcer/dist/import.mjs[22m
+2026-04-17T15:15:12.803Z vite:resolve [33m16.97ms[39m [36mclsx[39m -> [2mD:/恒沣/【8行政】/website/lastingqual/node_modules/clsx/dist/clsx.mjs[22m
+2026-04-17T15:15:12.803Z vite:resolve [33m16.95ms[39m [36m@react-stately/flags[39m -> [2mD:/恒沣/【8行政】/website/lastingqual/node_modules/@react-stately/flags/dist/import.mjs[22m
+2026-04-17T15:15:12.803Z vite:resolve [33m16.95ms[39m [36mbalanced-match[39m -> [2mD:/恒沣/【8行政】/website/lastingqual/node_modules/balanced-match/index.js[22m
+2026-04-17T15:15:12.816Z vite:resolve [33m11.61ms[39m [36mmicromark-util-decode-numeric-character-reference[39m -> [2mD:/恒沣/【8行政】/website/lastingqual/node_modules/micromark-util-decode-numeric-character-reference/dev/index.js[22m
+2026-04-17T15:15:12.816Z vite:resolve [33m11.39ms[39m [36mlodash/throttle[39m -> [2mD:/恒沣/【8行政】/website/lastingqual/node_modules/lodash/throttle.js[22m
+2026-04-17T15:15:12.816Z vite:resolve [33m11.29ms[39m [36macorn-jsx[39m -> [2mD:/恒沣/【8行政】/website/lastingqual/node_modules/acorn-jsx/index.js[22m
+2026-04-17T15:15:12.816Z vite:resolve [33m11.02ms[39m [36mmicromark-util-decode-string[39m -> [2mD:/恒沣/【8行政】/website/lastingqual/node_modules/micromark-util-decode-string/dev/index.js[22m
+2026-04-17T15:15:12.829Z vite:resolve [33m11.41ms[39m [36mmdast-util-mdxjs-esm[39m -> [2mD:/恒沣/【8行政】/website/lastingqual/node_modules/mdast-util-mdxjs-esm/index.js[22m
+2026-04-17T15:15:12.829Z vite:resolve [33m11.51ms[39m [36m@react-aria/separator[39m -> [2mD:/恒沣/【8行政】/website/lastingqual/node_modules/@react-aria/separator/dist/import.mjs[22m
+2026-04-17T15:15:12.829Z vite:resolve [33m11.49ms[39m [36mescape-string-regexp[39m -> [2mD:/恒沣/【8行政】/website/lastingqual/node_modules/escape-string-regexp/index.js[22m
+2026-04-17T15:15:12.829Z vite:resolve [33m11.40ms[39m [36mgraphql[39m -> [2mD:/恒沣/【8行政】/website/lastingqual/node_modules/graphql/index.mjs[22m
+2026-04-17T15:15:12.829Z vite:resolve [33m11.36ms[39m [36mlodash.deburr[39m -> [2mD:/恒沣/【8行政】/website/lastingqual/node_modules/lodash.deburr/index.js[22m
+2026-04-17T15:15:12.829Z vite:resolve [33m11.47ms[39m [36mintl-messageformat[39m -> [2mD:/恒沣/【8行政】/website/lastingqual/node_modules/intl-messageformat/lib/index.js[22m
+2026-04-17T15:15:12.843Z vite:resolve [33m12.80ms[39m [36m@react-aria/menu[39m -> [2mD:/恒沣/【8行政】/website/lastingqual/node_modules/@react-aria/menu/dist/import.mjs[22m
+2026-04-17T15:15:12.843Z vite:resolve [33m12.99ms[39m [36mlib0/function[39m -> [2mD:/恒沣/【8行政】/website/lastingqual/node_modules/lib0/function.js[22m
+2026-04-17T15:15:12.843Z vite:resolve [33m13.09ms[39m [36m@react-aria/toast[39m -> [2mD:/恒沣/【8行政】/website/lastingqual/node_modules/@react-aria/toast/dist/import.mjs[22m
+2026-04-17T15:15:12.843Z vite:resolve [33m13.16ms[39m [36mlib0/map[39m -> [2mD:/恒沣/【8行政】/website/lastingqual/node_modules/lib0/map.js[22m
+2026-04-17T15:15:12.844Z vite:resolve [33m13.16ms[39m [36mwonka[39m -> [2mD:/恒沣/【8行政】/website/lastingqual/node_modules/wonka/dist/wonka.mjs[22m
+2026-04-17T15:15:12.844Z vite:resolve [33m13.22ms[39m [36m@react-stately/numberfield[39m -> [2mD:/恒沣/【8行政】/website/lastingqual/node_modules/@react-stately/numberfield/dist/import.mjs[22m
+2026-04-17T15:15:12.844Z vite:resolve [33m13.19ms[39m [36mmicromark-extension-mdx-expression[39m -> [2mD:/恒沣/【8行政】/website/lastingqual/node_modules/micromark-extension-mdx-expression/dev/index.js[22m
+2026-04-17T15:15:12.844Z vite:resolve [33m13.59ms[39m [36mdecode-named-character-reference[39m -> [2mD:/恒沣/【8行政】/website/lastingqual/node_modules/decode-named-character-reference/index.dom.js[22m
+2026-04-17T15:15:12.860Z vite:resolve [33m13.69ms[39m [36mlib0/error[39m -> [2mD:/恒沣/【8行政】/website/lastingqual/node_modules/lib0/error.js[22m
+2026-04-17T15:15:12.860Z vite:resolve [33m13.84ms[39m [36mmicromark-util-resolve-all[39m -> [2mD:/恒沣/【8行政】/website/lastingqual/node_modules/micromark-util-resolve-all/index.js[22m
+2026-04-17T15:15:12.860Z vite:resolve [33m13.86ms[39m [36mescape-string-regexp[39m -> [2mD:/恒沣/【8行政】/website/lastingqual/node_modules/@sindresorhus/transliterate/node_modules/escape-string-regexp/index.js[22m
+2026-04-17T15:15:12.860Z vite:resolve [33m13.83ms[39m [36m@formatjs/icu-messageformat-parser[39m -> [2mD:/恒沣/【8行政】/website/lastingqual/node_modules/@formatjs/icu-messageformat-parser/lib/index.js[22m
+2026-04-17T15:15:12.860Z vite:resolve [33m13.98ms[39m [36m@swc/helpers/_/_class_private_field_init[39m -> [2mD:/恒沣/【8行政】/website/lastingqual/node_modules/@swc/helpers/esm/_class_private_field_init.js[22m
+2026-04-17T15:15:12.870Z vite:resolve [32m8.84ms[39m [36mmicromark-util-normalize-identifier[39m -> [2mD:/恒沣/【8行政】/website/lastingqual/node_modules/micromark-util-normalize-identifier/dev/index.js[22m
+2026-04-17T15:15:12.870Z vite:resolve [32m9.00ms[39m [36mscroll-into-view-if-needed[39m -> [2mD:/恒沣/【8行政】/website/lastingqual/node_modules/slate-react/node_modules/scroll-into-view-if-needed/es/index.js[22m
+2026-04-17T15:15:12.870Z vite:resolve [32m9.15ms[39m [36m@react-stately/tree[39m -> [2mD:/恒沣/【8行政】/website/lastingqual/node_modules/@react-stately/tree/dist/import.mjs[22m
+2026-04-17T15:15:12.871Z vite:resolve [32m9.18ms[39m [36m@react-aria/virtualizer[39m -> [2mD:/恒沣/【8行政】/website/lastingqual/node_modules/@react-aria/virtualizer/dist/import.mjs[22m
+2026-04-17T15:15:12.871Z vite:resolve [32m9.22ms[39m [36mmicromark-extension-mdx-jsx[39m -> [2mD:/恒沣/【8行政】/website/lastingqual/node_modules/micromark-extension-mdx-jsx/dev/index.js[22m
+2026-04-17T15:15:12.871Z vite:resolve [32m9.03ms[39m [36m@0no-co/graphql.web[39m -> [2mD:/恒沣/【8行政】/website/lastingqual/node_modules/@0no-co/graphql.web/dist/graphql.web.mjs[22m
+2026-04-17T15:15:12.882Z vite:resolve [33m10.06ms[39m [36mfacepaint[39m -> [2mD:/恒沣/【8行政】/website/lastingqual/node_modules/facepaint/dist/index.es.js[22m
+2026-04-17T15:15:12.882Z vite:resolve [33m10.24ms[39m [36m@react-stately/combobox[39m -> [2mD:/恒沣/【8行政】/website/lastingqual/node_modules/@react-stately/combobox/dist/import.mjs[22m
+2026-04-17T15:15:12.883Z vite:resolve [33m10.30ms[39m [36m@formatjs/fast-memoize[39m -> [2mD:/恒沣/【8行政】/website/lastingqual/node_modules/@formatjs/fast-memoize/lib/index.js[22m
+2026-04-17T15:15:12.883Z vite:resolve [32m9.89ms[39m [36m@swc/helpers/_/_class_private_field_get[39m -> [2mD:/恒沣/【8行政】/website/lastingqual/node_modules/@swc/helpers/esm/_class_private_field_get.js[22m
+2026-04-17T15:15:12.889Z vite:resolve [32m5.58ms[39m [36mmicromark-extension-mdx-md[39m -> [2mD:/恒沣/【8行政】/website/lastingqual/node_modules/micromark-extension-mdx-md/index.js[22m
+2026-04-17T15:15:12.890Z vite:resolve [32m5.61ms[39m [36mlib0/object[39m -> [2mD:/恒沣/【8行政】/website/lastingqual/node_modules/lib0/object.js[22m
+2026-04-17T15:15:12.897Z vite:resolve [32m6.32ms[39m [36m@react-aria/button[39m -> [2mD:/恒沣/【8行政】/website/lastingqual/node_modules/@react-aria/button/dist/import.mjs[22m
+2026-04-17T15:15:12.897Z vite:resolve [32m6.42ms[39m [36mlib0/eventloop[39m -> [2mD:/恒沣/【8行政】/website/lastingqual/node_modules/lib0/eventloop.js[22m
+2026-04-17T15:15:12.897Z vite:resolve [32m6.53ms[39m [36m@react-aria/dnd[39m -> [2mD:/恒沣/【8行政】/website/lastingqual/node_modules/@react-aria/dnd/dist/import.mjs[22m
+2026-04-17T15:15:12.897Z vite:resolve [32m6.55ms[39m [36m@keystar/ui/icon/icons/chevronsUpDownIcon[39m -> [2mD:/恒沣/【8行政】/website/lastingqual/node_modules/@keystar/ui/dist/keystar-ui-icon-icons-chevronsUpDownIcon.js[22m
+2026-04-17T15:15:12.897Z vite:resolve [32m6.51ms[39m [36mparse-entities[39m -> [2mD:/恒沣/【8行政】/website/lastingqual/node_modules/parse-entities/index.js[22m
+2026-04-17T15:15:12.906Z vite:resolve [32m8.31ms[39m [36m@react-aria/dialog[39m -> [2mD:/恒沣/【8行政】/website/lastingqual/node_modules/@react-aria/dialog/dist/import.mjs[22m
+2026-04-17T15:15:12.907Z vite:resolve [32m8.77ms[39m [36mlib0/random[39m -> [2mD:/恒沣/【8行政】/website/lastingqual/node_modules/lib0/random.js[22m
+2026-04-17T15:15:12.907Z vite:resolve [32m8.99ms[39m [36mmicromark-extension-mdxjs-esm[39m -> [2mD:/恒沣/【8行政】/website/lastingqual/node_modules/micromark-extension-mdxjs-esm/dev/index.js[22m
+2026-04-17T15:15:12.907Z vite:resolve [32m9.07ms[39m [36m@juggle/resize-observer[39m -> [2mD:/恒沣/【8行政】/website/lastingqual/node_modules/@juggle/resize-observer/lib/exports/resize-observer.js[22m
+2026-04-17T15:15:12.907Z vite:resolve [32m9.10ms[39m [36mlib0/set[39m -> [2mD:/恒沣/【8行政】/website/lastingqual/node_modules/lib0/set.js[22m
+2026-04-17T15:15:12.907Z vite:resolve [32m9.14ms[39m [36m@react-aria/textfield[39m -> [2mD:/恒沣/【8行政】/website/lastingqual/node_modules/@react-aria/textfield/dist/import.mjs[22m
+2026-04-17T15:15:12.916Z vite:resolve [32m7.24ms[39m [36m@react-stately/dnd[39m -> [2mD:/恒沣/【8行政】/website/lastingqual/node_modules/@react-stately/dnd/dist/import.mjs[22m
+2026-04-17T15:15:12.916Z vite:resolve [32m7.29ms[39m [36mstringify-entities[39m -> [2mD:/恒沣/【8行政】/website/lastingqual/node_modules/stringify-entities/index.js[22m
+2026-04-17T15:15:12.916Z vite:resolve [32m7.39ms[39m [36m@swc/helpers/_/_class_private_field_set[39m -> [2mD:/恒沣/【8行政】/website/lastingqual/node_modules/@swc/helpers/esm/_class_private_field_set.js[22m
+2026-04-17T15:15:12.916Z vite:resolve [32m7.42ms[39m [36m@formatjs/icu-skeleton-parser[39m -> [2mD:/恒沣/【8行政】/website/lastingqual/node_modules/@formatjs/icu-skeleton-parser/lib/index.js[22m
+2026-04-17T15:15:12.924Z vite:resolve [32m6.79ms[39m [36munist-util-stringify-position[39m -> [2mD:/恒沣/【8行政】/website/lastingqual/node_modules/unist-util-stringify-position/index.js[22m
+2026-04-17T15:15:12.924Z vite:resolve [32m6.96ms[39m [36m@react-aria/progress[39m -> [2mD:/恒沣/【8行政】/website/lastingqual/node_modules/@react-aria/progress/dist/import.mjs[22m
+2026-04-17T15:15:12.924Z vite:resolve [32m7.01ms[39m [36m@react-stately/radio[39m -> [2mD:/恒沣/【8行政】/website/lastingqual/node_modules/@react-stately/radio/dist/import.mjs[22m
+2026-04-17T15:15:12.924Z vite:resolve [32m7.06ms[39m [36m@keystar/ui/icon/icons/checkCircle2Icon[39m -> [2mD:/恒沣/【8行政】/website/lastingqual/node_modules/@keystar/ui/dist/keystar-ui-icon-icons-checkCircle2Icon.js[22m
+2026-04-17T15:15:12.924Z vite:resolve [32m7.10ms[39m [36mlib0/promise[39m -> [2mD:/恒沣/【8行政】/website/lastingqual/node_modules/lib0/promise.js[22m
+2026-04-17T15:15:12.925Z vite:resolve [32m7.32ms[39m [36m@floating-ui/react[39m -> [2mD:/恒沣/【8行政】/website/lastingqual/node_modules/@floating-ui/react/dist/floating-ui.react.esm.js[22m
+2026-04-17T15:15:12.930Z vite:resolve [32m4.61ms[39m [36mmicromark-util-combine-extensions[39m -> [2mD:/恒沣/【8行政】/website/lastingqual/node_modules/micromark-util-combine-extensions/index.js[22m
+2026-04-17T15:15:12.930Z vite:resolve [32m4.78ms[39m [36mis-hotkey[39m -> [2mD:/恒沣/【8行政】/website/lastingqual/node_modules/slate-react/node_modules/is-hotkey/lib/index.js[22m
+2026-04-17T15:15:12.930Z vite:resolve [32m4.90ms[39m [36mlib0/diff[39m -> [2mD:/恒沣/【8行政】/website/lastingqual/node_modules/lib0/diff.js[22m
+2026-04-17T15:15:12.938Z vite:resolve [32m6.66ms[39m [36m@keystar/ui/icon/icons/xIcon[39m -> [2mD:/恒沣/【8行政】/website/lastingqual/node_modules/@keystar/ui/dist/keystar-ui-icon-icons-xIcon.js[22m
+2026-04-17T15:15:12.939Z vite:resolve [32m6.85ms[39m [36m@keystar/ui/icon/icons/infoIcon[39m -> [2mD:/恒沣/【8行政】/website/lastingqual/node_modules/@keystar/ui/dist/keystar-ui-icon-icons-infoIcon.js[22m
+2026-04-17T15:15:12.939Z vite:resolve [32m6.98ms[39m [36mlib0/buffer[39m -> [2mD:/恒沣/【8行政】/website/lastingqual/node_modules/lib0/buffer.js[22m
+2026-04-17T15:15:12.939Z vite:resolve [32m7.06ms[39m [36m@react-aria/listbox[39m -> [2mD:/恒沣/【8行政】/website/lastingqual/node_modules/@react-aria/listbox/dist/import.mjs[22m
+2026-04-17T15:15:12.949Z vite:resolve [32m8.62ms[39m [36macorn[39m -> [2mD:/恒沣/【8行政】/website/lastingqual/node_modules/acorn/dist/acorn.js[22m
+2026-04-17T15:15:12.949Z vite:resolve [32m8.65ms[39m [36mmicromark-util-subtokenize[39m -> [2mD:/恒沣/【8行政】/website/lastingqual/node_modules/micromark-util-subtokenize/dev/index.js[22m
+2026-04-17T15:15:12.956Z vite:resolve [32m7.07ms[39m [36m@keystar/ui/icon/icons/alertTriangleIcon[39m -> [2mD:/恒沣/【8行政】/website/lastingqual/node_modules/@keystar/ui/dist/keystar-ui-icon-icons-alertTriangleIcon.js[22m
+2026-04-17T15:15:12.957Z vite:resolve [32m7.18ms[39m [36mvfile-message[39m -> [2mD:/恒沣/【8行政】/website/lastingqual/node_modules/vfile-message/index.js[22m
+2026-04-17T15:15:12.957Z vite:resolve [32m6.97ms[39m [36m@emotion/cache[39m -> [2mD:/恒沣/【8行政】/website/lastingqual/node_modules/@emotion/cache/dist/emotion-cache.browser.development.esm.js[22m
+2026-04-17T15:15:12.957Z vite:resolve [32m7.09ms[39m [36m@react-aria/toolbar[39m -> [2mD:/恒沣/【8行政】/website/lastingqual/node_modules/@react-aria/toolbar/dist/import.mjs[22m
+2026-04-17T15:15:12.966Z vite:resolve [32m8.16ms[39m [36mmicromark-core-commonmark[39m -> [2mD:/恒沣/【8行政】/website/lastingqual/node_modules/micromark-core-commonmark/dev/index.js[22m
+2026-04-17T15:15:12.967Z vite:resolve [32m8.37ms[39m [36mmicromark-factory-mdx-expression[39m -> [2mD:/恒沣/【8行政】/website/lastingqual/node_modules/micromark-factory-mdx-expression/dev/index.js[22m
+2026-04-17T15:15:12.967Z vite:resolve [32m8.42ms[39m [36mdebug[39m -> [2mD:/恒沣/【8行政】/website/lastingqual/node_modules/debug/src/browser.js[22m
+2026-04-17T15:15:12.980Z vite:resolve [33m12.32ms[39m [36m@react-stately/checkbox[39m -> [2mD:/恒沣/【8行政】/website/lastingqual/node_modules/@react-stately/checkbox/dist/import.mjs[22m
+2026-04-17T15:15:12.981Z vite:resolve [33m12.35ms[39m [36m@keystar/ui/icon/icons/moreHorizontalIcon[39m -> [2mD:/恒沣/【8行政】/website/lastingqual/node_modules/@keystar/ui/dist/keystar-ui-icon-icons-moreHorizontalIcon.js[22m
+2026-04-17T15:15:12.981Z vite:resolve [33m12.33ms[39m [36mlib0/binary[39m -> [2mD:/恒沣/【8行政】/website/lastingqual/node_modules/lib0/binary.js[22m
+2026-04-17T15:15:12.981Z vite:resolve [33m12.30ms[39m [36m@emotion/serialize[39m -> [2mD:/恒沣/【8行政】/website/lastingqual/node_modules/@emotion/serialize/dist/emotion-serialize.development.esm.js[22m
+2026-04-17T15:15:12.981Z vite:resolve [33m12.40ms[39m [36mcharacter-entities-legacy[39m -> [2mD:/恒沣/【8行政】/website/lastingqual/node_modules/character-entities-legacy/index.js[22m
+2026-04-17T15:15:12.981Z vite:resolve [33m12.46ms[39m [36m@react-stately/form[39m -> [2mD:/恒沣/【8行政】/website/lastingqual/node_modules/@react-stately/form/dist/import.mjs[22m
+2026-04-17T15:15:12.981Z vite:resolve [33m12.60ms[39m [36mcompute-scroll-into-view[39m -> [2mD:/恒沣/【8行政】/website/lastingqual/node_modules/slate-react/node_modules/compute-scroll-into-view/dist/index.mjs[22m
+2026-04-17T15:15:12.986Z vite:resolve [32m3.84ms[39m [36mestree-util-is-identifier-name[39m -> [2mD:/恒沣/【8行政】/website/lastingqual/node_modules/estree-util-is-identifier-name/index.js[22m
+2026-04-17T15:15:12.993Z vite:resolve [32m6.30ms[39m [36m@react-stately/tooltip[39m -> [2mD:/恒沣/【8行政】/website/lastingqual/node_modules/@react-stately/tooltip/dist/import.mjs[22m
+2026-04-17T15:15:12.993Z vite:resolve [32m6.31ms[39m [36mcharacter-reference-invalid[39m -> [2mD:/恒沣/【8行政】/website/lastingqual/node_modules/character-reference-invalid/index.js[22m
+2026-04-17T15:15:12.993Z vite:resolve [32m6.29ms[39m [36m@emotion/utils[39m -> [2mD:/恒沣/【8行政】/website/lastingqual/node_modules/@emotion/utils/dist/emotion-utils.browser.esm.js[22m
+2026-04-17T15:15:12.993Z vite:resolve [32m6.22ms[39m [36mcharacter-entities-html4[39m -> [2mD:/恒沣/【8行政】/website/lastingqual/node_modules/character-entities-html4/index.js[22m
+2026-04-17T15:15:13.000Z vite:resolve [32m6.21ms[39m [36mmicromark-util-events-to-acorn[39m -> [2mD:/恒沣/【8行政】/website/lastingqual/node_modules/micromark-util-events-to-acorn/dev/index.js[22m
+2026-04-17T15:15:13.000Z vite:resolve [32m6.05ms[39m [36mlib0/environment[39m -> [2mD:/恒沣/【8行政】/website/lastingqual/node_modules/lib0/environment.js[22m
+2026-04-17T15:15:13.010Z vite:resolve [32m8.66ms[39m [36mis-decimal[39m -> [2mD:/恒沣/【8行政】/website/lastingqual/node_modules/is-decimal/index.js[22m
+2026-04-17T15:15:13.010Z vite:resolve [32m8.53ms[39m [36m@emotion/hash[39m -> [2mD:/恒沣/【8行政】/website/lastingqual/node_modules/@emotion/hash/dist/emotion-hash.esm.js[22m
+2026-04-17T15:15:13.011Z vite:resolve [32m8.68ms[39m [36m@emotion/sheet[39m -> [2mD:/恒沣/【8行政】/website/lastingqual/node_modules/@emotion/sheet/dist/emotion-sheet.development.esm.js[22m
+2026-04-17T15:15:13.020Z vite:resolve [32m7.61ms[39m [36mlib0/dom[39m -> [2mD:/恒沣/【8行政】/website/lastingqual/node_modules/lib0/dom.js[22m
+2026-04-17T15:15:13.020Z vite:resolve [32m7.54ms[39m [36mmicromark-factory-destination[39m -> [2mD:/恒沣/【8行政】/website/lastingqual/node_modules/micromark-factory-destination/dev/index.js[22m
+2026-04-17T15:15:13.038Z vite:resolve [33m13.05ms[39m [36mis-hexadecimal[39m -> [2mD:/恒沣/【8行政】/website/lastingqual/node_modules/is-hexadecimal/index.js[22m
+2026-04-17T15:15:13.038Z vite:resolve [33m13.22ms[39m [36m@keystar/ui/icon/icons/chevronUpIcon[39m -> [2mD:/恒沣/【8行政】/website/lastingqual/node_modules/@keystar/ui/dist/keystar-ui-icon-icons-chevronUpIcon.js[22m
+2026-04-17T15:15:13.038Z vite:resolve [33m13.30ms[39m [36mlib0/logging[39m -> [2mD:/恒沣/【8行政】/website/lastingqual/node_modules/lib0/logging.js[22m
+2026-04-17T15:15:13.038Z vite:resolve [33m13.35ms[39m [36m@emotion/unitless[39m -> [2mD:/恒沣/【8行政】/website/lastingqual/node_modules/@emotion/unitless/dist/emotion-unitless.esm.js[22m
+2026-04-17T15:15:13.038Z vite:resolve [33m13.39ms[39m [36m@react-aria/form[39m -> [2mD:/恒沣/【8行政】/website/lastingqual/node_modules/@react-aria/form/dist/import.mjs[22m
+2026-04-17T15:15:13.038Z vite:resolve [33m13.43ms[39m [36mstylis[39m -> [2mD:/恒沣/【8行政】/website/lastingqual/node_modules/stylis/index.js[22m
+2026-04-17T15:15:13.039Z vite:resolve [33m13.36ms[39m [36munist-util-position-from-estree[39m -> [2mD:/恒沣/【8行政】/website/lastingqual/node_modules/unist-util-position-from-estree/index.js[22m
+2026-04-17T15:15:13.039Z vite:resolve [33m13.18ms[39m [36mmicromark-factory-label[39m -> [2mD:/恒沣/【8行政】/website/lastingqual/node_modules/micromark-factory-label/dev/index.js[22m
+2026-04-17T15:15:13.039Z vite:resolve [33m13.22ms[39m [36mmicromark-util-html-tag-name[39m -> [2mD:/恒沣/【8行政】/website/lastingqual/node_modules/micromark-util-html-tag-name/index.js[22m
+2026-04-17T15:15:13.050Z vite:resolve [32m8.71ms[39m [36m@react-stately/menu[39m -> [2mD:/恒沣/【8行政】/website/lastingqual/node_modules/@react-stately/menu/dist/import.mjs[22m
+2026-04-17T15:15:13.050Z vite:resolve [32m9.00ms[39m [36m@react-stately/virtualizer[39m -> [2mD:/恒沣/【8行政】/website/lastingqual/node_modules/@react-stately/virtualizer/dist/import.mjs[22m
+2026-04-17T15:15:13.050Z vite:resolve [32m9.09ms[39m [36mis-alphanumerical[39m -> [2mD:/恒沣/【8行政】/website/lastingqual/node_modules/is-alphanumerical/index.js[22m
+2026-04-17T15:15:13.051Z vite:resolve [32m9.07ms[39m [36m@emotion/memoize[39m -> [2mD:/恒沣/【8行政】/website/lastingqual/node_modules/@emotion/memoize/dist/emotion-memoize.esm.js[22m
+2026-04-17T15:15:13.051Z vite:resolve [32m9.02ms[39m [36m@emotion/weak-memoize[39m -> [2mD:/恒沣/【8行政】/website/lastingqual/node_modules/@emotion/cache/node_modules/@emotion/weak-memoize/dist/emotion-weak-memoize.esm.js[22m
+2026-04-17T15:15:13.055Z vite:resolve [32m3.56ms[39m [36mmicromark-factory-title[39m -> [2mD:/恒沣/【8行政】/website/lastingqual/node_modules/micromark-factory-title/dev/index.js[22m
+2026-04-17T15:15:13.063Z vite:resolve [32m6.66ms[39m [36m@react-stately/layout[39m -> [2mD:/恒沣/【8行政】/website/lastingqual/node_modules/@react-stately/layout/dist/import.mjs[22m
+2026-04-17T15:15:13.063Z vite:resolve [32m6.65ms[39m [36mlib0/string[39m -> [2mD:/恒沣/【8行政】/website/lastingqual/node_modules/lib0/string.js[22m
+2026-04-17T15:15:13.063Z vite:resolve [32m6.51ms[39m [36mlib0/hash/sha256[39m -> [2mD:/恒沣/【8行政】/website/lastingqual/node_modules/lib0/hash/sha256.js[22m
+2026-04-17T15:15:13.063Z vite:resolve [32m6.52ms[39m [36mlib0/webcrypto[39m -> [2mD:/恒沣/【8行政】/website/lastingqual/node_modules/lib0/webcrypto.js[22m
+2026-04-17T15:15:13.063Z vite:resolve [32m6.56ms[39m [36mms[39m -> [2mD:/恒沣/【8行政】/website/lastingqual/node_modules/ms/index.js[22m
+2026-04-17T15:15:13.068Z vite:resolve [32m3.86ms[39m [36mmicromark-factory-whitespace[39m -> [2mD:/恒沣/【8行政】/website/lastingqual/node_modules/micromark-factory-whitespace/dev/index.js[22m
+2026-04-17T15:15:13.068Z vite:resolve [32m3.90ms[39m [36m@floating-ui/react-dom[39m -> [2mD:/恒沣/【8行政】/website/lastingqual/node_modules/@floating-ui/react-dom/dist/floating-ui.react-dom.mjs[22m
+2026-04-17T15:15:13.074Z vite:resolve [32m5.36ms[39m [36mlib0/iterator[39m -> [2mD:/恒沣/【8行政】/website/lastingqual/node_modules/lib0/iterator.js[22m
+2026-04-17T15:15:13.074Z vite:resolve [32m5.48ms[39m [36mis-alphabetical[39m -> [2mD:/恒沣/【8行政】/website/lastingqual/node_modules/is-alphabetical/index.js[22m
+2026-04-17T15:15:13.076Z vite:resolve [32m1.60ms[39m [36mestree-util-visit[39m -> [2mD:/恒沣/【8行政】/website/lastingqual/node_modules/estree-util-visit/index.js[22m
+2026-04-17T15:15:13.082Z vite:resolve [32m2.09ms[39m [36maria-hidden[39m -> [2mD:/恒沣/【8行政】/website/lastingqual/node_modules/aria-hidden/dist/es2015/index.js[22m
+2026-04-17T15:15:13.089Z vite:resolve [32m6.67ms[39m [36m@react-aria/toggle[39m -> [2mD:/恒沣/【8行政】/website/lastingqual/node_modules/@react-aria/toggle/dist/import.mjs[22m
+2026-04-17T15:15:13.094Z vite:resolve [32m3.99ms[39m [36mtabbable[39m -> [2mD:/恒沣/【8行政】/website/lastingqual/node_modules/tabbable/dist/index.esm.js[22m
+2026-04-17T15:15:13.094Z vite:resolve [32m4.05ms[39m [36m@react-aria/searchfield[39m -> [2mD:/恒沣/【8行政】/website/lastingqual/node_modules/@react-aria/searchfield/dist/import.mjs[22m
+2026-04-17T15:15:13.094Z vite:resolve [32m4.04ms[39m [36m@react-stately/table[39m -> [2mD:/恒沣/【8行政】/website/lastingqual/node_modules/@react-stately/table/dist/import.mjs[22m
+2026-04-17T15:15:13.101Z vite:resolve [32m3.04ms[39m [36m@react-aria/breadcrumbs[39m -> [2mD:/恒沣/【8行政】/website/lastingqual/node_modules/@react-aria/breadcrumbs/dist/import.mjs[22m
+2026-04-17T15:15:13.102Z vite:resolve [32m3.03ms[39m [36mestree-util-visit/do-not-use-color[39m -> [2mD:/恒沣/【8行政】/website/lastingqual/node_modules/estree-util-visit/lib/color.default.js[22m
+2026-04-17T15:15:13.113Z vite:resolve [32m2.86ms[39m [36m@react-stately/searchfield[39m -> [2mD:/恒沣/【8行政】/website/lastingqual/node_modules/@react-stately/searchfield/dist/import.mjs[22m
+2026-04-17T15:15:13.113Z vite:resolve [32m3.07ms[39m [36m@floating-ui/dom[39m -> [2mD:/恒沣/【8行政】/website/lastingqual/node_modules/@floating-ui/dom/dist/floating-ui.dom.mjs[22m
+2026-04-17T15:15:13.129Z vite:resolve [32m4.60ms[39m [36muse-sync-external-store/shim/index.js[39m -> [2mD:/恒沣/【8行政】/website/lastingqual/node_modules/use-sync-external-store/shim/index.js[22m
+2026-04-17T15:15:13.154Z vite:resolve [32m4.74ms[39m [36m@keystar/ui/icon/icons/chevronLeftIcon[39m -> [2mD:/恒沣/【8行政】/website/lastingqual/node_modules/@keystar/ui/dist/keystar-ui-icon-icons-chevronLeftIcon.js[22m
+2026-04-17T15:15:13.154Z vite:resolve [32m4.80ms[39m [36m@react-aria/landmark[39m -> [2mD:/恒沣/【8行政】/website/lastingqual/node_modules/@react-aria/landmark/dist/import.mjs[22m
+2026-04-17T15:15:13.154Z vite:resolve [32m4.83ms[39m [36m@floating-ui/core[39m -> [2mD:/恒沣/【8行政】/website/lastingqual/node_modules/@floating-ui/core/dist/floating-ui.core.mjs[22m
+2026-04-17T15:15:13.160Z vite:resolve [32m3.67ms[39m [36m@react-aria/spinbutton[39m -> [2mD:/恒沣/【8行政】/website/lastingqual/node_modules/@react-aria/spinbutton/dist/import.mjs[22m
+2026-04-17T15:15:13.160Z vite:resolve [32m3.86ms[39m [36m@keystar/ui/icon/icons/chevronRightIcon[39m -> [2mD:/恒沣/【8行政】/website/lastingqual/node_modules/@keystar/ui/dist/keystar-ui-icon-icons-chevronRightIcon.js[22m
+2026-04-17T15:15:13.161Z vite:resolve [32m4.06ms[39m [36m@floating-ui/utils[39m -> [2mD:/恒沣/【8行政】/website/lastingqual/node_modules/@floating-ui/utils/dist/floating-ui.utils.mjs[22m
+2026-04-17T15:15:13.166Z vite:resolve [32m3.03ms[39m [36m@keystar/ui/icon/icons/gripVerticalIcon[39m -> [2mD:/恒沣/【8行政】/website/lastingqual/node_modules/@keystar/ui/dist/keystar-ui-icon-icons-gripVerticalIcon.js[22m
+2026-04-17T15:15:13.167Z vite:resolve [32m3.24ms[39m [36m@keystar/ui/icon/icons/folderClosedIcon[39m -> [2mD:/恒沣/【8行政】/website/lastingqual/node_modules/@keystar/ui/dist/keystar-ui-icon-icons-folderClosedIcon.js[22m
+2026-04-17T15:15:13.167Z vite:resolve [32m3.33ms[39m [36m@floating-ui/utils/dom[39m -> [2mD:/恒沣/【8行政】/website/lastingqual/node_modules/@floating-ui/utils/dist/floating-ui.utils.dom.mjs[22m
+2026-04-17T15:15:13.170Z vite:resolve [32m2.45ms[39m [36m@react-stately/grid[39m -> [2mD:/恒沣/【8行政】/website/lastingqual/node_modules/@react-stately/grid/dist/import.mjs[22m
+2026-04-17T15:15:13.174Z vite:resolve [32m2.97ms[39m [36m@react-aria/table[39m -> [2mD:/恒沣/【8行政】/website/lastingqual/node_modules/@react-aria/table/dist/import.mjs[22m
+2026-04-17T15:15:13.174Z vite:resolve [32m3.22ms[39m [36m@keystar/ui/icon/icons/folderOpenIcon[39m -> [2mD:/恒沣/【8行政】/website/lastingqual/node_modules/@keystar/ui/dist/keystar-ui-icon-icons-folderOpenIcon.js[22m
+2026-04-17T15:15:13.185Z vite:resolve [32m2.10ms[39m [36m@react-aria/grid[39m -> [2mD:/恒沣/【8行政】/website/lastingqual/node_modules/@react-aria/grid/dist/import.mjs[22m
+2026-04-17T15:15:13.217Z vite:resolve [32m0.73ms[39m [36m@keystar/ui/icon/icons/arrowUpIcon[39m -> [2mD:/恒沣/【8行政】/website/lastingqual/node_modules/@keystar/ui/dist/keystar-ui-icon-icons-arrowUpIcon.js[22m
+2026-04-17T15:15:13.719Z vite:deps Dependencies bundled in 1413.28ms
+2026-04-17T15:15:13.721Z vite:deps [32mcreating _metadata.json in D:/恒沣/【8行政】/website/lastingqual/.vite-local/deps_temp_ced7962a[39m
+2026-04-17T15:15:13.725Z vite:deps [32mrenaming D:/恒沣/【8行政】/website/lastingqual/.vite-local/deps to D:/恒沣/【8行政】/website/lastingqual/.vite-local/deps_temp_65030928[39m
+2026-04-17T15:15:13.729Z vite:deps [32mrenaming D:/恒沣/【8行政】/website/lastingqual/.vite-local/deps_temp_ced7962a to D:/恒沣/【8行政】/website/lastingqual/.vite-local/deps[39m
+2026-04-17T15:15:13.735Z vite:deps [32mremoving cache temp dir D:/恒沣/【8行政】/website/lastingqual/.vite-local/deps_temp_65030928[39m
+2026-04-17T15:15:13.740Z vite:hmr [file change] [2mdev.err.log[22m
+2026-04-17T15:15:13.741Z vite:hmr (client) [no modules matched] [2mdev.err.log[22m
+2026-04-17T15:15:13.741Z vite:hmr (ssr) [no modules matched] [2mdev.err.log[22m
+2026-04-17T15:15:13.748Z vite:hmr [file change] [2mdev.out.log[22m
+2026-04-17T15:15:13.749Z vite:hmr (client) [no modules matched] [2mdev.out.log[22m
+2026-04-17T15:15:13.750Z vite:hmr (ssr) [no modules matched] [2mdev.out.log[22m
+2026-04-17T15:17:33.101Z vite:hmr [file change] [2m.astro/keystatic-imports.js[22m
+2026-04-17T15:17:33.103Z vite:hmr (client) [no modules matched] [2m.astro/keystatic-imports.js[22m
+2026-04-17T15:17:33.105Z vite:hmr (ssr) [no modules matched] [2m.astro/keystatic-imports.js[22m
+2026-04-17T15:17:33.248Z vite:hmr [file change] [2mdev.err.log[22m
+2026-04-17T15:17:33.249Z vite:hmr (client) [no modules matched] [2mdev.err.log[22m
+2026-04-17T15:17:33.249Z vite:hmr (ssr) [no modules matched] [2mdev.err.log[22m
+2026-04-17T15:17:33.906Z vite:hmr [file change] [2m.astro/types.d.ts[22m
+2026-04-17T15:17:33.915Z vite:hmr (client) [no modules matched] [2m.astro/types.d.ts[22m
+2026-04-17T15:17:33.915Z vite:hmr (ssr) [no modules matched] [2m.astro/types.d.ts[22m
+2026-04-17T15:17:34.371Z vite:hmr [file change] [2m.astro/collections/cards.schema.json[22m
+2026-04-17T15:17:34.380Z vite:hmr (client) [no modules matched] [2m.astro/collections/cards.schema.json[22m
+2026-04-17T15:17:34.380Z vite:hmr (ssr) [no modules matched] [2m.astro/collections/cards.schema.json[22m
+2026-04-17T15:17:34.389Z vite:hmr [file change] [2m.astro/collections/finance.schema.json[22m
+2026-04-17T15:17:34.389Z vite:hmr (client) [no modules matched] [2m.astro/collections/finance.schema.json[22m
+2026-04-17T15:17:34.389Z vite:hmr (ssr) [no modules matched] [2m.astro/collections/finance.schema.json[22m
+2026-04-17T15:17:34.391Z vite:hmr [file change] [2m.astro/collections/home.schema.json[22m
+2026-04-17T15:17:34.392Z vite:hmr (client) [no modules matched] [2m.astro/collections/home.schema.json[22m
+2026-04-17T15:17:34.392Z vite:hmr (ssr) [no modules matched] [2m.astro/collections/home.schema.json[22m
+2026-04-17T15:17:34.393Z vite:hmr [file change] [2m.astro/collections/nav.schema.json[22m
+2026-04-17T15:17:34.394Z vite:hmr (client) [no modules matched] [2m.astro/collections/nav.schema.json[22m
+2026-04-17T15:17:34.394Z vite:hmr (ssr) [no modules matched] [2m.astro/collections/nav.schema.json[22m
+2026-04-17T15:17:34.397Z vite:hmr [file change] [2m.astro/collections/pages.schema.json[22m
+2026-04-17T15:17:34.397Z vite:hmr (client) [no modules matched] [2m.astro/collections/pages.schema.json[22m
+2026-04-17T15:17:34.397Z vite:hmr (ssr) [no modules matched] [2m.astro/collections/pages.schema.json[22m
+2026-04-17T15:17:34.401Z vite:hmr [file change] [2m.astro/collections/products.schema.json[22m
+2026-04-17T15:17:34.401Z vite:hmr (client) [no modules matched] [2m.astro/collections/products.schema.json[22m
+2026-04-17T15:17:34.401Z vite:hmr (ssr) [no modules matched] [2m.astro/collections/products.schema.json[22m
+2026-04-17T15:17:34.403Z vite:hmr [file change] [2m.astro/content.d.ts[22m
+2026-04-17T15:17:34.403Z vite:hmr (client) [no modules matched] [2m.astro/content.d.ts[22m
+2026-04-17T15:17:34.403Z vite:hmr (ssr) [no modules matched] [2m.astro/content.d.ts[22m
+2026-04-17T15:17:35.906Z vite:hmr [file change] [2mdev.err.log[22m
+2026-04-17T15:17:35.907Z vite:hmr (client) [no modules matched] [2mdev.err.log[22m
+2026-04-17T15:17:35.907Z vite:hmr (ssr) [no modules matched] [2mdev.err.log[22m
+n[22m
+2026-04-17T15:15:12.125Z vite:hmr (client) [no modules matched] [2m.astro/collections/products.schema.json[22m
+2026-04-17T15:15:12.125Z vite:hmr (ssr) [no modules matched] [2m.astro/collections/products.schema.json[22m
+2026-04-17T15:15:12.131Z vite:hmr [file change] [2m.astro/content.d.ts[22m
+2026-04-17T15:15:12.132Z vite:hmr (client) [no modules matched] [2m.astro/content.d.ts[22m
+2026-04-17T15:15:12.132Z vite:hmr (ssr) [no modules matched] [2m.astro/content.d.ts[22m
+2026-04-17T15:15:13.736Z vite:hmr [file change] [2mdev.err.log[22m
+2026-04-17T15:15:13.737Z vite:hmr (client) [no modules matched] [2mdev.err.log[22m
+2026-04-17T15:15:13.738Z vite:hmr (ssr) [no modules matched] [2mdev.err.log[22m
+2026-04-17T15:15:13.745Z vite:hmr [file change] [2mdev.out.log[22m
+2026-04-17T15:15:13.745Z vite:hmr (client) [no modules matched] [2mdev.out.log[22m
+2026-04-17T15:15:13.746Z vite:hmr (ssr) [no modules matched] [2mdev.out.log[22m
+2026-04-17T15:17:33.101Z vite:hmr [file change] [2m.astro/keystatic-imports.js[22m
+2026-04-17T15:17:33.104Z vite:hmr (client) [no modules matched] [2m.astro/keystatic-imports.js[22m
+2026-04-17T15:17:33.105Z vite:hmr (ssr) [no modules matched] [2m.astro/keystatic-imports.js[22m
+2026-04-17T15:17:33.249Z vite:hmr [file change] [2mdev.err.log[22m
+2026-04-17T15:17:33.249Z vite:hmr (client) [no modules matched] [2mdev.err.log[22m
+2026-04-17T15:17:33.249Z vite:hmr (ssr) [no modules matched] [2mdev.err.log[22m
+2026-04-17T15:17:33.905Z vite:hmr [file change] [2m.astro/types.d.ts[22m
+2026-04-17T15:17:33.915Z vite:hmr (client) [no modules matched] [2m.astro/types.d.ts[22m
+2026-04-17T15:17:33.915Z vite:hmr (ssr) [no modules matched] [2m.astro/types.d.ts[22m
+2026-04-17T15:17:34.370Z vite:hmr [file change] [2m.astro/collections/cards.schema.json[22m
+2026-04-17T15:17:34.379Z vite:hmr (client) [no modules matched] [2m.astro/collections/cards.schema.json[22m
+2026-04-17T15:17:34.380Z vite:hmr (ssr) [no modules matched] [2m.astro/collections/cards.schema.json[22m
+2026-04-17T15:17:34.388Z vite:hmr [file change] [2m.astro/collections/finance.schema.json[22m
+2026-04-17T15:17:34.389Z vite:hmr (client) [no modules matched] [2m.astro/collections/finance.schema.json[22m
+2026-04-17T15:17:34.390Z vite:hmr (ssr) [no modules matched] [2m.astro/collections/finance.schema.json[22m
+2026-04-17T15:17:34.392Z vite:hmr [file change] [2m.astro/collections/home.schema.json[22m
+2026-04-17T15:17:34.392Z vite:hmr (client) [no modules matched] [2m.astro/collections/home.schema.json[22m
+2026-04-17T15:17:34.392Z vite:hmr (ssr) [no modules matched] [2m.astro/collections/home.schema.json[22m
+2026-04-17T15:17:34.394Z vite:hmr [file change] [2m.astro/collections/nav.schema.json[22m
+2026-04-17T15:17:34.394Z vite:hmr (client) [no modules matched] [2m.astro/collections/nav.schema.json[22m
+2026-04-17T15:17:34.394Z vite:hmr (ssr) [no modules matched] [2m.astro/collections/nav.schema.json[22m
+2026-04-17T15:17:34.397Z vite:hmr [file change] [2m.astro/collections/pages.schema.json[22m
+2026-04-17T15:17:34.397Z vite:hmr (client) [no modules matched] [2m.astro/collections/pages.schema.json[22m
+2026-04-17T15:17:34.397Z vite:hmr (ssr) [no modules matched] [2m.astro/collections/pages.schema.json[22m
+2026-04-17T15:17:34.402Z vite:hmr [file change] [2m.astro/collections/products.schema.json[22m
+2026-04-17T15:17:34.402Z vite:hmr (client) [no modules matched] [2m.astro/collections/products.schema.json[22m
+2026-04-17T15:17:34.402Z vite:hmr (ssr) [no modules matched] [2m.astro/collections/products.schema.json[22m
+2026-04-17T15:17:34.405Z vite:hmr [file change] [2m.astro/content.d.ts[22m
+2026-04-17T15:17:34.406Z vite:hmr (client) [no modules matched] [2m.astro/content.d.ts[22m
+2026-04-17T15:17:34.406Z vite:hmr (ssr) [no modules matched] [2m.astro/content.d.ts[22m
+2026-04-17T15:17:35.906Z vite:hmr [file change] [2mdev.err.log[22m
+2026-04-17T15:17:35.907Z vite:hmr (client) [no modules matched] [2mdev.err.log[22m
+2026-04-17T15:17:35.907Z vite:hmr (ssr) [no modules matched] [2mdev.err.log[22m

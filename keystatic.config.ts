@@ -3,10 +3,27 @@ import { collection, config, fields, singleton } from "@keystatic/core";
 type PageKey = "about" | "products" | "solutions" | "finance" | "contact";
 type Lang = "zh" | "en";
 
+function readEnv(...keys: string[]) {
+  const processEnv =
+    typeof process !== "undefined" ? (process.env as Record<string, string | undefined>) : {};
+  const viteEnv =
+    typeof import.meta !== "undefined"
+      ? ((import.meta as unknown as { env?: Record<string, string | undefined> }).env ?? {})
+      : {};
+
+  for (const key of keys) {
+    const value = processEnv[key] ?? viteEnv[key];
+    if (value) return value;
+  }
+  return undefined;
+}
+
+const mode = readEnv("NODE_ENV", "MODE");
 const storageKind =
-  process.env.KEYSTATIC_STORAGE_KIND ??
-  (process.env.NODE_ENV === "production" ? "github" : "local");
-const githubRepo = process.env.KEYSTATIC_GITHUB_REPO ?? "";
+  readEnv("KEYSTATIC_STORAGE_KIND", "PUBLIC_KEYSTATIC_STORAGE_KIND") ??
+  (mode === "production" ? "github" : "local");
+const githubRepo =
+  readEnv("KEYSTATIC_GITHUB_REPO", "PUBLIC_KEYSTATIC_GITHUB_REPO") ?? "";
 
 const keystaticStorage =
   storageKind === "github"
