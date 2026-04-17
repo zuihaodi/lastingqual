@@ -1,12 +1,13 @@
 import { defineConfig } from "astro/config";
+import cloudflare from "@astrojs/cloudflare";
 import tailwind from "@astrojs/tailwind";
 import react from "@astrojs/react";
 import keystatic from "@keystatic/astro";
 
-const isDev = process.env.NODE_ENV !== "production";
-
 export default defineConfig({
-  integrations: isDev ? [tailwind(), react(), keystatic()] : [tailwind(), react()],
+  output: "server",
+  adapter: cloudflare(),
+  integrations: [tailwind(), react(), keystatic()],
   vite: {
     cacheDir: ".vite-local",
   },

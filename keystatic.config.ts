@@ -3,6 +3,25 @@ import { collection, config, fields, singleton } from "@keystatic/core";
 type PageKey = "about" | "products" | "solutions" | "finance" | "contact";
 type Lang = "zh" | "en";
 
+const storageKind =
+  process.env.KEYSTATIC_STORAGE_KIND ??
+  (process.env.NODE_ENV === "production" ? "github" : "local");
+const githubRepo = process.env.KEYSTATIC_GITHUB_REPO ?? "";
+
+const keystaticStorage =
+  storageKind === "github"
+    ? {
+        kind: "github" as const,
+        repo: githubRepo,
+      }
+    : { kind: "local" as const };
+
+if (storageKind === "github" && !githubRepo) {
+  throw new Error(
+    "Missing KEYSTATIC_GITHUB_REPO when KEYSTATIC_STORAGE_KIND=github",
+  );
+}
+
 function translationMetaField() {
   return fields.object(
     {
@@ -451,7 +470,7 @@ function pageSchema(lang: Lang, page: PageKey) {
 }
 
 export default config({
-  storage: { kind: "local" },
+  storage: keystaticStorage,
   collections: {
     navZh,
     navEn,
