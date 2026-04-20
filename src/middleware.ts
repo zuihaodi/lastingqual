@@ -1,12 +1,11 @@
 import type { MiddlewareHandler } from "astro";
 
 export const onRequest: MiddlewareHandler = async ({ url }, next) => {
-  const res = await next();
-
   if (!url.pathname.startsWith("/keystatic") && !url.pathname.startsWith("/api/keystatic")) {
-    return res;
+    return next();
   }
 
+  const res = await next();
   const passthrough = new Response(res.body, res);
   passthrough.headers.delete("Content-Security-Policy");
   passthrough.headers.set(
