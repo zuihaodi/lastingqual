@@ -3,7 +3,11 @@ import cloudflare from "@astrojs/cloudflare";
 
 export default defineConfig({
   output: "server",
-  adapter: cloudflare(),
+  adapter: cloudflare({
+    workerEntryPoint: {
+      path: "./src/worker-entrypoint.ts",
+    },
+  }),
   integrations: [],
   vite: {
     cacheDir: ".vite-local",
