@@ -1,5 +1,6 @@
 import { defineConfig } from "astro/config";
 import cloudflare from "@astrojs/cloudflare";
+import tailwind from "@astrojs/tailwind";
 
 export default defineConfig({
   output: "server",
@@ -8,7 +9,7 @@ export default defineConfig({
       path: "./src/worker-entrypoint.ts",
     },
   }),
-  integrations: [],
+  integrations: [tailwind()],
   vite: {
     cacheDir: ".vite-local",
   },
