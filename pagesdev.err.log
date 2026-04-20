@@ -1,0 +1,83 @@
+[33m▲ [43;33m[[43;30mWARNING[43;33m][0m [1mNo compatibility_date was specified. Using today's date: 2026-04-20.[0m
+
+  ❯❯ Add one to your Wrangler configuration file: compatibility_date = "2026-04-20", or
+  ❯❯ Pass it in your terminal: wrangler pages dev [<DIRECTORY>] --compatibility-date=2026-04-20
+  
+  See [4mhttps://developers.cloudflare.com/workers/platform/compatibility-dates/[0m for more information.
+
+
+[33m▲ [43;33m[[43;30mWARNING[43;33m][0m [1mThe package "node:events" wasn't found on the file system but is built into node.[0m
+
+  Your Worker may throw errors at runtime unless you enable the "nodejs_compat" compatibility flag. Refer to [4mhttps://developers.cloudflare.com/workers/runtime-apis/nodejs/[0m for more details. Imported from:
+   - node_modules\sharp\lib\utility.js
+
+
+[33m▲ [43;33m[[43;30mWARNING[43;33m][0m [1mThe package "node:child_process" wasn't found on the file system but is built into node.[0m
+
+  Your Worker may throw errors at runtime unless you enable the "nodejs_compat" compatibility flag. Refer to [4mhttps://developers.cloudflare.com/workers/runtime-apis/nodejs/[0m for more details. Imported from:
+   - node_modules\sharp\lib\libvips.js
+
+
+[33m▲ [43;33m[[43;30mWARNING[43;33m][0m [1mThe package "node:path" wasn't found on the file system but is built into node.[0m
+
+  Your Worker may throw errors at runtime unless you enable the "nodejs_compat" compatibility flag. Refer to [4mhttps://developers.cloudflare.com/workers/runtime-apis/nodejs/[0m for more details. Imported from:
+   - node_modules\sharp\lib\output.js
+
+
+[33m▲ [43;33m[[43;30mWARNING[43;33m][0m [1mThe package "node:crypto" wasn't found on the file system but is built into node.[0m
+
+  Your Worker may throw errors at runtime unless you enable the "nodejs_compat" compatibility flag. Refer to [4mhttps://developers.cloudflare.com/workers/runtime-apis/nodejs/[0m for more details. Imported from:
+   - node_modules\sharp\lib\libvips.js
+
+
+[33m▲ [43;33m[[43;30mWARNING[43;33m][0m [1mThe package "node:util" wasn't found on the file system but is built into node.[0m
+
+  Your Worker may throw errors at runtime unless you enable the "nodejs_compat" compatibility flag. Refer to [4mhttps://developers.cloudflare.com/workers/runtime-apis/nodejs/[0m for more details. Imported from:
+   - node_modules\sharp\lib\constructor.js
+
+
+[33m▲ [43;33m[[43;30mWARNING[43;33m][0m [1mThe package "node:os" wasn't found on the file system but is built into node.[0m
+
+  Your Worker may throw errors at runtime unless you enable the "nodejs_compat" compatibility flag. Refer to [4mhttps://developers.cloudflare.com/workers/runtime-apis/nodejs/[0m for more details. Imported from:
+   - node_modules\sharp\lib\utility.js
+
+
+[33m▲ [43;33m[[43;30mWARNING[43;33m][0m [1mThe package "node:stream" wasn't found on the file system but is built into node.[0m
+
+  Your Worker may throw errors at runtime unless you enable the "nodejs_compat" compatibility flag. Refer to [4mhttps://developers.cloudflare.com/workers/runtime-apis/nodejs/[0m for more details. Imported from:
+   - node_modules\sharp\lib\constructor.js
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mBuild failed with 2 errors:[0m
+
+  [31mX [41;31m[[41;97mERROR[41;31m][0m [1mCould not resolve "child_process"[0m
+  
+      node_modules/detect-libc/lib/detect-libc.js:6:29:
+  [37m      6 │ const childProcess = require([32m'child_process'[37m);
+          ╵                              [32m~~~~~~~~~~~~~~~[0m
+  
+    The package "child_process" wasn't found on the file system but is built into node.
+    - Add the "nodejs_compat" compatibility flag to your project.
+    
+  
+  
+  [31mX [41;31m[[41;97mERROR[41;31m][0m [1mCould not resolve "fs"[0m
+  
+      node_modules/detect-libc/lib/filesystem.js:6:19:
+  [37m      6 │ const fs = require([32m'fs'[37m);
+          ╵                    [32m~~~~[0m
+  
+    The package "fs" wasn't found on the file system but is built into node.
+    - Add the "nodejs_compat" compatibility flag to your project.
+    
+  
+  
+
+
+Error [ERR_IPC_CHANNEL_CLOSED]: Channel closed
+    at target.send (node:internal/child_process:753:16)
+    at D:\恒沣\【8行政】\website\lastingqual\node_modules\wrangler\wrangler-dist\cli.js:291671:17
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5) {
+  code: 'ERR_IPC_CHANNEL_CLOSED'
+}
+🪵  Logs were written to "C:\Users\Administrator\AppData\Roaming\xdg.config\.wrangler\logs\wrangler-2026-04-20_00-10-47_285.log"

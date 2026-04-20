@@ -1,2 +1,0 @@
-/keystatic/*
-  Content-Security-Policy: default-src 'self' 'unsafe-inline' 'unsafe-eval' https: data: blob:;
