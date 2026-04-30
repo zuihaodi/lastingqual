@@ -2,13 +2,15 @@
   "heroSection": {
     "show": true,
     "heroTitle": "支持与保障",
-    "heroSubtitle": "全方位的工程技术与支持体系"
+    "heroSubtitle": "全方位的工程技术与支持体系",
+    "heroBgFocus": "center center"
   },
   "mainSection": {
     "show": false,
     "sectionTitle": "Support Overview",
     "sectionBody": "Focused on **HSE**, ==risk control== and customized training.",
-    "legacyImage": "/images/card3.jpg"
+    "legacyImage": "/images/card3.jpg",
+    "imageFocus": "center center"
   },
   "metricsSection": {
     "show": false,
@@ -26,6 +28,7 @@
         "title": "全方位 HSE 质量管理",
         "summary": "坚持“安全第一、质量为本”，推进 HSE 体系持续改进。",
         "image": "/uploads/pages/zh/solutions/cards/cardsSection/cards/0/image.jpg",
+        "imageFocus": "center center",
         "order": 1,
         "published": true
       },
@@ -33,6 +36,7 @@
         "title": "全场景风险控制网络",
         "summary": "覆盖风险识别、量化与应对，保障项目在复杂环境下稳定运行。",
         "image": "/uploads/pages/zh/solutions/cards/cardsSection/cards/1/image.jpg",
+        "imageFocus": "center center",
         "order": 2,
         "published": true
       },
@@ -40,8 +44,7 @@
         "title": "定制化技术培训",
         "summary": "围绕设备运维与安全流程开展分层培训，强化一线能力。",
         "image": "/uploads/pages/zh/solutions/cards/cardsSection/cards/2/image.jpg",
-        "ctaText": "查看详情",
-        "ctaHref": "/zh/contact",
+        "imageFocus": "center center",
         "order": 3,
         "published": true
       }

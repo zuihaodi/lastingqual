@@ -1,6 +1,7 @@
 import { defineConfig } from "astro/config";
 import cloudflare from "@astrojs/cloudflare";
 import tailwind from "@astrojs/tailwind";
+import react from "@astrojs/react";
 import keystatic from "@keystatic/astro";
 
 export default defineConfig({
@@ -10,7 +11,7 @@ export default defineConfig({
       path: "./src/worker-entrypoint.ts",
     },
   }),
-  integrations: [tailwind(), keystatic()],
+  integrations: [tailwind(), react(), keystatic()],
   vite: {
     cacheDir: ".vite-local",
   },
