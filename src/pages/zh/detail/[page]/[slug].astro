@@ -1,0 +1,23 @@
+---
+import Layout from "../../../../app/layouts/Layout.astro";
+import Header from "../../../../app/components/Header.astro";
+import CardDetailPage from "../../../../app/components/CardDetailPage.astro";
+import { siteConfig } from "../../../../app/config/site";
+import { loadCardDetailByLangPageSlug, loadNavItemByPageKey } from "../../../../app/lib/content-loader";
+
+const card = loadCardDetailByLangPageSlug("zh", Astro.params.page, Astro.params.slug);
+if (!card) return new Response(null, { status: 404 });
+
+const parentNav = loadNavItemByPageKey("zh", Astro.params.page);
+const title = card.detail?.title || card.title || "详细信息";
+---
+
+<Layout title={`${title} | ${siteConfig.shortBrand}`} lang="zh-CN">
+  <Header />
+  <CardDetailPage card={card} lang="zh" parentNav={parentNav} />
+  <footer class="bg-[#002845] text-white py-8">
+    <div class="max-w-7xl mx-auto px-4 text-center text-sm">
+      <p>&copy; {siteConfig.copyrightYear} {siteConfig.companyName} All rights reserved.</p>
+    </div>
+  </footer>
+</Layout>

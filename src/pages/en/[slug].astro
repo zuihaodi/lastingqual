@@ -16,7 +16,7 @@ const cfg = loadSimplePageByLang(pageKey, "en");
 
 <Layout title={`${cfg?.heroTitle || "Page"} | ${siteConfig.shortBrand}`} lang="en">
   <Header />
-  <UnifiedSimplePage cfg={cfg} lang="en" />
+  <UnifiedSimplePage cfg={cfg} lang="en" pageKey={pageKey} />
   <footer class="bg-[#002845] text-white py-8">
     <div class="max-w-7xl mx-auto px-4 text-center text-sm">
       <p>&copy; {siteConfig.copyrightYear} {siteConfig.companyName} All rights reserved.</p>

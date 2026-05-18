@@ -76,6 +76,7 @@ export interface CmsCardItem {
   imageFocus?: string;
   ctaText?: string;
   ctaHref?: string;
+  detail?: CmsCardDetail;
   order?: number;
   published?: boolean;
   translation?: CmsTranslationMeta;
@@ -107,6 +108,32 @@ export interface CmsContactInfo {
   addressLine2?: string;
   email?: string;
   phone?: string;
+}
+
+export type CmsSlugFieldValue = string | {
+  name?: string;
+  slug?: string;
+};
+
+export interface CmsCardDetailImage {
+  image?: string;
+  imageFocus?: string;
+  caption?: string;
+}
+
+export interface CmsCardDetailTable {
+  title?: string;
+  tableText?: string;
+  note?: string;
+}
+
+export interface CmsCardDetail {
+  slug?: CmsSlugFieldValue;
+  title?: string;
+  summary?: string;
+  images?: CmsCardDetailImage[];
+  body?: string;
+  tables?: CmsCardDetailTable[];
 }
 
 export interface CmsPageSectionGroup {

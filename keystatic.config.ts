@@ -436,6 +436,57 @@ function pageSchema(lang: Lang, page: PageKey) {
         ctaHref: fields.text({ label: l("按钮链接", "CTA Href"), defaultValue: "" }),
         order: fields.integer({ label: l("排序", "Order"), defaultValue: 1 }),
         published: fields.checkbox({ label: l("发布", "Published"), defaultValue: true }),
+        detail: fields.object(
+          {
+            title: fields.text({ label: l("详情标题", "Detail Title"), defaultValue: "" }),
+            summary: fields.text({ label: l("详情摘要", "Detail Summary"), multiline: true, defaultValue: "" }),
+            images: fields.array(
+              fields.object(
+                {
+                  image: fields.image({
+                    label: l("详情图片", "Detail Image"),
+                    description: l("建议 1200x700，比例 12:7。", "Recommended 1200x700, ratio 12:7."),
+                    directory: `public/uploads/pages/${lang}/${page}/details`,
+                    publicPath: `/uploads/pages/${lang}/${page}/details/`,
+                  }),
+                  imageFocus: focusPositionField("Detail Image Focus"),
+                  caption: fields.text({ label: l("图片说明", "Image Caption"), defaultValue: "" }),
+                },
+                { label: l("详情图片项", "Detail Image") },
+              ),
+              {
+                label: l("详情图片列表", "Detail Images"),
+                itemLabel: (props) => props.fields.caption.value || l("详情图片", "Detail Image"),
+              },
+            ),
+            body: fields.text({ label: l("详情说明文字", "Detail Body"), multiline: true, defaultValue: "" }),
+            tables: fields.array(
+              fields.object(
+                {
+                  title: fields.text({ label: l("表格标题", "Table Title"), defaultValue: "" }),
+                  tableText: fields.text({
+                    label: l("表格粘贴区", "Pasted Table"),
+                    multiline: true,
+                    defaultValue: "",
+                    description: l("从 Excel/WPS 复制表格后直接粘贴。换行分隔行，Tab 分隔列，第一行作为表头。", "Paste directly from Excel/WPS. Lines create rows, tabs create columns, and the first row is the header."),
+                  }),
+                  note: fields.text({ label: l("表格备注", "Table Note"), multiline: true, defaultValue: "" }),
+                },
+                { label: l("参数表", "Parameter Table") },
+              ),
+              {
+                label: l("参数表列表", "Parameter Tables"),
+                itemLabel: (props) => props.fields.title.value || l("参数表", "Parameter Table"),
+              },
+            ),
+            slug: fields.text({
+              label: l("详情链接标识（可选）", "Detail URL Slug (Optional)"),
+              defaultValue: "",
+              description: l("填写产品型号或短名称即可，前台会自动生成详情链接。", "Enter a model or short name; the frontend builds the detail URL automatically."),
+            }),
+          },
+          { label: l("详情页内容", "Detail Page Content") },
+        ),
       },
       { label: l("卡片项", "Card Item") },
     ),

@@ -1,14 +1,16 @@
 ---
 import { renderRichText } from "../lib/rich-text";
 import { planCardGrid } from "../lib/card-grid";
+import { getCardAction, type CardDetailPageKey } from "../lib/card-detail";
 import type { CmsSimplePageConfig } from "../types/content";
 
 interface Props {
   cfg: CmsSimplePageConfig;
   lang: "zh" | "en";
+  pageKey: CardDetailPageKey;
 }
 
-const { cfg, lang } = Astro.props as Props;
+const { cfg, lang, pageKey } = Astro.props as Props;
 const isZh = lang === "zh";
 const toMainImage = (src?: string) => (src ? src.replace(/\.sm\.webp$/i, ".webp") : "");
 const focusPos = (value?: string) => value || "center center";
@@ -97,8 +99,10 @@ const sectionGroups = (cfg.sectionGroups || []).filter(
             const gridPlan = planCardGrid(group.cards.length);
             return (
               <div class:list={["max-w-7xl mx-auto px-4 grid gap-8", gridPlan.mobileColsClass, gridPlan.tabletColsClass, gridPlan.desktopColsClass]}>
-                {group.cards.map((item, idx) => (
-                  <article class:list={["bg-white p-6 rounded-lg shadow-sm border border-gray-100", gridPlan.itemStartClass[idx]]}>
+                {group.cards.map((item, idx) => {
+                  const action = getCardAction(lang, pageKey, item);
+                  return (
+                    <article class:list={["bg-white p-6 rounded-lg shadow-sm border border-gray-100", gridPlan.itemStartClass[idx]]}>
                 {item.image && (
                   <div class="h-44 mb-4 overflow-hidden rounded">
                     <button
@@ -114,13 +118,14 @@ const sectionGroups = (cfg.sectionGroups || []).filter(
                 )}
                 <h3 class="text-xl font-bold text-[#003865] mb-2">{item.title}</h3>
                 <p class="text-gray-600 text-sm mb-4" set:html={renderRichText(item.summary || "")}></p>
-                {item.ctaText && item.ctaHref && (
-                  <a href={item.ctaHref} class="text-[#E63E00] font-semibold text-sm hover:underline no-underline">
-                    {item.ctaText} &rarr;
+                {action && (
+                  <a href={action.href} class="text-[#E63E00] font-semibold text-sm hover:underline no-underline">
+                    {action.text} &rarr;
                   </a>
                 )}
-                  </article>
-                ))}
+                    </article>
+                  );
+                })}
               </div>
             );
           })()}

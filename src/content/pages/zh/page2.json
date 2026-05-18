@@ -6,8 +6,10 @@
     "heroBgFocus": "center center"
   },
   "mainSection": {
-    "show": false,
-    "sectionTitle": "5555",
+    "show": true,
+    "sectionTitle": "我有很多种类产品",
+    "sectionBody": "有钻机\n有压裂车\n有发电机组\n还有不少",
+    "image": "/uploads/pages/zh/page2/mainSection/image.png",
     "imageFocus": "center center"
   },
   "metricsSection": {
@@ -27,7 +29,25 @@
           "imageFocus": "center center",
           "ctaText": "详细信息",
           "order": 1,
-          "published": true
+          "published": true,
+          "detail": {
+            "title": "交流电驱动钻机1",
+            "summary": "交流电驱动钻机1",
+            "images": [
+              {
+                "image": "/uploads/pages/zh/page2/details/sectionGroups/0/cards/0/detail/images/0/image.jpg",
+                "imageFocus": "center center"
+              }
+            ],
+            "body": "钻机的基本参数符合GB/T23505-2017《石油钻机与修井机》标准规定;采用当代世界先进的VFD全数字控制技术，可根据需要调节提升速度、转盘转速和泥浆泵冲数，提高钻井时效;\n采用了宽频大功率电机驱动，实现了绞车、转盘和泥浆泵全程无级调速;起升方式:双升式、旋升式结构和同升式结构(钻台高度7.5m，9 m，10.5 m，13.7m)，依靠绞车或液压绞车动力整体起升到位;\n绞车刹车采用液压盘式刹车和交流变频电机能耗制动相结合的刹车形式，性能可靠:转盘采用独立驱动形式，转盘驱动装置置于台面以下，钻台操作空间大;通过PLC实现钻井全过程的逻辑控制、监控和保护，并可实现数据的存储、打印和远程传输;钻机可配整体平移装置，满足丛式钻井井位间移动的要求。",
+            "tables": [
+              {
+                "title": "技术参数",
+                "tableText": "钻机型号\tZJ40/2250DB\n范围\t2000-4000\n最大钩载\t2250"
+              }
+            ],
+            "slug": "jldq"
+          }
         },
         {
           "title": "直流电驱动钻机",
@@ -35,7 +55,11 @@
           "image": "/uploads/pages/zh/page2/cards/sectionGroups/0/cards/1/image.jpg",
           "imageFocus": "center center",
           "order": 2,
-          "published": true
+          "published": true,
+          "detail": {
+            "images": [],
+            "tables": []
+          }
         }
       ]
     },
@@ -51,7 +75,11 @@
           "imageFocus": "center center",
           "ctaText": "详细信息",
           "order": 1,
-          "published": true
+          "published": true,
+          "detail": {
+            "images": [],
+            "tables": []
+          }
         },
         {
           "title": "燃气发电机组700KW",
@@ -60,7 +88,11 @@
           "imageFocus": "center center",
           "ctaText": "详细信息",
           "order": 2,
-          "published": true
+          "published": true,
+          "detail": {
+            "images": [],
+            "tables": []
+          }
         }
       ]
     },
@@ -76,7 +108,32 @@
           "imageFocus": "center center",
           "ctaText": "详细信息",
           "order": 1,
-          "published": true
+          "published": true,
+          "detail": {
+            "title": "压裂车2300型详细信息",
+            "summary": "这是压裂车2300型",
+            "images": [
+              {
+                "image": "/uploads/pages/zh/page2/details/sectionGroups/2/cards/0/detail/images/0/image.jpg",
+                "imageFocus": "center center"
+              },
+              {
+                "image": "/uploads/pages/zh/page2/details/sectionGroups/2/cards/0/detail/images/1/image.jpg",
+                "imageFocus": "center center"
+              },
+              {
+                "image": "/uploads/pages/zh/page2/details/sectionGroups/2/cards/0/detail/images/2/image.jpg",
+                "imageFocus": "center center"
+              }
+            ],
+            "tables": [
+              {
+                "title": "技术参数",
+                "tableText": "项目\tXYLC2500\n整车重量kg\t45500\n最大压力MPa\t3.75寸-140（根据客户需求配置不同液力端，满足不同工况需求）\n输出水马力hp\t2500\n尺寸mm\t12000×2550×4000\n发动机功率kW\t2237/1900\n底盘\t陕汽8×6定制底盘\n发动机\tMTU\n变速箱\t双环\n压裂泵\t徐工集团"
+              }
+            ],
+            "slug": "ylc2300"
+          }
         },
         {
           "title": "压裂车2500型",
@@ -85,7 +142,11 @@
           "imageFocus": "center center",
           "ctaText": "详细信息",
           "order": 2,
-          "published": true
+          "published": true,
+          "detail": {
+            "images": [],
+            "tables": []
+          }
         },
         {
           "title": "压裂车混砂车",
@@ -94,7 +155,11 @@
           "imageFocus": "center center",
           "ctaText": "详细信息",
           "order": 3,
-          "published": true
+          "published": true,
+          "detail": {
+            "images": [],
+            "tables": []
+          }
         }
       ]
     }
@@ -111,7 +176,11 @@
         "image": "/uploads/pages/zh/page2/cards/cardsSection/cards/0/image.jpg",
         "imageFocus": "center center",
         "order": 1,
-        "published": true
+        "published": true,
+        "detail": {
+          "images": [],
+          "tables": []
+        }
       },
       {
         "title": "油田特种底盘",
@@ -119,7 +188,11 @@
         "image": "/uploads/pages/zh/page2/cards/cardsSection/cards/1/image.jpg",
         "imageFocus": "center center",
         "order": 2,
-        "published": true
+        "published": true,
+        "detail": {
+          "images": [],
+          "tables": []
+        }
       },
       {
         "title": "动力总包服务",
@@ -127,7 +200,11 @@
         "image": "/uploads/pages/zh/page2/cards/cardsSection/cards/2/image.jpg",
         "imageFocus": "center center",
         "order": 3,
-        "published": true
+        "published": true,
+        "detail": {
+          "images": [],
+          "tables": []
+        }
       },
       {
         "title": "墨西哥 PEMEX 项目支持",
@@ -135,7 +212,11 @@
         "image": "/uploads/pages/zh/page2/cards/cardsSection/cards/3/image.jpg",
         "imageFocus": "center center",
         "order": 4,
-        "published": true
+        "published": true,
+        "detail": {
+          "images": [],
+          "tables": []
+        }
       },
       {
         "title": "定制化柴油机组",
@@ -143,7 +224,11 @@
         "image": "/uploads/pages/zh/page2/cards/cardsSection/cards/4/image.jpg",
         "imageFocus": "center center",
         "order": 5,
-        "published": true
+        "published": true,
+        "detail": {
+          "images": [],
+          "tables": []
+        }
       },
       {
         "title": "HSE 全方位风控",
@@ -151,7 +236,11 @@
         "image": "/uploads/pages/zh/page2/cards/cardsSection/cards/5/image.jpg",
         "imageFocus": "center center",
         "order": 6,
-        "published": true
+        "published": true,
+        "detail": {
+          "images": [],
+          "tables": []
+        }
       }
     ]
   },

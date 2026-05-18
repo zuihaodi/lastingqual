@@ -26,6 +26,8 @@
         "summary": "专注油服设备、油田装备、炼化设备、海工装备的研发、销售和服务",
         "image": "/uploads/home/zh/cards/cardsSection/cards/0/image.jpg",
         "imageFocus": "center center",
+        "ctaText": "了解更多",
+        "ctaHref": "/zh/products",
         "order": 1,
         "published": true
       },
@@ -33,6 +35,8 @@
         "title": "服务",
         "image": "/uploads/home/zh/cards/cardsSection/cards/1/image.jpg",
         "imageFocus": "center center",
+        "ctaText": "了解更多",
+        "ctaHref": "/zh/services",
         "order": 2,
         "published": true
       },
@@ -41,6 +45,8 @@
         "summary": "融资",
         "image": "/uploads/home/zh/cards/cardsSection/cards/2/image.jpg",
         "imageFocus": "center center",
+        "ctaText": "了解更多",
+        "ctaHref": "/zh/finace",
         "order": 3,
         "published": true
       }

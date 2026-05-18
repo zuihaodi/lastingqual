@@ -8,6 +8,11 @@
   CmsPageSectionGroup,
   CmsSimplePageConfig,
 } from "../types/content";
+import {
+  cardHasDetailContent,
+  normalizeCardDetailSlugValue,
+  type CardDetailPageKey,
+} from "./card-detail";
 
 type SortablePublished = { order?: number; published?: boolean };
 type Lang = "zh" | "en";
@@ -157,6 +162,37 @@ function normalizeContactInfo(primary?: CmsContactInfo, fallback?: CmsContactInf
   };
 }
 
+function normalizeCardDetail(detail?: CmsCardItem["detail"]): CmsCardItem["detail"] | undefined {
+  if (!detail) return undefined;
+  const images = Array.isArray(detail.images)
+    ? detail.images
+        .filter((item) => hasText(item?.image) || hasDisplayText(item?.caption))
+        .map((item) => ({
+          image: item.image,
+          imageFocus: normalizeFocus(item.imageFocus),
+          caption: textOrHidden(item.caption),
+        }))
+    : [];
+  const tables = Array.isArray(detail.tables)
+    ? detail.tables
+        .map((table) => ({
+          title: textOrHidden(table?.title),
+          tableText: textOrHidden(table?.tableText),
+          note: textOrHidden(table?.note),
+        }))
+        .filter((table) => hasDisplayText(table.title) || hasDisplayText(table.tableText) || hasDisplayText(table.note))
+    : [];
+
+  return {
+    slug: normalizeCardDetailSlugValue(detail.slug),
+    title: textOrHidden(detail.title),
+    summary: textOrHidden(detail.summary),
+    images,
+    body: textOrHidden(detail.body),
+    tables,
+  };
+}
+
 function normalizeInlineCards(list?: CmsCardItem[]) {
   if (!Array.isArray(list)) return [];
   return list
@@ -169,6 +205,7 @@ function normalizeInlineCards(list?: CmsCardItem[]) {
       ctaHref: textOrBlank(item.ctaHref),
       image: item.image,
       imageFocus: normalizeFocus(item.imageFocus),
+      detail: normalizeCardDetail(item.detail),
     }));
 }
 
@@ -206,6 +243,21 @@ function normalizeSectionGroups(
   ];
 }
 
+function mergeLocalizedCardDetail(zhDetail?: CmsCardItem["detail"], enDetail?: CmsCardItem["detail"]) {
+  if (!enDetail) return zhDetail;
+  if (!zhDetail) return enDetail;
+  return {
+    ...zhDetail,
+    ...enDetail,
+    slug: normalizeCardDetailSlugValue(enDetail.slug) || normalizeCardDetailSlugValue(zhDetail.slug),
+    title: textOrHidden(enDetail.title, zhDetail.title),
+    summary: textOrHidden(enDetail.summary, zhDetail.summary),
+    images: enDetail.images && enDetail.images.length > 0 ? enDetail.images : zhDetail.images,
+    body: textOrHidden(enDetail.body, zhDetail.body),
+    tables: enDetail.tables && enDetail.tables.length > 0 ? enDetail.tables : zhDetail.tables,
+  };
+}
+
 function mergeLocalizedCards(zhList?: CmsCardItem[], enList?: CmsCardItem[]) {
   const zhCards = Array.isArray(zhList) ? zhList : [];
   const enCards = Array.isArray(enList) ? enList : [];
@@ -234,6 +286,7 @@ function mergeLocalizedCards(zhList?: CmsCardItem[], enList?: CmsCardItem[]) {
       imageFocus: resolveLocalizedFocus(enCard?.imageFocus, zhCard?.imageFocus),
       ctaText: textOrBlank(enCard?.ctaText, zhCard?.ctaText),
       ctaHref: textOrBlank(enCard?.ctaHref, zhCard?.ctaHref),
+      detail: mergeLocalizedCardDetail(zhCard.detail, enCard?.detail),
       order: typeof enCard?.order === "number" ? enCard.order : zhCard.order,
       published: enCard?.published ?? zhCard.published,
     };
@@ -326,6 +379,12 @@ export function loadNavByLang(lang: "zh" | "en", options: LoadNavOptions = {}): 
     };
   });
   return options.includeUnpublished ? items.sort((a, b) => (a.order ?? 0) - (b.order ?? 0)) : normalizeSort(items);
+}
+
+export function loadNavItemByPageKey(lang: Lang, pageKey: string | undefined): CmsNavItem | null {
+  const normalizedPage = normalizeKey(pageKey || "");
+  if (!isPageSlot(normalizedPage)) return null;
+  return loadNavByLang(lang).find((item) => normalizeKey(item.key) === normalizedPage) || null;
 }
 
 export function loadHomeByLang(lang: "zh" | "en"): CmsHomeConfig | null {
@@ -645,5 +704,25 @@ export function loadCardsByLangPage(
 ): CmsCardItem[] {
   const pageCfg = loadSimplePageByLang(pageKey, lang);
   return (pageCfg.sectionGroups || []).flatMap((group) => group.cards || []);
+}
+
+export function loadCardDetailByLangPageSlug(
+  lang: Lang,
+  pageKey: string | undefined,
+  slug: string | undefined,
+): CmsCardItem | null {
+  const normalizedPage = normalizeKey(pageKey || "");
+  if (!isPageSlot(normalizedPage)) return null;
+  const normalizedSlug = normalizeCardDetailSlugValue(slug || "");
+  if (!normalizedSlug) return null;
+
+  const pageCfg = loadSimplePageByLang(normalizedPage, lang);
+  const cards = (pageCfg.sectionGroups || []).flatMap((group) => group.cards || []);
+  const card = cards.find(
+    (item) =>
+      normalizeCardDetailSlugValue(item.detail?.slug) === normalizedSlug &&
+      cardHasDetailContent(item),
+  );
+  return card ? { ...card, pageKey: normalizedPage as CardDetailPageKey } : null;
 }
 
