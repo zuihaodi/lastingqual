@@ -1,9 +1,10 @@
 ﻿---
-import Layout from "../../layouts/Layout.astro";
-import Header from "../../components/Header.astro";
-import { siteConfig } from "../../config/site";
-import { loadCardsByLangPage, loadHomeByLang, loadProductsByLang } from "../../lib/content-loader";
-import type { CmsCardItem, CmsHomeConfig, CmsProductItem } from "../../types/content";
+import Layout from "../../app/layouts/Layout.astro";
+import Header from "../../app/components/Header.astro";
+import { siteConfig } from "../../app/config/site";
+import { loadHomeByLang } from "../../app/lib/content-loader";
+import { planCardGrid } from "../../app/lib/card-grid";
+import type { CmsCardItem, CmsHomeConfig } from "../../app/types/content";
 
 const fallbackHome: CmsHomeConfig = {
   hero: {
@@ -11,67 +12,40 @@ const fallbackHome: CmsHomeConfig = {
     titleLine2: "Set New Records",
     subtitle:
       "Mastering ultra-deep drilling technology and delivering reliable energy solutions.",
-    buttonPrimaryText: "View Services",
-    buttonPrimaryHref: "/zh/products",
-    buttonSecondaryText: "Contact Us",
+    buttonPrimaryText: "查看服务",
+    buttonPrimaryHref: "/zh/business",
+    buttonSecondaryText: "联系我们",
     buttonSecondaryHref: "/zh/contact",
+    buttonTertiaryText: "",
+    buttonTertiaryHref: "",
+    buttonQuaternaryText: "",
+    buttonQuaternaryHref: "",
     bgImage: "/images/hero-bg.jpg",
   },
   metrics: [
-    { value: "2002", unit: "Y", desc: "Established Since" },
-    { value: "9396", unit: "m", desc: "Depth Record" },
-    { value: "CNPC", unit: "", desc: "Tier-1 Supplier" },
-    { value: "ISO", unit: "", desc: "Certified Quality" },
+    { value: "2002", unit: "年", desc: "成立以来" },
+    { value: "9396", unit: "米", desc: "钻探深度纪录" },
+    { value: "CNPC", unit: "", desc: "一级供应商" },
+    { value: "ISO", unit: "", desc: "质量认证" },
   ],
   businessSection: {
     show: true,
-    title: "Core Business",
-    desc: "Integrated capabilities in R&D, manufacturing, leasing and service.",
+    title: "核心业务",
+    desc: "覆盖研发、制造、租赁与服务的一体化能力。",
   },
   cta: {
-    title: "Reliable Supply Network",
-    desc: "Customized support for complex energy projects.",
-    buttonText: "Get Proposal",
+    title: "可靠供应网络",
+    desc: "为复杂能源项目提供定制化支持。",
+    buttonText: "获取方案",
     buttonHref: "/zh/contact",
   },
 };
 
 const homeConfig = loadHomeByLang("zh") || fallbackHome;
-const metrics = homeConfig.metrics?.length ? homeConfig.metrics : fallbackHome.metrics;
+const metrics = homeConfig.metrics || [];
 
-const productFallback: CmsProductItem[] = [
-  {
-    category: "Rental",
-    title: "High-end Rig Rental (ZJ90DB)",
-    summary: "High-end rig leasing for deep drilling scenarios.",
-    cover: "/images/card1.jpg",
-    ctaHref: "/zh/contact",
-    order: 1,
-    published: true,
-  },
-  {
-    category: "Sales",
-    title: "Oilfield Special Chassis",
-    summary: "8x6 fracturing and mixed-operation chassis solutions.",
-    cover: "/images/card2.jpg",
-    ctaHref: "/zh/contact",
-    order: 2,
-    published: true,
-  },
-  {
-    category: "Service",
-    title: "Power Packaging Service",
-    summary: "One-stop power package solutions for drilling operations.",
-    cover: "/images/card3.jpg",
-    ctaHref: "/zh/contact",
-    order: 3,
-    published: true,
-  },
-];
-
-const cmsProducts = loadProductsByLang("zh").filter((p) => p.title && p.summary && p.cover);
 const cardsEnabled = homeConfig.cardsSection?.show !== false;
-const cards = cardsEnabled ? loadCardsByLangPage("zh", "home").filter((c) => c.title && c.summary) : [];
+const cards = cardsEnabled ? homeConfig.cardsSection?.cards?.filter((c) => c.title) || [] : [];
 const bottomListEnabled = homeConfig.bottomListSection?.show !== false;
 const bottomList = homeConfig.bottomListSection?.bottomList || homeConfig.bottomList || [];
 const bottomTitle = homeConfig.bottomSection?.bottomTitle || homeConfig.bottomTitle || "底部列表区域";
@@ -79,29 +53,25 @@ const bottomSubtitle = homeConfig.bottomSection?.bottomSubtitle || homeConfig.bo
 const bottomCols = Math.min(8, Math.max(bottomList.length, 1));
 const toMainImage = (src?: string) => (src ? src.replace(/\.sm\.webp$/i, ".webp") : "");
 const focusPos = (value?: string) => value || "center center";
-const topProducts = (
-  cards.length
-    ? cards.map((c: CmsCardItem) => ({
-        title: c.title || "",
-        summary: c.summary || "",
-        cover: c.image || "/images/card1.jpg",
-        fullCover: toMainImage(c.image) || c.image || "/images/card1.jpg",
-        coverFocus: c.imageFocus || "center center",
-        ctaText: c.ctaText || "了解更多",
-        ctaHref: c.ctaHref || "/zh/contact",
-      }))
-    : cmsProducts.length
-      ? cmsProducts.map((p) => ({
-          ...p,
-          fullCover: toMainImage(p.cover) || p.cover || "/images/card1.jpg",
-          coverFocus: p.coverFocus || "center center",
-          ctaText: "了解更多",
-        }))
-      : productFallback.map((p) => ({ ...p, fullCover: p.cover, coverFocus: "center center" }))
-);
+const heroButtons = [
+  { text: homeConfig.hero.buttonPrimaryText, href: homeConfig.hero.buttonPrimaryHref },
+  { text: homeConfig.hero.buttonSecondaryText, href: homeConfig.hero.buttonSecondaryHref },
+  { text: homeConfig.hero.buttonTertiaryText, href: homeConfig.hero.buttonTertiaryHref },
+  { text: homeConfig.hero.buttonQuaternaryText, href: homeConfig.hero.buttonQuaternaryHref },
+].filter((button) => typeof button.text === "string" && button.text.trim() && typeof button.href === "string" && button.href.trim());
+const topProducts = cards.map((c: CmsCardItem) => ({
+  title: c.title || "",
+  summary: c.summary || "",
+  cover: c.image || "/images/card1.jpg",
+  fullCover: toMainImage(c.image) || c.image || "/images/card1.jpg",
+  coverFocus: c.imageFocus || "center center",
+  ctaText: typeof c.ctaText === "string" ? c.ctaText.trim() : "",
+  ctaHref: typeof c.ctaHref === "string" ? c.ctaHref.trim() : "",
+}));
+const topProductsGrid = planCardGrid(topProducts.length);
 ---
 
-<Layout title="Lasting Qual - Energy Equipment Service" lang="zh-CN">
+<Layout title={`${siteConfig.shortBrand} - Energy Equipment Service`} lang="zh-CN">
   <Header />
 
   <main>
@@ -115,23 +85,30 @@ const topProducts = (
           <span class="text-[#E63E00]">{homeConfig.hero.titleLine2}</span>
         </h1>
         <p class="text-xl md:text-2xl mb-10 max-w-2xl text-gray-200 font-light whitespace-pre-line">{homeConfig.hero.subtitle}</p>
-        <div class="flex flex-col sm:flex-row gap-4">
-          <a href={homeConfig.hero.buttonPrimaryHref} class="bg-[#E63E00] text-white px-8 py-4 rounded font-bold text-center hover:bg-orange-700 transition uppercase tracking-wider no-underline">{homeConfig.hero.buttonPrimaryText}</a>
-          <a href={homeConfig.hero.buttonSecondaryHref} class="bg-transparent border-2 border-white text-white px-8 py-4 rounded font-bold text-center hover:bg-white hover:text-[#003865] transition uppercase tracking-wider no-underline">{homeConfig.hero.buttonSecondaryText}</a>
-        </div>
+        {heroButtons.length > 0 && (
+          <div class="flex flex-col sm:flex-row sm:flex-wrap gap-4">
+            {heroButtons.map((button) => (
+              <a href={button.href} class="bg-[#E63E00] text-white px-8 py-4 rounded font-bold text-center hover:bg-orange-700 transition uppercase tracking-wider no-underline">
+                {button.text}
+              </a>
+            ))}
+          </div>
+        )}
       </div>
     </section>
 
-    <section class="bg-[#003865] py-10 border-b-4 border-[#E63E00]">
-      <div class="max-w-7xl mx-auto px-4 grid grid-cols-2 md:grid-cols-4 gap-8 text-center text-white">
-        {metrics.map((metric) => (
-          <div>
-            <div class="text-4xl font-bold mb-1">{metric.value}{metric.unit && <span class="text-xl font-normal">{metric.unit}</span>}</div>
-            <div class="text-gray-300 text-sm">{metric.desc}</div>
-          </div>
-        ))}
-      </div>
-    </section>
+    {metrics.length > 0 && (
+      <section class="bg-[#003865] py-10 border-b-4 border-[#E63E00]">
+        <div class="max-w-7xl mx-auto px-4 grid grid-cols-2 md:grid-cols-4 gap-8 text-center text-white">
+          {metrics.map((metric) => (
+            <div>
+              <div class="text-4xl font-bold mb-1">{metric.value}{metric.unit && <span class="text-xl font-normal">{metric.unit}</span>}</div>
+              <div class="text-gray-300 text-sm">{metric.desc}</div>
+            </div>
+          ))}
+        </div>
+      </section>
+    )}
 
     {homeConfig.businessSection?.show === true && cardsEnabled && (
       <section class="py-24 bg-gray-50">
@@ -142,9 +119,9 @@ const topProducts = (
             <p class="mt-4 text-gray-600 max-w-2xl mx-auto">{homeConfig.businessSection?.desc || ""}</p>
           </div>
 
-          <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
-            {topProducts.map((item) => (
-              <div class="group bg-white shadow-xl rounded overflow-hidden hover:-translate-y-2 transition duration-300">
+          <div class:list={["grid gap-8", topProductsGrid.mobileColsClass, topProductsGrid.tabletColsClass, topProductsGrid.desktopColsClass]}>
+            {topProducts.map((item, idx) => (
+              <div class:list={["group bg-white shadow-xl rounded overflow-hidden hover:-translate-y-2 transition duration-300", topProductsGrid.itemStartClass[idx]]}>
                 <div class="h-56 overflow-hidden">
                   <button
                     type="button"
@@ -158,8 +135,10 @@ const topProducts = (
                 </div>
                 <div class="p-8">
                   <h3 class="text-2xl font-bold mb-3 text-[#003865]">{item.title}</h3>
-                  <p class="text-gray-600 mb-6 leading-relaxed">{item.summary}</p>
-                  <a href={item.ctaHref || "/zh/contact"} class="text-[#E63E00] font-bold uppercase tracking-wide hover:underline">{item.ctaText || "了解更多"} &rarr;</a>
+                  {item.summary && <p class="text-gray-600 mb-6 leading-relaxed">{item.summary}</p>}
+                  {item.ctaText && item.ctaHref && (
+                    <a href={item.ctaHref} class="text-[#E63E00] font-bold uppercase tracking-wide hover:underline">{item.ctaText} &rarr;</a>
+                  )}
                 </div>
               </div>
             ))}

@@ -2,34 +2,17 @@
   "hero": {
     "titleLine1": "挑战地心深度",
     "titleLine2": "刷新亚洲纪录",
-    "subtitle": "掌握12000米超深井钻采技术，创下9396米亚洲最深水平井纪录。\nLasting Qual —— 您最值得信赖的能源合作伙伴",
-    "buttonPrimaryText": "查看业务领域",
+    "subtitle": "掌握12000米超深井钻采技术，创下9396米亚洲最深水平井纪录。\nLasting Quality —— 您最值得信赖的能源合作伙伴",
+    "buttonPrimaryText": "产品信息",
     "buttonPrimaryHref": "/zh/products",
-    "buttonSecondaryText": "联系我们",
-    "buttonSecondaryHref": "/zh/contact",
+    "buttonSecondaryText": "服务",
+    "buttonSecondaryHref": "/zh/services",
+    "buttonTertiaryText": "融资",
+    "buttonTertiaryHref": "/zh/finace",
     "bgImage": "/uploads/home/zh/hero/bgImage.jpg",
     "bgImageFocus": "center center"
   },
-  "metrics": [
-    {
-      "value": "2002",
-      "unit": "年",
-      "desc": "行业积淀始于"
-    },
-    {
-      "value": "9396",
-      "unit": "米",
-      "desc": "亚洲钻探深度纪录"
-    },
-    {
-      "value": "CNPC",
-      "desc": "中石油一级供应商"
-    },
-    {
-      "value": "ISO",
-      "desc": "全体系质量认证"
-    }
-  ],
+  "metrics": [],
   "businessSection": {
     "show": true,
     "title": "核心业务领域",
@@ -39,43 +22,37 @@
     "show": true,
     "cards": [
       {
-        "title": "高端钻机租赁 (ZJ90DB)",
-        "summary": "提供高端钻机租赁，适配超深井作业场景。",
+        "title": "产品信息",
+        "summary": "专注油服设备、油田装备、炼化设备、海工装备的研发、销售和服务",
+        "image": "/uploads/home/zh/cards/cardsSection/cards/0/image.jpg",
         "imageFocus": "center center",
-        "ctaText": "了解更多",
-        "ctaHref": "/zh/products",
         "order": 1,
         "published": true
       },
       {
-        "title": "油田特种底盘 (中国重汽联研)",
-        "summary": "与中国重汽联合研发，提供 8x6 压裂车底盘、混砂车底盘及 58吨 连续油管车底盘。全面替代进口 MAN 及奔驰底盘，降低综合成本。",
+        "title": "服务",
         "image": "/uploads/home/zh/cards/cardsSection/cards/1/image.jpg",
         "imageFocus": "center center",
-        "ctaText": "了解更多",
-        "ctaHref": "/zh/products",
         "order": 2,
         "published": true
       },
       {
-        "title": "动力总包服务",
-        "summary": "为钻机提供一站式动力系统解决方案。",
+        "title": "融资",
+        "summary": "融资",
         "image": "/uploads/home/zh/cards/cardsSection/cards/2/image.jpg",
         "imageFocus": "center center",
-        "ctaText": "了解更多",
-        "ctaHref": "/zh/products",
         "order": 3,
         "published": true
       }
     ]
   },
   "bottomSection": {
-    "show": true,
+    "show": false,
     "bottomTitle": "战略合作伙伴",
     "bottomSubtitle": "国内国际石油公司、国内国际油服公司"
   },
   "bottomListSection": {
-    "show": true,
+    "show": false,
     "bottomList": [
       {
         "title": "中国石油",

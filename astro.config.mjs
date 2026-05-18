@@ -8,7 +8,7 @@ export default defineConfig({
   output: "server",
   adapter: cloudflare({
     workerEntryPoint: {
-      path: "./src/worker-entrypoint.ts",
+      path: "./src/app/worker-entrypoint.ts",
     },
   }),
   integrations: [tailwind(), react(), keystatic()],

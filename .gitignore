@@ -15,6 +15,9 @@ yarn-error.log*
 pnpm-debug.log*
 *.log
 
+# generated framework upgrade package
+_upgrade_framework/
+
 # environment variables
 .env
 .env.production
