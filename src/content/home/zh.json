@@ -3,7 +3,7 @@
     "titleLine1": "挑战地心深度",
     "titleLine2": "刷新亚洲纪录",
     "subtitle": "掌握12000米超深井钻采技术，创下9396米亚洲最深水平井纪录。\nLasting Quality —— 您最值得信赖的能源合作伙伴",
-    "buttonPrimaryText": "产品信息",
+    "buttonPrimaryText": "产品",
     "buttonPrimaryHref": "/zh/products",
     "buttonSecondaryText": "服务",
     "buttonSecondaryHref": "/zh/services",
@@ -22,7 +22,7 @@
     "show": true,
     "cards": [
       {
-        "title": "产品信息",
+        "title": "产品",
         "summary": "专注油服设备、油田装备、炼化设备、海工装备的研发、销售和服务",
         "image": "/uploads/home/zh/cards/cardsSection/cards/0/image.jpg",
         "imageFocus": "center center",
