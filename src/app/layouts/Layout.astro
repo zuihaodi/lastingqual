@@ -1,5 +1,6 @@
 ---
 import { getLanguagePolicy, getSiteSettings } from "../lib/site-settings";
+import { getSiteTheme } from "../config/site-themes";
 
 interface Props {
 	title: string;
@@ -8,6 +9,7 @@ interface Props {
 
 const { title, lang = "zh-CN" } = Astro.props;
 const site = getSiteSettings();
+const theme = getSiteTheme(site.themePreset);
 const languagePolicy = getLanguagePolicy(site);
 const pageLang = lang.toLowerCase().startsWith("en") ? "en" : "zh";
 const languageAllowed =
@@ -25,7 +27,7 @@ const languageAllowed =
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
 	</head>
-	<body class="font-sans text-slate-800 bg-white">
+	<body class="font-sans text-slate-800 bg-white" style={theme.cssVars}>
 		<slot />
 		<dialog id="global-image-lightbox" class="p-0 border-0 bg-transparent max-w-[92vw] max-h-[92vh] w-auto">
 			<form method="dialog" class="fixed inset-0 bg-black/75 backdrop-blur-[1px]"></form>
@@ -67,5 +69,58 @@ const languageAllowed =
 				});
 			})();
 		</script>
+		<style is:global>
+			.theme-text-brand {
+				color: var(--theme-brand);
+			}
+
+			.theme-text-accent {
+				color: var(--theme-accent);
+			}
+
+			.theme-bg-brand {
+				background-color: var(--theme-brand);
+			}
+
+			.theme-bg-accent {
+				background-color: var(--theme-accent);
+			}
+
+			.theme-bg-footer {
+				background-color: var(--theme-footer);
+			}
+
+			.theme-border-brand {
+				border-color: var(--theme-brand);
+			}
+
+			.theme-border-accent {
+				border-color: var(--theme-accent);
+			}
+
+			.theme-hover-text-brand:hover {
+				color: var(--theme-brand);
+			}
+
+			.theme-hover-bg-brand:hover {
+				background-color: var(--theme-brand);
+			}
+
+			.theme-hover-bg-accent:hover {
+				background-color: var(--theme-accent-hover);
+			}
+
+			.theme-table-head {
+				background-color: var(--theme-table-head);
+			}
+
+			.theme-breadcrumb {
+				color: var(--theme-breadcrumb);
+			}
+
+			.theme-breadcrumb-muted {
+				color: var(--theme-breadcrumb-muted);
+			}
+		</style>
 	</body>
 </html>

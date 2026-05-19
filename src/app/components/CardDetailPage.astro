@@ -40,15 +40,15 @@ const tableViews = tables
 ---
 
 <main>
-  <section class="bg-[#003865] py-14 text-white">
+  <section class="theme-bg-brand py-14 text-white">
     <div class="max-w-7xl mx-auto px-4">
-      <nav class="text-sm font-semibold text-orange-200" aria-label={lang === "zh" ? "面包屑导航" : "Breadcrumb"}>
-        <a href={homeHref} class="text-orange-200 no-underline hover:text-white">{homeLabel}</a>
+      <nav class="text-sm font-semibold theme-breadcrumb" aria-label={lang === "zh" ? "面包屑导航" : "Breadcrumb"}>
+        <a href={homeHref} class="theme-breadcrumb no-underline hover:text-white">{homeLabel}</a>
         {parentTitle && (
           <>
-            <span class="mx-2 text-orange-100/70">/</span>
+            <span class="mx-2 theme-breadcrumb-muted">/</span>
             {parentHref ? (
-              <a href={parentHref} class="text-orange-200 no-underline hover:text-white">{parentTitle}</a>
+              <a href={parentHref} class="theme-breadcrumb no-underline hover:text-white">{parentTitle}</a>
             ) : (
               <span>{parentTitle}</span>
             )}
@@ -96,12 +96,12 @@ const tableViews = tables
       <div class="max-w-5xl mx-auto px-4 space-y-10">
         {tableViews.map((table) => (
           <div>
-            {table.title && <h2 class="text-2xl font-bold text-[#003865] mb-4">{table.title}</h2>}
+            {table.title && <h2 class="text-2xl font-bold theme-text-brand mb-4">{table.title}</h2>}
             {table.header.length > 0 && (
               <div class="overflow-x-auto border border-blue-200 rounded-lg">
                 <table class="w-full min-w-[720px] border-collapse text-sm">
                   <thead>
-                    <tr class="bg-[#D90D12] text-white">
+                    <tr class="theme-table-head text-white">
                       {Array.from({ length: table.columnCount }).map((_, idx) => (
                         <th class="border-r border-white/60 px-4 py-3 text-center font-bold last:border-r-0">
                           {table.header[idx] || ""}
@@ -113,7 +113,7 @@ const tableViews = tables
                     {table.bodyRows.map((row) => (
                       <tr class="odd:bg-blue-50 even:bg-white">
                         {Array.from({ length: table.columnCount }).map((_, idx) => (
-                          <td class:list={["border-b border-r border-blue-100 px-4 py-3 text-center text-gray-700 last:border-r-0", idx === 0 && "font-semibold text-[#003865]"]}>
+                          <td class:list={["border-b border-r border-blue-100 px-4 py-3 text-center text-gray-700 last:border-r-0", idx === 0 && "font-semibold theme-text-brand"]}>
                             {row[idx] || ""}
                           </td>
                         ))}

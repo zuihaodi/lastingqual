@@ -1,4 +1,5 @@
 import fallbackConfig from "../../content/site/settings.json";
+import { normalizeThemePreset, type SiteThemePreset } from "../config/site-themes";
 
 export type Lang = "zh" | "en";
 export type LanguageMode = "zh_en" | "en_zh" | "zh_only" | "en_only";
@@ -8,6 +9,7 @@ export interface SiteSettings {
   shortBrand: string;
   logo?: string;
   languageMode: LanguageMode;
+  themePreset: SiteThemePreset;
   defaultDescription: string;
   email: string;
   phone: string;
@@ -35,6 +37,7 @@ export function getSiteSettings(): SiteSettings {
     shortBrand: textOr(raw.shortBrand, "Lasting Qual"),
     logo: textOr(raw.logo, ""),
     languageMode: normalizeMode(raw.languageMode),
+    themePreset: normalizeThemePreset(raw.themePreset),
     defaultDescription: textOr(raw.defaultDescription, "Lasting Qual - 工业解决方案"),
     email: textOr(raw.email, "info@lastingqual.com"),
     phone: textOr(raw.phone, "+65 6789 1234"),

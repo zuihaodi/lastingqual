@@ -82,13 +82,13 @@ const topProductsGrid = planCardGrid(topProducts.length);
       <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-white mt-10">
         <h1 class="text-5xl md:text-7xl font-extrabold mb-6 leading-tight">
           {homeConfig.hero.titleLine1}<br />
-          <span class="text-[#E63E00]">{homeConfig.hero.titleLine2}</span>
+          <span class="theme-text-accent">{homeConfig.hero.titleLine2}</span>
         </h1>
         <p class="text-xl md:text-2xl mb-10 max-w-2xl text-gray-200 font-light whitespace-pre-line">{homeConfig.hero.subtitle}</p>
         {heroButtons.length > 0 && (
           <div class="flex flex-col sm:flex-row sm:flex-wrap gap-4">
             {heroButtons.map((button) => (
-              <a href={button.href} class="bg-[#E63E00] text-white px-8 py-4 rounded font-bold text-center hover:bg-orange-700 transition uppercase tracking-wider no-underline">
+              <a href={button.href} class="theme-bg-accent text-white px-8 py-4 rounded font-bold text-center theme-hover-bg-accent transition uppercase tracking-wider no-underline">
                 {button.text}
               </a>
             ))}
@@ -98,7 +98,7 @@ const topProductsGrid = planCardGrid(topProducts.length);
     </section>
 
     {metrics.length > 0 && (
-      <section class="bg-[#003865] py-10 border-b-4 border-[#E63E00]">
+      <section class="theme-bg-brand py-10 border-b-4 theme-border-accent">
         <div class="max-w-7xl mx-auto px-4 grid grid-cols-2 md:grid-cols-4 gap-8 text-center text-white">
           {metrics.map((metric) => (
             <div>
@@ -114,8 +114,8 @@ const topProductsGrid = planCardGrid(topProducts.length);
       <section class="py-24 bg-gray-50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div class="text-center mb-16">
-            <h2 class="text-4xl font-extrabold text-[#003865] mb-4">{homeConfig.businessSection?.title || "Core Business Areas"}</h2>
-            <div class="w-20 h-1 bg-[#E63E00] mx-auto"></div>
+            <h2 class="text-4xl font-extrabold theme-text-brand mb-4">{homeConfig.businessSection?.title || "Core Business Areas"}</h2>
+            <div class="w-20 h-1 theme-bg-accent mx-auto"></div>
             <p class="mt-4 text-gray-600 max-w-2xl mx-auto">{homeConfig.businessSection?.desc || ""}</p>
           </div>
           <div class:list={["grid gap-8", topProductsGrid.mobileColsClass, topProductsGrid.tabletColsClass, topProductsGrid.desktopColsClass]}>
@@ -133,10 +133,10 @@ const topProductsGrid = planCardGrid(topProducts.length);
                   </button>
                 </div>
                 <div class="p-8">
-                  <h3 class="text-2xl font-bold mb-3 text-[#003865]">{item.title}</h3>
+                  <h3 class="text-2xl font-bold mb-3 theme-text-brand">{item.title}</h3>
                   {item.summary && <p class="text-gray-600 mb-6 leading-relaxed">{item.summary}</p>}
                   {item.ctaText && item.ctaHref && (
-                    <a href={item.ctaHref} class="text-[#E63E00] font-bold uppercase tracking-wide hover:underline">{item.ctaText} &rarr;</a>
+                    <a href={item.ctaHref} class="theme-text-accent font-bold uppercase tracking-wide hover:underline">{item.ctaText} &rarr;</a>
                   )}
                 </div>
               </div>
@@ -149,7 +149,7 @@ const topProductsGrid = planCardGrid(topProducts.length);
     {bottomListEnabled && bottomList.length > 0 && (
       <section class="py-14 bg-gray-50">
         <div class="max-w-7xl mx-auto px-4">
-          <h2 class="text-3xl font-extrabold text-[#003865] mb-4 text-center">{bottomTitle}</h2>
+          <h2 class="text-3xl font-extrabold theme-text-brand mb-4 text-center">{bottomTitle}</h2>
           {bottomSubtitle && <p class="text-gray-600 mb-6 text-center">{bottomSubtitle}</p>}
           <div
             class="grid gap-x-6 gap-y-5 justify-items-center"
@@ -167,16 +167,16 @@ const topProductsGrid = planCardGrid(topProducts.length);
     )}
 
     {homeConfig.cta?.show !== false && (
-      <section class="bg-[#003865] py-12">
+      <section class="theme-bg-brand py-12">
         <div class="max-w-5xl mx-auto px-4 text-center">
           <h2 class="text-2xl font-bold text-white mb-4">{homeConfig.cta.title}</h2>
           <p class="text-gray-300 mb-8">{homeConfig.cta.desc}</p>
-          <a href={homeConfig.cta.buttonHref} class="bg-white text-[#003865] px-8 py-3 rounded font-bold hover:bg-gray-100 transition no-underline">{homeConfig.cta.buttonText}</a>
+          <a href={homeConfig.cta.buttonHref} class="bg-white theme-text-brand px-8 py-3 rounded font-bold hover:bg-gray-100 transition no-underline">{homeConfig.cta.buttonText}</a>
         </div>
       </section>
     )}
 
-    <footer class="bg-[#002845] text-white py-12 border-t-4 border-[#E63E00]">
+    <footer class="theme-bg-footer text-white py-12 border-t-4 theme-border-accent">
       <div class="max-w-7xl mx-auto px-4 text-center text-sm text-gray-400">
         <p class="mb-2">&copy; {siteConfig.copyrightYear} {siteConfig.companyName} All rights reserved.</p>
         <p>Committed to promoting technological progress and efficiency in the energy industry.</p>

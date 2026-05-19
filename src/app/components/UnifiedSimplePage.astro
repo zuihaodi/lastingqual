@@ -21,7 +21,7 @@ const sectionGroups = (cfg.sectionGroups || []).filter(
 
 <main>
   {cfg.heroShow !== false && (
-    <div class="py-16 relative" class:list={{ "bg-[#003865]": !cfg.heroBgImage }}>
+    <div class="py-16 relative" class:list={{ "theme-bg-brand": !cfg.heroBgImage }}>
       {cfg.heroBgImage && (
         <div class="absolute inset-0 overflow-hidden bg-slate-900">
           <img src={cfg.heroBgImage} alt={cfg.heroTitle || ""} class="w-full h-full object-cover opacity-40" style={{ objectPosition: focusPos(cfg.heroBgFocus) }} />
@@ -38,18 +38,18 @@ const sectionGroups = (cfg.sectionGroups || []).filter(
     <section class="py-16 bg-white">
       <div class="max-w-7xl mx-auto px-4 grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
         <div>
-          {cfg.sectionTitle && <h2 class="text-3xl font-bold text-[#003865] mb-6">{cfg.sectionTitle}</h2>}
+          {cfg.sectionTitle && <h2 class="text-3xl font-bold theme-text-brand mb-6">{cfg.sectionTitle}</h2>}
           {cfg.sectionBody && <p class="text-gray-600 leading-relaxed" set:html={renderRichText(cfg.sectionBody)}></p>}
 
           {(cfg.sectionPrimaryButtonText || cfg.sectionSecondaryButtonText) && (
             <div class="mt-8 flex flex-col sm:flex-row gap-4">
               {cfg.sectionPrimaryButtonText && cfg.sectionPrimaryButtonHref && (
-                <a href={cfg.sectionPrimaryButtonHref} class="bg-[#E63E00] text-white px-6 py-3 rounded font-bold text-center no-underline hover:bg-orange-700 transition">
+                <a href={cfg.sectionPrimaryButtonHref} class="theme-bg-accent text-white px-6 py-3 rounded font-bold text-center no-underline theme-hover-bg-accent transition">
                   {cfg.sectionPrimaryButtonText}
                 </a>
               )}
               {cfg.sectionSecondaryButtonText && cfg.sectionSecondaryButtonHref && (
-                <a href={cfg.sectionSecondaryButtonHref} class="bg-transparent border border-[#003865] text-[#003865] px-6 py-3 rounded font-bold text-center no-underline hover:bg-[#003865] hover:text-white transition">
+                <a href={cfg.sectionSecondaryButtonHref} class="bg-transparent border theme-border-brand theme-text-brand px-6 py-3 rounded font-bold text-center no-underline theme-hover-bg-brand hover:text-white transition">
                   {cfg.sectionSecondaryButtonText}
                 </a>
               )}
@@ -67,7 +67,7 @@ const sectionGroups = (cfg.sectionGroups || []).filter(
   )}
 
   {cfg.metricsShow === true && cfg.metrics && cfg.metrics.length > 0 && (
-    <section class="bg-[#003865] py-10 border-b-4 border-[#E63E00]">
+    <section class="theme-bg-brand py-10 border-b-4 theme-border-accent">
       <div class="max-w-7xl mx-auto px-4 grid grid-cols-2 md:grid-cols-4 gap-8 text-center text-white">
         {cfg.metrics.map((metric) => (
           <div>
@@ -87,7 +87,7 @@ const sectionGroups = (cfg.sectionGroups || []).filter(
       {(group.title || group.subtitle) && (
         <section class="py-12 bg-gray-50">
           <div class="max-w-7xl mx-auto px-4 text-center">
-            {group.title && <h2 class="text-3xl font-bold text-[#003865]">{group.title}</h2>}
+            {group.title && <h2 class="text-3xl font-bold theme-text-brand">{group.title}</h2>}
             {group.subtitle && <p class="mt-4 text-gray-600">{group.subtitle}</p>}
           </div>
         </section>
@@ -116,10 +116,10 @@ const sectionGroups = (cfg.sectionGroups || []).filter(
                     </button>
                   </div>
                 )}
-                <h3 class="text-xl font-bold text-[#003865] mb-2">{item.title}</h3>
+                <h3 class="text-xl font-bold theme-text-brand mb-2">{item.title}</h3>
                 <p class="text-gray-600 text-sm mb-4" set:html={renderRichText(item.summary || "")}></p>
                 {action && (
-                  <a href={action.href} class="text-[#E63E00] font-semibold text-sm hover:underline no-underline">
+                  <a href={action.href} class="theme-text-accent font-semibold text-sm hover:underline no-underline">
                     {action.text} &rarr;
                   </a>
                 )}
@@ -137,7 +137,7 @@ const sectionGroups = (cfg.sectionGroups || []).filter(
   {cfg.bottomShow !== false && (cfg.bottomTitle || cfg.bottomSubtitle) && (
     <section class="py-12 bg-gray-50">
       <div class="max-w-7xl mx-auto px-4 text-center">
-        {cfg.bottomTitle && <h2 class="text-3xl font-bold text-[#003865]">{cfg.bottomTitle}</h2>}
+        {cfg.bottomTitle && <h2 class="text-3xl font-bold theme-text-brand">{cfg.bottomTitle}</h2>}
         {cfg.bottomSubtitle && <p class="mt-4 text-gray-600">{cfg.bottomSubtitle}</p>}
       </div>
     </section>
@@ -148,7 +148,7 @@ const sectionGroups = (cfg.sectionGroups || []).filter(
       <div class="max-w-7xl mx-auto px-4 grid gap-6 [grid-template-columns:repeat(auto-fit,minmax(220px,1fr))]">
         {cfg.bottomList.map((item) => (
           <article class="bg-white border border-gray-200 rounded-lg p-6 text-center">
-            <h3 class="text-2xl font-bold text-[#003865] mb-2">{item.title}</h3>
+            <h3 class="text-2xl font-bold theme-text-brand mb-2">{item.title}</h3>
             <p class="text-gray-600">{item.summary}</p>
           </article>
         ))}
@@ -159,7 +159,7 @@ const sectionGroups = (cfg.sectionGroups || []).filter(
   {cfg.contactInfo?.show === true && (
     <section class="py-12 bg-white">
       <div class="max-w-7xl mx-auto px-4">
-        <h2 class="text-2xl font-bold text-[#003865] mb-6">{cfg.contactInfo.title || (isZh ? "联系信息" : "Contact Info")}</h2>
+        <h2 class="text-2xl font-bold theme-text-brand mb-6">{cfg.contactInfo.title || (isZh ? "联系信息" : "Contact Info")}</h2>
         <div class="space-y-4 text-gray-700">
           {cfg.contactInfo.addressLine1 && (
             <p>
@@ -171,7 +171,7 @@ const sectionGroups = (cfg.sectionGroups || []).filter(
           {cfg.contactInfo.email && (
             <p>
               <strong class="text-gray-900">{isZh ? "邮箱：" : "Email: "}</strong>
-              <a href={`mailto:${cfg.contactInfo.email}`} class="text-[#E63E00] hover:underline">
+              <a href={`mailto:${cfg.contactInfo.email}`} class="theme-text-accent hover:underline">
                 {cfg.contactInfo.email}
               </a>
             </p>

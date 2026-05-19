@@ -22,7 +22,7 @@ const brandHref = languagePolicy.hasEn ? "/en/" : languagePolicy.rootHref;
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="flex justify-between items-center h-20 gap-3">
       <div class="min-w-0 flex flex-1 items-center cursor-pointer">
-        <a href={brandHref} class="flex min-w-0 max-w-full items-center gap-3 text-[clamp(1rem,4.6vw,1.875rem)] font-extrabold leading-none text-[#003865] tracking-tighter no-underline md:text-3xl">
+        <a href={brandHref} class="flex min-w-0 max-w-full items-center gap-3 text-[clamp(1rem,4.6vw,1.875rem)] font-extrabold leading-none theme-text-brand tracking-tighter no-underline md:text-3xl">
           {site.logo ? (
             <img src={site.logo} alt={site.shortBrand} class="block h-12 w-auto max-w-full object-contain md:max-w-[220px]" loading="eager" />
           ) : (
@@ -34,12 +34,12 @@ const brandHref = languagePolicy.hasEn ? "/en/" : languagePolicy.rootHref;
       <div class="hidden md:flex items-center space-x-8">
         <nav id="main-nav-en" class="flex space-x-8">
           {navEn.map((item) => (
-            <a href={item.href} class="text-gray-700 hover:text-[#003865] font-bold text-sm uppercase tracking-wide no-underline">{item.label}</a>
+            <a href={item.href} class="text-gray-700 theme-hover-text-brand font-bold text-sm uppercase tracking-wide no-underline">{item.label}</a>
           ))}
         </nav>
 
         {languagePolicy.canSwitch && languagePolicy.hasZh && (
-          <a href={switchHref} class="border border-[#003865] text-[#003865] px-3 py-1 rounded text-xs font-bold hover:bg-[#003865] hover:text-white transition no-underline">
+          <a href={switchHref} class="border theme-border-brand theme-text-brand px-3 py-1 rounded text-xs font-bold theme-hover-bg-brand hover:text-white transition no-underline">
             中文
           </a>
         )}
@@ -64,10 +64,10 @@ const brandHref = languagePolicy.hasEn ? "/en/" : languagePolicy.rootHref;
     <div id="mobile-nav-en" class="md:hidden hidden pb-4" data-mobile-menu>
       <nav class="flex flex-col space-y-3">
         {navEn.map((item) => (
-          <a href={item.href} class="text-gray-700 hover:text-[#003865] font-bold text-sm no-underline" data-mobile-menu-link>{item.label}</a>
+          <a href={item.href} class="text-gray-700 theme-hover-text-brand font-bold text-sm no-underline" data-mobile-menu-link>{item.label}</a>
         ))}
         {languagePolicy.canSwitch && languagePolicy.hasZh && (
-          <a href={switchHref} class="inline-flex w-fit border border-[#003865] text-[#003865] px-3 py-1 rounded text-xs font-bold hover:bg-[#003865] hover:text-white transition no-underline" data-mobile-menu-link>
+          <a href={switchHref} class="inline-flex w-fit border theme-border-brand theme-text-brand px-3 py-1 rounded text-xs font-bold theme-hover-bg-brand hover:text-white transition no-underline" data-mobile-menu-link>
             中文
           </a>
         )}
