@@ -25,7 +25,7 @@
         {
           "title": "交流电驱动钻机",
           "summary": "交流电驱动钻机",
-          "image": "/uploads/pages/zh/page2/cards/sectionGroups/0/cards/0/image.jpg",
+          "image": "/uploads/pages/zh/page2/cards/sectionGroups/0/cards/0/image.png",
           "imageFocus": "center center",
           "ctaText": "详细信息",
           "order": 1,
@@ -35,7 +35,7 @@
             "summary": "交流电驱动钻机",
             "images": [
               {
-                "image": "/uploads/pages/zh/page2/details/sectionGroups/0/cards/0/detail/images/0/image.jpg",
+                "image": "/uploads/pages/zh/page2/details/sectionGroups/0/cards/0/detail/images/0/image.png",
                 "imageFocus": "center center"
               }
             ],
