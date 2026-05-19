@@ -9,7 +9,7 @@
     "show": true,
     "sectionTitle": "#blank#",
     "sectionBody": "公司地址:\n123 Marina Bay Financial Centre,\nSingapore 018981\n\n电子邮箱:\ninfo@lastingqual.com\n\n联系电话:\n+65 6789 1234",
-    "image": "/uploads/pages/zh/page5/mainSection/image.png",
+    "image": "/uploads/pages/zh/page5/mainSection/image.jpg",
     "imageFocus": "center top"
   },
   "metricsSection": {
@@ -32,7 +32,11 @@
         "ctaText": "立即联系",
         "ctaHref": "/zh/contact",
         "order": 1,
-        "published": true
+        "published": true,
+        "detail": {
+          "images": [],
+          "tables": []
+        }
       },
       {
         "title": "技术支持",
@@ -41,7 +45,11 @@
         "ctaText": "提交需求",
         "ctaHref": "/zh/contact",
         "order": 2,
-        "published": true
+        "published": true,
+        "detail": {
+          "images": [],
+          "tables": []
+        }
       },
       {
         "title": "合作对接",
@@ -50,7 +58,11 @@
         "ctaText": "开始洽谈",
         "ctaHref": "/zh/contact",
         "order": 3,
-        "published": true
+        "published": true,
+        "detail": {
+          "images": [],
+          "tables": []
+        }
       }
     ]
   },
