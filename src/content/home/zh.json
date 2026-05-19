@@ -1,14 +1,14 @@
 {
   "hero": {
-    "titleLine1": "挑战地心深度",
-    "titleLine2": "刷新亚洲纪录",
-    "subtitle": "掌握12000米超深井钻采技术，创下9396米亚洲最深水平井纪录。\nLasting Quality —— 您最值得信赖的能源合作伙伴",
+    "titleLine1": "以服务客户为使命",
+    "titleLine2": "诚信 共赢 开拓",
+    "subtitle": "以服务客户为使命，通过高质量产品和服务为客户创造价值，推动能源行业的可持续发展。",
     "buttonPrimaryText": "产品",
     "buttonPrimaryHref": "/zh/products",
     "buttonSecondaryText": "服务",
     "buttonSecondaryHref": "/zh/services",
     "buttonTertiaryText": "融资",
-    "buttonTertiaryHref": "/zh/finace",
+    "buttonTertiaryHref": "/zh/finance",
     "bgImage": "/uploads/home/zh/hero/bgImage.jpg",
     "bgImageFocus": "center center"
   },
@@ -23,7 +23,7 @@
     "cards": [
       {
         "title": "产品",
-        "summary": "专注油服设备、油田装备、炼化设备、海工装备的研发、销售和服务",
+        "summary": "专注油服设备、油田装备、炼化设备、海工装备",
         "image": "/uploads/home/zh/cards/cardsSection/cards/0/image.jpg",
         "imageFocus": "center center",
         "ctaText": "了解更多",
@@ -33,6 +33,7 @@
       },
       {
         "title": "服务",
+        "summary": "动力总包服务",
         "image": "/uploads/home/zh/cards/cardsSection/cards/1/image.jpg",
         "imageFocus": "center center",
         "ctaText": "了解更多",
@@ -42,11 +43,11 @@
       },
       {
         "title": "融资",
-        "summary": "融资",
+        "summary": "以“设备租赁 + 融资合作 + 维保服务”为主线，为国际石油公司、国际油田服务公司及大型工程项目提供设备资产配置方案。",
         "image": "/uploads/home/zh/cards/cardsSection/cards/2/image.jpg",
         "imageFocus": "center center",
         "ctaText": "了解更多",
-        "ctaHref": "/zh/finace",
+        "ctaHref": "/zh/finance",
         "order": 3,
         "published": true
       }
