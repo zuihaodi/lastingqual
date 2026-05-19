@@ -2,14 +2,15 @@
   "heroSection": {
     "show": true,
     "heroTitle": "关于我们",
-    "heroSubtitle": "源于 2002，深耕能源行业二十余载",
+    "heroSubtitle": "创始于20世纪90年代，深耕能源行业三十余载",
     "heroBgImage": "/uploads/pages/zh/page1/hero/heroSection/heroBgImage.png",
     "heroBgFocus": "center center"
   },
   "mainSection": {
     "show": true,
     "sectionTitle": "公司概况",
-    "sectionBody": "Lasting Quality Pte. Ltd. 始创于 2002 年，是一家集能源行业钻采装备研发、生产、销售及服务于一体的创新型企业。公司总部位于新加坡，致力于提供全面的钻采解决方案。\n\n作为**中国石油集团一号网一级供应商及中国石化集团易派客成员**，我们拥有全面的入网资质。凭借强大的研发实力和全球化供应链，我们与中石油、中石化、杰瑞股份、东方宏华等业内顶尖企业保持着长期稳定的战略伙伴关系。",
+    "sectionBody": "Lasting Quality Pte. Ltd. 创始于20世纪90年代，是一家集能源行业钻采装备研发、生产、销售及服务于一体的创新型企业。公司总部位于新加坡，致力于提供全面的钻采解决方案。",
+    "image": "/uploads/pages/zh/page1/mainSection/image.png",
     "imageFocus": "center center"
   },
   "metricsSection": {
@@ -31,7 +32,11 @@
         "image": "/uploads/pages/zh/page1/cards/cardsSection/cards/0/image.jpg",
         "imageFocus": "center center",
         "order": 1,
-        "published": true
+        "published": true,
+        "detail": {
+          "images": [],
+          "tables": []
+        }
       },
       {
         "title": "经营理念",
@@ -39,7 +44,11 @@
         "image": "/uploads/pages/zh/page1/cards/cardsSection/cards/1/image.jpg",
         "imageFocus": "center center",
         "order": 2,
-        "published": true
+        "published": true,
+        "detail": {
+          "images": [],
+          "tables": []
+        }
       },
       {
         "title": "愿景",
@@ -47,7 +56,11 @@
         "image": "/uploads/pages/zh/page1/cards/cardsSection/cards/2/image.png",
         "imageFocus": "center center",
         "order": 3,
-        "published": true
+        "published": true,
+        "detail": {
+          "images": [],
+          "tables": []
+        }
       }
     ]
   },
